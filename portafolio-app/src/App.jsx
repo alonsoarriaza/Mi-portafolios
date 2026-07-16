@@ -383,10 +383,22 @@ function Navbar() {
 
 
 /* ═══════════════════════════════════════════════
-   COMPONENTE: Video Background
+   COMPONENTE: Video Background (con blur dinámico al scroll)
    ═══════════════════════════════════════════════ */
 
 function VideoBackground() {
+  const [scrollProgress, setScrollProgress] = useState(0)
+
+  useEffect(() => {
+    const onScroll = () => {
+      const maxScroll = window.innerHeight * 0.8
+      const progress = Math.min(window.scrollY / maxScroll, 1)
+      setScrollProgress(progress)
+    }
+    window.addEventListener('scroll', onScroll, { passive: true })
+    return () => window.removeEventListener('scroll', onScroll)
+  }, [])
+
   return (
     <div className="fixed inset-0 -z-10 overflow-hidden">
       <video
@@ -394,12 +406,45 @@ function VideoBackground() {
         loop
         muted
         playsInline
-        className="w-full h-full object-cover"
+        className="w-full h-full object-cover transition-[filter] duration-300"
+        style={{
+          filter: `blur(${scrollProgress * 12}px) brightness(${1 - scrollProgress * 0.5})`,
+          transform: `scale(${1 + scrollProgress * 0.08})`,
+        }}
       >
-        <source src="/videofondo8bits.mp4" type="video/mp4" />
+        <source src="/8bits.mp4" type="video/mp4" />
       </video>
-      {/* Overlay sutil para mejorar legibilidad en Hero */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-transparent to-black/20" />
+
+      {/* Capa 1: Viñeta radial (siempre visible, efecto cine) */}
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          background: 'radial-gradient(ellipse at center, transparent 40%, rgba(0,0,0,0.6) 100%)',
+        }}
+      />
+
+      {/* Capa 2: Degradado vertical (se intensifica al bajar) */}
+      <div
+        className="absolute inset-0 pointer-events-none transition-opacity duration-500"
+        style={{
+          background: 'linear-gradient(to bottom, rgba(0,0,0,0.2) 0%, transparent 30%, transparent 60%, rgba(0,0,0,0.7) 100%)',
+          opacity: 0.6 + scrollProgress * 0.4,
+        }}
+      />
+
+      {/* Capa 3: Oscurecimiento progresivo general */}
+      <div
+        className="absolute inset-0 bg-black pointer-events-none transition-opacity duration-500"
+        style={{ opacity: scrollProgress * 0.55 }}
+      />
+
+      {/* Capa 4: Ruido sutil (textura premium) */}
+      <div
+        className="absolute inset-0 pointer-events-none opacity-[0.03]"
+        style={{
+          backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")`,
+        }}
+      />
     </div>
   )
 }
@@ -412,26 +457,32 @@ function VideoBackground() {
 function HeroSection() {
   return (
     <section id="hero" className="relative min-h-screen flex items-center justify-center">
-      <div className="text-center px-4 sm:px-6">
+      {/* Capa de respaldo para legibilidad sobre el video */}
+      <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-black/40 pointer-events-none" />
+
+      <div className="relative text-center px-4 sm:px-6">
         {/* Badge */}
-        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/10 bg-white/5 backdrop-blur-md mb-8 animate-fade-in">
-          <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-          <span className="text-sm text-white/70">Disponible para proyectos</span>
+        <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-purple-400/30 bg-black/40 backdrop-blur-xl mb-8 animate-fade-in">
+          <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse shadow-[0_0_8px_rgba(52,211,153,0.6)]" />
+          <span className="text-sm text-white font-medium">Disponible para proyectos</span>
         </div>
 
         {/* Name */}
-        <h1 className="font-display text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-extrabold mb-6 animate-fade-in-up leading-tight">
-          <span className="block">{PROFILE.name.split(' ')[0]}</span>
-          <span className="block gradient-text">{PROFILE.name.split(' ').slice(1).join(' ')}</span>
+        <h1 className="font-display text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-extrabold mb-6 animate-fade-in-up leading-tight hero-text-shadow">
+          <span className="block text-white">{PROFILE.name.split(' ')[0]}</span>
+          <span className="relative inline-block text-white">
+            {PROFILE.name.split(' ').slice(1).join(' ')}
+            <span className="absolute -bottom-2 left-0 w-full h-1 rounded-full bg-gradient-to-r from-purple-500 via-pink-500 to-cyan-500 opacity-80" />
+          </span>
         </h1>
 
         {/* Role */}
-        <p className="text-lg sm:text-xl md:text-2xl text-white/60 max-w-2xl mx-auto mb-4 animate-fade-in-up delay-200 font-light">
+        <p className="text-lg sm:text-xl md:text-2xl text-white max-w-2xl mx-auto mb-4 animate-fade-in-up delay-200 font-light hero-text-shadow">
           {PROFILE.role}
         </p>
 
         {/* Tagline */}
-        <p className="text-base text-white/40 max-w-lg mx-auto mb-10 animate-fade-in-up delay-300">
+        <p className="text-base text-white/80 max-w-lg mx-auto mb-10 animate-fade-in-up delay-300 hero-text-shadow">
           {PROFILE.heroTagline}
         </p>
 
@@ -439,7 +490,7 @@ function HeroSection() {
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 animate-fade-in-up delay-400">
           <a
             href={PROFILE.ctaLink}
-            className="group px-8 py-3.5 rounded-full bg-gradient-to-r from-purple-600 to-cyan-600 text-white font-semibold text-sm tracking-wide hover:shadow-lg hover:shadow-purple-500/25 transition-all duration-500 hover:scale-105 flex items-center gap-2"
+            className="group px-8 py-3.5 rounded-full bg-gradient-to-r from-purple-600 to-cyan-600 text-white font-semibold text-sm tracking-wide hover:shadow-[0_8px_30px_rgba(168,85,247,0.35)] transition-all duration-500 hover:scale-105 flex items-center gap-2"
           >
             {PROFILE.ctaText}
             <span className="group-hover:translate-y-1 transition-transform duration-300">
@@ -451,7 +502,7 @@ function HeroSection() {
               href={PROFILE.github}
               target="_blank"
               rel="noopener noreferrer"
-              className="p-3 rounded-full border border-white/10 bg-white/5 backdrop-blur-md text-white/60 hover:text-white hover:border-white/30 hover:bg-white/10 transition-all duration-300"
+              className="p-3 rounded-full border border-white/20 bg-black/30 backdrop-blur-xl text-white/80 hover:text-white hover:border-purple-400/40 hover:bg-purple-500/15 hover:shadow-[0_0_20px_rgba(168,85,247,0.2)] transition-all duration-300"
               aria-label="GitHub"
             >
               <Icons.GitHub />
@@ -460,7 +511,7 @@ function HeroSection() {
               href={PROFILE.linkedin}
               target="_blank"
               rel="noopener noreferrer"
-              className="p-3 rounded-full border border-white/10 bg-white/5 backdrop-blur-md text-white/60 hover:text-white hover:border-white/30 hover:bg-white/10 transition-all duration-300"
+              className="p-3 rounded-full border border-white/20 bg-black/30 backdrop-blur-xl text-white/80 hover:text-white hover:border-cyan-400/40 hover:bg-cyan-500/15 hover:shadow-[0_0_20px_rgba(6,182,212,0.2)] transition-all duration-300"
               aria-label="LinkedIn"
             >
               <Icons.LinkedIn />
@@ -471,8 +522,8 @@ function HeroSection() {
 
       {/* Scroll indicator */}
       <div className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce">
-        <div className="w-6 h-10 rounded-full border-2 border-white/20 flex justify-center pt-2">
-          <div className="w-1 h-2 rounded-full bg-white/40 animate-pulse" />
+        <div className="w-6 h-10 rounded-full border-2 border-purple-400/30 flex justify-center pt-2 animate-glow-pulse">
+          <div className="w-1 h-2 rounded-full bg-gradient-to-b from-purple-400/60 to-cyan-400/60 animate-pulse" />
         </div>
       </div>
     </section>
@@ -481,15 +532,34 @@ function HeroSection() {
 
 
 /* ═══════════════════════════════════════════════
-   COMPONENTE: Content Wrapper (con blur de fondo)
+   COMPONENTE: Content Wrapper (con fondo rico y orbes de color)
    ═══════════════════════════════════════════════ */
 
 function ContentWrapper({ children }) {
   return (
-    <div className="relative bg-black/75 backdrop-blur-3xl">
-      {/* Borde superior degradado para transición suave */}
-      <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-transparent to-black/75 -translate-y-full pointer-events-none" />
-      {children}
+    <div className="relative overflow-hidden" style={{
+      background: 'linear-gradient(180deg, rgba(10,5,25,0.92) 0%, rgba(15,10,35,0.95) 20%, rgba(8,5,20,0.96) 50%, rgba(12,8,30,0.95) 80%, rgba(10,5,25,0.92) 100%)',
+      backdropFilter: 'blur(40px) saturate(1.2)',
+    }}>
+      {/* Orbe decorativo púrpura */}
+      <div className="absolute top-[20%] -left-32 w-96 h-96 rounded-full bg-purple-600/8 blur-[100px] animate-orb pointer-events-none" />
+      {/* Orbe decorativo cyan */}
+      <div className="absolute top-[50%] -right-32 w-80 h-80 rounded-full bg-cyan-500/6 blur-[100px] animate-orb pointer-events-none" style={{ animationDelay: '5s' }} />
+      {/* Orbe decorativo rosa */}
+      <div className="absolute top-[75%] left-1/4 w-72 h-72 rounded-full bg-pink-500/5 blur-[100px] animate-orb pointer-events-none" style={{ animationDelay: '10s' }} />
+
+      {/* Zona de transición superior */}
+      <div className="absolute top-0 left-0 right-0 -translate-y-full pointer-events-none">
+        <div className="h-56 bg-gradient-to-b from-transparent via-[rgba(10,5,25,0.4)] to-[rgba(10,5,25,0.92)]" />
+      </div>
+
+      {/* Línea luminosa decorativa en el borde superior */}
+      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-purple-500/40 to-transparent" />
+
+      {/* Contenido */}
+      <div className="relative z-10">
+        {children}
+      </div>
     </div>
   )
 }
@@ -511,7 +581,7 @@ function ExperienceSection() {
         </div>
         <h2 className="section-title">Experiencia Profesional</h2>
         <p className="section-subtitle">
-          Un recorrido por los lugares donde he dejado mi huella (y algún que otro bug en producción).
+          Un recorrido por los lugares donde he dejado mi huella.
         </p>
       </div>
 
@@ -534,9 +604,10 @@ function ExperienceSection() {
             {/* Content */}
             <div className={`md:w-1/2 ${i % 2 === 0 ? 'md:pr-12' : 'md:pl-12'}`}>
               <div className="glass-card-hover p-6 md:p-8">
-                <span className="inline-block text-xs font-mono text-purple-400 bg-purple-400/10 px-3 py-1 rounded-full mb-3">
+                <div className="inline-flex items-center gap-2 text-xs font-semibold text-purple-300 bg-purple-500/10 border border-purple-500/20 px-3.5 py-1.5 rounded-lg mb-3">
+                  <svg className="w-3.5 h-3.5 opacity-70" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><rect x="3" y="4" width="18" height="18" rx="2" /><path d="M16 2v4M8 2v4M3 10h18" /></svg>
                   {item.year}
-                </span>
+                </div>
                 <h3 className="text-xl font-display font-bold mb-1 text-white">{item.role}</h3>
                 <p className="text-sm text-cyan-400/80 mb-3 font-medium">{item.company}</p>
                 {Array.isArray(item.description) ? (
@@ -586,9 +657,10 @@ function EducationSection() {
           <div key={i} className="animate-on-scroll" style={{ animationDelay: `${i * 150} ms` }}>
             <div className="glass-card-hover p-6 md:p-8 flex flex-col md:flex-row md:items-start gap-4 md:gap-8">
               <div className="md:w-40 shrink-0">
-                <span className="inline-block text-xs font-mono text-cyan-400 bg-cyan-400/10 px-3 py-1 rounded-full">
+                <div className="inline-flex items-center gap-2 text-xs font-semibold text-cyan-300 bg-cyan-500/10 border border-cyan-500/20 px-3.5 py-1.5 rounded-lg">
+                  <svg className="w-3.5 h-3.5 opacity-70" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><rect x="3" y="4" width="18" height="18" rx="2" /><path d="M16 2v4M8 2v4M3 10h18" /></svg>
                   {item.year}
-                </span>
+                </div>
               </div>
               <div>
                 <h3 className="text-lg font-display font-bold mb-1 text-white">{item.degree}</h3>
@@ -841,19 +913,19 @@ export default function App() {
         <ContentWrapper>
           <ExperienceSection />
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <hr className="border-white/5" />
+            <hr className="section-divider" />
           </div>
           <EducationSection />
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <hr className="border-white/5" />
+            <hr className="section-divider" />
           </div>
           <ProjectsSection />
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <hr className="border-white/5" />
+            <hr className="section-divider" />
           </div>
           <SkillsSection />
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <hr className="border-white/5" />
+            <hr className="section-divider" />
           </div>
           <AboutSection />
           <Footer />
