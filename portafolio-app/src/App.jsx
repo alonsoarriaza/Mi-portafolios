@@ -84,7 +84,7 @@ const EDUCATION = [
   },
 
   {
-    year: "Septiembre 2024 — Presente",
+    year: "Septiembre 2024 - Presente",
     degree: "Grado Superior Desarrollo de Aplicaciones Web",
     institution: "Ilerna Sevilla",
     description: "Mi formación técnica especializada en el ecosistema web. Aquí pasé de escribir un simple HOLA MUNDO! en pocas líneas de código a diseñar arquitecturas completas y funcionales. Aprendí a manejar el ciclo de vida de una aplicación, desde el diseño de la base de datos hasta el despliegue final, asegurando siempre que el resultado no solo funcione, sino que sea eficiente y fácil de mantener. Es la base sobre la que construyo todas mis soluciones actuales.",
@@ -311,26 +311,26 @@ function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false)
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 50)
-    window.addEventListener('scroll', onScroll)
+    const onScroll = () => setScrolled(window.scrollY > 20)
+    window.addEventListener('scroll', onScroll, { passive: true })
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
   return (
     <nav
       id="navbar"
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${scrolled
-        ? 'bg-black/60 backdrop-blur-xl border-b border-white/10 shadow-lg shadow-black/20'
-        : 'bg-transparent'
+      className={`fixed left-1/2 -translate-x-1/2 z-50 transition-all duration-500 w-[92%] max-w-5xl rounded-full border border-white/10 ${scrolled
+        ? 'top-4 bg-black/85 backdrop-blur-xl shadow-[0_12px_40px_rgba(0,0,0,0.5)] py-2.5 px-6'
+        : 'top-6 bg-black/50 backdrop-blur-md shadow-lg py-3.5 px-8'
         }`}
     >
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16 md:h-20">
+      <div className="flex items-center justify-between">
         {/* Logo */}
         <a href="#" className="flex items-center gap-2 group">
           <span className="text-purple-400 group-hover:rotate-180 transition-transform duration-700">
             <Icons.Sparkle />
           </span>
-          <span className="font-display font-bold text-lg tracking-tight">
+          <span className="font-display font-bold text-lg tracking-tight text-white">
             {PROFILE.name.split(' ')[0]}
             <span className="text-purple-400">.</span>
           </span>
@@ -342,17 +342,27 @@ function Navbar() {
             <a
               key={link.href}
               href={link.href}
-              className="text-sm text-white/60 hover:text-white transition-colors duration-300 relative after:content-[''] after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-gradient-to-r after:from-purple-400 after:to-cyan-400 after:transition-all after:duration-300 hover:after:w-full"
+              className="text-sm font-medium text-white/80 hover:text-purple-300 transition-colors duration-300 relative py-1 after:content-[''] after:absolute after:bottom-[-2px] after:left-0 after:w-0 after:h-[2px] after:bg-gradient-to-r after:from-purple-400 after:to-cyan-400 after:transition-all after:duration-300 hover:after:w-full"
             >
               {link.label}
             </a>
           ))}
         </div>
 
+        {/* CTA Button Desktop (Contacto) */}
+        <div className="hidden md:block">
+          <a
+            href="#sobre-mi"
+            className="px-5 py-1.5 rounded-full text-xs font-semibold bg-gradient-to-r from-purple-600 to-cyan-600 text-white hover:shadow-[0_0_15px_rgba(168,85,247,0.4)] transition-all duration-300 hover:scale-105"
+          >
+            Contacto
+          </a>
+        </div>
+
         {/* Mobile Menu Toggle */}
         <button
           onClick={() => setMobileOpen(!mobileOpen)}
-          className="md:hidden text-white/70 hover:text-white transition-colors"
+          className="md:hidden p-2 rounded-full bg-white/5 border border-white/10 text-white/90 hover:text-white hover:bg-white/10 transition-all"
           aria-label="Toggle menu"
         >
           {mobileOpen ? <Icons.Close /> : <Icons.Menu />}
@@ -361,20 +371,27 @@ function Navbar() {
 
       {/* Mobile Menu */}
       <div
-        className={`md:hidden overflow-hidden transition-all duration-500 ${mobileOpen ? 'max-h-80 opacity-100' : 'max-h-0 opacity-0'
+        className={`md:hidden overflow-hidden transition-all duration-500 ${mobileOpen ? 'max-h-[400px] opacity-100 mt-4' : 'max-h-0 opacity-0'
           }`}
       >
-        <div className="px-4 pb-6 pt-2 bg-black/80 backdrop-blur-xl border-b border-white/10 space-y-1">
+        <div className="pt-3 pb-2 border-t border-white/5 flex flex-col gap-1">
           {NAV_LINKS.map((link) => (
             <a
               key={link.href}
               href={link.href}
               onClick={() => setMobileOpen(false)}
-              className="block py-3 px-4 text-white/70 hover:text-white hover:bg-white/5 rounded-xl transition-all duration-300"
+              className="block py-2.5 px-4 text-white/80 hover:text-white hover:bg-white/5 rounded-xl transition-all duration-300 text-sm font-medium"
             >
               {link.label}
             </a>
           ))}
+          <a
+            href="#sobre-mi"
+            onClick={() => setMobileOpen(false)}
+            className="block text-center mt-2 py-2.5 px-4 rounded-xl bg-gradient-to-r from-purple-600 to-cyan-600 text-white text-sm font-semibold transition-all"
+          >
+            Contacto
+          </a>
         </div>
       </div>
     </nav>
