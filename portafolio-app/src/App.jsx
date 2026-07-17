@@ -119,14 +119,14 @@ const PROJECTS = [
     description: `Diseño y desarrollo integral de una plataforma web Full-Stack orientada a la trazabilidad de activos corporativos y la gestión avanzada de inventarios...`,
     notes: "Implantada con éxito a nivel multi-sede, hasta ahora mi proyecto mas importante.",
     tags: ["Java 21", "Spring Boot", "React", "Vite", "TailwindCSS", "MySQL", "XAMPP", "Git", "Docker", "JWT", "Spring Security", "API REST", "Códigos QR", "ERP/CRM (ADV)"],
-    githubLink: "https://github.com/alonsoarriaza",
+    githubLink: "https://github.com/alonsoarriaza/Sistema-Trazabilidad-QR",
   },
   {
     title: "SitoInformatic | Plataforma eCommerce y Configurador de Hardware",
     description: `SitoInformatic es una tienda online de ordenadores y componentes diseñada a medida...`,
     notes: "Más allá del 8,4 que obtuvo como nota final, la mayor satisfacción fue ver cómo mi centro de prácticas adoptó mi proyecto como modelo de negocio...",
     tags: ["Java 21", "JavaScript (JSX)", "CSS", "PostgreSQL", "MySQL", "H2 Database", "Spring Boot", "React", "Tailwind", "JWT"],
-    githubLink: "https://github.com/alonsoarriaza/SitoInformatic-ConfiguradorHardware-ECommerce-Spring-React",
+    githubLink: "https://github.com/alonsoarriaza/sitoinformatic",
   },
   {
     title: "Desarrollador de Soluciones de Automatización / Analista de Datos",
