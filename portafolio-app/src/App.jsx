@@ -17,7 +17,7 @@ const NAV_LINKS = [
   { label: "Educación", href: "#educacion" },
   { label: "Proyectos", href: "#proyectos" },
   { label: "Competencias", href: "#competencias" },
-  { label: "🎮 Easter Egg", href: "#easter-egg" },
+  { label: "☕ Ahorra tiempo para el café", href: "#cafe-express" },
   { label: "Sobre Mí", href: "#sobre-mi" },
 ]
 
@@ -214,12 +214,12 @@ const ABOUT = {
 }
 
 const RETRO_CARDS = [
-  { t:'⚔️ EXP', txt:'Full-Stack Dev @ Coanda Technologies · Java 21 + Spring Boot + React · Despliegues multi-sede · APIs REST + JWT + Spring Security' },
-  { t:'🛡️ SKILLS', txt:'Java · Spring Boot · React · Vite · TailwindCSS · PostgreSQL · MySQL · Docker · Git · API REST · JavaScript' },
-  { t:'📜 EDUCACIÓN', txt:'DAW @ Ilerna Sevilla · Cisco CCNA v7 · Doble Certificación IA & ML · SMR @ IES Hermanos Machado' },
-  { t:'🧙 SOBRE MÍ', txt:'Desarrollador proactivo que pasó de gestionar equipos en retail a construir software empresarial de alto nivel.' },
-  { t:'🏆 PROYECTOS', txt:'SitoInformatic: eCommerce + Motor IA · App Inventario QR: 15K registros migrados · Automatización comercial' },
-  { t:'📡 CONTACTO', txt:'Dos Hermanas, Sevilla · alonsoarriaza03@gmail.com · github.com/alonsoarriaza · LinkedIn: alonsoferiaarriaza' },
+  { t:'📍 DATOS', txt:'Alonso Feria Arriaza · Dos Hermanas, Sevilla · 627 53 61 25 · alonsoarriaza03@gmail.com · Nacimiento: 14/07/2002 · Permiso B + Vehículo propio · Disponibilidad geográfica inmediata' },
+  { t:'⚔️ EXPERIENCIA', txt:'Full-Stack Developer en Coanda Technologies. Desarrollo de apps empresariales con Java 21, Spring Boot y React. Despliegue multi-sede de plataforma de inventario con 15.000 registros migrados. Automatización de procesos y captación de clientes.' },
+  { t:'🛡️ TECH STACK', txt:'Java 21 · Spring Boot 3.4 · Spring Security · React · Vite · TailwindCSS · PostgreSQL · MySQL · Docker · Git · JWT · API REST · JavaScript ES6+ · HTML5 · CSS3 · Swagger' },
+  { t:'🏆 PROYECTOS', txt:'SitoInformatic: eCommerce con motor IA propietario para configuración de hardware · App Inventario QR: trazabilidad corporativa multi-sede · Clasificador inteligente de actividades comerciales · Asistente virtual de recomendación para DMS/ECM' },
+  { t:'📜 FORMACIÓN', txt:'Grado Superior DAW en Ilerna Sevilla · Cisco CCNA v7 (Redes empresariales y SDN) · Doble Cert. Desarrollo con IA y Machine Learning · Grado Medio SMR en IES Hermanos Machado · Cursos JavaScript en OpenWebinars' },
+  { t:'🧙 SOBRE MÍ', txt:'Desarrollador con mentalidad proactiva forjada tras años como Segundo Encargado gestionando equipos y logística en entornos de alta presión. Cada línea de código refleja esa disciplina: soluciones limpias, escalables y orientadas al negocio.' },
 ]
 
 
@@ -963,16 +963,16 @@ function RetroSection() {
   const sectionRef = useAnimateOnScroll()
 
   return (
-    <section id="easter-egg" ref={sectionRef} className="section-container">
+    <section id="cafe-express" ref={sectionRef} className="section-container">
       <div className="animate-on-scroll">
         <div className="flex items-center gap-3 mb-2">
-          <span className="text-yellow-400 text-xl">🎮</span>
-          <span className="retro-font text-yellow-400 uppercase tracking-widest" style={{ fontSize: '0.55rem' }}>Level Up</span>
+          <span className="text-yellow-400 text-xl">☕</span>
+          <span className="retro-font text-yellow-400 uppercase tracking-widest" style={{ fontSize: '0.55rem' }}>Café Express</span>
         </div>
-        <h2 className="section-title retro-font" style={{ fontSize: '1.4rem', lineHeight: '2' }}>Easter Egg Zone</h2>
-        <p className="section-subtitle" style={{ marginBottom: '1.5rem' }}>¿Curiosidad? Pulsa el botón y descubre mi CV al estilo retro.</p>
+        <h2 className="section-title retro-font" style={{ fontSize: '1.4rem', lineHeight: '2' }}>Ahorra tiempo para el café</h2>
+        <p className="section-subtitle" style={{ marginBottom: '1.5rem' }}>Mi CV resumido en 6 clicks. Ve al grano y guárdate unos minutos para el café.</p>
         <button className="retro-btn" onClick={() => setOpen(!open)}>
-          {open ? '⏸ PAUSE' : '🪙 INSERT COIN'}
+          {open ? '⏸ PAUSE' : '☕ PREPARAR CAFÉ'}
         </button>
       </div>
 
