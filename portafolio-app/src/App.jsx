@@ -148,51 +148,6 @@ La arquitectura, fundamentada en principios de diseño limpio y desacoplado, int
   },
 ]
 
-const SKILLS = [
-  {
-    category: "Backend Development",
-    icon: "Server",
-    color: "text-purple-400 bg-purple-400/10 border-purple-500/20",
-    gradient: "from-purple-500/20 to-pink-500/5",
-    skills: ["Java 21", "Spring Boot 3.4", "Spring Security", "JWT", "API REST", "Algoritmos de Optimización"]
-  },
-  {
-    category: "Frontend Development",
-    icon: "Layout",
-    color: "text-cyan-400 bg-cyan-400/10 border-cyan-500/20",
-    gradient: "from-cyan-500/20 to-blue-500/5",
-    skills: ["React (SPA)", "Vite", "TailwindCSS", "Axios", "Componentes Dinámicos", "Gestión de Estados"]
-  },
-  {
-    category: "Gestión de Datos",
-    icon: "Database",
-    color: "text-emerald-400 bg-emerald-400/10 border-emerald-500/20",
-    gradient: "from-emerald-500/20 to-teal-500/5",
-    skills: ["PostgreSQL", "MySQL", "MongoDB (NoSQL)", "Spring Data JPA", "Hibernate (Persistencia ORM)"]
-  },
-  {
-    category: "Lenguajes de Programación",
-    icon: "Terminal",
-    color: "text-amber-400 bg-amber-400/10 border-amber-500/20",
-    gradient: "from-amber-500/20 to-orange-500/5",
-    skills: ["PHP (Symfony)", "C#", "Python", "JavaScript (ES6)", "HTML5", "CSS3"]
-  },
-  {
-    category: "DevOps, Entornos & Testing",
-    icon: "Cpu",
-    color: "text-rose-400 bg-rose-400/10 border-rose-500/20",
-    gradient: "from-rose-500/20 to-red-500/5",
-    skills: ["Docker (Contenedores)", "Jenkins (CI/CD)", "JUnit (Unit Testing)", "Apache / Tomcat", "Metodología SCRUM"]
-  },
-  {
-    category: "Herramientas & Tooling",
-    icon: "Tools",
-    color: "text-indigo-400 bg-indigo-400/10 border-indigo-500/20",
-    gradient: "from-indigo-500/20 to-purple-500/5",
-    skills: ["Git (Control de Versiones)", "Maven (Dependencias)", "Swagger / OpenAPI", "Postman (Testing API)"]
-  }
-]
-
 const ABOUT = {
   paragraphs: [
     "Mi pasión por la tecnología comenzó desde muy joven. Lo que empezó como una curiosidad insaciable por saber cómo funcionaban las cosas por dentro me llevó a pasar tardes enteras montando, desmontando y diagnosticando ordenadores, instalando sistemas operativos y trasteando con cualquier dispositivo que cayera en mis manos. Ese deseo constante de experimentar y resolver problemas de hardware fue la chispa que me impulsó a enfocar mi futuro profesional hacia el mundo del desarrollo de software y las infraestructuras de red.",
@@ -212,7 +167,7 @@ const ABOUT = {
 const RETRO_CARDS = [
   { t:'📍 DATOS', txt:'Alonso Feria Arriaza · Dos Hermanas, Sevilla · 627 53 61 25 · alonsoarriaza03@gmail.com · Permiso B + Vehículo propio · Disponibilidad geográfica inmediata para incorporaciones locales o nacionales.' },
   { t:'⚔️ EXPERIENCIA', txt:'Full-Stack Developer en Coanda Technologies. Desarrollo, auditoría e implantación de aplicaciones empresariales. Integración de flujos de trabajo documentales inteligentes (Therefore, Solpheo). Administración de incidencias ERP/CRM (ADV) y auditoría de ciberseguridad corporativa con Ciberguardian.' },
-  { t:'🛡️ TECH STACK', txt:'Backend: Java 21 · Spring Boot 3.4 · Spring Security · JWT · API REST · Spring Data JPA. Frontend: React · Vite · TailwindCSS · JavaScript ES6+ · HTML5 · CSS3 · Bootstrap 5. DB: PostgreSQL · MySQL · MariaDB · MongoDB. DevOps/Herramientas: Docker · Git · Postman · Swagger.' },
+  { t:'💡 COMPROMISO', txt:'Enfoque analítico y estructurado en la resolución de incidencias complejas. Compromiso riguroso con el código limpio (Clean Code) y las mejores prácticas de arquitectura de software. Gran capacidad de organización, comunicación clara y liderazgo de equipos en entornos bajo presión.' },
   { t:'📱 DESARROLLO QR', txt:'Diseño e implantación de un sistema Full-Stack para gestión de activos y trazabilidad mediante códigos QR. Backend robusto en Java 21 con Spring Boot y seguridad JWT. Frontend interactivo en React + Tailwind con escáner QR. Migración automatizada de 15.000 registros desde el ERP ADV hacia base de datos MySQL.' },
   { t:'🚀 SITOINFORMATIC', txt:'Trabajo de Fin de Grado (TFG) finalizado con calificación de 8,4. Plataforma eCommerce de hardware de computadoras que integra SitoIA, un motor heurístico en Java 21 que calcula la compatibilidad física de sockets, equilibrio térmico TDP, performanceScore y balancea presupuestos en tiempo real.' },
   { t:'📜 FORMACIÓN', txt:'Grado Superior en Desarrollo de Aplicaciones Web (DAW) en Ilerna Sevilla. Certificación Oficial Cisco CCNA v7 (diseño de redes, seguridad, virtualización y automatización SDN). Doble Certificación en Inteligencia Artificial y Machine Learning. Grado Medio SMR.' },
