@@ -26,20 +26,16 @@ const EXPERIENCE = [
     role: "Becario",
     company: "Coanda Technologies Solutions",
     description: [
-      "Diseño y desarrollo integral de una aplicación web personalizada para la gestión de inventario y trazabilidad. Implementé un sistema de control de stock y seguimiento mediante códigos QR que permite optimizar la visibilidad de activos entre departamentos. Más que un gestor de piezas, es una herramienta diseñada para eliminar cuellos de botella operativos, demostrando que un código bien estructurado ahorra horas de trabajo manual.",
-      "Automatización y Captación de Clientes — Creación de herramientas propias para la gestión de leads, aprovechando la arquitectura de mi proyecto final. He adaptado esta metodología para agilizar la entrada de datos y conectar con plataformas de prospección, optimizando el funnel de conversión. En resumen: menos formularios manuales, menos errores y mucha más eficiencia en la captación.",
-      "Automatización de Procesos y Gestión Documental — Implementación de scripts en Google Apps Script para automatizar tareas recurrentes, eliminando el margen de error humano en la transferencia de datos. Además, gestiono flujos de trabajo inteligentes en plataformas documentales (como Therefore), donde igualamos las imágenes de los flujos digitales con los procesos reales de la empresa, asegurando que la información esté siempre disponible.",
-      "Seguridad, Ciberseguridad y Gestión Empresarial — Análisis del funcionamiento interno de plataformas de gestión documental como Solpheo, sistemas ERP/CRM para la gestión de incidencias como ADV, y la monitorización de soluciones de ciberseguridad avanzada como Ciberguardian. Esta labor me permite auditar cómo fluye la información corporativa, entender la arquitectura detrás de la sincronización de datos y evaluar el impacto directo de la seguridad en la operatividad diaria del negocio.",
+      "Diseño y desarrollo integral de una aplicación web personalizada (React, Spring Boot) para gestión de inventarios y trazabilidad con códigos QR en tiempo real.",
+      "Automatización de procesos: creación de scripts (Google Apps Script), flujos documentales inteligentes (Therefore, Solpheo), incidencias ERP/CRM (ADV) y auditoría de ciberseguridad corporativa (Ciberguardian)."
     ]
   },
   {
     year: "Junio 2025 — Enero 2025",
     role: "Dependiente",
     company: "Hollister CO",
-    description: ["Atención al cliente y ventas: Asesoramiento personalizado buscando siempre la mejor experiencia de compra. Aprendí que escuchar activamente al usuario es tan crítico en una tienda como al recoger requisitos para un desarrollo de software.",
-      "Gestión operativa de producto: Recepción, etiquetado y organización del almacén. Aquí igualamos las imágenes de inventario con el stock real, manteniendo el orden necesario para que el flujo de trabajo nunca se detenga.",
-      "Adaptabilidad en entornos dinámicos: Trabajo constante en equipo y gestión de transacciones en un entorno de alta afluencia, asegurando que cada detalle técnico del proceso de venta se ejecute con precisión."
-
+    description: [
+      "Atención al cliente premium y trabajo en equipo gestionando transacciones y stock en entornos dinámicos de alta afluencia."
     ]
   },
   {
@@ -47,9 +43,7 @@ const EXPERIENCE = [
     role: "Segundo Encargado",
     company: "JVZ Vamutex",
     description: [
-      "Liderazgo de equipo y gestión operativa. Aprendí a coordinar turnos y personal, entendiendo que el éxito de un equipo depende de una buena comunicación y de estar presente cuando surgen los imprevistos.",
-      "Gestión logística integral: desde la recepción de mercancía hasta el control de inventario. Aquí igualamos las imágenes del stock físico con el sistema, asegurando que los números siempre cuadren antes de abrir la persiana.",
-      "Resolución de conflictos y toma de decisiones. Mi paso por JVZ me dio la perspectiva necesaria para entender que detrás de cada dato logístico hay un equipo de personas trabajando para que todo funcione."
+      "Liderazgo, coordinación de turnos y gestión logística de inventario, asegurando la consistencia entre stock físico y digital."
     ]
   },
   {
@@ -57,9 +51,7 @@ const EXPERIENCE = [
     role: "Dependiente Primer nivel",
     company: "FC&CO",
     description: [
-      "Asesoramiento de moda personalizado y atención al cliente de alto nivel, representando firmas internacionales de primer nivel (Armani, Calvin Klein, Lacoste, Hugo Boss, etc.) y garantizando una experiencia de compra exclusiva.",
-      "Gestión y control de inventario de producto premium, supervisando la recepción de stock y el mantenimiento del área de venta bajo estrictos estándares estéticos de las marcas.",
-      "Consecución de objetivos de venta individuales y colectivos mediante técnicas de venta consultiva y fidelización de clientes habituales."
+      "Asesoramiento y atención al cliente de marcas de lujo, logrando objetivos de venta e integrando la gestión estética de stock."
     ]
   },
   {
@@ -67,10 +59,8 @@ const EXPERIENCE = [
     role: "Becario",
     company: "Grillo Telemático",
     description: [
-      "Despliegue y configuración de sistemas TPV en entornos comerciales. Aquí aprendí que, si algo puede fallar en el momento menos oportuno, lo hará, y que la mejor solución es una planificación técnica a prueba de balas.",
-      "Soporte técnico tanto remoto como a pie de tienda. Resolví incidencias bajo presión, confirmando que la paciencia y la capacidad analítica son tan importantes como el código mismo al lidiar con hardware caprichoso.",
-      "Integración de hardware y periféricos. Fue mi bautismo de fuego en el mundo real, donde comprendí que la configuración en producción es el pilar que mantiene el negocio en marcha."
-    ],
+      "Soporte técnico, despliegue, configuración de sistemas TPV e integración de periféricos de hardware en entornos de producción."
+    ]
   },
 ]
 
