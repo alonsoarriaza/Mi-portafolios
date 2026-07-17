@@ -55,7 +55,7 @@ const EXPERIENCE = [
   },
   {
     year: "Enero 2023 — Noviembre 2023",
-    role: "Dependiente Premium",
+    role: "Dependiente Primer nivel",
     company: "FC&CO",
     description: [
       "Asesoramiento de moda personalizado y atención al cliente de alto nivel, representando firmas internacionales de primer nivel (Armani, Calvin Klein, Lacoste, Hugo Boss, etc.) y garantizando una experiencia de compra exclusiva.",
