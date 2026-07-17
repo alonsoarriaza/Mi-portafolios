@@ -13,11 +13,10 @@ const PROFILE = {
 }
 
 const NAV_LINKS = [
+  { label: "☕ Ahorra tiempo para el café", href: "#cafe-express" },
   { label: "Experiencia", href: "#experiencia" },
   { label: "Educación", href: "#educacion" },
   { label: "Proyectos", href: "#proyectos" },
-  { label: "Competencias", href: "#competencias" },
-  { label: "☕ Ahorra tiempo para el café", href: "#cafe-express" },
   { label: "Sobre Mí", href: "#sobre-mi" },
 ]
 
@@ -209,12 +208,11 @@ const ABOUT = {
     "📍 Ubicación: Dos Hermanas, Sevilla",
     "📞 Teléfono: 627 53 61 25",
     "✉️ Email: alonsoarriaza03@gmail.com",
-    "🎂 Nacimiento: 14/07/2002",
   ],
 }
 
 const RETRO_CARDS = [
-  { t:'📍 DATOS', txt:'Alonso Feria Arriaza · Dos Hermanas, Sevilla · 627 53 61 25 · alonsoarriaza03@gmail.com · Nacimiento: 14/07/2002 · Permiso B + Vehículo propio · Disponibilidad geográfica inmediata para incorporaciones locales o nacionales.' },
+  { t:'📍 DATOS', txt:'Alonso Feria Arriaza · Dos Hermanas, Sevilla · 627 53 61 25 · alonsoarriaza03@gmail.com · Permiso B + Vehículo propio · Disponibilidad geográfica inmediata para incorporaciones locales o nacionales.' },
   { t:'⚔️ EXPERIENCIA', txt:'Full-Stack Developer en Coanda Technologies. Desarrollo, auditoría e implantación de aplicaciones empresariales. Integración de flujos de trabajo documentales inteligentes (Therefore, Solpheo). Administración de incidencias ERP/CRM (ADV) y auditoría de ciberseguridad corporativa con Ciberguardian.' },
   { t:'🛡️ TECH STACK', txt:'Backend: Java 21 · Spring Boot 3.4 · Spring Security · JWT · API REST · Spring Data JPA. Frontend: React · Vite · TailwindCSS · JavaScript ES6+ · HTML5 · CSS3 · Bootstrap 5. DB: PostgreSQL · MySQL · MariaDB · MongoDB. DevOps/Herramientas: Docker · Git · Postman · Swagger.' },
   { t:'📱 DESARROLLO QR', txt:'Diseño e implantación de un sistema Full-Stack para gestión de activos y trazabilidad mediante códigos QR. Backend robusto en Java 21 con Spring Boot y seguridad JWT. Frontend interactivo en React + Tailwind con escáner QR. Migración automatizada de 15.000 registros desde el ERP ADV hacia base de datos MySQL.' },
@@ -727,7 +725,7 @@ function ProjectsSection() {
       <div className="grid md:grid-cols-2 gap-6 md:gap-8">
         {PROJECTS.map((project, i) => (
           <div key={i} className="animate-on-scroll" style={{ animationDelay: `${i * 150} ms` }}>
-            <div className="glass-card-hover p-6 md:p-8 h-full flex flex-col group">
+            <div className="glass-card-hover p-6 md:p-8 h-full flex flex-col group justify-between">
               {/* Header */}
               <div className="flex items-start justify-between mb-4">
                 <h3 className="text-xl font-display font-bold text-white group-hover:gradient-text transition-all duration-300">
@@ -738,18 +736,8 @@ function ProjectsSection() {
                 </span>
               </div>
 
-              {/* Description */}
-              <p className="text-sm text-white/50 leading-relaxed mb-4 flex-grow whitespace-pre-line">
-                {project.description}
-              </p>
-
-              {/* Notes */}
-              <p className="text-xs text-white/30 italic mb-5 border-l-2 border-purple-500/30 pl-3">
-                {project.notes}
-              </p>
-
               {/* Tags */}
-              <div className="flex flex-wrap gap-2">
+              <div className="flex flex-wrap gap-2 mt-4">
                 {project.tags.map((tag) => (
                   <span key={tag} className="tag">{tag}</span>
                 ))}
@@ -764,58 +752,7 @@ function ProjectsSection() {
 
 
 
-/* ═══════════════════════════════════════════════
-   COMPONENTE: Competencias Técnicas
-   ═══════════════════════════════════════════════ */
 
-function SkillsSection() {
-  const sectionRef = useAnimateOnScroll()
-
-  return (
-    <section id="competencias" ref={sectionRef} className="section-container">
-      <div className="animate-on-scroll">
-        <div className="flex items-center gap-3 mb-2">
-          <span className="text-purple-400"><Icons.Code /></span>
-          <span className="text-sm font-medium text-purple-400 uppercase tracking-widest">Stack</span>
-        </div>
-        <h2 className="section-title">Competencias Técnicas</h2>
-        <p className="section-subtitle">
-          Mi caja de herramientas tecnológicas clasificadas por especialidades.
-        </p>
-      </div>
-
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-        {SKILLS.map((skill, i) => {
-          const SkillIcon = Icons[skill.icon] || Icons.Code
-          return (
-            <div key={i} className="animate-on-scroll" style={{ animationDelay: `${i * 100}ms` }}>
-              <div className={`glass-card-hover p-6 md:p-8 h-full flex flex-col bg-gradient-to-br ${skill.gradient}`}>
-                {/* Icon & Title */}
-                <div className="flex items-center gap-4 mb-5">
-                  <div className={`p-3 rounded-xl border ${skill.color}`}>
-                    <SkillIcon />
-                  </div>
-                  <h3 className="font-display font-bold text-lg text-white leading-snug">
-                    {skill.category}
-                  </h3>
-                </div>
-
-                {/* Sub skills List */}
-                <div className="flex flex-wrap gap-2 mt-auto">
-                  {skill.skills.map((s, j) => (
-                    <span key={j} className="tag text-white/80 border-white/5 bg-white/5 hover:border-white/20 transition-colors duration-300">
-                      {s}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            </div>
-          )
-        })}
-      </div>
-    </section>
-  )
-}
 
 
 /* ═══════════════════════════════════════════════
@@ -1034,6 +971,10 @@ export default function App() {
       <main>
         <HeroSection />
         <ContentWrapper>
+          <RetroSection />
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <hr className="section-divider" />
+          </div>
           <ExperienceSection />
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <hr className="section-divider" />
@@ -1043,14 +984,6 @@ export default function App() {
             <hr className="section-divider" />
           </div>
           <ProjectsSection />
-          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <hr className="section-divider" />
-          </div>
-          <SkillsSection />
-          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <hr className="section-divider" />
-          </div>
-          <RetroSection />
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <hr className="section-divider" />
           </div>
