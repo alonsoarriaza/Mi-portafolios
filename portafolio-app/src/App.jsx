@@ -17,8 +17,8 @@ const NAV_LINKS = [
   { label: "Educación", href: "#educacion" },
   { label: "Proyectos", href: "#proyectos" },
   { label: "Competencias", href: "#competencias" },
+  { label: "🎮 Easter Egg", href: "#easter-egg" },
   { label: "Sobre Mí", href: "#sobre-mi" },
-  { label: "Datos de Interés", href: "#datos-interes" },
 ]
 
 const EXPERIENCE = [
@@ -212,6 +212,15 @@ const ABOUT = {
     "🎂 Nacimiento: 14/07/2002",
   ],
 }
+
+const RETRO_CARDS = [
+  { t:'⚔️ EXP', txt:'Full-Stack Dev @ Coanda Technologies · Java 21 + Spring Boot + React · Despliegues multi-sede · APIs REST + JWT + Spring Security' },
+  { t:'🛡️ SKILLS', txt:'Java · Spring Boot · React · Vite · TailwindCSS · PostgreSQL · MySQL · Docker · Git · API REST · JavaScript' },
+  { t:'📜 EDUCACIÓN', txt:'DAW @ Ilerna Sevilla · Cisco CCNA v7 · Doble Certificación IA & ML · SMR @ IES Hermanos Machado' },
+  { t:'🧙 SOBRE MÍ', txt:'Desarrollador proactivo que pasó de gestionar equipos en retail a construir software empresarial de alto nivel.' },
+  { t:'🏆 PROYECTOS', txt:'SitoInformatic: eCommerce + Motor IA · App Inventario QR: 15K registros migrados · Automatización comercial' },
+  { t:'📡 CONTACTO', txt:'Dos Hermanas, Sevilla · alonsoarriaza03@gmail.com · github.com/alonsoarriaza · LinkedIn: alonsoferiaarriaza' },
+]
 
 
 /* ═══════════════════════════════════════════════
@@ -917,6 +926,93 @@ function Footer() {
 
 
 /* ═══════════════════════════════════════════════
+   COMPONENTE: Retro Easter Egg (8-bits CV)
+   ═══════════════════════════════════════════════ */
+
+function RetroSection() {
+  const [open, setOpen] = useState(false)
+  const [cards, setCards] = useState(() =>
+    RETRO_CARDS.map(c => ({
+      ...c,
+      hit: false,
+      done: false,
+      dust: Array.from({ length: 6 }, (_, i) => ({
+        x: `${(Math.random() - 0.5) * 120}px`,
+        y: `${-Math.random() * 60 - 20}px`,
+        d: `${i * 45}ms`
+      }))
+    }))
+  )
+
+  function punch(index) {
+    setCards(prev => {
+      if (prev[index].hit || prev[index].done) return prev
+      const next = [...prev]
+      next[index] = { ...next[index], hit: true }
+      return next
+    })
+    setTimeout(() => {
+      setCards(prev => {
+        const next = [...prev]
+        next[index] = { ...next[index], hit: false, done: true }
+        return next
+      })
+    }, 950)
+  }
+
+  const sectionRef = useAnimateOnScroll()
+
+  return (
+    <section id="easter-egg" ref={sectionRef} className="section-container">
+      <div className="animate-on-scroll">
+        <div className="flex items-center gap-3 mb-2">
+          <span className="text-yellow-400 text-xl">🎮</span>
+          <span className="retro-font text-yellow-400 uppercase tracking-widest" style={{ fontSize: '0.55rem' }}>Level Up</span>
+        </div>
+        <h2 className="section-title retro-font" style={{ fontSize: '1.4rem', lineHeight: '2' }}>Easter Egg Zone</h2>
+        <p className="section-subtitle" style={{ marginBottom: '1.5rem' }}>¿Curiosidad? Pulsa el botón y descubre mi CV al estilo retro.</p>
+        <button className="retro-btn" onClick={() => setOpen(!open)}>
+          {open ? '⏸ PAUSE' : '🪙 INSERT COIN'}
+        </button>
+      </div>
+
+      <div className={`retro-grid-wrap ${open ? 'retro-open' : 'retro-closed'}`}>
+        <div className="retro-grid">
+          {cards.map((c, i) => (
+            <div
+              key={i}
+              className={`retro-block ${c.hit ? 'retro-bump' : ''} ${c.done ? 'retro-revealed' : ''}`}
+              onClick={() => punch(i)}
+            >
+              {!c.done && (
+                <>
+                  <div className={`retro-char ${c.hit ? 'retro-jump' : 'retro-idle'}`}>
+                    <i className="retro-px" />
+                  </div>
+                  <span className="retro-qm">?</span>
+                </>
+              )}
+              {c.hit && <div className="retro-coin">🪙</div>}
+              {c.hit && c.dust.map((d, j) => (
+                <span key={j} className="retro-dust" style={{ '--dx': d.x, '--dy': d.y, animationDelay: d.d }} />
+              ))}
+              {c.done && (
+                <div className="retro-rpg">
+                  <strong>{c.t}</strong>
+                  <p>{c.txt}</p>
+                  <em>▼</em>
+                </div>
+              )}
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  )
+}
+
+
+/* ═══════════════════════════════════════════════
    APP PRINCIPAL
    ═══════════════════════════════════════════════ */
 
@@ -941,6 +1037,10 @@ export default function App() {
             <hr className="section-divider" />
           </div>
           <SkillsSection />
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <hr className="section-divider" />
+          </div>
+          <RetroSection />
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <hr className="section-divider" />
           </div>
