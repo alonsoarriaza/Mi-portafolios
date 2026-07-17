@@ -983,16 +983,24 @@ function RetroSection() {
           {cards.map((c, i) => (
             <div
               key={i}
-              className={`retro-block ${c.hit ? 'retro-bump' : ''} ${c.done ? 'retro-revealed' : ''}`}
+              className={`retro-block ${c.hit ? 'retro-bump retro-shattering' : ''} ${c.done ? 'retro-revealed' : ''}`}
               onClick={() => punch(i)}
             >
               {!c.done && (
                 <>
                   <div className={`retro-char ${c.hit ? 'retro-jump' : 'retro-idle'}`}>
-                    <i className="retro-px" />
+                    <img src="/MB.png" alt="Mario" className="retro-mario-sprite" />
                   </div>
                   <span className="retro-qm">?</span>
                 </>
+              )}
+              {c.hit && (
+                <div className="retro-shatter-debris">
+                  <div className="debris-piece p1"></div>
+                  <div className="debris-piece p2"></div>
+                  <div className="debris-piece p3"></div>
+                  <div className="debris-piece p4"></div>
+                </div>
               )}
               {c.hit && <div className="retro-coin">🪙</div>}
               {c.hit && c.dust.map((d, j) => (

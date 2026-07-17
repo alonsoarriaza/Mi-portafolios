@@ -257,28 +257,74 @@ body {
 .retro-idle { animation: retroIdleAnim 1.5s ease-in-out infinite; }
 .retro-jump { animation: retroJumpAnim 0.6s cubic-bezier(0.33, 1, 0.68, 1) forwards; pointer-events: none; }
 
-.retro-px {
-  display: block;
-  width: 4px;
-  height: 4px;
-  position: relative;
-  transform: scale(2.8);
-  transform-origin: center bottom;
+.retro-mario-sprite {
+  height: 52px;
+  width: auto;
   image-rendering: pixelated;
+  image-rendering: crisp-edges;
+  display: block;
 }
-.retro-px::after {
-  content: '';
+
+/* Ocultar el bloque cuando se rompe en trozos */
+.retro-block.retro-shattering {
+  background: transparent !important;
+  border-color: transparent !important;
+  box-shadow: none !important;
+}
+.retro-block.retro-shattering .retro-qm {
+  display: none !important;
+}
+
+/* Escombros de ladrillos */
+.retro-shatter-debris {
   position: absolute;
-  width: 4px;
-  height: 4px;
-  background: transparent;
-  box-shadow:
-    4px -20px #4a3728, 8px -20px #4a3728,
-    0 -16px #ffd699, 4px -16px #ffd699, 8px -16px #ffd699, 12px -16px #ffd699,
-    4px -12px #6c5ce7, 8px -12px #6c5ce7,
-    0 -8px #6c5ce7, 4px -8px #ffd699, 8px -8px #ffd699, 12px -8px #6c5ce7,
-    4px -4px #2d3436, 8px -4px #2d3436,
-    0 0 #8b4513, 12px 0 #8b4513;
+  inset: 0;
+  pointer-events: none;
+  z-index: 10;
+}
+
+.debris-piece {
+  position: absolute;
+  width: 24px;
+  height: 16px;
+  background: #b84c0c; /* Color clásico ladrillo */
+  border: 2px solid #501800;
+  box-shadow: inset 2px 2px 0 #f87830;
+}
+
+/* Animaciones 4 esquinas de rotura de ladrillo */
+.debris-piece.p1 {
+  top: 35%; left: 35%;
+  animation: shatter-p1 0.75s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+.debris-piece.p2 {
+  top: 35%; right: 35%;
+  animation: shatter-p2 0.75s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+.debris-piece.p3 {
+  bottom: 35%; left: 35%;
+  animation: shatter-p3 0.75s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+.debris-piece.p4 {
+  bottom: 35%; right: 35%;
+  animation: shatter-p4 0.75s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+@keyframes shatter-p1 {
+  0% { transform: translate(0, 0) rotate(0deg); opacity: 1; }
+  100% { transform: translate(-140px, -200px) rotate(-540deg); opacity: 0; }
+}
+@keyframes shatter-p2 {
+  0% { transform: translate(0, 0) rotate(0deg); opacity: 1; }
+  100% { transform: translate(140px, -200px) rotate(540deg); opacity: 0; }
+}
+@keyframes shatter-p3 {
+  0% { transform: translate(0, 0) rotate(0deg); opacity: 1; }
+  100% { transform: translate(-100px, 150px) rotate(-360deg); opacity: 0; }
+}
+@keyframes shatter-p4 {
+  0% { transform: translate(0, 0) rotate(0deg); opacity: 1; }
+  100% { transform: translate(100px, 150px) rotate(360deg); opacity: 0; }
 }
 
 .retro-coin {
