@@ -214,12 +214,14 @@ const ABOUT = {
 }
 
 const RETRO_CARDS = [
-  { t:'📍 DATOS', txt:'Alonso Feria Arriaza · Dos Hermanas, Sevilla · 627 53 61 25 · alonsoarriaza03@gmail.com · Nacimiento: 14/07/2002 · Permiso B + Vehículo propio · Disponibilidad geográfica inmediata' },
-  { t:'⚔️ EXPERIENCIA', txt:'Full-Stack Developer en Coanda Technologies. Desarrollo de apps empresariales con Java 21, Spring Boot y React. Despliegue multi-sede de plataforma de inventario con 15.000 registros migrados. Automatización de procesos y captación de clientes.' },
-  { t:'🛡️ TECH STACK', txt:'Java 21 · Spring Boot 3.4 · Spring Security · React · Vite · TailwindCSS · PostgreSQL · MySQL · Docker · Git · JWT · API REST · JavaScript ES6+ · HTML5 · CSS3 · Swagger' },
-  { t:'🏆 PROYECTOS', txt:'SitoInformatic: eCommerce con motor IA propietario para configuración de hardware · App Inventario QR: trazabilidad corporativa multi-sede · Clasificador inteligente de actividades comerciales · Asistente virtual de recomendación para DMS/ECM' },
-  { t:'📜 FORMACIÓN', txt:'Grado Superior DAW en Ilerna Sevilla · Cisco CCNA v7 (Redes empresariales y SDN) · Doble Cert. Desarrollo con IA y Machine Learning · Grado Medio SMR en IES Hermanos Machado · Cursos JavaScript en OpenWebinars' },
-  { t:'🧙 SOBRE MÍ', txt:'Desarrollador con mentalidad proactiva forjada tras años como Segundo Encargado gestionando equipos y logística en entornos de alta presión. Cada línea de código refleja esa disciplina: soluciones limpias, escalables y orientadas al negocio.' },
+  { t:'📍 DATOS', txt:'Alonso Feria Arriaza · Dos Hermanas, Sevilla · 627 53 61 25 · alonsoarriaza03@gmail.com · Nacimiento: 14/07/2002 · Permiso B + Vehículo propio · Disponibilidad geográfica inmediata para incorporaciones locales o nacionales.' },
+  { t:'⚔️ EXPERIENCIA', txt:'Full-Stack Developer en Coanda Technologies. Desarrollo, auditoría e implantación de aplicaciones empresariales. Integración de flujos de trabajo documentales inteligentes (Therefore, Solpheo). Administración de incidencias ERP/CRM (ADV) y auditoría de ciberseguridad corporativa con Ciberguardian.' },
+  { t:'🛡️ TECH STACK', txt:'Backend: Java 21 · Spring Boot 3.4 · Spring Security · JWT · API REST · Spring Data JPA. Frontend: React · Vite · TailwindCSS · JavaScript ES6+ · HTML5 · CSS3 · Bootstrap 5. DB: PostgreSQL · MySQL · MariaDB · MongoDB. DevOps/Herramientas: Docker · Git · Postman · Swagger.' },
+  { t:'📱 DESARROLLO QR', txt:'Diseño e implantación de un sistema Full-Stack para gestión de activos y trazabilidad mediante códigos QR. Backend robusto en Java 21 con Spring Boot y seguridad JWT. Frontend interactivo en React + Tailwind con escáner QR. Migración automatizada de 15.000 registros desde el ERP ADV hacia base de datos MySQL.' },
+  { t:'🚀 SITOINFORMATIC', txt:'Trabajo de Fin de Grado (TFG) finalizado con calificación de 8,4. Plataforma eCommerce de hardware de computadoras que integra SitoIA, un motor heurístico en Java 21 que calcula la compatibilidad física de sockets, equilibrio térmico TDP, performanceScore y balancea presupuestos en tiempo real.' },
+  { t:'📜 FORMACIÓN', txt:'Grado Superior en Desarrollo de Aplicaciones Web (DAW) en Ilerna Sevilla. Certificación Oficial Cisco CCNA v7 (diseño de redes, seguridad, virtualización y automatización SDN). Doble Certificación en Inteligencia Artificial y Machine Learning. Grado Medio SMR.' },
+  { t:'🧙 SOBRE MÍ', txt:'Desarrollador con mentalidad proactiva y alto nivel de exigencia personal. Cuento con una madurez profesional consolidada tras años como Segundo Encargado en retail, gestionando equipos y logística en entornos de alta presión, capacidades que ahora vuelco al desarrollo de software.' },
+  { t:'📡 CONTACTO & WEB', txt:'Encuentra todos mis repositorios en GitHub (github.com/alonsoarriaza) y conecta conmigo en LinkedIn (linkedin.com/in/alonsoferiaarriaza) para entrevistas, propuestas de proyectos o para descargar mi currículum en formato PDF clásico.' },
 ]
 
 
@@ -937,8 +939,8 @@ function RetroSection() {
       hit: false,
       done: false,
       dust: Array.from({ length: 6 }, (_, i) => ({
-        x: `${(Math.random() - 0.5) * 120}px`,
-        y: `${-Math.random() * 60 - 20}px`,
+        x: `${(Math.random() - 0.5) * 240}px`,
+        y: `${-Math.random() * 120 - 30}px`,
         d: `${i * 45}ms`
       }))
     }))
