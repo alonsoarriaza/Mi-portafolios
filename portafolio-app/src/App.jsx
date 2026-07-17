@@ -140,7 +140,7 @@ const PROJECTS = [
     description: "Desarrollé e implementé un asistente virtual de recomendación inteligente especializado en sistemas de gestión documental corporativa...",
     notes: "Del clic en el formulario a la integración de software en tu negocio.",
     tags: ["Java", "Spring Boot 3.4", "JavaScript", "React", "PostgreSQL", "Bootstrap 5", "Docker", "Postman", "Git"],
-    githubLink: "https://github.com/alonsoarriaza/Assistant-Virtual-de-Recomendacion-Inteligente",
+    githubLink: "https://github.com/alonsoarriaza/CoandaForms",
   },
 ]
 
