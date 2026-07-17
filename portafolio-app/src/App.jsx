@@ -116,35 +116,31 @@ const EDUCATION = [
 const PROJECTS = [
   {
     title: "Aplicación Web de Gestión de Inventario y Trazabilidad mediante Códigos QR",
-    description: `Diseño y desarrollo integral de una plataforma web Full-Stack orientada a la trazabilidad de activos corporativos y la gestión avanzada de inventarios. Para eliminar las ineficiencias operativas y la dependencia de procesos manuales, se construyó una interfaz de usuario altamente intuitiva y rápida para los técnicos utilizando React, Vite y TailwindCSS. Esta capa visual agiliza los procesos para dar de alta nuevas máquinas y equipos, permitiendo además un control de stock en tiempo real mediante un módulo integrado de generación y lectura de códigos QR. Esto otorga a los distintos departamentos una visibilidad absoluta y sin fricción sobre las entradas, salidas y transferencias de piezas y materiales.
-
-La lógica de negocio y la escalabilidad del sistema están sostenidas por un backend de alto rendimiento desarrollado en Java 21 con Spring Boot. Mediante una API REST protegida por Spring Security y autenticación JWT, la aplicación logró un despliegue multi-sede seguro y exitoso. Su implantación estandarizó la gestión de inventario en todas las delegaciones de la compañía equipadas con almacén, centralizando el control corporativo y logrando una reducción drástica de las horas dedicadas a tareas manuales redundantes.
-
-Para asegurar una puesta en producción fluida y sin impacto en la operativa diaria, se diseñó un pipeline de carga masiva de datos acoplado a los sistemas corporativos existentes. Este proceso extrajo e importó de forma automatizada un volumen de aproximadamente 15.000 registros históricos directamente desde el ERP/CRM (ADV) hacia una base de datos en MySQL. Por otro lado, la plataforma cuenta con un estricto sistema de roles y permisos que adapta las funcionalidades y el acceso a la información según el perfil del usuario (técnicos, comerciales y supervisores), agilizando la localización de activos y mitigando los errores humanos en la empresa.`,
+    description: `Diseño y desarrollo integral de una plataforma web Full-Stack orientada a la trazabilidad de activos corporativos y la gestión avanzada de inventarios...`,
     notes: "Implantada con éxito a nivel multi-sede, hasta ahora mi proyecto mas importante.",
     tags: ["Java 21", "Spring Boot", "React", "Vite", "TailwindCSS", "MySQL", "XAMPP", "Git", "Docker", "JWT", "Spring Security", "API REST", "Códigos QR", "ERP/CRM (ADV)"],
+    githubLink: "https://github.com/alonsoarriaza",
   },
   {
     title: "SitoInformatic | Plataforma eCommerce y Configurador de Hardware",
-    description: `SitoInformatic es una tienda online de ordenadores y componentes diseñada a medida para que cualquier persona pueda adquirir el equipo perfecto sin necesidad de tener conocimientos técnicos. Su principal innovación es un asistente inteligente que funciona como un asesor personal experto: el usuario simplemente indica cuánto dinero quiere gastar y el uso principal que le dará al ordenador (como jugar, transmitir en vivo o tareas de oficina). En cuestión de segundos, el sistema analiza el catálogo y construye automáticamente la mejor combinación de piezas posibles, asegurándose de que todas encajen físicamente, funcionen a la perfección entre sí y aprovechen cada céntimo del presupuesto. Una vez generada esta propuesta a medida, el cliente puede revisarla de forma muy visual, añadirla directamente a su carrito y finalizar el pago, logrando una experiencia de compra guiada, rápida, segura y sin miedo a cometer errores.
-
-Para ponerme mas técnico el resumen de SitoInformatic es una plataforma e-commerce full-stack de alto rendimiento diseñada para democratizar la adquisición de hardware personalizado, eliminando la asimetría de información mediante SitoIA, un motor heurístico propietario desarrollado en Java 21 que resuelve las dudas del usuario en un click. Este algoritmo optimiza configuraciones en tiempo real aplicando reglas de negocio estrictas, como el balanceo dinámico de presupuestos mediante técnicas de arrastre (carryover) y la validación de restricciones físicas (compatibilidad de sockets, equilibrio térmico mediante TDP y performanceScore), garantizando siempre el máximo rendimiento técnico por cada euro invertido.
-
-La arquitectura, fundamentada en principios de diseño limpio y desacoplado, integra un backend robusto en Spring Boot 3.4 que gestiona la seguridad perimetral mediante autenticación stateless (JWT/BCrypt) y asegura la integridad transaccional ACID en PostgreSQL para la gestión crítica de inventarios. En el frontend, la aplicación se despliega como una Single Page Application (SPA) optimizada con React, Vite y Tailwind CSS, ofreciendo una interfaz responsive con gestión de estado compleja para manipulaciones CRUD dinámicas y visualización precisa de cálculos fiscales. En conjunto, el proyecto transforma una experiencia de compra técnica compleja en un flujo intuitivo de "fricción cero", logrando escalar el modelo de negocio al eliminar la dependencia de soporte técnico pre-venta humano y elevar la tasa de conversión mediante una precisión algorítmica inalterable.`,
-    notes: "Más allá del 8,4 que obtuvo como nota final, la mayor satisfacción fue ver cómo mi centro de prácticas adoptó mi proyecto como modelo de negocio y me dio la oportunidad de presentarlo ante mis compañeros de departamento, y ver la posible adaptabilidad a un modelo de captación de clientes.",
+    description: `SitoInformatic es una tienda online de ordenadores y componentes diseñada a medida...`,
+    notes: "Más allá del 8,4 que obtuvo como nota final, la mayor satisfacción fue ver cómo mi centro de prácticas adoptó mi proyecto como modelo de negocio...",
     tags: ["Java 21", "JavaScript (JSX)", "CSS", "PostgreSQL", "MySQL", "H2 Database", "Spring Boot", "React", "Tailwind", "JWT"],
+    githubLink: "https://github.com/alonsoarriaza/SitoInformatic-ConfiguradorHardware-ECommerce-Spring-React",
   },
   {
     title: "Desarrollador de Soluciones de Automatización / Analista de Datos",
-    description: `Desarrollé una aplicación web (Single Page Application) utilizando HTML5, Vanilla CSS y JavaScript (ES6) orientada a automatizar la clasificación de actividades comerciales, integrando una interfaz de alta usabilidad con retroalimentación visual en tiempo real. El núcleo del sistema incluye un motor heurístico de emparejamiento y un algoritmo de normalización de texto con diccionario de pesos que clasifica automáticamente más del 80% de los registros, complementado por un módulo híbrido de integración con Inteligencia Artificial mediante un parser JSON con soporte interactivo Drag & Drop para procesar los lotes no identificados. Para finalizar el flujo, programé un generador automatizado de scripts de migración SQL (MySQL/MariaDB) que asegura la consistencia e integridad referencial estructurando las salidas mediante una división lógica por provincias. A nivel de impacto de negocio, esta herramienta logró estandarizar los formatos de entrada, eliminar el 100% de los errores de importación contable y reducir drásticamente los tiempos de procesamiento manual, pasando de requerir varios días de trabajo a completarse en escasos minutos por provincia.`,
+    description: `Desarrollé una aplicación web (Single Page Application) utilizando HTML5, Vanilla CSS y JavaScript (ES6) orientada a automatizar la clasificación de actividades comerciales...`,
     notes: "Pasar de miles de clientes sueltos a su clasificación en un solo click",
     tags: ["HTML5", "Vanilla CSS", "JavaScript (ES6)", "MySQL/MariaDB", "Integración IA"],
+    githubLink: "https://github.com/alonsoarriaza/Desarrollador-de-Soluciones-de-Automatizaci-n-Analista-de-Datos",
   },
   {
     title: "Assistant Virtual de Recomendación Inteligente",
-    description: "Desarrollé e implementé un asistente virtual de recomendación inteligente especializado en sistemas de gestión documental corporativa (DMS/ECM), aprovechando estratégicamente la arquitectura y parte del desarrollo algorítmico de mi Trabajo de Fin de Grado (TFG), la aplicación SitoInformatic. Con el objetivo de optimizar el embudo de conversión digital y eliminar por completo la fricción operativa en la fase de preventa, diseñé y programé una interfaz interactiva basada en un formulario dinámico y gamificado que actúa como puente de comunicación: traduce la alta complejidad de los requisitos técnicos a un lenguaje conversacional y accesible, adaptando sus ramificaciones lógicas en tiempo real según las interacciones del usuario. En el núcleo de esta arquitectura, integré un potente motor algorítmico de análisis multivariable capaz de procesar instantáneamente parámetros críticos de negocio —tales como modelos de licenciamiento, proyecciones de escalabilidad, volumen de datos y exigencias específicas del entorno de trabajo—. Este sistema evalúa todas las restricciones y mapea de forma autónoma el catálogo para recomendar el ecosistema de software más idóneo. Con este desarrollo, no solo logré proporcionar a los clientes una propuesta de digitalización inmediata y de alta precisión, sino que automaticé la captación de leads altamente cualificados. El sistema enriquece la base de datos de la empresa con perfiles técnicos completos, dotando al equipo comercial de un diagnóstico previo exhaustivo que permite ejecutar contactos de ventas estratégicos con soluciones ya definidas antes de la primera llamada.",
+    description: "Desarrollé e implementé un asistente virtual de recomendación inteligente especializado en sistemas de gestión documental corporativa...",
     notes: "Del clic en el formulario a la integración de software en tu negocio.",
     tags: ["Java", "Spring Boot 3.4", "JavaScript", "React", "PostgreSQL", "Bootstrap 5", "Docker", "Postman", "Git"],
+    githubLink: "https://github.com/alonsoarriaza/Assistant-Virtual-de-Recomendacion-Inteligente",
   },
 ]
 
@@ -678,24 +674,31 @@ function ProjectsSection() {
       <div className="grid md:grid-cols-2 gap-6 md:gap-8">
         {PROJECTS.map((project, i) => (
           <div key={i} className="animate-on-scroll" style={{ animationDelay: `${i * 150} ms` }}>
-            <div className="glass-card-hover p-6 md:p-8 h-full flex flex-col group justify-between">
+            <a
+              href={project.githubLink || "https://github.com/alonsoarriaza"}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="glass-card-hover p-6 md:p-8 h-full flex flex-col group justify-between cursor-pointer block hover:border-purple-400/35 transition-all duration-300"
+            >
               {/* Header */}
-              <div className="flex items-start justify-between mb-4">
-                <h3 className="text-xl font-display font-bold text-white group-hover:gradient-text transition-all duration-300">
-                  {project.title}
-                </h3>
-                <span className="text-white/30 group-hover:text-white/70 transition-colors duration-300 shrink-0 ml-2 mt-1">
-                  <Icons.ExternalLink />
-                </span>
-              </div>
+              <div>
+                <div className="flex items-start justify-between mb-4">
+                  <h3 className="text-xl font-display font-bold text-white group-hover:text-purple-300 transition-all duration-300">
+                    {project.title}
+                  </h3>
+                  <span className="text-white/30 group-hover:text-purple-400 transition-colors duration-300 shrink-0 ml-2 mt-1">
+                    <Icons.ExternalLink />
+                  </span>
+                </div>
 
-              {/* Tags */}
-              <div className="flex flex-wrap gap-2 mt-4">
-                {project.tags.map((tag) => (
-                  <span key={tag} className="tag">{tag}</span>
-                ))}
+                {/* Tags */}
+                <div className="flex flex-wrap gap-2 mt-4">
+                  {project.tags.map((tag) => (
+                    <span key={tag} className="tag">{tag}</span>
+                  ))}
+                </div>
               </div>
-            </div>
+            </a>
           </div>
         ))}
       </div>
