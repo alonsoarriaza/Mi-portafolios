@@ -132,7 +132,7 @@ const PROJECTS = [
     title: "Desarrollador de Soluciones de Automatización / Analista de Datos",
     description: `Desarrollé una aplicación web (Single Page Application) utilizando HTML5, Vanilla CSS y JavaScript (ES6) orientada a automatizar la clasificación de actividades comerciales...`,
     notes: "Pasar de miles de clientes sueltos a su clasificación en un solo click",
-    tags: ["HTML5", "Spring Boot 3.4", "Vanilla CSS", "JavaScript (ES6)", "MySQL/MariaDB", "Integración IA"],
+    tags: ["HTML5", "Vanilla CSS", "JavaScript (ES6)", "MySQL/MariaDB", "Integración IA"],
     githubLink: "https://github.com/alonsoarriaza/Desarrollador-de-Soluciones-de-Automatizaci-n-Analista-de-Datos",
   },
   {
