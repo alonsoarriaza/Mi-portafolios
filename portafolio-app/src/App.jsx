@@ -118,14 +118,14 @@ const PROJECTS = [
     title: "Aplicación Web de Gestión de Inventario y Trazabilidad mediante Códigos QR",
     description: `Diseño y desarrollo integral de una plataforma web Full-Stack orientada a la trazabilidad de activos corporativos y la gestión avanzada de inventarios...`,
     notes: "Implantada con éxito a nivel multi-sede, hasta ahora mi proyecto mas importante.",
-    tags: ["Java 21", "Spring Boot", "React", "Vite", "TailwindCSS", "MySQL", "XAMPP", "Git", "Docker", "JWT", "Spring Security", "API REST", "Códigos QR", "ERP/CRM (ADV)"],
+    tags: ["Java 21", "Spring Boot 3.4", "React", "Vite", "TailwindCSS", "MySQL", "XAMPP", "Git", "Docker", "JWT", "Spring Security", "API REST", "Códigos QR", "ERP/CRM (ADV)"],
     githubLink: "https://github.com/alonsoarriaza/Sistema-Trazabilidad-QR",
   },
   {
     title: "SitoInformatic | Plataforma eCommerce y Configurador de Hardware",
     description: `SitoInformatic es una tienda online de ordenadores y componentes diseñada a medida...`,
     notes: "Más allá del 8,4 que obtuvo como nota final, la mayor satisfacción fue ver cómo mi centro de prácticas adoptó mi proyecto como modelo de negocio...",
-    tags: ["Java 21", "Spring Boot 3.4", "JavaScript (JSX)", "CSS", "PostgreSQL", "MySQL", "H2 Database", "Spring Boot", "React", "Tailwind", "JWT"],
+    tags: ["Java 21", "Spring Boot 3.4", "JavaScript (JSX)", "CSS", "PostgreSQL", "MySQL", "H2 Database", "React", "Tailwind", "JWT"],
     githubLink: "https://github.com/alonsoarriaza/sitoinformatic",
   },
   {
