@@ -125,14 +125,14 @@ const PROJECTS = [
     title: "SitoInformatic | Plataforma eCommerce y Configurador de Hardware",
     description: `SitoInformatic es una tienda online de ordenadores y componentes diseñada a medida...`,
     notes: "Más allá del 8,4 que obtuvo como nota final, la mayor satisfacción fue ver cómo mi centro de prácticas adoptó mi proyecto como modelo de negocio...",
-    tags: ["Java 21", "JavaScript (JSX)", "CSS", "PostgreSQL", "MySQL", "H2 Database", "Spring Boot", "React", "Tailwind", "JWT"],
+    tags: ["Java 21", "Spring Boot 3.4", "JavaScript (JSX)", "CSS", "PostgreSQL", "MySQL", "H2 Database", "Spring Boot", "React", "Tailwind", "JWT"],
     githubLink: "https://github.com/alonsoarriaza/sitoinformatic",
   },
   {
     title: "Desarrollador de Soluciones de Automatización / Analista de Datos",
     description: `Desarrollé una aplicación web (Single Page Application) utilizando HTML5, Vanilla CSS y JavaScript (ES6) orientada a automatizar la clasificación de actividades comerciales...`,
     notes: "Pasar de miles de clientes sueltos a su clasificación en un solo click",
-    tags: ["HTML5", "Vanilla CSS", "JavaScript (ES6)", "MySQL/MariaDB", "Integración IA"],
+    tags: ["HTML5", "Spring Boot 3.4", "Vanilla CSS", "JavaScript (ES6)", "MySQL/MariaDB", "Integración IA"],
     githubLink: "https://github.com/alonsoarriaza/Desarrollador-de-Soluciones-de-Automatizaci-n-Analista-de-Datos",
   },
   {
