@@ -121,7 +121,7 @@ const PROJECTS = [
     notes: "Implantada con éxito a nivel multi-sede, hasta ahora mi proyecto mas importante.",
     tags: ["Java 21", "Spring Boot 3.4", "React", "Vite", "TailwindCSS", "MySQL", "XAMPP", "Git", "Docker", "JWT", "Spring Security", "API REST", "Códigos QR", "ERP/CRM (ADV)"],
     githubLink: "https://github.com/alonsoarriaza/Sistema-Trazabilidad-QR",
-    previewImage: "/previews/TALLER.png",
+    previewImage: "/previews/taller.png",
   },
   {
     id: "sitoinformatic",
@@ -130,7 +130,7 @@ const PROJECTS = [
     notes: "Más allá del 8,4 que obtuvo como nota final, la mayor satisfacción fue ver cómo mi centro de prácticas adoptó mi proyecto como modelo de negocio...",
     tags: ["Java 21", "Spring Boot 3.4", "Spring Security", "JavaScript (JSX)", "CSS", "PostgreSQL", "MySQL", "H2 Database", "React", "Tailwind", "JWT"],
     githubLink: "https://github.com/alonsoarriaza/sitoinformatic",
-    previewImage: "/previews/SITOINFO.png",
+    previewImage: "/previews/sitoinfo.png",
   },
   {
     id: "automatizacion-datos",
@@ -139,7 +139,7 @@ const PROJECTS = [
     notes: "Pasar de miles de clientes sueltos a su clasificación en un solo click",
     tags: ["HTML5", "Vanilla CSS", "JavaScript (ES6)", "MySQL/MariaDB", "Integración IA"],
     githubLink: "https://github.com/alonsoarriaza/Desarrollador-de-Soluciones-de-Automatizaci-n-Analista-de-Datos",
-    previewImage: "/previews/ACT-CLI.png",
+    previewImage: "/previews/act-cli.png",
   },
   {
     id: "coanda-forms",
@@ -148,7 +148,7 @@ const PROJECTS = [
     notes: "Del clic en el formulario a la integración de software en tu negocio.",
     tags: ["Java", "Spring Boot 3.4", "JavaScript", "React", "PostgreSQL", "Bootstrap 5", "Docker", "Postman", "Git"],
     githubLink: "https://github.com/alonsoarriaza/CoandaForms",
-    previewImage: "/previews/CRM_INTERNO.png",
+    previewImage: "/previews/crm-interno.png",
   },
 ]
 
