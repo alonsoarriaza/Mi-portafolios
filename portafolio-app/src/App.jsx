@@ -121,7 +121,7 @@ const PROJECTS = [
     notes: "Implantada con éxito a nivel multi-sede, hasta ahora mi proyecto mas importante.",
     tags: ["Java 21", "Spring Boot 3.4", "React", "Vite", "TailwindCSS", "MySQL", "XAMPP", "Git", "Docker", "JWT", "Spring Security", "API REST", "Códigos QR", "ERP/CRM (ADV)"],
     githubLink: "https://github.com/alonsoarriaza/Sistema-Trazabilidad-QR",
-    previewImage: "/previews/trazabilidad-qr.png",
+    previewImage: "/previews/TALLER.png",
   },
   {
     id: "sitoinformatic",
@@ -130,7 +130,7 @@ const PROJECTS = [
     notes: "Más allá del 8,4 que obtuvo como nota final, la mayor satisfacción fue ver cómo mi centro de prácticas adoptó mi proyecto como modelo de negocio...",
     tags: ["Java 21", "Spring Boot 3.4", "Spring Security", "JavaScript (JSX)", "CSS", "PostgreSQL", "MySQL", "H2 Database", "React", "Tailwind", "JWT"],
     githubLink: "https://github.com/alonsoarriaza/sitoinformatic",
-    previewImage: "/previews/sitoinformatic.png",
+    previewImage: "/previews/SITOINFO.png",
   },
   {
     id: "automatizacion-datos",
@@ -139,7 +139,7 @@ const PROJECTS = [
     notes: "Pasar de miles de clientes sueltos a su clasificación en un solo click",
     tags: ["HTML5", "Vanilla CSS", "JavaScript (ES6)", "MySQL/MariaDB", "Integración IA"],
     githubLink: "https://github.com/alonsoarriaza/Desarrollador-de-Soluciones-de-Automatizaci-n-Analista-de-Datos",
-    previewImage: "/previews/automatizacion-datos.png",
+    previewImage: "/previews/ACT-CLI.png",
   },
   {
     id: "coanda-forms",
@@ -148,7 +148,7 @@ const PROJECTS = [
     notes: "Del clic en el formulario a la integración de software en tu negocio.",
     tags: ["Java", "Spring Boot 3.4", "JavaScript", "React", "PostgreSQL", "Bootstrap 5", "Docker", "Postman", "Git"],
     githubLink: "https://github.com/alonsoarriaza/CoandaForms",
-    previewImage: "/previews/coanda-forms.png",
+    previewImage: "/previews/CRM_INTERNO.png",
   },
 ]
 
@@ -806,20 +806,26 @@ function ProjectsSection() {
         {PROJECTS.map((project, i) => (
           <div key={i} className="animate-on-scroll" style={{ animationDelay: `${i * 150}ms` }}>
             <div
-              onClick={() => setSelectedProject(project)}
-              className="glass-card-hover p-6 md:p-8 h-full flex flex-col group justify-between cursor-pointer hover:border-purple-400/40 transition-all duration-300 relative"
+              className="glass-card-hover p-6 md:p-8 h-full flex flex-col group justify-between hover:border-purple-400/40 transition-all duration-300 relative"
             >
               {/* Header & Title */}
               <div>
                 <div className="flex items-start justify-between mb-3">
-                  <h3 className="text-xl font-display font-bold text-white group-hover:text-purple-300 transition-all duration-300">
-                    {project.title}
-                  </h3>
                   <a
                     href={project.githubLink || "https://github.com/alonsoarriaza"}
                     target="_blank"
                     rel="noopener noreferrer"
-                    onClick={(e) => e.stopPropagation()}
+                    className="hover:text-purple-300 transition-colors duration-300"
+                    title="Ver en GitHub"
+                  >
+                    <h3 className="text-xl font-display font-bold text-white hover:text-purple-300 transition-colors">
+                      {project.title}
+                    </h3>
+                  </a>
+                  <a
+                    href={project.githubLink || "https://github.com/alonsoarriaza"}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="text-white/30 hover:text-purple-400 transition-colors duration-300 shrink-0 ml-2 mt-1"
                     title="Ver en GitHub"
                   >
@@ -843,10 +849,7 @@ function ProjectsSection() {
               <div className="pt-4 border-t border-white/10 flex items-center justify-between gap-3">
                 <button
                   type="button"
-                  onClick={(e) => {
-                    e.stopPropagation()
-                    setSelectedProject(project)
-                  }}
+                  onClick={() => setSelectedProject(project)}
                   className="w-full py-2.5 px-4 rounded-xl text-xs font-semibold bg-gradient-to-r from-purple-600/30 to-cyan-600/30 border border-purple-500/30 text-purple-200 hover:text-white hover:from-purple-600 hover:to-cyan-600 hover:border-transparent transition-all duration-300 flex items-center justify-center gap-2 group-hover:shadow-[0_0_15px_rgba(168,85,247,0.3)]"
                 >
                   <Icons.Eye />
