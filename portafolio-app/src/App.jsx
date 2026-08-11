@@ -127,6 +127,7 @@ const PROJECTS = [
     tags: ["Java 21", "Spring Boot 3.4", "React", "Vite", "TailwindCSS", "MySQL", "XAMPP", "Git", "Docker", "JWT", "Spring Security", "API REST", "Códigos QR", "ERP/CRM (ADV)"],
     githubLink: "https://github.com/alonsoarriaza/Sistema-Trazabilidad-QR",
     previewImage: tallerImg,
+    fallbackImage: "/previews/taller.png",
   },
   {
     id: "sitoinformatic",
@@ -136,6 +137,7 @@ const PROJECTS = [
     tags: ["Java 21", "Spring Boot 3.4", "Spring Security", "JavaScript (JSX)", "CSS", "PostgreSQL", "MySQL", "H2 Database", "React", "Tailwind", "JWT"],
     githubLink: "https://github.com/alonsoarriaza/sitoinformatic",
     previewImage: sitoinfoImg,
+    fallbackImage: "/previews/sitoinfo.png",
   },
   {
     id: "automatizacion-datos",
@@ -145,6 +147,7 @@ const PROJECTS = [
     tags: ["HTML5", "Vanilla CSS", "JavaScript (ES6)", "MySQL/MariaDB", "Integración IA"],
     githubLink: "https://github.com/alonsoarriaza/Desarrollador-de-Soluciones-de-Automatizaci-n-Analista-de-Datos",
     previewImage: actCliImg,
+    fallbackImage: "/previews/act-cli.png",
   },
   {
     id: "coanda-forms",
@@ -154,6 +157,7 @@ const PROJECTS = [
     tags: ["Java", "Spring Boot 3.4", "JavaScript", "React", "PostgreSQL", "Bootstrap 5", "Docker", "Postman", "Git"],
     githubLink: "https://github.com/alonsoarriaza/CoandaForms",
     previewImage: crmInternoImg,
+    fallbackImage: "/previews/crm-interno.png",
   },
 ]
 
@@ -675,9 +679,11 @@ function EducationSection() {
    ═══════════════════════════════════════════════ */
 
 function ProjectPreviewModal({ project, onClose }) {
+  const [currentSrc, setCurrentSrc] = useState(project?.previewImage)
   const [imageError, setImageError] = useState(false)
 
   useEffect(() => {
+    setCurrentSrc(project?.previewImage)
     setImageError(false)
   }, [project])
 
@@ -688,6 +694,14 @@ function ProjectPreviewModal({ project, onClose }) {
     window.addEventListener('keydown', handleKeyDown)
     return () => window.removeEventListener('keydown', handleKeyDown)
   }, [onClose])
+
+  const handleImageError = () => {
+    if (currentSrc !== project?.fallbackImage && project?.fallbackImage) {
+      setCurrentSrc(project.fallbackImage)
+    } else {
+      setImageError(true)
+    }
+  }
 
   if (!project) return null
 
@@ -720,26 +734,23 @@ function ProjectPreviewModal({ project, onClose }) {
         </div>
 
         {/* Imagen / Screenshot del Proyecto */}
-        <div className="relative mb-6 rounded-2xl overflow-hidden border border-white/10 bg-black/50 min-h-[220px] sm:min-h-[320px] flex items-center justify-center">
+        <div className="relative mb-6 rounded-2xl overflow-hidden border border-white/10 bg-zinc-900/80 p-2 sm:p-4">
           {!imageError ? (
             <img
-              src={project.previewImage}
+              src={currentSrc}
               alt={`Vista previa de ${project.title}`}
-              onError={() => setImageError(true)}
-              className="w-full h-auto object-cover max-h-[500px] rounded-2xl transition-all duration-300"
+              onError={handleImageError}
+              className="w-full h-auto max-h-[60vh] object-contain rounded-xl block mx-auto shadow-2xl transition-all duration-300"
             />
           ) : (
             <div className="w-full py-12 px-6 flex flex-col items-center justify-center text-center bg-gradient-to-br from-purple-950/40 via-black to-zinc-900/60 border border-dashed border-purple-500/30 rounded-2xl">
               <div className="w-16 h-16 rounded-full bg-purple-500/10 border border-purple-500/30 flex items-center justify-center text-purple-400 mb-4 animate-pulse">
                 <Icons.ImageIcon />
               </div>
-              <h4 className="text-lg font-semibold text-white mb-2">Imagen pendiente de asociar</h4>
+              <h4 className="text-lg font-semibold text-white mb-2">Vista previa del proyecto</h4>
               <p className="text-sm text-white/60 max-w-md mb-4 leading-relaxed">
-                Coloca la captura de tu proyecto en la ruta <code className="text-purple-300 bg-black/60 px-2.5 py-1 rounded font-mono text-xs border border-purple-500/20">{`public${project.previewImage}`}</code> para visualizarla automáticamente.
+                {project.description}
               </p>
-              <div className="text-xs text-purple-400/80 bg-purple-500/10 border border-purple-500/20 px-3 py-1.5 rounded-lg">
-                💡 Ruta esperada: <span className="font-mono text-white">/public{project.previewImage}</span>
-              </div>
             </div>
           )}
         </div>
