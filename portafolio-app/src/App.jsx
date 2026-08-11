@@ -1,5 +1,10 @@
 import { useState, useEffect, useRef } from 'react'
 
+import tallerImg from './assets/previews/taller.png'
+import sitoinfoImg from './assets/previews/sitoinfo.png'
+import actCliImg from './assets/previews/act-cli.png'
+import crmInternoImg from './assets/previews/crm-interno.png'
+
 
 
 const PROFILE = {
