@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from 'react'
+import { createPortal } from 'react-dom'
 
 import tallerImg from './assets/previews/taller.png'
 import sitoinfoImg from './assets/previews/sitoinfo.png'
@@ -692,7 +693,11 @@ function ProjectPreviewModal({ project, onClose }) {
       if (e.key === 'Escape') onClose()
     }
     window.addEventListener('keydown', handleKeyDown)
-    return () => window.removeEventListener('keydown', handleKeyDown)
+    document.body.style.overflow = 'hidden'
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown)
+      document.body.style.overflow = ''
+    }
   }, [onClose])
 
   const handleImageError = () => {
@@ -705,28 +710,28 @@ function ProjectPreviewModal({ project, onClose }) {
 
   if (!project) return null
 
-  return (
+  return createPortal(
     <div
-      className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-black/80 backdrop-blur-md animate-fade-in"
+      style={{ position: 'fixed', inset: 0, zIndex: 9999, display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '1rem', backgroundColor: 'rgba(0,0,0,0.85)', backdropFilter: 'blur(8px)' }}
       onClick={onClose}
     >
       <div
-        className="relative w-full max-w-4xl max-h-[90vh] overflow-y-auto rounded-3xl bg-zinc-950 border border-purple-500/30 p-6 md:p-8 shadow-[0_0_50px_rgba(168,85,247,0.25)] text-white"
+        style={{ position: 'relative', width: '100%', maxWidth: '56rem', maxHeight: '90vh', overflowY: 'auto', borderRadius: '1.5rem', backgroundColor: '#09090b', border: '1px solid rgba(168,85,247,0.3)', padding: '2rem', boxShadow: '0 0 50px rgba(168,85,247,0.25)', color: 'white' }}
         onClick={(e) => e.stopPropagation()}
       >
         {/* Header Modal */}
-        <div className="flex items-start justify-between gap-4 mb-6">
+        <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', gap: '1rem', marginBottom: '1.5rem' }}>
           <div>
-            <span className="text-xs font-semibold text-purple-400 uppercase tracking-wider block mb-1">
+            <span style={{ fontSize: '0.75rem', fontWeight: 600, color: '#a855f7', textTransform: 'uppercase', letterSpacing: '0.05em', display: 'block', marginBottom: '0.25rem' }}>
               Vista previa del proyecto
             </span>
-            <h3 className="text-2xl md:text-3xl font-display font-bold text-white">
+            <h3 style={{ fontSize: '1.5rem', fontWeight: 700, color: 'white', margin: 0 }}>
               {project.title}
             </h3>
           </div>
           <button
             onClick={onClose}
-            className="p-2 rounded-full bg-white/10 hover:bg-white/20 text-white/80 hover:text-white transition-all shrink-0"
+            style={{ padding: '0.5rem', borderRadius: '9999px', backgroundColor: 'rgba(255,255,255,0.1)', color: 'rgba(255,255,255,0.8)', border: 'none', cursor: 'pointer', flexShrink: 0 }}
             aria-label="Cerrar modal"
           >
             <Icons.Close />
@@ -734,21 +739,21 @@ function ProjectPreviewModal({ project, onClose }) {
         </div>
 
         {/* Imagen / Screenshot del Proyecto */}
-        <div className="relative mb-6 rounded-2xl overflow-hidden border border-white/10 bg-zinc-900/80 p-2 sm:p-4">
+        <div style={{ position: 'relative', marginBottom: '1.5rem', borderRadius: '1rem', overflow: 'hidden', border: '1px solid rgba(255,255,255,0.1)', backgroundColor: 'rgba(24,24,27,0.8)', padding: '0.5rem' }}>
           {!imageError ? (
             <img
               src={currentSrc}
               alt={`Vista previa de ${project.title}`}
               onError={handleImageError}
-              className="w-full h-auto max-h-[60vh] object-contain rounded-xl block mx-auto shadow-2xl transition-all duration-300"
+              style={{ width: '100%', height: 'auto', maxHeight: '60vh', objectFit: 'contain', borderRadius: '0.75rem', display: 'block', margin: '0 auto' }}
             />
           ) : (
-            <div className="w-full py-12 px-6 flex flex-col items-center justify-center text-center bg-gradient-to-br from-purple-950/40 via-black to-zinc-900/60 border border-dashed border-purple-500/30 rounded-2xl">
-              <div className="w-16 h-16 rounded-full bg-purple-500/10 border border-purple-500/30 flex items-center justify-center text-purple-400 mb-4 animate-pulse">
+            <div style={{ width: '100%', padding: '3rem 1.5rem', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', textAlign: 'center', borderRadius: '1rem', border: '1px dashed rgba(168,85,247,0.3)', backgroundColor: 'rgba(24,24,27,0.6)' }}>
+              <div style={{ width: '4rem', height: '4rem', borderRadius: '9999px', backgroundColor: 'rgba(168,85,247,0.1)', border: '1px solid rgba(168,85,247,0.3)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#a855f7', marginBottom: '1rem' }}>
                 <Icons.ImageIcon />
               </div>
-              <h4 className="text-lg font-semibold text-white mb-2">Vista previa del proyecto</h4>
-              <p className="text-sm text-white/60 max-w-md mb-4 leading-relaxed">
+              <h4 style={{ fontSize: '1.125rem', fontWeight: 600, color: 'white', marginBottom: '0.5rem' }}>Vista previa del proyecto</h4>
+              <p style={{ fontSize: '0.875rem', color: 'rgba(255,255,255,0.6)', maxWidth: '28rem', marginBottom: '1rem', lineHeight: 1.6 }}>
                 {project.description}
               </p>
             </div>
@@ -756,14 +761,14 @@ function ProjectPreviewModal({ project, onClose }) {
         </div>
 
         {/* Descripción y Notas */}
-        <div className="space-y-4 mb-6">
-          <p className="text-sm md:text-base text-white/70 leading-relaxed">
+        <div style={{ marginBottom: '1.5rem' }}>
+          <p style={{ fontSize: '0.875rem', color: 'rgba(255,255,255,0.7)', lineHeight: 1.6, marginBottom: '1rem' }}>
             {project.description}
           </p>
 
           {project.notes && (
-            <div className="p-4 rounded-xl bg-purple-500/10 border border-purple-500/20 text-xs md:text-sm text-purple-200 flex items-start gap-2">
-              <span className="text-purple-400 mt-0.5">💡</span>
+            <div style={{ padding: '1rem', borderRadius: '0.75rem', backgroundColor: 'rgba(168,85,247,0.1)', border: '1px solid rgba(168,85,247,0.2)', fontSize: '0.8rem', color: '#e9d5ff', display: 'flex', alignItems: 'flex-start', gap: '0.5rem', marginBottom: '1rem' }}>
+              <span style={{ color: '#a855f7', marginTop: '0.125rem' }}>💡</span>
               <span><strong>Nota:</strong> {project.notes}</span>
             </div>
           )}
@@ -777,12 +782,12 @@ function ProjectPreviewModal({ project, onClose }) {
         </div>
 
         {/* Acciones del Modal */}
-        <div className="flex flex-wrap items-center justify-between gap-4 pt-4 border-t border-white/10">
+        <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'space-between', gap: '1rem', paddingTop: '1rem', borderTop: '1px solid rgba(255,255,255,0.1)' }}>
           <a
             href={project.githubLink || "https://github.com/alonsoarriaza"}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full bg-gradient-to-r from-purple-600 to-cyan-600 text-white font-semibold text-xs tracking-wide hover:shadow-[0_0_20px_rgba(168,85,247,0.4)] transition-all hover:scale-105"
+            style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', padding: '0.625rem 1.5rem', borderRadius: '9999px', background: 'linear-gradient(to right, #9333ea, #0891b2)', color: 'white', fontWeight: 600, fontSize: '0.75rem', textDecoration: 'none', letterSpacing: '0.05em' }}
           >
             <span>Ver repositorio en GitHub</span>
             <Icons.ExternalLink />
@@ -790,13 +795,14 @@ function ProjectPreviewModal({ project, onClose }) {
 
           <button
             onClick={onClose}
-            className="px-5 py-2.5 rounded-full border border-white/20 text-white/80 hover:text-white hover:bg-white/10 transition-all text-xs font-semibold"
+            style={{ padding: '0.625rem 1.25rem', borderRadius: '9999px', border: '1px solid rgba(255,255,255,0.2)', backgroundColor: 'transparent', color: 'rgba(255,255,255,0.8)', cursor: 'pointer', fontSize: '0.75rem', fontWeight: 600 }}
           >
             Cerrar vista previa
           </button>
         </div>
       </div>
-    </div>
+    </div>,
+    document.body
   )
 }
 
