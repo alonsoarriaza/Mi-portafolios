@@ -1,7 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
 /* ── Base Styles ── */
 * {
@@ -352,7 +352,7 @@ body {
 
 .retro-rpg { padding: 1.2rem; text-align: left; width: 100%; font-family: 'Press Start 2P', monospace; }
 .retro-rpg strong { display: block; font-size: 0.75rem; color: #ffe066; margin-bottom: 0.7rem; text-shadow: 1px 1px 0 #6c5ce7; }
-.retro-rpg p { font-size: 0.58rem; line-height: 1.8; color: #d1d5db; margin: 0; }
+.retro-rpg p { font-size: 0.58rem; line-height: 1.8; color: #d1d5db; margin: 0; white-space: pre-line; }
 .retro-rpg em { display: block; text-align: right; font-style: normal; margin-top: 0.6rem; font-size: 0.55rem; color: #ffe066; animation: retroIdleAnim 1s ease-in-out infinite; }
 
 @keyframes retroIdleAnim {

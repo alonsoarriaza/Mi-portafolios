@@ -115,32 +115,40 @@ const EDUCATION = [
 
 const PROJECTS = [
   {
+    id: "trazabilidad-qr",
     title: "Aplicación Web de Gestión de Inventario y Trazabilidad mediante Códigos QR",
-    description: `Diseño y desarrollo integral de una plataforma web Full-Stack orientada a la trazabilidad de activos corporativos y la gestión avanzada de inventarios...`,
+    description: `Diseño y desarrollo integral de una plataforma web Full-Stack orientada a la trazabilidad de activos corporativos y la gestión avanzada de inventarios con control de lectura QR en tiempo real.`,
     notes: "Implantada con éxito a nivel multi-sede, hasta ahora mi proyecto mas importante.",
     tags: ["Java 21", "Spring Boot 3.4", "React", "Vite", "TailwindCSS", "MySQL", "XAMPP", "Git", "Docker", "JWT", "Spring Security", "API REST", "Códigos QR", "ERP/CRM (ADV)"],
     githubLink: "https://github.com/alonsoarriaza/Sistema-Trazabilidad-QR",
+    previewImage: "/previews/trazabilidad-qr.png",
   },
   {
+    id: "sitoinformatic",
     title: "SitoInformatic | Plataforma eCommerce y Configurador de Hardware",
-    description: `SitoInformatic es una tienda online de ordenadores y componentes diseñada a medida...`,
+    description: `SitoInformatic es una tienda online de ordenadores y componentes diseñada a medida con un motor heurístico (SitoIA) que evalúa compatibilidad física, balance térmico y presupuesto.`,
     notes: "Más allá del 8,4 que obtuvo como nota final, la mayor satisfacción fue ver cómo mi centro de prácticas adoptó mi proyecto como modelo de negocio...",
     tags: ["Java 21", "Spring Boot 3.4", "Spring Security", "JavaScript (JSX)", "CSS", "PostgreSQL", "MySQL", "H2 Database", "React", "Tailwind", "JWT"],
     githubLink: "https://github.com/alonsoarriaza/sitoinformatic",
+    previewImage: "/previews/sitoinformatic.png",
   },
   {
+    id: "automatizacion-datos",
     title: "Desarrollador de Soluciones de Automatización / Analista de Datos",
     description: `Desarrollé una aplicación web (Single Page Application) utilizando HTML5, Vanilla CSS y JavaScript (ES6) orientada a automatizar la clasificación de actividades comerciales...`,
     notes: "Pasar de miles de clientes sueltos a su clasificación en un solo click",
     tags: ["HTML5", "Vanilla CSS", "JavaScript (ES6)", "MySQL/MariaDB", "Integración IA"],
     githubLink: "https://github.com/alonsoarriaza/Desarrollador-de-Soluciones-de-Automatizaci-n-Analista-de-Datos",
+    previewImage: "/previews/automatizacion-datos.png",
   },
   {
+    id: "coanda-forms",
     title: "Assistant Virtual de Recomendación Inteligente",
     description: "Desarrollé e implementé un asistente virtual de recomendación inteligente especializado en sistemas de gestión documental corporativa...",
     notes: "Del clic en el formulario a la integración de software en tu negocio.",
     tags: ["Java", "Spring Boot 3.4", "JavaScript", "React", "PostgreSQL", "Bootstrap 5", "Docker", "Postman", "Git"],
     githubLink: "https://github.com/alonsoarriaza/CoandaForms",
+    previewImage: "/previews/coanda-forms.png",
   },
 ]
 
@@ -162,7 +170,7 @@ const ABOUT = {
 
 const RETRO_CARDS = [
   { t: '📍 DATOS', txt: 'Alonso Feria Arriaza · Dos Hermanas, Sevilla · 627 53 61 25 · alonsoarriaza03@gmail.com · Permiso B + Vehículo propio · Disponibilidad geográfica inmediata para incorporaciones locales o nacionales.' },
-  { t: '⚔️ EXPERIENCIA', txt: 'Full-Stack Developer en Coanda Technologies. Desarrollo, auditoría e implantación de aplicaciones empresariales. Integración de flujos de trabajo documentales inteligentes (Therefore, Solpheo). Administración de incidencias ERP/CRM (ADV) y auditoría de ciberseguridad corporativa con Ciberguardian.' },
+  { t: '⚔️ EXPERIENCIA', txt: 'Full-Stack Developer · Coanda Technologies\n\nDesarrollo e implantación de soluciones digitales para entornos empresariales, combinando desarrollo de software, integración de sistemas y automatización de procesos. Destaca el desarrollo de una aplicación web corporativa realizada de forma individual, actualmente en fase de despliegue para su implantación en todas las sedes de la empresa. Experiencia trabajando con plataformas de gestión documental como Therefore y Solpheo, entornos ERP/CRM (ADV) y herramientas de auditoría de ciberseguridad corporativa como Ciberguardian.' },
   { t: '💡 COMPROMISO', txt: 'Enfoque analítico y estructurado en la resolución de incidencias complejas. Compromiso riguroso con el código limpio (Clean Code) y las mejores prácticas de arquitectura de software. Gran capacidad de organización, comunicación clara y liderazgo de equipos en entornos bajo presión.' },
   { t: '📱 DESARROLLO QR', txt: 'Diseño e implantación de un sistema Full-Stack para gestión de activos y trazabilidad mediante códigos QR. Backend robusto en Java 21 con Spring Boot y seguridad JWT. Frontend interactivo en React + Tailwind con escáner QR. Migración automatizada de 15.000 registros desde el ERP ADV hacia base de datos MySQL.' },
   { t: '🚀 SITOINFORMATIC', txt: 'Trabajo de Fin de Grado (TFG) finalizado con calificación de 8,4. Plataforma eCommerce de hardware de computadoras que integra SitoIA, un motor heurístico en Java 21 que calcula la compatibilidad física de sockets, equilibrio térmico TDP, performanceScore y balancea presupuestos en tiempo real.' },
@@ -227,6 +235,12 @@ const Icons = {
   ),
   Tools: () => (
     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" /></svg>
+  ),
+  Eye: () => (
+    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+  ),
+  ImageIcon: () => (
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
   ),
 }
 
@@ -652,11 +666,128 @@ function EducationSection() {
 
 
 /* ═══════════════════════════════════════════════
+   COMPONENTE: Project Preview Modal
+   ═══════════════════════════════════════════════ */
+
+function ProjectPreviewModal({ project, onClose }) {
+  const [imageError, setImageError] = useState(false)
+
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (e.key === 'Escape') onClose()
+    }
+    window.addEventListener('keydown', handleKeyDown)
+    return () => window.removeEventListener('keydown', handleKeyDown)
+  }, [onClose])
+
+  if (!project) return null
+
+  return (
+    <div
+      className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-black/80 backdrop-blur-md animate-fade-in"
+      onClick={onClose}
+    >
+      <div
+        className="relative w-full max-w-4xl max-h-[90vh] overflow-y-auto rounded-3xl bg-zinc-950 border border-purple-500/30 p-6 md:p-8 shadow-[0_0_50px_rgba(168,85,247,0.25)] text-white"
+        onClick={(e) => e.stopPropagation()}
+      >
+        {/* Header Modal */}
+        <div className="flex items-start justify-between gap-4 mb-6">
+          <div>
+            <span className="text-xs font-semibold text-purple-400 uppercase tracking-wider block mb-1">
+              Vista previa del proyecto
+            </span>
+            <h3 className="text-2xl md:text-3xl font-display font-bold text-white">
+              {project.title}
+            </h3>
+          </div>
+          <button
+            onClick={onClose}
+            className="p-2 rounded-full bg-white/10 hover:bg-white/20 text-white/80 hover:text-white transition-all shrink-0"
+            aria-label="Cerrar modal"
+          >
+            <Icons.Close />
+          </button>
+        </div>
+
+        {/* Imagen / Screenshot del Proyecto */}
+        <div className="relative mb-6 rounded-2xl overflow-hidden border border-white/10 bg-black/50 min-h-[220px] sm:min-h-[320px] flex items-center justify-center">
+          {!imageError ? (
+            <img
+              src={project.previewImage}
+              alt={`Vista previa de ${project.title}`}
+              onError={() => setImageError(true)}
+              className="w-full h-auto object-cover max-h-[500px] rounded-2xl transition-all duration-300"
+            />
+          ) : (
+            <div className="w-full py-12 px-6 flex flex-col items-center justify-center text-center bg-gradient-to-br from-purple-950/40 via-black to-zinc-900/60 border border-dashed border-purple-500/30 rounded-2xl">
+              <div className="w-16 h-16 rounded-full bg-purple-500/10 border border-purple-500/30 flex items-center justify-center text-purple-400 mb-4 animate-pulse">
+                <Icons.ImageIcon />
+              </div>
+              <h4 className="text-lg font-semibold text-white mb-2">Imagen pendiente de asociar</h4>
+              <p className="text-sm text-white/60 max-w-md mb-4 leading-relaxed">
+                Coloca la captura de tu proyecto en la ruta <code className="text-purple-300 bg-black/60 px-2.5 py-1 rounded font-mono text-xs border border-purple-500/20">{`public${project.previewImage}`}</code> para visualizarla automáticamente.
+              </p>
+              <div className="text-xs text-purple-400/80 bg-purple-500/10 border border-purple-500/20 px-3 py-1.5 rounded-lg">
+                💡 Ruta esperada: <span className="font-mono text-white">/public{project.previewImage}</span>
+              </div>
+            </div>
+          )}
+        </div>
+
+        {/* Descripción y Notas */}
+        <div className="space-y-4 mb-6">
+          <p className="text-sm md:text-base text-white/70 leading-relaxed">
+            {project.description}
+          </p>
+
+          {project.notes && (
+            <div className="p-4 rounded-xl bg-purple-500/10 border border-purple-500/20 text-xs md:text-sm text-purple-200 flex items-start gap-2">
+              <span className="text-purple-400 mt-0.5">💡</span>
+              <span><strong>Nota:</strong> {project.notes}</span>
+            </div>
+          )}
+
+          {/* Tags */}
+          <div className="flex flex-wrap gap-2 pt-2">
+            {project.tags.map((tag) => (
+              <span key={tag} className="tag">{tag}</span>
+            ))}
+          </div>
+        </div>
+
+        {/* Acciones del Modal */}
+        <div className="flex flex-wrap items-center justify-between gap-4 pt-4 border-t border-white/10">
+          <a
+            href={project.githubLink || "https://github.com/alonsoarriaza"}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full bg-gradient-to-r from-purple-600 to-cyan-600 text-white font-semibold text-xs tracking-wide hover:shadow-[0_0_20px_rgba(168,85,247,0.4)] transition-all hover:scale-105"
+          >
+            <span>Ver repositorio en GitHub</span>
+            <Icons.ExternalLink />
+          </a>
+
+          <button
+            onClick={onClose}
+            className="px-5 py-2.5 rounded-full border border-white/20 text-white/80 hover:text-white hover:bg-white/10 transition-all text-xs font-semibold"
+          >
+            Cerrar vista previa
+          </button>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+
+/* ═══════════════════════════════════════════════
    COMPONENTE: Projects Section
    ═══════════════════════════════════════════════ */
 
 function ProjectsSection() {
   const sectionRef = useAnimateOnScroll()
+  const [selectedProject, setSelectedProject] = useState(null)
 
   return (
     <section id="proyectos" ref={sectionRef} className="section-container">
@@ -673,35 +804,67 @@ function ProjectsSection() {
 
       <div className="grid md:grid-cols-2 gap-6 md:gap-8">
         {PROJECTS.map((project, i) => (
-          <div key={i} className="animate-on-scroll" style={{ animationDelay: `${i * 150} ms` }}>
-            <a
-              href={project.githubLink || "https://github.com/alonsoarriaza"}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="glass-card-hover p-6 md:p-8 h-full flex flex-col group justify-between cursor-pointer block hover:border-purple-400/35 transition-all duration-300"
+          <div key={i} className="animate-on-scroll" style={{ animationDelay: `${i * 150}ms` }}>
+            <div
+              onClick={() => setSelectedProject(project)}
+              className="glass-card-hover p-6 md:p-8 h-full flex flex-col group justify-between cursor-pointer hover:border-purple-400/40 transition-all duration-300 relative"
             >
-              {/* Header */}
+              {/* Header & Title */}
               <div>
-                <div className="flex items-start justify-between mb-4">
+                <div className="flex items-start justify-between mb-3">
                   <h3 className="text-xl font-display font-bold text-white group-hover:text-purple-300 transition-all duration-300">
                     {project.title}
                   </h3>
-                  <span className="text-white/30 group-hover:text-purple-400 transition-colors duration-300 shrink-0 ml-2 mt-1">
+                  <a
+                    href={project.githubLink || "https://github.com/alonsoarriaza"}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={(e) => e.stopPropagation()}
+                    className="text-white/30 hover:text-purple-400 transition-colors duration-300 shrink-0 ml-2 mt-1"
+                    title="Ver en GitHub"
+                  >
                     <Icons.ExternalLink />
-                  </span>
+                  </a>
                 </div>
 
+                <p className="text-xs sm:text-sm text-white/60 mb-4 line-clamp-2 leading-relaxed">
+                  {project.description}
+                </p>
+
                 {/* Tags */}
-                <div className="flex flex-wrap gap-2 mt-4">
+                <div className="flex flex-wrap gap-2 mb-6">
                   {project.tags.map((tag) => (
                     <span key={tag} className="tag">{tag}</span>
                   ))}
                 </div>
               </div>
-            </a>
+
+              {/* Botón de Vista Previa */}
+              <div className="pt-4 border-t border-white/10 flex items-center justify-between gap-3">
+                <button
+                  type="button"
+                  onClick={(e) => {
+                    e.stopPropagation()
+                    setSelectedProject(project)
+                  }}
+                  className="w-full py-2.5 px-4 rounded-xl text-xs font-semibold bg-gradient-to-r from-purple-600/30 to-cyan-600/30 border border-purple-500/30 text-purple-200 hover:text-white hover:from-purple-600 hover:to-cyan-600 hover:border-transparent transition-all duration-300 flex items-center justify-center gap-2 group-hover:shadow-[0_0_15px_rgba(168,85,247,0.3)]"
+                >
+                  <Icons.Eye />
+                  <span>Vista previa</span>
+                </button>
+              </div>
+            </div>
           </div>
         ))}
       </div>
+
+      {/* Modal de Vista Previa */}
+      {selectedProject && (
+        <ProjectPreviewModal
+          project={selectedProject}
+          onClose={() => setSelectedProject(null)}
+        />
+      )}
     </section>
   )
 }
