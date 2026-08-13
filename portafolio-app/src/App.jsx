@@ -10,8 +10,9 @@ import crmInternoImg from './assets/previews/crm-interno.png'
 
 const PROFILE = {
   name: "Alonso Feria Arriaza",
-  role: "Desarollador Web Full Stack",
-  heroTagline: "Transformo necesidades de negocio en soluciones web escalables, seguras y diseñadas para crecer.",
+  headline: "Convierto problemas reales en soluciones digitales.",
+  description: "Desarrollo aplicaciones web, automatizaciones e integraciones que optimizan procesos, reducen tareas repetitivas y aportan valor al negocio.",
+  techStack: "Full-Stack Developer · Java · Spring Boot · React · Automatización · IA · Trazabilidad QR",
   ctaText: "Ver mis inventos",
   ctaLink: "#proyectos",
   github: "https://github.com/alonsoarriaza",
@@ -472,7 +473,7 @@ function HeroSection() {
         </div>
 
         {/* Name */}
-        <h1 className="font-display text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-extrabold mb-6 animate-fade-in-up leading-tight hero-text-shadow">
+        <h1 className="font-display text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-extrabold mb-4 animate-fade-in-up leading-tight hero-text-shadow">
           <span className="block text-white">{PROFILE.name.split(' ')[0]}</span>
           <span className="relative inline-block text-white">
             {PROFILE.name.split(' ').slice(1).join(' ')}
@@ -480,15 +481,20 @@ function HeroSection() {
           </span>
         </h1>
 
-        {/* Role */}
-        <p className="text-lg sm:text-xl md:text-2xl text-white max-w-2xl mx-auto mb-4 animate-fade-in-up delay-200 font-light hero-text-shadow">
-          {PROFILE.role}
+        {/* Headline */}
+        <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-300 via-pink-200 to-cyan-300 max-w-3xl mx-auto mb-4 animate-fade-in-up delay-200 hero-text-shadow">
+          {PROFILE.headline}
+        </h2>
+
+        {/* Description */}
+        <p className="text-base sm:text-lg text-white/80 max-w-2xl mx-auto mb-5 animate-fade-in-up delay-300 font-light leading-relaxed hero-text-shadow">
+          {PROFILE.description}
         </p>
 
-        {/* Tagline */}
-        <p className="text-base text-white/80 max-w-lg mx-auto mb-10 animate-fade-in-up delay-300 hero-text-shadow">
-          {PROFILE.heroTagline}
-        </p>
+        {/* Tech Stack */}
+        <div className="inline-block px-5 py-2 rounded-full border border-purple-400/20 bg-black/40 backdrop-blur-md text-xs sm:text-sm text-cyan-300/90 font-medium max-w-2xl mx-auto mb-8 animate-fade-in-up delay-300 shadow-[0_0_15px_rgba(168,85,247,0.15)]">
+          {PROFILE.techStack}
+        </div>
 
         {/* CTA Buttons */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 animate-fade-in-up delay-400">
