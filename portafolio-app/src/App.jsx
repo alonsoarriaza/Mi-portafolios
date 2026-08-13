@@ -29,8 +29,7 @@ const NAV_LINKS = [
 const EXPERIENCE = [
   {
     year: "Mayo 2025 — Presente",
-    role: "Becario",
-    company: "Coanda Technologies Solutions",
+    role: "Junior Full-Stack Developer · Prácticas",
     description: [
       "Diseño y desarrollo integral de una aplicación web personalizada (React, Spring Boot) para gestión de inventarios y trazabilidad con códigos QR en tiempo real.",
       "Automatización de procesos: creación de scripts (Google Apps Script), flujos documentales inteligentes (Therefore, Solpheo), incidencias ERP/CRM (ADV) y auditoría de ciberseguridad corporativa (Ciberguardian)."
