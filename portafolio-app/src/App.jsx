@@ -10,7 +10,7 @@ import crmInternoImg from './assets/previews/crm-interno.png'
 
 const PROFILE = {
   name: "Alonso Feria Arriaza",
-  headline: "Convierto problemas reales en soluciones digitales.",
+  headline: "Convierto problemas reales en soluciones digitales",
   description: "Desarrollo aplicaciones web, automatizaciones e integraciones que optimizan procesos, reducen tareas repetitivas y aportan valor al negocio.",
   techStack: "Full-Stack Developer · Java · Spring Boot · React · Automatización · IA · Trazabilidad QR",
   ctaText: "Ver mis inventos",
