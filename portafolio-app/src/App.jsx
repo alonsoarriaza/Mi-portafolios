@@ -149,7 +149,7 @@ Desarrollado como Trabajo de Fin de Grado (TFG) en Desarrollo de Aplicaciones We
   {
     id: "automatizacion-datos",
     title: "Desarrollador de Soluciones de Automatización / Analista de Datos",
-    description: `Desarrollé una aplicación web (Single Page Application) utilizando HTML5, Vanilla CSS y JavaScript (ES6) orientada a automatizar la clasificación de actividades comerciales...`,
+    description: `Desarrollo de una Single Page Application (SPA) para la clasificación automatizada de miles de clientes y sus actividades comerciales. Creación de un sistema propio de correspondencias y filtrado integrado con un agente de IA para analizar, relacionar y clasificar los datos según el catálogo oficial. La solución automatizó un proceso de alta carga manual, transformando una tarea que habría requerido meses de trabajo en un flujo mucho más ágil, estructurado y eficiente.`,
     notes: "Pasar de miles de clientes sueltos a su clasificación en un solo click",
     tags: ["HTML5", "Vanilla CSS", "JavaScript (ES6)", "MySQL/MariaDB", "Integración IA"],
     githubLink: "https://github.com/alonsoarriaza/Desarrollador-de-Soluciones-de-Automatizaci-n-Analista-de-Datos",
@@ -159,7 +159,7 @@ Desarrollado como Trabajo de Fin de Grado (TFG) en Desarrollo de Aplicaciones We
   {
     id: "coanda-forms",
     title: "Assistant Virtual de Recomendación Inteligente",
-    description: "Desarrollé e implementé un asistente virtual de recomendación inteligente especializado en sistemas de gestión documental corporativa...",
+    description: "Desarrollo de una aplicación web interactiva para la captación y cualificación automatizada de clientes, mediante un asistente inteligente capaz de analizar sus necesidades y recomendar la solución de gestión documental más adecuada. La información y afinidad obtenidas se sincronizan en tiempo real con un panel comercial, facilitando el seguimiento y la conversión de oportunidades. El proyecto se plantea como base para evolucionar hacia un CRM propio conectado a base de datos, centralizando contactos, oportunidades, interacciones y estado del proceso comercial.",
     notes: "Del clic en el formulario a la integración de software en tu negocio.",
     tags: ["Java", "Spring Boot 3.4", "JavaScript", "React", "PostgreSQL", "Bootstrap 5", "Docker", "Postman", "Git"],
     githubLink: "https://github.com/alonsoarriaza/CoandaForms",
