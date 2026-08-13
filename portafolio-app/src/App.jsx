@@ -914,7 +914,7 @@ function ProjectsSection() {
 
 
 /* ═══════════════════════════════════════════════
-   COMPONENTE: About Section
+   COMPONENTE: About Section (Sobre Mí + Datos de Interés)
    ═══════════════════════════════════════════════ */
 
 function AboutSection() {
@@ -933,50 +933,68 @@ function AboutSection() {
         </p>
       </div>
 
-      <div className="grid md:grid-cols-3 gap-6 md:gap-8">
-        {/* Main Text */}
-        <div className="md:col-span-2 animate-on-scroll">
-          <div className="glass-card p-6 md:p-8 space-y-5">
-            {ABOUT.paragraphs.map((p, i) => (
-              <p key={i} className="text-sm md:text-base text-white/60 leading-relaxed">
-                {p}
-              </p>
-            ))}
+      <div className="space-y-8">
+        {/* Bloque principal: Párrafos de Sobre Mí */}
+        <div className="animate-on-scroll">
+          <div className="glass-card p-6 md:p-10 border border-white/10 relative overflow-hidden">
+            <div className="absolute top-0 right-0 w-64 h-64 bg-purple-600/5 blur-3xl rounded-full pointer-events-none" />
+            <div className="space-y-6 relative z-10">
+              {ABOUT.paragraphs.map((p, i) => (
+                <div key={i} className="relative">
+                  <p className="text-sm sm:text-base text-white/70 leading-relaxed font-light">
+                    {p}
+                  </p>
+                  {i < ABOUT.paragraphs.length - 1 && (
+                    <div className="mt-6 border-b border-white/5" />
+                  )}
+                </div>
+              ))}
+            </div>
           </div>
         </div>
 
-        {/* Fun Facts */}
-        <div id="datos-interes" className="animate-on-scroll delay-200">
-          <div className="glass-card p-6 md:p-8 h-full">
-            <h3 className="font-display font-bold text-lg mb-5 flex items-center gap-2 text-white">
-              <Icons.Sparkle /> Datos de Interés
-            </h3>
-            <ul className="space-y-4">
-              {ABOUT.funFacts.map((fact, i) => {
-                if (fact.includes("Email:")) {
-                  const parts = fact.split("Email:");
-                  return (
-                    <li key={i} className="text-sm text-white/50 leading-relaxed pl-1">
-                      {parts[0]}Email: <a href={`mailto:${parts[1].trim()}`} className="text-purple-400 hover:text-purple-300 hover:underline transition-all">{parts[1]}</a>
-                    </li>
-                  );
-                }
-                if (fact.includes("Teléfono:")) {
-                  const parts = fact.split("Teléfono:");
-                  const phoneClean = parts[1].replace(/\s+/g, '');
-                  return (
-                    <li key={i} className="text-sm text-white/50 leading-relaxed pl-1">
-                      {parts[0]}Teléfono: <a href={`tel:${phoneClean}`} className="text-cyan-400 hover:text-cyan-300 hover:underline transition-all">{parts[1]}</a>
-                    </li>
-                  );
-                }
-                return (
-                  <li key={i} className="text-sm text-white/50 leading-relaxed pl-1">
-                    {fact}
-                  </li>
-                );
-              })}
-            </ul>
+        {/* Bloque secundario: Datos de Interés en tarjetas limpias */}
+        <div id="datos-interes" className="animate-on-scroll">
+          <div className="mb-4 flex items-center gap-2 text-white font-display font-bold text-lg">
+            <Icons.Sparkle />
+            <span>Datos de Interés</span>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {ABOUT.funFacts.map((fact, i) => {
+              let label = "Información"
+              let value = fact
+
+              if (fact.includes(":")) {
+                const parts = fact.split(":")
+                label = parts[0].trim()
+                value = parts.slice(1).join(":").trim()
+              }
+
+              const isEmail = label === "Email"
+              const isPhone = label === "Teléfono"
+
+              return (
+                <div key={i} className="glass-card p-5 border border-purple-500/20 hover:border-purple-400/40 transition-all duration-300 flex flex-col justify-between">
+                  <div>
+                    <span className="text-[10px] font-bold text-purple-300 uppercase tracking-widest block mb-1.5">{label}</span>
+                    {isEmail ? (
+                      <a href={`mailto:${value}`} className="text-xs sm:text-sm text-cyan-300 hover:text-white hover:underline transition-all break-all font-medium">
+                        {value}
+                      </a>
+                    ) : isPhone ? (
+                      <a href={`tel:${value.replace(/\s+/g, '')}`} className="text-xs sm:text-sm text-cyan-300 hover:text-white hover:underline transition-all font-medium">
+                        {value}
+                      </a>
+                    ) : (
+                      <p className="text-xs sm:text-sm text-white/80 font-light leading-relaxed">
+                        {value}
+                      </p>
+                    )}
+                  </div>
+                </div>
+              )
+            })}
           </div>
         </div>
       </div>
