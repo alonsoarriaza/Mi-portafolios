@@ -395,7 +395,7 @@ function VideoBackground() {
 
   useEffect(() => {
     const onScroll = () => {
-      const maxScroll = window.innerHeight * 0.8
+      const maxScroll = window.innerHeight * 0.7
       const progress = Math.min(window.scrollY / maxScroll, 1)
       setScrollProgress(progress)
     }
@@ -410,29 +410,29 @@ function VideoBackground() {
         loop
         muted
         playsInline
-        className="w-full h-full object-cover transition-[filter] duration-300"
+        className="w-full h-full object-cover transition-[filter,transform] duration-300 ease-out"
         style={{
-          filter: `blur(${scrollProgress * 12}px) brightness(${1 - scrollProgress * 0.4})`,
-          transform: `scale(${1 + scrollProgress * 0.08})`,
+          filter: `blur(${scrollProgress * 16}px) brightness(${1 - scrollProgress * 0.25})`,
+          transform: `scale(${1 + scrollProgress * 0.05})`,
         }}
       >
         <source src="/8bits.mp4" type="video/mp4" />
       </video>
 
-      {/* Capa 1: Viñeta radial */}
+      {/* Capa 1: Viñeta radial para enfoque central */}
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
-          background: 'radial-gradient(ellipse at center, transparent 40%, rgba(0,0,0,0.5) 100%)',
+          background: 'radial-gradient(ellipse at center, transparent 30%, rgba(0,0,0,0.5) 100%)',
         }}
       />
 
-      {/* Capa 2: Degradado vertical suave hacia el tema claro */}
+      {/* Capa 2: Degradado de transición de opacidad suave hacia el fondo matizado */}
       <div
-        className="absolute inset-0 pointer-events-none transition-opacity duration-500"
+        className="absolute inset-0 pointer-events-none transition-opacity duration-300"
         style={{
-          background: 'linear-gradient(to bottom, rgba(0,0,0,0.3) 0%, transparent 40%, transparent 60%, rgba(241,245,249,0.95) 100%)',
-          opacity: 0.6 + scrollProgress * 0.4,
+          background: 'linear-gradient(to bottom, rgba(0,0,0,0.2) 0%, rgba(241,245,249,0.3) 50%, rgba(241,245,249,0.7) 100%)',
+          opacity: 0.5 + scrollProgress * 0.35,
         }}
       />
     </div>
@@ -527,16 +527,16 @@ function HeroSection() {
 
 
 /* ═══════════════════════════════════════════════
-   COMPONENTE: Content Wrapper (Tema claro matizado: slate-100 + lavanda + sky)
+   COMPONENTE: Content Wrapper (con transparencia suave para visibilidad de video difuminado)
    ═══════════════════════════════════════════════ */
 
 function ContentWrapper({ children }) {
   return (
-    <div className="relative overflow-hidden bg-gradient-to-b from-slate-100 via-purple-50/50 via-sky-50/40 to-slate-100 text-slate-900">
+    <div className="relative overflow-hidden bg-gradient-to-b from-slate-100/80 via-purple-50/60 via-sky-50/50 to-slate-100/80 backdrop-blur-md text-slate-900">
       {/* Orbes decorativos de luz pastel matizada */}
-      <div className="absolute top-[10%] -left-32 w-96 h-96 rounded-full bg-purple-200/60 blur-[130px] pointer-events-none" />
-      <div className="absolute top-[40%] -right-32 w-96 h-96 rounded-full bg-sky-200/60 blur-[130px] pointer-events-none" />
-      <div className="absolute top-[70%] left-1/4 w-96 h-96 rounded-full bg-indigo-200/50 blur-[130px] pointer-events-none" />
+      <div className="absolute top-[10%] -left-32 w-96 h-96 rounded-full bg-purple-200/50 blur-[130px] pointer-events-none" />
+      <div className="absolute top-[40%] -right-32 w-96 h-96 rounded-full bg-sky-200/50 blur-[130px] pointer-events-none" />
+      <div className="absolute top-[70%] left-1/4 w-96 h-96 rounded-full bg-indigo-200/40 blur-[130px] pointer-events-none" />
 
       {/* Línea luminosa decorativa superior */}
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-purple-300 to-transparent" />
