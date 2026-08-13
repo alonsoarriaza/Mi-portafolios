@@ -306,20 +306,20 @@ function Navbar() {
   return (
     <nav
       id="navbar"
-      className={`fixed left-1/2 -translate-x-1/2 z-50 transition-all duration-500 w-[92%] max-w-5xl rounded-full border border-white/15 ${scrolled
-        ? 'top-4 bg-slate-950/90 backdrop-blur-xl shadow-[0_12px_40px_rgba(0,0,0,0.6)] py-2.5 px-6'
-        : 'top-6 bg-slate-900/60 backdrop-blur-md shadow-lg py-3.5 px-8'
+      className={`fixed left-1/2 -translate-x-1/2 z-50 transition-all duration-500 w-[92%] max-w-5xl rounded-full border ${scrolled
+        ? 'top-4 bg-white/95 border-slate-200 backdrop-blur-xl shadow-lg py-2.5 px-6'
+        : 'top-6 bg-slate-900/80 border-white/10 backdrop-blur-md shadow-md py-3.5 px-8'
         }`}
     >
       <div className="flex items-center justify-between">
         {/* Logo */}
         <a href="#" className="flex items-center gap-2 group">
-          <span className="text-purple-400 group-hover:rotate-180 transition-transform duration-700">
+          <span className="text-purple-600 group-hover:rotate-180 transition-transform duration-700">
             <Icons.Sparkle />
           </span>
-          <span className="font-display font-bold text-lg tracking-tight text-white">
+          <span className={`font-display font-bold text-lg tracking-tight ${scrolled ? 'text-slate-900' : 'text-white'}`}>
             {PROFILE.name.split(' ')[0]}
-            <span className="text-purple-400">.</span>
+            <span className="text-purple-600">.</span>
           </span>
         </a>
 
@@ -329,7 +329,7 @@ function Navbar() {
             <a
               key={link.href}
               href={link.href}
-              className="text-sm font-semibold text-slate-200 hover:text-purple-300 transition-colors duration-300 relative py-1 after:content-[''] after:absolute after:bottom-[-2px] after:left-0 after:w-0 after:h-[2px] after:bg-gradient-to-r after:from-purple-400 after:to-cyan-400 after:transition-all after:duration-300 hover:after:w-full"
+              className={`text-sm font-bold transition-colors duration-300 relative py-1 ${scrolled ? 'text-slate-800 hover:text-purple-700' : 'text-white/90 hover:text-purple-300'}`}
             >
               {link.label}
             </a>
@@ -340,7 +340,7 @@ function Navbar() {
         <div className="hidden md:block">
           <a
             href="#contacto"
-            className="px-5 py-1.5 rounded-full text-xs font-bold bg-gradient-to-r from-purple-600 to-cyan-600 text-white shadow-[0_0_20px_rgba(168,85,247,0.3)] hover:shadow-[0_0_30px_rgba(168,85,247,0.5)] transition-all duration-300 hover:scale-105"
+            className="px-5 py-1.5 rounded-full text-xs font-bold bg-gradient-to-r from-purple-600 to-indigo-600 text-white hover:shadow-md hover:shadow-purple-500/20 transition-all duration-300 hover:scale-105"
           >
             Contacto
           </a>
@@ -349,7 +349,7 @@ function Navbar() {
         {/* Mobile Menu Toggle */}
         <button
           onClick={() => setMobileOpen(!mobileOpen)}
-          className="md:hidden p-2 rounded-full bg-white/10 border border-white/20 text-white hover:bg-white/20 transition-all"
+          className={`md:hidden p-2 rounded-full border transition-all ${scrolled ? 'bg-slate-100 border-slate-300 text-slate-900' : 'bg-white/10 border-white/20 text-white'}`}
           aria-label="Toggle menu"
         >
           {mobileOpen ? <Icons.Close /> : <Icons.Menu />}
@@ -361,13 +361,13 @@ function Navbar() {
         className={`md:hidden overflow-hidden transition-all duration-500 ${mobileOpen ? 'max-h-[400px] opacity-100 mt-4' : 'max-h-0 opacity-0'
           }`}
       >
-        <div className="pt-3 pb-2 border-t border-white/10 flex flex-col gap-1">
+        <div className={`pt-3 pb-2 border-t flex flex-col gap-1 ${scrolled ? 'border-slate-200' : 'border-white/10'}`}>
           {NAV_LINKS.map((link) => (
             <a
               key={link.href}
               href={link.href}
               onClick={() => setMobileOpen(false)}
-              className="block py-2.5 px-4 text-slate-200 hover:text-white hover:bg-white/10 rounded-xl transition-all duration-300 text-sm font-semibold"
+              className={`block py-2.5 px-4 rounded-xl transition-all duration-300 text-sm font-bold ${scrolled ? 'text-slate-800 hover:bg-slate-100' : 'text-white/90 hover:bg-white/10'}`}
             >
               {link.label}
             </a>
@@ -375,7 +375,7 @@ function Navbar() {
           <a
             href="#contacto"
             onClick={() => setMobileOpen(false)}
-            className="block text-center mt-2 py-2.5 px-4 rounded-xl bg-gradient-to-r from-purple-600 to-cyan-600 text-white text-sm font-bold transition-all"
+            className="block text-center mt-2 py-2.5 px-4 rounded-xl bg-gradient-to-r from-purple-600 to-indigo-600 text-white text-sm font-bold transition-all"
           >
             Contacto
           </a>
@@ -423,15 +423,15 @@ function VideoBackground() {
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
-          background: 'radial-gradient(ellipse at center, transparent 40%, rgba(0,0,0,0.6) 100%)',
+          background: 'radial-gradient(ellipse at center, transparent 40%, rgba(0,0,0,0.5) 100%)',
         }}
       />
 
-      {/* Capa 2: Degradado vertical */}
+      {/* Capa 2: Degradado vertical suave hacia el tema claro */}
       <div
         className="absolute inset-0 pointer-events-none transition-opacity duration-500"
         style={{
-          background: 'linear-gradient(to bottom, rgba(0,0,0,0.3) 0%, transparent 40%, transparent 60%, rgba(8,12,20,0.85) 100%)',
+          background: 'linear-gradient(to bottom, rgba(0,0,0,0.3) 0%, transparent 40%, transparent 60%, rgba(241,245,249,0.95) 100%)',
           opacity: 0.6 + scrollProgress * 0.4,
         }}
       />
@@ -448,12 +448,12 @@ function HeroSection() {
   return (
     <section id="hero" className="relative min-h-screen flex items-center justify-center">
       {/* Capa de respaldo para legibilidad sobre el video */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-transparent to-[#080c14]/60 pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-transparent to-slate-900/50 pointer-events-none" />
 
       <div className="relative text-center px-4 sm:px-6">
         {/* Badge */}
-        <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-purple-400/40 bg-black/50 backdrop-blur-xl mb-8 animate-fade-in shadow-lg">
-          <span className="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse shadow-[0_0_10px_rgba(52,211,153,0.8)]" />
+        <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-purple-400/30 bg-black/40 backdrop-blur-xl mb-8 animate-fade-in shadow-md">
+          <span className="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse shadow-[0_0_8px_rgba(52,211,153,0.8)]" />
           <span className="text-sm text-white font-semibold">Disponible para proyectos</span>
         </div>
 
@@ -462,7 +462,7 @@ function HeroSection() {
           <span className="block text-white">{PROFILE.name.split(' ')[0]}</span>
           <span className="relative inline-block text-white">
             {PROFILE.name.split(' ').slice(1).join(' ')}
-            <span className="absolute -bottom-2 left-0 w-full h-1.5 rounded-full bg-gradient-to-r from-purple-500 via-pink-500 to-cyan-500 opacity-90 shadow-[0_0_12px_rgba(168,85,247,0.6)]" />
+            <span className="absolute -bottom-2 left-0 w-full h-1.5 rounded-full bg-gradient-to-r from-purple-500 via-pink-500 to-cyan-500 opacity-90 shadow-md" />
           </span>
         </h1>
 
@@ -472,12 +472,12 @@ function HeroSection() {
         </h2>
 
         {/* Description */}
-        <p className="text-base sm:text-lg text-slate-100 max-w-2xl mx-auto mb-5 animate-fade-in-up delay-300 font-medium leading-relaxed hero-text-shadow">
+        <p className="text-base sm:text-lg text-white max-w-2xl mx-auto mb-5 animate-fade-in-up delay-300 font-medium leading-relaxed hero-text-shadow">
           {PROFILE.description}
         </p>
 
         {/* Tech Stack */}
-        <div className="inline-block px-5 py-2.5 rounded-full border border-purple-400/30 bg-black/60 backdrop-blur-md text-xs sm:text-sm text-cyan-200 font-bold max-w-2xl mx-auto mb-8 animate-fade-in-up delay-300 shadow-xl">
+        <div className="inline-block px-5 py-2.5 rounded-full border border-purple-400/30 bg-black/50 backdrop-blur-md text-xs sm:text-sm text-cyan-200 font-bold max-w-2xl mx-auto mb-8 animate-fade-in-up delay-300 shadow-md">
           {PROFILE.techStack}
         </div>
 
@@ -485,7 +485,7 @@ function HeroSection() {
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 animate-fade-in-up delay-400">
           <a
             href={PROFILE.ctaLink}
-            className="group px-8 py-3.5 rounded-full bg-gradient-to-r from-purple-600 via-pink-600 to-cyan-600 text-white font-bold text-sm tracking-wide shadow-[0_0_25px_rgba(168,85,247,0.4)] hover:shadow-[0_0_40px_rgba(168,85,247,0.6)] transition-all duration-500 hover:scale-105 flex items-center gap-2"
+            className="group px-8 py-3.5 rounded-full bg-gradient-to-r from-purple-600 to-indigo-600 text-white font-bold text-sm tracking-wide hover:shadow-[0_8px_30px_rgba(147,51,234,0.35)] transition-all duration-500 hover:scale-105 flex items-center gap-2"
           >
             {PROFILE.ctaText}
             <span className="group-hover:translate-y-1 transition-transform duration-300">
@@ -497,7 +497,7 @@ function HeroSection() {
               href={PROFILE.github}
               target="_blank"
               rel="noopener noreferrer"
-              className="p-3 rounded-full border border-white/25 bg-black/50 backdrop-blur-xl text-white hover:text-white hover:border-purple-400 hover:bg-purple-500/25 transition-all duration-300 shadow-lg"
+              className="p-3 rounded-full border border-white/20 bg-black/40 backdrop-blur-xl text-white hover:text-white hover:border-purple-400/40 hover:bg-purple-500/20 transition-all duration-300"
               aria-label="GitHub"
             >
               <Icons.GitHub />
@@ -506,7 +506,7 @@ function HeroSection() {
               href={PROFILE.linkedin}
               target="_blank"
               rel="noopener noreferrer"
-              className="p-3 rounded-full border border-white/25 bg-black/50 backdrop-blur-xl text-white hover:text-white hover:border-cyan-400 hover:bg-cyan-500/25 transition-all duration-300 shadow-lg"
+              className="p-3 rounded-full border border-white/20 bg-black/40 backdrop-blur-xl text-white hover:text-white hover:border-cyan-400/40 hover:bg-cyan-500/20 transition-all duration-300"
               aria-label="LinkedIn"
             >
               <Icons.LinkedIn />
@@ -517,7 +517,7 @@ function HeroSection() {
 
       {/* Scroll indicator */}
       <div className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce">
-        <div className="w-6 h-10 rounded-full border-2 border-purple-400/50 flex justify-center pt-2 animate-glow-pulse">
+        <div className="w-6 h-10 rounded-full border-2 border-purple-400/40 flex justify-center pt-2 animate-glow-pulse">
           <div className="w-1.5 h-2.5 rounded-full bg-gradient-to-b from-purple-400 to-cyan-400 animate-pulse" />
         </div>
       </div>
@@ -527,20 +527,19 @@ function HeroSection() {
 
 
 /* ═══════════════════════════════════════════════
-   COMPONENTE: Content Wrapper (con estética de alto contraste y orbes de luz)
+   COMPONENTE: Content Wrapper (Tema claro matizado: slate-100 + lavanda + sky)
    ═══════════════════════════════════════════════ */
 
 function ContentWrapper({ children }) {
   return (
-    <div className="relative overflow-hidden bg-[#080c14] text-slate-100">
-      {/* Orbes decorativos de color intenso */}
-      <div className="absolute top-[10%] -left-32 w-96 h-96 rounded-full bg-purple-600/15 blur-[130px] pointer-events-none" />
-      <div className="absolute top-[35%] -right-32 w-96 h-96 rounded-full bg-cyan-500/12 blur-[130px] pointer-events-none" />
-      <div className="absolute top-[65%] left-1/4 w-96 h-96 rounded-full bg-pink-500/10 blur-[130px] pointer-events-none" />
-      <div className="absolute top-[88%] right-1/4 w-96 h-96 rounded-full bg-emerald-500/10 blur-[130px] pointer-events-none" />
+    <div className="relative overflow-hidden bg-gradient-to-b from-slate-100 via-purple-50/50 via-sky-50/40 to-slate-100 text-slate-900">
+      {/* Orbes decorativos de luz pastel matizada */}
+      <div className="absolute top-[10%] -left-32 w-96 h-96 rounded-full bg-purple-200/60 blur-[130px] pointer-events-none" />
+      <div className="absolute top-[40%] -right-32 w-96 h-96 rounded-full bg-sky-200/60 blur-[130px] pointer-events-none" />
+      <div className="absolute top-[70%] left-1/4 w-96 h-96 rounded-full bg-indigo-200/50 blur-[130px] pointer-events-none" />
 
       {/* Línea luminosa decorativa superior */}
-      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-purple-500/50 to-transparent" />
+      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-purple-300 to-transparent" />
 
       {/* Contenido */}
       <div className="relative z-10">
@@ -562,8 +561,8 @@ function ExperienceSection() {
     <section id="experiencia" ref={sectionRef} className="section-container">
       <div className="animate-on-scroll">
         <div className="flex items-center gap-3 mb-2">
-          <span className="text-purple-400"><Icons.Briefcase /></span>
-          <span className="text-sm font-bold text-purple-300 uppercase tracking-widest">Trayectoria</span>
+          <span className="text-purple-700"><Icons.Briefcase /></span>
+          <span className="text-sm font-bold text-purple-800 uppercase tracking-widest">Trayectoria</span>
         </div>
         <h2 className="section-title">Experiencia Profesional</h2>
         <p className="section-subtitle">
@@ -573,7 +572,7 @@ function ExperienceSection() {
 
       <div className="relative">
         {/* Línea del timeline */}
-        <div className="timeline-line" />
+        <div className="timeline-line bg-gradient-to-b from-purple-300 via-indigo-300 to-purple-200" />
 
         {EXPERIENCE.map((item, i) => (
           <div
@@ -583,30 +582,30 @@ function ExperienceSection() {
             style={{ animationDelay: `${i * 150}ms` }}
           >
             {/* Dot */}
-            <div className="absolute left-[10px] md:left-1/2 md:-translate-x-1/2 top-2 w-5 h-5 rounded-full border-2 border-purple-400 bg-slate-950 z-10 shadow-[0_0_10px_rgba(168,85,247,0.5)]">
-              <div className="w-full h-full rounded-full bg-purple-500/40 animate-pulse-slow" />
+            <div className="absolute left-[10px] md:left-1/2 md:-translate-x-1/2 top-2 w-5 h-5 rounded-full border-2 border-purple-600 bg-white z-10 shadow-sm">
+              <div className="w-full h-full rounded-full bg-purple-500/20 animate-pulse-slow" />
             </div>
 
             {/* Content */}
             <div className={`md:w-1/2 ${i % 2 === 0 ? 'md:pr-12' : 'md:pl-12'}`}>
-              <div className="glass-card-hover p-6 md:p-8 border border-purple-500/20 bg-slate-900/90 shadow-xl">
-                <div className="inline-flex items-center gap-2 text-xs font-bold text-purple-300 bg-purple-500/15 border border-purple-500/30 px-3.5 py-1.5 rounded-lg mb-3">
+              <div className="glass-card-hover p-6 md:p-8 bg-white border border-purple-100 shadow-md shadow-purple-500/5">
+                <div className="inline-flex items-center gap-2 text-xs font-extrabold text-purple-900 bg-purple-100/80 border border-purple-200 px-3.5 py-1.5 rounded-lg mb-3">
                   <svg className="w-3.5 h-3.5 opacity-80" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><rect x="3" y="4" width="18" height="18" rx="2" /><path d="M16 2v4M8 2v4M3 10h18" /></svg>
                   {item.year}
                 </div>
-                <h3 className="text-xl font-display font-extrabold mb-1 text-white">{item.role}</h3>
-                <p className="text-sm text-cyan-300 mb-3 font-semibold">{item.company}</p>
+                <h3 className="text-xl font-display font-extrabold mb-1 text-slate-900">{item.role}</h3>
+                <p className="text-sm text-purple-800 mb-3 font-bold">{item.company}</p>
                 {Array.isArray(item.description) ? (
-                  <ul className="space-y-2.5 text-sm text-slate-200 leading-relaxed font-normal list-none">
+                  <ul className="space-y-2.5 text-sm text-slate-700 leading-relaxed font-medium list-none">
                     {item.description.map((desc, j) => (
                       <li key={j} className="flex gap-2">
-                        <span className="text-purple-400 font-bold mt-1 shrink-0">▸</span>
-                        <span className="text-slate-200">{desc}</span>
+                        <span className="text-purple-600 font-bold mt-1 shrink-0">▸</span>
+                        <span className="text-slate-700">{desc}</span>
                       </li>
                     ))}
                   </ul>
                 ) : (
-                  <p className="text-sm text-slate-200 leading-relaxed font-normal">{item.description}</p>
+                  <p className="text-sm text-slate-700 leading-relaxed font-medium">{item.description}</p>
                 )}
               </div>
             </div>
@@ -629,8 +628,8 @@ function EducationSection() {
     <section id="educacion" ref={sectionRef} className="section-container">
       <div className="animate-on-scroll">
         <div className="flex items-center gap-3 mb-2">
-          <span className="text-cyan-400"><Icons.GraduationCap /></span>
-          <span className="text-sm font-bold text-cyan-300 uppercase tracking-widest">Formación</span>
+          <span className="text-sky-700"><Icons.GraduationCap /></span>
+          <span className="text-sm font-bold text-sky-800 uppercase tracking-widest">Formación</span>
         </div>
         <h2 className="section-title">Educación</h2>
         <p className="section-subtitle">
@@ -641,17 +640,17 @@ function EducationSection() {
       <div className="grid gap-6 md:gap-8">
         {EDUCATION.map((item, i) => (
           <div key={i} className="animate-on-scroll" style={{ animationDelay: `${i * 150}ms` }}>
-            <div className="glass-card-hover p-6 md:p-8 flex flex-col md:flex-row md:items-start gap-4 md:gap-8 border border-cyan-500/20 bg-slate-900/90 shadow-xl">
+            <div className="glass-card-hover p-6 md:p-8 flex flex-col md:flex-row md:items-start gap-4 md:gap-8 bg-white border border-sky-100 shadow-md shadow-sky-500/5">
               <div className="md:w-44 shrink-0">
-                <div className="inline-flex items-center gap-2 text-xs font-bold text-cyan-300 bg-cyan-500/15 border border-cyan-500/30 px-3.5 py-1.5 rounded-lg">
+                <div className="inline-flex items-center gap-2 text-xs font-extrabold text-sky-900 bg-sky-100/80 border border-sky-200 px-3.5 py-1.5 rounded-lg">
                   <svg className="w-3.5 h-3.5 opacity-80" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><rect x="3" y="4" width="18" height="18" rx="2" /><path d="M16 2v4M8 2v4M3 10h18" /></svg>
                   {item.year}
                 </div>
               </div>
               <div>
-                <h3 className="text-lg font-display font-extrabold mb-1 text-white">{item.degree}</h3>
-                <p className="text-sm text-purple-300 font-semibold mb-3">{item.institution}</p>
-                <p className="text-sm text-slate-200 leading-relaxed font-normal">{item.description}</p>
+                <h3 className="text-lg font-display font-extrabold mb-1 text-slate-900">{item.degree}</h3>
+                <p className="text-sm text-purple-800 font-bold mb-3">{item.institution}</p>
+                <p className="text-sm text-slate-700 leading-relaxed font-medium">{item.description}</p>
               </div>
             </div>
           </div>
@@ -695,31 +694,31 @@ function ProjectPreviewModal({ project, onClose }) {
   return createPortal(
     <div
       onClick={onClose}
-      style={{ position: 'fixed', inset: 0, zIndex: 9999, display: 'flex', alignItems: 'center', justify: 'center', padding: '1rem', backgroundColor: 'rgba(0, 0, 0, 0.85)', backdropFilter: 'blur(8px)' }}
+      style={{ position: 'fixed', inset: 0, zIndex: 9999, display: 'flex', alignItems: 'center', justify: 'center', padding: '1rem', backgroundColor: 'rgba(15, 23, 42, 0.75)', backdropFilter: 'blur(8px)' }}
     >
       <div
         onClick={(e) => e.stopPropagation()}
-        style={{ position: 'relative', width: '100%', maxWidth: '56rem', backgroundColor: '#090d16', borderRadius: '1rem', border: '1px solid rgba(168, 85, 247, 0.4)', padding: '1.5rem', boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.8)', maxHeight: '90vh', overflowY: 'auto' }}
+        style={{ position: 'relative', width: '100%', maxWidth: '56rem', backgroundColor: '#ffffff', borderRadius: '1rem', border: '1px solid #cbd5e1', padding: '1.5rem', boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.25)', maxHeight: '90vh', overflowY: 'auto' }}
       >
         <button
           onClick={onClose}
-          style={{ position: 'absolute', top: '1rem', right: '1rem', padding: '0.5rem', borderRadius: '9999px', backgroundColor: 'rgba(255, 255, 255, 0.1)', color: 'white', cursor: 'pointer', border: 'none' }}
+          style={{ position: 'absolute', top: '1rem', right: '1rem', padding: '0.5rem', borderRadius: '9999px', backgroundColor: '#f1f5f9', color: '#334155', cursor: 'pointer', border: 'none' }}
           aria-label="Cerrar modal"
         >
           <Icons.Close />
         </button>
 
         <div style={{ marginBottom: '1.25rem' }}>
-          <span style={{ fontSize: '0.75rem', fontWeight: 700, color: '#c084fc', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Vista Previa de Proyecto</span>
-          <h3 style={{ fontSize: '1.5rem', fontWeight: 800, color: 'white', marginTop: '0.25rem' }}>{project.title}</h3>
+          <span style={{ fontSize: '0.75rem', fontWeight: 800, color: '#7e22ce', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Vista Previa de Proyecto</span>
+          <h3 style={{ fontSize: '1.5rem', fontWeight: 800, color: '#0f172a', marginTop: '0.25rem' }}>{project.title}</h3>
           {project.notes && (
-            <p style={{ fontSize: '0.875rem', color: '#67e8f9', marginTop: '0.25rem', fontWeight: 600 }}>
+            <p style={{ fontSize: '0.875rem', color: '#0369a1', marginTop: '0.25rem', fontWeight: 700 }}>
               💡 {project.notes}
             </p>
           )}
         </div>
 
-        <div style={{ position: 'relative', width: '100%', borderRadius: '0.75rem', overflow: 'hidden', backgroundColor: 'black', border: '1px solid rgba(255, 255, 255, 0.15)', marginBottom: '1.25rem', minHeight: '200px', display: 'flex', alignItems: 'center', justify: 'center' }}>
+        <div style={{ position: 'relative', width: '100%', borderRadius: '0.75rem', overflow: 'hidden', backgroundColor: '#f8fafc', border: '1px solid #e2e8f0', marginBottom: '1.25rem', minHeight: '200px', display: 'flex', alignItems: 'center', justify: 'center' }}>
           <img
             src={currentSrc}
             alt={`Captura de pantalla de ${project.title}`}
@@ -729,26 +728,26 @@ function ProjectPreviewModal({ project, onClose }) {
         </div>
 
         <div style={{ marginBottom: '1.25rem' }}>
-          <h4 style={{ fontSize: '0.875rem', fontWeight: 700, color: '#f8fafc', marginBottom: '0.5rem' }}>Descripción del Proyecto:</h4>
-          <p style={{ fontSize: '0.875rem', color: '#e2e8f0', lineHeight: 1.6, whiteSpace: 'pre-line' }}>
+          <h4 style={{ fontSize: '0.875rem', fontWeight: 700, color: '#0f172a', marginBottom: '0.5rem' }}>Descripción del Proyecto:</h4>
+          <p style={{ fontSize: '0.875rem', color: '#334155', lineHeight: 1.6, fontWeight: 500, whiteSpace: 'pre-line' }}>
             {project.description}
           </p>
         </div>
 
         <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem', marginBottom: '1.5rem' }}>
           {project.tags.map((tag) => (
-            <span key={tag} style={{ padding: '0.25rem 0.75rem', fontSize: '0.75rem', fontWeight: 600, borderRadius: '9999px', backgroundColor: 'rgba(168, 85, 247, 0.2)', color: '#e9d5ff', border: '1px solid rgba(168, 85, 247, 0.4)' }}>
+            <span key={tag} style={{ padding: '0.25rem 0.75rem', fontSize: '0.75rem', fontWeight: 700, borderRadius: '9999px', backgroundColor: '#f3e8ff', color: '#6b21a8', border: '1px solid #d8b4fe' }}>
               {tag}
             </span>
           ))}
         </div>
 
-        <div style={{ display: 'flex', alignItems: 'center', justify: 'space-between', gap: '1rem', paddingTop: '1rem', borderTop: '1px solid rgba(255, 255, 255, 0.1)' }}>
+        <div style={{ display: 'flex', alignItems: 'center', justify: 'space-between', gap: '1rem', paddingTop: '1rem', borderTop: '1px solid #f1f5f9' }}>
           <a
             href={project.githubLink || "https://github.com/alonsoarriaza"}
             target="_blank"
             rel="noopener noreferrer"
-            style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', padding: '0.625rem 1.5rem', borderRadius: '9999px', background: 'linear-gradient(to right, #9333ea, #0891b2)', color: 'white', fontWeight: 700, fontSize: '0.75rem', textDecoration: 'none', letterSpacing: '0.05em' }}
+            style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', padding: '0.625rem 1.5rem', borderRadius: '9999px', background: 'linear-gradient(to right, #7e22ce, #4338ca)', color: 'white', fontWeight: 700, fontSize: '0.75rem', textDecoration: 'none', letterSpacing: '0.05em' }}
           >
             <span>Ver repositorio en GitHub</span>
             <Icons.ExternalLink />
@@ -756,7 +755,7 @@ function ProjectPreviewModal({ project, onClose }) {
 
           <button
             onClick={onClose}
-            style={{ padding: '0.625rem 1.25rem', borderRadius: '9999px', border: '1px solid rgba(255, 255, 255, 0.2)', backgroundColor: 'transparent', color: 'rgba(255, 255, 255, 0.8)', cursor: 'pointer', fontSize: '0.75rem', fontWeight: 600 }}
+            style={{ padding: '0.625rem 1.25rem', borderRadius: '9999px', border: '1px solid #cbd5e1', backgroundColor: '#f8fafc', color: '#334155', cursor: 'pointer', fontSize: '0.75rem', fontWeight: 700 }}
           >
             Cerrar vista previa
           </button>
@@ -777,18 +776,18 @@ function ProjectsSection() {
   const [selectedProject, setSelectedProject] = useState(null)
 
   const cardAccents = [
-    { border: "border-purple-500/30 hover:border-purple-400/60", bg: "bg-purple-950/20", badge: "bg-purple-500/20 text-purple-200 border-purple-500/30" },
-    { border: "border-cyan-500/30 hover:border-cyan-400/60", bg: "bg-cyan-950/20", badge: "bg-cyan-500/20 text-cyan-200 border-cyan-500/30" },
-    { border: "border-emerald-500/30 hover:border-emerald-400/60", bg: "bg-emerald-950/20", badge: "bg-emerald-500/20 text-emerald-200 border-emerald-500/30" },
-    { border: "border-amber-500/30 hover:border-amber-400/60", bg: "bg-amber-950/20", badge: "bg-amber-500/20 text-amber-200 border-amber-500/30" },
+    { border: "border-purple-200 hover:border-purple-400", bg: "bg-gradient-to-br from-white via-purple-50/30 to-white", badge: "bg-purple-100 text-purple-900 border-purple-200" },
+    { border: "border-sky-200 hover:border-sky-400", bg: "bg-gradient-to-br from-white via-sky-50/30 to-white", badge: "bg-sky-100 text-sky-900 border-sky-200" },
+    { border: "border-emerald-200 hover:border-emerald-400", bg: "bg-gradient-to-br from-white via-emerald-50/30 to-white", badge: "bg-emerald-100 text-emerald-900 border-emerald-200" },
+    { border: "border-amber-200 hover:border-amber-400", bg: "bg-gradient-to-br from-white via-amber-50/30 to-white", badge: "bg-amber-100 text-amber-900 border-amber-200" },
   ]
 
   return (
     <section id="proyectos" ref={sectionRef} className="section-container">
       <div className="animate-on-scroll">
         <div className="flex items-center gap-3 mb-2">
-          <span className="text-pink-400"><Icons.Code /></span>
-          <span className="text-sm font-bold text-pink-300 uppercase tracking-widest">Portfolio</span>
+          <span className="text-purple-700"><Icons.Code /></span>
+          <span className="text-sm font-bold text-purple-800 uppercase tracking-widest">Portfolio</span>
         </div>
         <h2 className="section-title">Proyectos</h2>
         <p className="section-subtitle">
@@ -802,7 +801,7 @@ function ProjectsSection() {
           return (
             <div key={i} className="animate-on-scroll" style={{ animationDelay: `${i * 150}ms` }}>
               <div
-                className={`glass-card p-6 md:p-8 h-full flex flex-col group justify-between border ${accent.border} ${accent.bg} transition-all duration-500 relative hover:scale-[1.01] overflow-hidden shadow-xl`}
+                className={`glass-card p-6 md:p-8 h-full flex flex-col group justify-between border ${accent.border} ${accent.bg} transition-all duration-500 relative hover:-translate-y-1 shadow-md hover:shadow-xl hover:shadow-purple-500/10 overflow-hidden`}
               >
                 {/* Visual Header & Title */}
                 <div>
@@ -811,10 +810,10 @@ function ProjectsSection() {
                       href={project.githubLink || "https://github.com/alonsoarriaza"}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="hover:text-purple-300 transition-colors duration-300"
+                      className="hover:text-purple-700 transition-colors duration-300"
                       title="Ver en GitHub"
                     >
-                      <h3 className="text-xl font-display font-extrabold text-white hover:text-purple-300 transition-colors leading-snug">
+                      <h3 className="text-xl font-display font-extrabold text-slate-900 hover:text-purple-700 transition-colors leading-snug">
                         {project.title}
                       </h3>
                     </a>
@@ -822,14 +821,14 @@ function ProjectsSection() {
                       href={project.githubLink || "https://github.com/alonsoarriaza"}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-white/40 hover:text-purple-300 transition-colors duration-300 shrink-0 mt-1 p-1"
+                      className="text-slate-400 hover:text-purple-600 transition-colors duration-300 shrink-0 mt-1 p-1"
                       title="Ver en GitHub"
                     >
                       <Icons.ExternalLink />
                     </a>
                   </div>
 
-                  <p className="text-xs sm:text-sm text-slate-200 mb-5 line-clamp-3 leading-relaxed font-normal">
+                  <p className="text-xs sm:text-sm text-slate-700 mb-5 line-clamp-3 leading-relaxed font-medium">
                     {project.description}
                   </p>
 
@@ -842,11 +841,11 @@ function ProjectsSection() {
                 </div>
 
                 {/* Botón de Vista Previa */}
-                <div className="pt-4 border-t border-white/10 flex items-center justify-between gap-3">
+                <div className="pt-4 border-t border-slate-200/80 flex items-center justify-between gap-3">
                   <button
                     type="button"
                     onClick={() => setSelectedProject(project)}
-                    className="w-full py-2.5 px-4 rounded-xl text-xs font-bold bg-gradient-to-r from-purple-600/40 to-cyan-600/40 border border-purple-400/40 text-white hover:from-purple-600 hover:to-cyan-600 hover:border-transparent transition-all duration-300 flex items-center justify-center gap-2 group-hover:shadow-[0_0_20px_rgba(168,85,247,0.4)]"
+                    className="w-full py-2.5 px-4 rounded-xl text-xs font-bold bg-purple-100/70 hover:bg-purple-600 border border-purple-300 text-purple-900 hover:text-white transition-all duration-300 flex items-center justify-center gap-2 shadow-sm"
                   >
                     <Icons.Eye />
                     <span>Vista previa</span>
@@ -870,10 +869,6 @@ function ProjectsSection() {
 }
 
 
-
-
-
-
 /* ═══════════════════════════════════════════════
    COMPONENTE: About Section (Sobre Mí + Datos de Interés)
    ═══════════════════════════════════════════════ */
@@ -885,8 +880,8 @@ function AboutSection() {
     <section id="sobre-mi" ref={sectionRef} className="section-container">
       <div className="animate-on-scroll">
         <div className="flex items-center gap-3 mb-2">
-          <span className="text-emerald-400"><Icons.User /></span>
-          <span className="text-sm font-bold text-emerald-300 uppercase tracking-widest">Bio</span>
+          <span className="text-emerald-700"><Icons.User /></span>
+          <span className="text-sm font-bold text-emerald-800 uppercase tracking-widest">Bio</span>
         </div>
         <h2 className="section-title">Sobre Mí</h2>
         <p className="section-subtitle">
@@ -897,16 +892,15 @@ function AboutSection() {
       <div className="space-y-8">
         {/* Bloque principal: Párrafos de Sobre Mí */}
         <div className="animate-on-scroll">
-          <div className="glass-card p-6 md:p-10 border border-purple-500/20 bg-slate-900/90 shadow-xl relative overflow-hidden">
-            <div className="absolute top-0 right-0 w-64 h-64 bg-purple-600/10 blur-3xl rounded-full pointer-events-none" />
+          <div className="glass-card p-6 md:p-10 bg-white border border-purple-100 shadow-md shadow-purple-500/5 relative overflow-hidden">
             <div className="space-y-6 relative z-10">
               {ABOUT.paragraphs.map((p, i) => (
                 <div key={i} className="relative">
-                  <p className="text-sm sm:text-base text-slate-100 leading-relaxed font-normal">
+                  <p className="text-sm sm:text-base text-slate-800 leading-relaxed font-medium">
                     {p}
                   </p>
                   {i < ABOUT.paragraphs.length - 1 && (
-                    <div className="mt-6 border-b border-white/10" />
+                    <div className="mt-6 border-b border-slate-200/80" />
                   )}
                 </div>
               ))}
@@ -916,7 +910,7 @@ function AboutSection() {
 
         {/* Bloque secundario: Datos de Interés en tarjetas limpias */}
         <div id="datos-interes" className="animate-on-scroll">
-          <div className="mb-4 flex items-center gap-2 text-white font-display font-bold text-lg">
+          <div className="mb-4 flex items-center gap-2 text-slate-900 font-display font-bold text-lg">
             <Icons.Sparkle />
             <span>Datos de Interés</span>
           </div>
@@ -936,19 +930,19 @@ function AboutSection() {
               const isPhone = label === "Teléfono"
 
               return (
-                <div key={i} className="glass-card p-5 border border-purple-500/30 bg-slate-900/90 hover:border-purple-400/60 transition-all duration-300 flex flex-col justify-between shadow-lg">
+                <div key={i} className="glass-card p-5 bg-white border border-slate-200 hover:border-purple-400 transition-all duration-300 flex flex-col justify-between shadow-sm hover:shadow-md">
                   <div>
-                    <span className="text-[10px] font-bold text-purple-300 uppercase tracking-widest block mb-1.5">{label}</span>
+                    <span className="text-[10px] font-extrabold text-purple-900 uppercase tracking-widest block mb-1.5">{label}</span>
                     {isEmail ? (
-                      <a href={`mailto:${value}`} className="text-xs sm:text-sm text-cyan-300 hover:text-white hover:underline transition-all break-all font-semibold">
+                      <a href={`mailto:${value}`} className="text-xs sm:text-sm text-indigo-700 hover:text-purple-800 hover:underline transition-all break-all font-bold">
                         {value}
                       </a>
                     ) : isPhone ? (
-                      <a href={`tel:${value.replace(/\s+/g, '')}`} className="text-xs sm:text-sm text-cyan-300 hover:text-white hover:underline transition-all font-semibold">
+                      <a href={`tel:${value.replace(/\s+/g, '')}`} className="text-xs sm:text-sm text-indigo-700 hover:text-purple-800 hover:underline transition-all font-bold">
                         {value}
                       </a>
                     ) : (
-                      <p className="text-xs sm:text-sm text-slate-100 font-normal leading-relaxed">
+                      <p className="text-xs sm:text-sm text-slate-800 font-semibold leading-relaxed">
                         {value}
                       </p>
                     )}
@@ -972,15 +966,14 @@ function ContactCallToAction() {
   const sectionRef = useAnimateOnScroll()
   return (
     <section id="contacto" ref={sectionRef} className="section-container text-center py-16">
-      <div className="animate-on-scroll max-w-3xl mx-auto glass-card p-8 md:p-12 border border-purple-500/30 bg-gradient-to-r from-purple-950/40 via-slate-900/90 to-cyan-950/40 relative overflow-hidden shadow-2xl">
-        <div className="absolute -top-24 left-1/2 -translate-x-1/2 w-96 h-96 bg-purple-600/15 blur-[100px] rounded-full pointer-events-none" />
-        <span className="text-xs font-bold text-purple-300 uppercase tracking-widest bg-purple-500/15 border border-purple-500/30 px-3.5 py-1.5 rounded-full inline-block mb-4">Contacto Directo</span>
-        <h2 className="text-2xl sm:text-3xl md:text-4xl font-display font-extrabold text-white mb-3 leading-tight">¿Tienes un problema que podamos convertir en una solución?</h2>
-        <p className="text-base sm:text-lg text-cyan-300 font-semibold mb-8">Hablemos.</p>
+      <div className="animate-on-scroll max-w-3xl mx-auto glass-card p-8 md:p-12 border border-purple-200 bg-gradient-to-r from-purple-100/80 via-white to-indigo-100/80 relative overflow-hidden shadow-lg">
+        <span className="text-xs font-bold text-purple-900 uppercase tracking-widest bg-purple-200/80 border border-purple-300 px-3.5 py-1.5 rounded-full inline-block mb-4">Contacto Directo</span>
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-display font-extrabold text-slate-900 mb-3 leading-tight">¿Tienes un problema que podamos convertir en una solución?</h2>
+        <p className="text-base sm:text-lg text-indigo-800 font-bold mb-8">Hablemos.</p>
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-          <a href="mailto:alonsoarriaza03@gmail.com" className="px-8 py-3.5 rounded-full bg-gradient-to-r from-purple-600 to-cyan-600 text-white font-bold text-sm hover:shadow-[0_0_30px_rgba(168,85,247,0.5)] transition-all duration-300 hover:scale-105">Enviar Email</a>
-          <a href={PROFILE.linkedin} target="_blank" rel="noopener noreferrer" className="px-6 py-3.5 rounded-full border border-white/20 bg-slate-900/60 text-white hover:text-white hover:border-cyan-400/50 text-sm font-semibold transition-all duration-300">LinkedIn</a>
-          <a href={PROFILE.github} target="_blank" rel="noopener noreferrer" className="px-6 py-3.5 rounded-full border border-white/20 bg-slate-900/60 text-white hover:text-white hover:border-purple-400/50 text-sm font-semibold transition-all duration-300">GitHub</a>
+          <a href="mailto:alonsoarriaza03@gmail.com" className="px-8 py-3.5 rounded-full bg-gradient-to-r from-purple-600 to-indigo-600 text-white font-bold text-sm hover:shadow-lg hover:shadow-purple-500/20 transition-all duration-300 hover:scale-105">Enviar Email</a>
+          <a href={PROFILE.linkedin} target="_blank" rel="noopener noreferrer" className="px-6 py-3.5 rounded-full border border-slate-300 bg-white text-slate-800 hover:border-purple-600 text-sm font-bold transition-all duration-300 shadow-sm">LinkedIn</a>
+          <a href={PROFILE.github} target="_blank" rel="noopener noreferrer" className="px-6 py-3.5 rounded-full border border-slate-300 bg-white text-slate-800 hover:border-purple-600 text-sm font-bold transition-all duration-300 shadow-sm">GitHub</a>
         </div>
       </div>
     </section>
@@ -994,9 +987,9 @@ function ContactCallToAction() {
 
 function Footer() {
   return (
-    <footer className="border-t border-white/10 py-10 bg-slate-950">
+    <footer className="border-t border-slate-300/80 py-10 bg-slate-200/60">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center justify-center gap-4 text-center">
-        <p className="text-sm text-slate-400 font-normal">
+        <p className="text-sm text-slate-700 font-medium">
           © {new Date().getFullYear()} Alonso Feria Arriaza · Desarrollador Full-Stack
         </p>
       </div>
@@ -1111,58 +1104,58 @@ function ImpactMetricsSection() {
       value: "+5",
       title: "Proyectos y soluciones desarrolladas",
       description: "Aplicaciones web, automatizaciones e integraciones orientadas a necesidades empresariales.",
-      gradient: "from-purple-400 via-pink-300 to-purple-400",
-      border: "border-purple-500/30 hover:border-purple-400/60",
-      bg: "bg-purple-500/10",
+      gradient: "from-purple-700 via-pink-700 to-indigo-800",
+      border: "border-purple-200 hover:border-purple-400",
+      bg: "bg-purple-100/60",
       badge: "Alcance",
-      badgeColor: "bg-purple-500/15 border-purple-500/30 text-purple-300"
+      badgeColor: "bg-purple-100 text-purple-900 border-purple-300"
     },
     {
       value: "Miles",
       title: "Registros procesados",
       description: "Automatización de clasificación y tratamiento de grandes volúmenes de datos.",
-      gradient: "from-cyan-400 via-blue-300 to-cyan-400",
-      border: "border-cyan-500/30 hover:border-cyan-400/60",
-      bg: "bg-cyan-500/10",
+      gradient: "from-sky-700 via-blue-700 to-cyan-800",
+      border: "border-sky-200 hover:border-sky-400",
+      bg: "bg-sky-100/60",
       badge: "Volumen",
-      badgeColor: "bg-cyan-500/15 border-cyan-500/30 text-cyan-300"
+      badgeColor: "bg-sky-100 text-sky-900 border-sky-300"
     },
     {
       value: "QR",
       title: "Trazabilidad de activos",
       description: "Digitalización, inventario y seguimiento de recursos en tiempo real.",
-      gradient: "from-emerald-400 via-teal-300 to-emerald-400",
-      border: "border-emerald-500/30 hover:border-emerald-400/60",
-      bg: "bg-emerald-500/10",
+      gradient: "from-emerald-700 via-teal-700 to-emerald-800",
+      border: "border-emerald-200 hover:border-emerald-400",
+      bg: "bg-emerald-100/60",
       badge: "Control",
-      badgeColor: "bg-emerald-500/15 border-emerald-500/30 text-emerald-300"
+      badgeColor: "bg-emerald-100 text-emerald-900 border-emerald-300"
     },
     {
       value: "ERP → BBDD",
       title: "Integración y transformación de datos",
       description: "Extracción, transformación y centralización de información procedente de sistemas empresariales.",
-      gradient: "from-amber-400 via-orange-300 to-amber-400",
-      border: "border-amber-500/30 hover:border-amber-400/60 font-mono text-2xl sm:text-3xl",
-      bg: "bg-amber-500/10",
+      gradient: "from-amber-700 via-orange-700 to-amber-800",
+      border: "border-amber-200 hover:border-amber-400 font-mono text-2xl sm:text-3xl",
+      bg: "bg-amber-100/60",
       badge: "Sistemas",
-      badgeColor: "bg-amber-500/15 border-amber-500/30 text-amber-300"
+      badgeColor: "bg-amber-100 text-amber-900 border-amber-300"
     },
     {
       value: "IA",
       title: "Inteligencia aplicada",
       description: "Agentes de IA integrados en procesos de clasificación, recomendación y automatización.",
-      gradient: "from-pink-400 via-purple-300 to-pink-400",
-      border: "border-pink-500/30 hover:border-pink-400/60",
-      bg: "bg-pink-500/10",
+      gradient: "from-pink-700 via-purple-700 to-pink-800",
+      border: "border-pink-200 hover:border-pink-400",
+      bg: "bg-pink-100/60",
       badge: "Agentes",
-      badgeColor: "bg-pink-500/15 border-pink-500/30 text-pink-300"
+      badgeColor: "bg-pink-100 text-pink-900 border-pink-300"
     }
   ]
 
   return (
     <section id="impacto" ref={sectionRef} className="section-container">
       <div className="animate-on-scroll text-center max-w-2xl mx-auto mb-10">
-        <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full border border-purple-400/30 bg-purple-500/15 text-purple-300 text-xs font-bold uppercase tracking-wider mb-3">
+        <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full border border-purple-300 bg-purple-100/80 text-purple-900 text-xs font-bold uppercase tracking-wider mb-3">
           <Icons.Sparkle /> Métricas & Impacto
         </div>
         <h2 className="section-title">Variedad e Impacto Real</h2>
@@ -1173,17 +1166,17 @@ function ImpactMetricsSection() {
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 mb-8">
         {metrics.map((m, i) => (
           <div key={i} className="animate-on-scroll" style={{ animationDelay: `${i * 100}ms` }}>
-            <div className={`glass-card-hover p-5 text-left h-full flex flex-col justify-between border ${m.border} relative overflow-hidden group transition-all duration-300 shadow-lg`}>
+            <div className={`glass-card-hover p-5 text-left h-full flex flex-col justify-between bg-white border ${m.border} relative overflow-hidden group transition-all duration-300 shadow-sm hover:shadow-md`}>
               <div className={`absolute -top-6 -right-6 w-20 h-20 ${m.bg} blur-2xl rounded-full pointer-events-none group-hover:scale-150 transition-transform duration-500`} />
               <div>
                 <div className="flex items-center justify-between gap-2 mb-3">
-                  <span className={`text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded border ${m.badgeColor}`}>{m.badge}</span>
+                  <span className={`text-[10px] font-extrabold uppercase tracking-wider px-2 py-0.5 rounded border ${m.badgeColor}`}>{m.badge}</span>
                 </div>
                 <div className={`font-display font-black text-transparent bg-clip-text bg-gradient-to-r ${m.gradient} mb-2 tracking-tight ${m.value.length > 5 ? 'text-2xl sm:text-2xl' : 'text-3xl sm:text-4xl'}`}>
                   {m.value}
                 </div>
-                <h3 className="text-xs sm:text-sm font-bold text-white mb-2 leading-snug">{m.title}</h3>
-                <p className="text-xs text-slate-300 font-normal leading-relaxed">{m.description}</p>
+                <h3 className="text-xs sm:text-sm font-extrabold text-slate-900 mb-2 leading-snug">{m.title}</h3>
+                <p className="text-xs text-slate-700 font-medium leading-relaxed">{m.description}</p>
               </div>
             </div>
           </div>
