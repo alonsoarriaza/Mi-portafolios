@@ -133,7 +133,13 @@ const PROJECTS = [
   {
     id: "sitoinformatic",
     title: "SitoInformatic | Plataforma eCommerce y Configurador de Hardware",
-    description: `SitoInformatic es una tienda online de ordenadores y componentes diseñada a medida con un motor heurístico (SitoIA) que evalúa compatibilidad física, balance térmico y presupuesto.`,
+    description: `SitoInformatic es una plataforma e-commerce de hardware y componentes informáticos que integra SitoIA, un sistema inteligente propio para la configuración automática de equipos. A partir del presupuesto, necesidades y perfil de uso del usuario, aplica ponderaciones y cálculos porcentuales para distribuir el presupuesto entre componentes, generar una configuración equilibrada y comprobar su compatibilidad.
+
+La plataforma incorpora catálogo de productos, búsqueda y filtrado, fichas de producto, carrito de compra y gestión de usuarios, además de un sistema de recomendaciones adaptado a perfiles como Gaming, Streaming/Edición y Oficina.
+
+En el apartado de seguridad, implementa autenticación mediante JWT y almacenamiento seguro de contraseñas mediante BCrypt, junto con control de acceso a las funcionalidades de usuario.
+
+Desarrollado como Trabajo de Fin de Grado (TFG) en Desarrollo de Aplicaciones Web (DAW), el proyecto integra e-commerce, gestión de datos, lógica de negocio y un sistema propio de recomendación y configuración automática basado en reglas y cálculos matemáticos..`,
     notes: "Más allá del 8,4 que obtuvo como nota final, la mayor satisfacción fue ver cómo mi centro de prácticas adoptó mi proyecto como modelo de negocio...",
     tags: ["Java 21", "Spring Boot 3.4", "Spring Security", "JavaScript (JSX)", "CSS", "PostgreSQL", "MySQL", "H2 Database", "React", "Tailwind", "JWT"],
     githubLink: "https://github.com/alonsoarriaza/sitoinformatic",
