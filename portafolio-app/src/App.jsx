@@ -306,20 +306,20 @@ function Navbar() {
   return (
     <nav
       id="navbar"
-      className={`fixed left-1/2 -translate-x-1/2 z-50 transition-all duration-500 w-[92%] max-w-5xl rounded-full border border-white/10 ${scrolled
-        ? 'top-4 bg-black/85 backdrop-blur-xl shadow-[0_12px_40px_rgba(0,0,0,0.5)] py-2.5 px-6'
-        : 'top-6 bg-black/50 backdrop-blur-md shadow-lg py-3.5 px-8'
+      className={`fixed left-1/2 -translate-x-1/2 z-50 transition-all duration-500 w-[92%] max-w-5xl rounded-full border ${scrolled
+        ? 'top-4 bg-white/90 border-slate-200/80 backdrop-blur-xl shadow-lg py-2.5 px-6'
+        : 'top-6 bg-slate-900/70 border-white/10 backdrop-blur-md shadow-md py-3.5 px-8'
         }`}
     >
       <div className="flex items-center justify-between">
         {/* Logo */}
         <a href="#" className="flex items-center gap-2 group">
-          <span className="text-purple-400 group-hover:rotate-180 transition-transform duration-700">
+          <span className="text-purple-600 group-hover:rotate-180 transition-transform duration-700">
             <Icons.Sparkle />
           </span>
-          <span className="font-display font-bold text-lg tracking-tight text-white">
+          <span className={`font-display font-bold text-lg tracking-tight ${scrolled ? 'text-slate-900' : 'text-white'}`}>
             {PROFILE.name.split(' ')[0]}
-            <span className="text-purple-400">.</span>
+            <span className="text-purple-600">.</span>
           </span>
         </a>
 
@@ -329,7 +329,7 @@ function Navbar() {
             <a
               key={link.href}
               href={link.href}
-              className="text-sm font-medium text-white/80 hover:text-purple-300 transition-colors duration-300 relative py-1 after:content-[''] after:absolute after:bottom-[-2px] after:left-0 after:w-0 after:h-[2px] after:bg-gradient-to-r after:from-purple-400 after:to-cyan-400 after:transition-all after:duration-300 hover:after:w-full"
+              className={`text-sm font-medium transition-colors duration-300 relative py-1 ${scrolled ? 'text-slate-700 hover:text-purple-700' : 'text-white/80 hover:text-purple-300'}`}
             >
               {link.label}
             </a>
@@ -340,7 +340,7 @@ function Navbar() {
         <div className="hidden md:block">
           <a
             href="#contacto"
-            className="px-5 py-1.5 rounded-full text-xs font-semibold bg-gradient-to-r from-purple-600 to-cyan-600 text-white hover:shadow-[0_0_15px_rgba(168,85,247,0.4)] transition-all duration-300 hover:scale-105"
+            className="px-5 py-1.5 rounded-full text-xs font-semibold bg-gradient-to-r from-purple-600 to-indigo-600 text-white hover:shadow-md hover:shadow-purple-500/20 transition-all duration-300 hover:scale-105"
           >
             Contacto
           </a>
@@ -349,7 +349,7 @@ function Navbar() {
         {/* Mobile Menu Toggle */}
         <button
           onClick={() => setMobileOpen(!mobileOpen)}
-          className="md:hidden p-2 rounded-full bg-white/5 border border-white/10 text-white/90 hover:text-white hover:bg-white/10 transition-all"
+          className={`md:hidden p-2 rounded-full border transition-all ${scrolled ? 'bg-slate-100 border-slate-200 text-slate-800' : 'bg-white/10 border-white/20 text-white'}`}
           aria-label="Toggle menu"
         >
           {mobileOpen ? <Icons.Close /> : <Icons.Menu />}
@@ -361,13 +361,13 @@ function Navbar() {
         className={`md:hidden overflow-hidden transition-all duration-500 ${mobileOpen ? 'max-h-[400px] opacity-100 mt-4' : 'max-h-0 opacity-0'
           }`}
       >
-        <div className="pt-3 pb-2 border-t border-white/5 flex flex-col gap-1">
+        <div className={`pt-3 pb-2 border-t flex flex-col gap-1 ${scrolled ? 'border-slate-200' : 'border-white/10'}`}>
           {NAV_LINKS.map((link) => (
             <a
               key={link.href}
               href={link.href}
               onClick={() => setMobileOpen(false)}
-              className="block py-2.5 px-4 text-white/80 hover:text-white hover:bg-white/5 rounded-xl transition-all duration-300 text-sm font-medium"
+              className={`block py-2.5 px-4 rounded-xl transition-all duration-300 text-sm font-medium ${scrolled ? 'text-slate-700 hover:bg-slate-100' : 'text-white/80 hover:bg-white/10'}`}
             >
               {link.label}
             </a>
@@ -375,7 +375,7 @@ function Navbar() {
           <a
             href="#contacto"
             onClick={() => setMobileOpen(false)}
-            className="block text-center mt-2 py-2.5 px-4 rounded-xl bg-gradient-to-r from-purple-600 to-cyan-600 text-white text-sm font-semibold transition-all"
+            className="block text-center mt-2 py-2.5 px-4 rounded-xl bg-gradient-to-r from-purple-600 to-indigo-600 text-white text-sm font-semibold transition-all"
           >
             Contacto
           </a>
@@ -412,41 +412,27 @@ function VideoBackground() {
         playsInline
         className="w-full h-full object-cover transition-[filter] duration-300"
         style={{
-          filter: `blur(${scrollProgress * 12}px) brightness(${1 - scrollProgress * 0.5})`,
+          filter: `blur(${scrollProgress * 12}px) brightness(${1 - scrollProgress * 0.4})`,
           transform: `scale(${1 + scrollProgress * 0.08})`,
         }}
       >
         <source src="/8bits.mp4" type="video/mp4" />
       </video>
 
-      {/* Capa 1: Viñeta radial (siempre visible, efecto cine) */}
+      {/* Capa 1: Viñeta radial */}
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
-          background: 'radial-gradient(ellipse at center, transparent 40%, rgba(0,0,0,0.6) 100%)',
+          background: 'radial-gradient(ellipse at center, transparent 40%, rgba(0,0,0,0.5) 100%)',
         }}
       />
 
-      {/* Capa 2: Degradado vertical (se intensifica al bajar) */}
+      {/* Capa 2: Degradado vertical */}
       <div
         className="absolute inset-0 pointer-events-none transition-opacity duration-500"
         style={{
-          background: 'linear-gradient(to bottom, rgba(0,0,0,0.2) 0%, transparent 30%, transparent 60%, rgba(0,0,0,0.7) 100%)',
+          background: 'linear-gradient(to bottom, rgba(0,0,0,0.3) 0%, transparent 40%, transparent 60%, rgba(15,23,42,0.85) 100%)',
           opacity: 0.6 + scrollProgress * 0.4,
-        }}
-      />
-
-      {/* Capa 3: Oscurecimiento progresivo general */}
-      <div
-        className="absolute inset-0 bg-black pointer-events-none transition-opacity duration-500"
-        style={{ opacity: scrollProgress * 0.55 }}
-      />
-
-      {/* Capa 4: Ruido sutil (textura premium) */}
-      <div
-        className="absolute inset-0 pointer-events-none opacity-[0.03]"
-        style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")`,
         }}
       />
     </div>
@@ -462,7 +448,7 @@ function HeroSection() {
   return (
     <section id="hero" className="relative min-h-screen flex items-center justify-center">
       {/* Capa de respaldo para legibilidad sobre el video */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-black/40 pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-transparent to-slate-900/50 pointer-events-none" />
 
       <div className="relative text-center px-4 sm:px-6">
         {/* Badge */}
@@ -481,17 +467,17 @@ function HeroSection() {
         </h1>
 
         {/* Headline */}
-        <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-300 via-pink-200 to-cyan-300 max-w-3xl mx-auto mb-4 animate-fade-in-up delay-200 hero-text-shadow">
+        <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-200 via-pink-100 to-cyan-200 max-w-3xl mx-auto mb-4 animate-fade-in-up delay-200 hero-text-shadow">
           {PROFILE.headline}
         </h2>
 
         {/* Description */}
-        <p className="text-base sm:text-lg text-white/80 max-w-2xl mx-auto mb-5 animate-fade-in-up delay-300 font-light leading-relaxed hero-text-shadow">
+        <p className="text-base sm:text-lg text-white/90 max-w-2xl mx-auto mb-5 animate-fade-in-up delay-300 font-light leading-relaxed hero-text-shadow">
           {PROFILE.description}
         </p>
 
         {/* Tech Stack */}
-        <div className="inline-block px-5 py-2 rounded-full border border-purple-400/20 bg-black/40 backdrop-blur-md text-xs sm:text-sm text-cyan-300/90 font-medium max-w-2xl mx-auto mb-8 animate-fade-in-up delay-300 shadow-[0_0_15px_rgba(168,85,247,0.15)]">
+        <div className="inline-block px-5 py-2 rounded-full border border-purple-400/30 bg-black/50 backdrop-blur-md text-xs sm:text-sm text-cyan-200 font-medium max-w-2xl mx-auto mb-8 animate-fade-in-up delay-300 shadow-md">
           {PROFILE.techStack}
         </div>
 
@@ -499,7 +485,7 @@ function HeroSection() {
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 animate-fade-in-up delay-400">
           <a
             href={PROFILE.ctaLink}
-            className="group px-8 py-3.5 rounded-full bg-gradient-to-r from-purple-600 to-cyan-600 text-white font-semibold text-sm tracking-wide hover:shadow-[0_8px_30px_rgba(168,85,247,0.35)] transition-all duration-500 hover:scale-105 flex items-center gap-2"
+            className="group px-8 py-3.5 rounded-full bg-gradient-to-r from-purple-600 to-indigo-600 text-white font-semibold text-sm tracking-wide hover:shadow-[0_8px_30px_rgba(147,51,234,0.35)] transition-all duration-500 hover:scale-105 flex items-center gap-2"
           >
             {PROFILE.ctaText}
             <span className="group-hover:translate-y-1 transition-transform duration-300">
@@ -511,7 +497,7 @@ function HeroSection() {
               href={PROFILE.github}
               target="_blank"
               rel="noopener noreferrer"
-              className="p-3 rounded-full border border-white/20 bg-black/30 backdrop-blur-xl text-white/80 hover:text-white hover:border-purple-400/40 hover:bg-purple-500/15 hover:shadow-[0_0_20px_rgba(168,85,247,0.2)] transition-all duration-300"
+              className="p-3 rounded-full border border-white/20 bg-black/40 backdrop-blur-xl text-white/80 hover:text-white hover:border-purple-400/40 hover:bg-purple-500/20 transition-all duration-300"
               aria-label="GitHub"
             >
               <Icons.GitHub />
@@ -520,7 +506,7 @@ function HeroSection() {
               href={PROFILE.linkedin}
               target="_blank"
               rel="noopener noreferrer"
-              className="p-3 rounded-full border border-white/20 bg-black/30 backdrop-blur-xl text-white/80 hover:text-white hover:border-cyan-400/40 hover:bg-cyan-500/15 hover:shadow-[0_0_20px_rgba(6,182,212,0.2)] transition-all duration-300"
+              className="p-3 rounded-full border border-white/20 bg-black/40 backdrop-blur-xl text-white/80 hover:text-white hover:border-cyan-400/40 hover:bg-cyan-500/20 transition-all duration-300"
               aria-label="LinkedIn"
             >
               <Icons.LinkedIn />
@@ -531,8 +517,8 @@ function HeroSection() {
 
       {/* Scroll indicator */}
       <div className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce">
-        <div className="w-6 h-10 rounded-full border-2 border-purple-400/30 flex justify-center pt-2 animate-glow-pulse">
-          <div className="w-1 h-2 rounded-full bg-gradient-to-b from-purple-400/60 to-cyan-400/60 animate-pulse" />
+        <div className="w-6 h-10 rounded-full border-2 border-purple-400/40 flex justify-center pt-2 animate-glow-pulse">
+          <div className="w-1 h-2 rounded-full bg-gradient-to-b from-purple-400 to-cyan-400 animate-pulse" />
         </div>
       </div>
     </section>
@@ -541,29 +527,19 @@ function HeroSection() {
 
 
 /* ═══════════════════════════════════════════════
-   COMPONENTE: Content Wrapper (con fondo rico y orbes de color)
+   COMPONENTE: Content Wrapper (con estética clara, limpia y moderna)
    ═══════════════════════════════════════════════ */
 
 function ContentWrapper({ children }) {
   return (
-    <div className="relative overflow-hidden" style={{
-      background: 'linear-gradient(180deg, rgba(10,5,25,0.92) 0%, rgba(15,10,35,0.95) 20%, rgba(8,5,20,0.96) 50%, rgba(12,8,30,0.95) 80%, rgba(10,5,25,0.92) 100%)',
-      backdropFilter: 'blur(40px) saturate(1.2)',
-    }}>
-      {/* Orbe decorativo púrpura */}
-      <div className="absolute top-[20%] -left-32 w-96 h-96 rounded-full bg-purple-600/8 blur-[100px] animate-orb pointer-events-none" />
-      {/* Orbe decorativo cyan */}
-      <div className="absolute top-[50%] -right-32 w-80 h-80 rounded-full bg-cyan-500/6 blur-[100px] animate-orb pointer-events-none" style={{ animationDelay: '5s' }} />
-      {/* Orbe decorativo rosa */}
-      <div className="absolute top-[75%] left-1/4 w-72 h-72 rounded-full bg-pink-500/5 blur-[100px] animate-orb pointer-events-none" style={{ animationDelay: '10s' }} />
+    <div className="relative overflow-hidden bg-slate-50 text-slate-900">
+      {/* Orbes decorativos de luz ambiental suave */}
+      <div className="absolute top-[10%] -left-32 w-96 h-96 rounded-full bg-purple-200/50 blur-[120px] pointer-events-none" />
+      <div className="absolute top-[45%] -right-32 w-96 h-96 rounded-full bg-sky-200/50 blur-[120px] pointer-events-none" />
+      <div className="absolute top-[80%] left-1/4 w-96 h-96 rounded-full bg-indigo-200/40 blur-[120px] pointer-events-none" />
 
-      {/* Zona de transición superior */}
-      <div className="absolute top-0 left-0 right-0 -translate-y-full pointer-events-none">
-        <div className="h-56 bg-gradient-to-b from-transparent via-[rgba(10,5,25,0.4)] to-[rgba(10,5,25,0.92)]" />
-      </div>
-
-      {/* Línea luminosa decorativa en el borde superior */}
-      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-purple-500/40 to-transparent" />
+      {/* Línea luminosa decorativa superior */}
+      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-purple-300 to-transparent" />
 
       {/* Contenido */}
       <div className="relative z-10">
@@ -585,8 +561,8 @@ function ExperienceSection() {
     <section id="experiencia" ref={sectionRef} className="section-container">
       <div className="animate-on-scroll">
         <div className="flex items-center gap-3 mb-2">
-          <span className="text-purple-400"><Icons.Briefcase /></span>
-          <span className="text-sm font-medium text-purple-400 uppercase tracking-widest">Trayectoria</span>
+          <span className="text-purple-600"><Icons.Briefcase /></span>
+          <span className="text-sm font-semibold text-purple-700 uppercase tracking-widest">Trayectoria</span>
         </div>
         <h2 className="section-title">Experiencia Profesional</h2>
         <p className="section-subtitle">
@@ -596,7 +572,7 @@ function ExperienceSection() {
 
       <div className="relative">
         {/* Línea del timeline */}
-        <div className="timeline-line" />
+        <div className="timeline-line bg-gradient-to-b from-purple-300 via-indigo-300 to-purple-200" />
 
         {EXPERIENCE.map((item, i) => (
           <div
@@ -606,30 +582,30 @@ function ExperienceSection() {
             style={{ animationDelay: `${i * 150}ms` }}
           >
             {/* Dot */}
-            <div className="absolute left-[10px] md:left-1/2 md:-translate-x-1/2 top-2 w-5 h-5 rounded-full border-2 border-purple-500 bg-black z-10">
-              <div className="w-full h-full rounded-full bg-purple-500/30 animate-pulse-slow" />
+            <div className="absolute left-[10px] md:left-1/2 md:-translate-x-1/2 top-2 w-5 h-5 rounded-full border-2 border-purple-600 bg-white z-10 shadow-sm">
+              <div className="w-full h-full rounded-full bg-purple-500/20 animate-pulse-slow" />
             </div>
 
             {/* Content */}
             <div className={`md:w-1/2 ${i % 2 === 0 ? 'md:pr-12' : 'md:pl-12'}`}>
-              <div className="glass-card-hover p-6 md:p-8">
-                <div className="inline-flex items-center gap-2 text-xs font-semibold text-purple-300 bg-purple-500/10 border border-purple-500/20 px-3.5 py-1.5 rounded-lg mb-3">
+              <div className="glass-card-hover p-6 md:p-8 bg-white border border-slate-200/90 shadow-sm">
+                <div className="inline-flex items-center gap-2 text-xs font-bold text-purple-700 bg-purple-50 border border-purple-200 px-3.5 py-1.5 rounded-lg mb-3">
                   <svg className="w-3.5 h-3.5 opacity-70" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><rect x="3" y="4" width="18" height="18" rx="2" /><path d="M16 2v4M8 2v4M3 10h18" /></svg>
                   {item.year}
                 </div>
-                <h3 className="text-xl font-display font-bold mb-1 text-white">{item.role}</h3>
-                <p className="text-sm text-cyan-400/80 mb-3 font-medium">{item.company}</p>
+                <h3 className="text-xl font-display font-bold mb-1 text-slate-900">{item.role}</h3>
+                <p className="text-sm text-purple-700 mb-3 font-semibold">{item.company}</p>
                 {Array.isArray(item.description) ? (
-                  <ul className="space-y-2 text-sm text-white/50 leading-relaxed list-none">
+                  <ul className="space-y-2.5 text-sm text-slate-600 leading-relaxed list-none">
                     {item.description.map((desc, j) => (
                       <li key={j} className="flex gap-2">
-                        <span className="text-purple-400/60 mt-1 shrink-0">▸</span>
+                        <span className="text-purple-600 font-bold mt-1 shrink-0">▸</span>
                         <span>{desc}</span>
                       </li>
                     ))}
                   </ul>
                 ) : (
-                  <p className="text-sm text-white/50 leading-relaxed">{item.description}</p>
+                  <p className="text-sm text-slate-600 leading-relaxed">{item.description}</p>
                 )}
               </div>
             </div>
@@ -652,8 +628,8 @@ function EducationSection() {
     <section id="educacion" ref={sectionRef} className="section-container">
       <div className="animate-on-scroll">
         <div className="flex items-center gap-3 mb-2">
-          <span className="text-cyan-400"><Icons.GraduationCap /></span>
-          <span className="text-sm font-medium text-cyan-400 uppercase tracking-widest">Formación</span>
+          <span className="text-sky-600"><Icons.GraduationCap /></span>
+          <span className="text-sm font-semibold text-sky-700 uppercase tracking-widest">Formación</span>
         </div>
         <h2 className="section-title">Educación</h2>
         <p className="section-subtitle">
@@ -663,18 +639,18 @@ function EducationSection() {
 
       <div className="grid gap-6 md:gap-8">
         {EDUCATION.map((item, i) => (
-          <div key={i} className="animate-on-scroll" style={{ animationDelay: `${i * 150} ms` }}>
-            <div className="glass-card-hover p-6 md:p-8 flex flex-col md:flex-row md:items-start gap-4 md:gap-8">
-              <div className="md:w-40 shrink-0">
-                <div className="inline-flex items-center gap-2 text-xs font-semibold text-cyan-300 bg-cyan-500/10 border border-cyan-500/20 px-3.5 py-1.5 rounded-lg">
+          <div key={i} className="animate-on-scroll" style={{ animationDelay: `${i * 150}ms` }}>
+            <div className="glass-card-hover p-6 md:p-8 flex flex-col md:flex-row md:items-start gap-4 md:gap-8 bg-white border border-slate-200/90 shadow-sm">
+              <div className="md:w-44 shrink-0">
+                <div className="inline-flex items-center gap-2 text-xs font-bold text-sky-800 bg-sky-50 border border-sky-200 px-3.5 py-1.5 rounded-lg">
                   <svg className="w-3.5 h-3.5 opacity-70" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><rect x="3" y="4" width="18" height="18" rx="2" /><path d="M16 2v4M8 2v4M3 10h18" /></svg>
                   {item.year}
                 </div>
               </div>
               <div>
-                <h3 className="text-lg font-display font-bold mb-1 text-white">{item.degree}</h3>
-                <p className="text-sm text-purple-400/80 font-medium mb-3">{item.institution}</p>
-                <p className="text-sm text-white/50 leading-relaxed">{item.description}</p>
+                <h3 className="text-lg font-display font-bold mb-1 text-slate-900">{item.degree}</h3>
+                <p className="text-sm text-purple-700 font-semibold mb-3">{item.institution}</p>
+                <p className="text-sm text-slate-600 leading-relaxed font-light">{item.description}</p>
               </div>
             </div>
           </div>
@@ -703,101 +679,75 @@ function ProjectPreviewModal({ project, onClose }) {
       if (e.key === 'Escape') onClose()
     }
     window.addEventListener('keydown', handleKeyDown)
-    document.body.style.overflow = 'hidden'
-    return () => {
-      window.removeEventListener('keydown', handleKeyDown)
-      document.body.style.overflow = ''
-    }
+    return () => window.removeEventListener('keydown', handleKeyDown)
   }, [onClose])
-
-  const handleImageError = () => {
-    if (currentSrc !== project?.fallbackImage && project?.fallbackImage) {
-      setCurrentSrc(project.fallbackImage)
-    } else {
-      setImageError(true)
-    }
-  }
 
   if (!project) return null
 
+  const handleImageError = () => {
+    if (!imageError && project?.fallbackImage) {
+      setImageError(true)
+      setCurrentSrc(project.fallbackImage)
+    }
+  }
+
   return createPortal(
     <div
-      style={{ position: 'fixed', inset: 0, zIndex: 9999, display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '1rem', backgroundColor: 'rgba(0,0,0,0.85)', backdropFilter: 'blur(8px)' }}
       onClick={onClose}
+      style={{ position: 'fixed', inset: 0, zIndex: 9999, display: 'flex', alignItems: 'center', justify: 'center', padding: '1rem', backgroundColor: 'rgba(15, 23, 42, 0.75)', backdropFilter: 'blur(8px)' }}
     >
       <div
-        style={{ position: 'relative', width: '100%', maxWidth: '56rem', maxHeight: '90vh', overflowY: 'auto', borderRadius: '1.5rem', backgroundColor: '#09090b', border: '1px solid rgba(168,85,247,0.3)', padding: '2rem', boxShadow: '0 0 50px rgba(168,85,247,0.25)', color: 'white' }}
         onClick={(e) => e.stopPropagation()}
+        style={{ position: 'relative', width: '100%', maxWidth: '56rem', backgroundColor: '#ffffff', borderRadius: '1rem', border: '1px solid rgba(226, 232, 240, 1)', padding: '1.5rem', boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.25)', maxHeight: '90vh', overflowY: 'auto' }}
       >
-        {/* Header Modal */}
-        <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', gap: '1rem', marginBottom: '1.5rem' }}>
-          <div>
-            <span style={{ fontSize: '0.75rem', fontWeight: 600, color: '#a855f7', textTransform: 'uppercase', letterSpacing: '0.05em', display: 'block', marginBottom: '0.25rem' }}>
-              Vista previa del proyecto
-            </span>
-            <h3 style={{ fontSize: '1.5rem', fontWeight: 700, color: 'white', margin: 0 }}>
-              {project.title}
-            </h3>
-          </div>
-          <button
-            onClick={onClose}
-            style={{ padding: '0.5rem', borderRadius: '9999px', backgroundColor: 'rgba(255,255,255,0.1)', color: 'rgba(255,255,255,0.8)', border: 'none', cursor: 'pointer', flexShrink: 0 }}
-            aria-label="Cerrar modal"
-          >
-            <Icons.Close />
-          </button>
-        </div>
+        <button
+          onClick={onClose}
+          style={{ position: 'absolute', top: '1rem', right: '1rem', padding: '0.5rem', borderRadius: '9999px', backgroundColor: '#f1f5f9', color: '#475569', cursor: 'pointer', border: 'none' }}
+          aria-label="Cerrar modal"
+        >
+          <Icons.Close />
+        </button>
 
-        {/* Imagen / Screenshot del Proyecto */}
-        <div style={{ position: 'relative', marginBottom: '1.5rem', borderRadius: '1rem', overflow: 'hidden', border: '1px solid rgba(255,255,255,0.1)', backgroundColor: 'rgba(24,24,27,0.8)', padding: '0.5rem' }}>
-          {!imageError ? (
-            <img
-              src={currentSrc}
-              alt={`Vista previa de ${project.title}`}
-              onError={handleImageError}
-              style={{ width: '100%', height: 'auto', maxHeight: '60vh', objectFit: 'contain', borderRadius: '0.75rem', display: 'block', margin: '0 auto' }}
-            />
-          ) : (
-            <div style={{ width: '100%', padding: '3rem 1.5rem', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', textAlign: 'center', borderRadius: '1rem', border: '1px dashed rgba(168,85,247,0.3)', backgroundColor: 'rgba(24,24,27,0.6)' }}>
-              <div style={{ width: '4rem', height: '4rem', borderRadius: '9999px', backgroundColor: 'rgba(168,85,247,0.1)', border: '1px solid rgba(168,85,247,0.3)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#a855f7', marginBottom: '1rem' }}>
-                <Icons.ImageIcon />
-              </div>
-              <h4 style={{ fontSize: '1.125rem', fontWeight: 600, color: 'white', marginBottom: '0.5rem' }}>Vista previa del proyecto</h4>
-              <p style={{ fontSize: '0.875rem', color: 'rgba(255,255,255,0.6)', maxWidth: '28rem', marginBottom: '1rem', lineHeight: 1.6 }}>
-                {project.description}
-              </p>
-            </div>
+        <div style={{ marginBottom: '1.25rem' }}>
+          <span style={{ fontSize: '0.75rem', fontWeight: 600, color: '#9333ea', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Vista Previa de Proyecto</span>
+          <h3 style={{ fontSize: '1.5rem', fontWeight: 700, color: '#0f172a', marginTop: '0.25rem' }}>{project.title}</h3>
+          {project.notes && (
+            <p style={{ fontSize: '0.875rem', color: '#7e22ce', marginTop: '0.25rem', fontWeight: 500 }}>
+              💡 {project.notes}
+            </p>
           )}
         </div>
 
-        {/* Descripción y Notas */}
-        <div style={{ marginBottom: '1.5rem' }}>
-          <p style={{ fontSize: '0.875rem', color: 'rgba(255,255,255,0.7)', lineHeight: 1.6, marginBottom: '1rem' }}>
+        <div style={{ position: 'relative', width: '100%', borderRadius: '0.75rem', overflow: 'hidden', backgroundColor: '#f8fafc', border: '1px solid #e2e8f0', marginBottom: '1.25rem', minHeight: '200px', display: 'flex', alignItems: 'center', justify: 'center' }}>
+          <img
+            src={currentSrc}
+            alt={`Captura de pantalla de ${project.title}`}
+            onError={handleImageError}
+            style={{ width: '100%', height: 'auto', maxHeight: '60vh', objectFit: 'contain', display: 'block' }}
+          />
+        </div>
+
+        <div style={{ marginBottom: '1.25rem' }}>
+          <h4 style={{ fontSize: '0.875rem', fontWeight: 600, color: '#334155', marginBottom: '0.5rem' }}>Descripción del Proyecto:</h4>
+          <p style={{ fontSize: '0.875rem', color: '#475569', lineHeight: 1.6, whiteSpace: 'pre-line' }}>
             {project.description}
           </p>
-
-          {project.notes && (
-            <div style={{ padding: '1rem', borderRadius: '0.75rem', backgroundColor: 'rgba(168,85,247,0.1)', border: '1px solid rgba(168,85,247,0.2)', fontSize: '0.8rem', color: '#e9d5ff', display: 'flex', alignItems: 'flex-start', gap: '0.5rem', marginBottom: '1rem' }}>
-              <span style={{ color: '#a855f7', marginTop: '0.125rem' }}>💡</span>
-              <span><strong>Nota:</strong> {project.notes}</span>
-            </div>
-          )}
-
-          {/* Tags */}
-          <div className="flex flex-wrap gap-2 pt-2">
-            {project.tags.map((tag) => (
-              <span key={tag} className="tag">{tag}</span>
-            ))}
-          </div>
         </div>
 
-        {/* Acciones del Modal */}
-        <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'space-between', gap: '1rem', paddingTop: '1rem', borderTop: '1px solid rgba(255,255,255,0.1)' }}>
+        <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem', marginBottom: '1.5rem' }}>
+          {project.tags.map((tag) => (
+            <span key={tag} style={{ padding: '0.25rem 0.75rem', fontSize: '0.75rem', fontWeight: 500, borderRadius: '9999px', backgroundColor: '#f3e8ff', color: '#7e22ce', border: '1px solid #e9d5ff' }}>
+              {tag}
+            </span>
+          ))}
+        </div>
+
+        <div style={{ display: 'flex', alignItems: 'center', justify: 'space-between', gap: '1rem', paddingTop: '1rem', borderTop: '1px solid #f1f5f9' }}>
           <a
             href={project.githubLink || "https://github.com/alonsoarriaza"}
             target="_blank"
             rel="noopener noreferrer"
-            style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', padding: '0.625rem 1.5rem', borderRadius: '9999px', background: 'linear-gradient(to right, #9333ea, #0891b2)', color: 'white', fontWeight: 600, fontSize: '0.75rem', textDecoration: 'none', letterSpacing: '0.05em' }}
+            style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', padding: '0.625rem 1.5rem', borderRadius: '9999px', background: 'linear-gradient(to right, #9333ea, #4f46e5)', color: 'white', fontWeight: 600, fontSize: '0.75rem', textDecoration: 'none', letterSpacing: '0.05em' }}
           >
             <span>Ver repositorio en GitHub</span>
             <Icons.ExternalLink />
@@ -805,7 +755,7 @@ function ProjectPreviewModal({ project, onClose }) {
 
           <button
             onClick={onClose}
-            style={{ padding: '0.625rem 1.25rem', borderRadius: '9999px', border: '1px solid rgba(255,255,255,0.2)', backgroundColor: 'transparent', color: 'rgba(255,255,255,0.8)', cursor: 'pointer', fontSize: '0.75rem', fontWeight: 600 }}
+            style={{ padding: '0.625rem 1.25rem', borderRadius: '9999px', border: '1px solid #cbd5e1', backgroundColor: '#f8fafc', color: '#475569', cursor: 'pointer', fontSize: '0.75rem', fontWeight: 600 }}
           >
             Cerrar vista previa
           </button>
@@ -826,18 +776,18 @@ function ProjectsSection() {
   const [selectedProject, setSelectedProject] = useState(null)
 
   const cardAccents = [
-    { border: "border-purple-500/30 hover:border-purple-400/60", bg: "bg-purple-950/10", badge: "bg-purple-500/10 text-purple-300 border-purple-500/20" },
-    { border: "border-cyan-500/30 hover:border-cyan-400/60", bg: "bg-cyan-950/10", badge: "bg-cyan-500/10 text-cyan-300 border-cyan-500/20" },
-    { border: "border-emerald-500/30 hover:border-emerald-400/60", bg: "bg-emerald-950/10", badge: "bg-emerald-500/10 text-emerald-300 border-emerald-500/20" },
-    { border: "border-amber-500/30 hover:border-amber-400/60", bg: "bg-amber-950/10", badge: "bg-amber-500/10 text-amber-300 border-amber-500/20" },
+    { border: "border-purple-200 hover:border-purple-400", bg: "bg-white", badge: "bg-purple-50 text-purple-700 border-purple-200" },
+    { border: "border-sky-200 hover:border-sky-400", bg: "bg-white", badge: "bg-sky-50 text-sky-700 border-sky-200" },
+    { border: "border-emerald-200 hover:border-emerald-400", bg: "bg-white", badge: "bg-emerald-50 text-emerald-700 border-emerald-200" },
+    { border: "border-amber-200 hover:border-amber-400", bg: "bg-white", badge: "bg-amber-50 text-amber-700 border-amber-200" },
   ]
 
   return (
     <section id="proyectos" ref={sectionRef} className="section-container">
       <div className="animate-on-scroll">
         <div className="flex items-center gap-3 mb-2">
-          <span className="text-pink-400"><Icons.Code /></span>
-          <span className="text-sm font-medium text-pink-400 uppercase tracking-widest">Portfolio</span>
+          <span className="text-purple-600"><Icons.Code /></span>
+          <span className="text-sm font-semibold text-purple-700 uppercase tracking-widest">Portfolio</span>
         </div>
         <h2 className="section-title">Proyectos</h2>
         <p className="section-subtitle">
@@ -851,7 +801,7 @@ function ProjectsSection() {
           return (
             <div key={i} className="animate-on-scroll" style={{ animationDelay: `${i * 150}ms` }}>
               <div
-                className={`glass-card p-6 md:p-8 h-full flex flex-col group justify-between border ${accent.border} ${accent.bg} transition-all duration-500 relative hover:scale-[1.01] overflow-hidden`}
+                className={`glass-card p-6 md:p-8 h-full flex flex-col group justify-between border ${accent.border} ${accent.bg} transition-all duration-500 relative hover:-translate-y-1 shadow-sm hover:shadow-xl hover:shadow-purple-500/5 overflow-hidden`}
               >
                 {/* Visual Header & Title */}
                 <div>
@@ -860,10 +810,10 @@ function ProjectsSection() {
                       href={project.githubLink || "https://github.com/alonsoarriaza"}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="hover:text-purple-300 transition-colors duration-300"
+                      className="hover:text-purple-700 transition-colors duration-300"
                       title="Ver en GitHub"
                     >
-                      <h3 className="text-xl font-display font-bold text-white hover:text-purple-300 transition-colors leading-snug">
+                      <h3 className="text-xl font-display font-bold text-slate-900 hover:text-purple-700 transition-colors leading-snug">
                         {project.title}
                       </h3>
                     </a>
@@ -871,14 +821,14 @@ function ProjectsSection() {
                       href={project.githubLink || "https://github.com/alonsoarriaza"}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-white/30 hover:text-purple-400 transition-colors duration-300 shrink-0 mt-1 p-1"
+                      className="text-slate-400 hover:text-purple-600 transition-colors duration-300 shrink-0 mt-1 p-1"
                       title="Ver en GitHub"
                     >
                       <Icons.ExternalLink />
                     </a>
                   </div>
 
-                  <p className="text-xs sm:text-sm text-white/60 mb-5 line-clamp-3 leading-relaxed font-light">
+                  <p className="text-xs sm:text-sm text-slate-600 mb-5 line-clamp-3 leading-relaxed font-light">
                     {project.description}
                   </p>
 
@@ -891,11 +841,11 @@ function ProjectsSection() {
                 </div>
 
                 {/* Botón de Vista Previa */}
-                <div className="pt-4 border-t border-white/10 flex items-center justify-between gap-3">
+                <div className="pt-4 border-t border-slate-100 flex items-center justify-between gap-3">
                   <button
                     type="button"
                     onClick={() => setSelectedProject(project)}
-                    className="w-full py-2.5 px-4 rounded-xl text-xs font-semibold bg-gradient-to-r from-purple-600/30 to-cyan-600/30 border border-purple-500/30 text-purple-200 hover:text-white hover:from-purple-600 hover:to-cyan-600 hover:border-transparent transition-all duration-300 flex items-center justify-center gap-2 group-hover:shadow-[0_0_15px_rgba(168,85,247,0.3)]"
+                    className="w-full py-2.5 px-4 rounded-xl text-xs font-semibold bg-purple-50 hover:bg-purple-600 border border-purple-200 text-purple-700 hover:text-white transition-all duration-300 flex items-center justify-center gap-2 shadow-sm"
                   >
                     <Icons.Eye />
                     <span>Vista previa</span>
@@ -934,8 +884,8 @@ function AboutSection() {
     <section id="sobre-mi" ref={sectionRef} className="section-container">
       <div className="animate-on-scroll">
         <div className="flex items-center gap-3 mb-2">
-          <span className="text-emerald-400"><Icons.User /></span>
-          <span className="text-sm font-medium text-emerald-400 uppercase tracking-widest">Bio</span>
+          <span className="text-emerald-600"><Icons.User /></span>
+          <span className="text-sm font-semibold text-emerald-700 uppercase tracking-widest">Bio</span>
         </div>
         <h2 className="section-title">Sobre Mí</h2>
         <p className="section-subtitle">
@@ -946,16 +896,15 @@ function AboutSection() {
       <div className="space-y-8">
         {/* Bloque principal: Párrafos de Sobre Mí */}
         <div className="animate-on-scroll">
-          <div className="glass-card p-6 md:p-10 border border-white/10 relative overflow-hidden">
-            <div className="absolute top-0 right-0 w-64 h-64 bg-purple-600/5 blur-3xl rounded-full pointer-events-none" />
+          <div className="glass-card p-6 md:p-10 bg-white border border-slate-200/90 shadow-sm relative overflow-hidden">
             <div className="space-y-6 relative z-10">
               {ABOUT.paragraphs.map((p, i) => (
                 <div key={i} className="relative">
-                  <p className="text-sm sm:text-base text-white/70 leading-relaxed font-light">
+                  <p className="text-sm sm:text-base text-slate-700 leading-relaxed font-light">
                     {p}
                   </p>
                   {i < ABOUT.paragraphs.length - 1 && (
-                    <div className="mt-6 border-b border-white/5" />
+                    <div className="mt-6 border-b border-slate-100" />
                   )}
                 </div>
               ))}
@@ -965,7 +914,7 @@ function AboutSection() {
 
         {/* Bloque secundario: Datos de Interés en tarjetas limpias */}
         <div id="datos-interes" className="animate-on-scroll">
-          <div className="mb-4 flex items-center gap-2 text-white font-display font-bold text-lg">
+          <div className="mb-4 flex items-center gap-2 text-slate-900 font-display font-bold text-lg">
             <Icons.Sparkle />
             <span>Datos de Interés</span>
           </div>
@@ -985,19 +934,19 @@ function AboutSection() {
               const isPhone = label === "Teléfono"
 
               return (
-                <div key={i} className="glass-card p-5 border border-purple-500/20 hover:border-purple-400/40 transition-all duration-300 flex flex-col justify-between">
+                <div key={i} className="glass-card p-5 bg-white border border-slate-200/90 hover:border-purple-300 transition-all duration-300 flex flex-col justify-between shadow-sm hover:shadow-md">
                   <div>
-                    <span className="text-[10px] font-bold text-purple-300 uppercase tracking-widest block mb-1.5">{label}</span>
+                    <span className="text-[10px] font-bold text-purple-700 uppercase tracking-widest block mb-1.5">{label}</span>
                     {isEmail ? (
-                      <a href={`mailto:${value}`} className="text-xs sm:text-sm text-cyan-300 hover:text-white hover:underline transition-all break-all font-medium">
+                      <a href={`mailto:${value}`} className="text-xs sm:text-sm text-indigo-600 hover:text-purple-700 hover:underline transition-all break-all font-semibold">
                         {value}
                       </a>
                     ) : isPhone ? (
-                      <a href={`tel:${value.replace(/\s+/g, '')}`} className="text-xs sm:text-sm text-cyan-300 hover:text-white hover:underline transition-all font-medium">
+                      <a href={`tel:${value.replace(/\s+/g, '')}`} className="text-xs sm:text-sm text-indigo-600 hover:text-purple-700 hover:underline transition-all font-semibold">
                         {value}
                       </a>
                     ) : (
-                      <p className="text-xs sm:text-sm text-white/80 font-light leading-relaxed">
+                      <p className="text-xs sm:text-sm text-slate-700 font-normal leading-relaxed">
                         {value}
                       </p>
                     )}
@@ -1021,15 +970,14 @@ function ContactCallToAction() {
   const sectionRef = useAnimateOnScroll()
   return (
     <section id="contacto" ref={sectionRef} className="section-container text-center py-16">
-      <div className="animate-on-scroll max-w-3xl mx-auto glass-card p-8 md:p-12 border border-purple-500/30 relative overflow-hidden">
-        <div className="absolute -top-24 left-1/2 -translate-x-1/2 w-96 h-96 bg-purple-600/10 blur-[100px] rounded-full pointer-events-none" />
-        <span className="text-xs font-semibold text-purple-300 uppercase tracking-widest bg-purple-500/10 border border-purple-500/20 px-3.5 py-1.5 rounded-full inline-block mb-4">Contacto Directo</span>
-        <h2 className="text-2xl sm:text-3xl md:text-4xl font-display font-bold text-white mb-3 leading-tight">¿Tienes un problema que podamos convertir en una solución?</h2>
-        <p className="text-base sm:text-lg text-cyan-300 font-medium mb-8">Hablemos.</p>
+      <div className="animate-on-scroll max-w-3xl mx-auto glass-card p-8 md:p-12 border border-purple-200 bg-gradient-to-r from-purple-50 via-white to-indigo-50 relative overflow-hidden shadow-md">
+        <span className="text-xs font-bold text-purple-700 uppercase tracking-widest bg-purple-100 border border-purple-200 px-3.5 py-1.5 rounded-full inline-block mb-4">Contacto Directo</span>
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-display font-bold text-slate-900 mb-3 leading-tight">¿Tienes un problema que podamos convertir en una solución?</h2>
+        <p className="text-base sm:text-lg text-indigo-700 font-semibold mb-8">Hablemos.</p>
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-          <a href="mailto:alonsoarriaza03@gmail.com" className="px-8 py-3.5 rounded-full bg-gradient-to-r from-purple-600 to-cyan-600 text-white font-semibold text-sm hover:shadow-[0_0_30px_rgba(168,85,247,0.4)] transition-all duration-300 hover:scale-105">Enviar Email</a>
-          <a href={PROFILE.linkedin} target="_blank" rel="noopener noreferrer" className="px-6 py-3.5 rounded-full border border-white/20 bg-black/40 text-white/90 hover:text-white hover:border-cyan-400/40 text-sm font-semibold transition-all duration-300">LinkedIn</a>
-          <a href={PROFILE.github} target="_blank" rel="noopener noreferrer" className="px-6 py-3.5 rounded-full border border-white/20 bg-black/40 text-white/90 hover:text-white hover:border-purple-400/40 text-sm font-semibold transition-all duration-300">GitHub</a>
+          <a href="mailto:alonsoarriaza03@gmail.com" className="px-8 py-3.5 rounded-full bg-gradient-to-r from-purple-600 to-indigo-600 text-white font-semibold text-sm hover:shadow-lg hover:shadow-purple-500/20 transition-all duration-300 hover:scale-105">Enviar Email</a>
+          <a href={PROFILE.linkedin} target="_blank" rel="noopener noreferrer" className="px-6 py-3.5 rounded-full border border-slate-300 bg-white text-slate-800 hover:border-purple-500 text-sm font-semibold transition-all duration-300 shadow-sm">LinkedIn</a>
+          <a href={PROFILE.github} target="_blank" rel="noopener noreferrer" className="px-6 py-3.5 rounded-full border border-slate-300 bg-white text-slate-800 hover:border-purple-500 text-sm font-semibold transition-all duration-300 shadow-sm">GitHub</a>
         </div>
       </div>
     </section>
@@ -1043,31 +991,11 @@ function ContactCallToAction() {
 
 function Footer() {
   return (
-    <footer className="border-t border-white/5 py-10">
+    <footer className="border-t border-slate-200 py-10 bg-white">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center justify-center gap-4 text-center">
-        <p className="text-sm text-white/30">
-          © {new Date().getFullYear()} {PROFILE.name}. Hecho con café y mucho amor.
+        <p className="text-sm text-slate-500 font-light">
+          © {new Date().getFullYear()} Alonso Feria Arriaza · Desarrollador Full-Stack
         </p>
-        <div className="flex items-center gap-4">
-          <a
-            href={PROFILE.github}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-white/30 hover:text-white/70 transition-colors duration-300"
-            aria-label="GitHub"
-          >
-            <Icons.GitHub />
-          </a>
-          <a
-            href={PROFILE.linkedin}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-white/30 hover:text-white/70 transition-colors duration-300"
-            aria-label="LinkedIn"
-          >
-            <Icons.LinkedIn />
-          </a>
-        </div>
       </div>
     </footer>
   )
@@ -1180,58 +1108,58 @@ function ImpactMetricsSection() {
       value: "+5",
       title: "Proyectos y soluciones desarrolladas",
       description: "Aplicaciones web, automatizaciones e integraciones orientadas a necesidades empresariales.",
-      gradient: "from-purple-400 via-pink-300 to-purple-400",
-      border: "border-purple-500/30 hover:border-purple-400/60",
-      bg: "bg-purple-500/10",
+      gradient: "from-purple-600 via-pink-600 to-indigo-600",
+      border: "border-purple-200 hover:border-purple-400",
+      bg: "bg-purple-50",
       badge: "Alcance",
-      badgeColor: "bg-purple-500/10 border-purple-500/20 text-purple-300"
+      badgeColor: "bg-purple-100 text-purple-700 border-purple-200"
     },
     {
       value: "Miles",
       title: "Registros procesados",
       description: "Automatización de clasificación y tratamiento de grandes volúmenes de datos.",
-      gradient: "from-cyan-400 via-blue-300 to-cyan-400",
-      border: "border-cyan-500/30 hover:border-cyan-400/60",
-      bg: "bg-cyan-500/10",
+      gradient: "from-sky-600 via-blue-600 to-cyan-600",
+      border: "border-sky-200 hover:border-sky-400",
+      bg: "bg-sky-50",
       badge: "Volumen",
-      badgeColor: "bg-cyan-500/10 border-cyan-500/20 text-cyan-300"
+      badgeColor: "bg-sky-100 text-sky-700 border-sky-200"
     },
     {
       value: "QR",
       title: "Trazabilidad de activos",
       description: "Digitalización, inventario y seguimiento de recursos en tiempo real.",
-      gradient: "from-emerald-400 via-teal-300 to-emerald-400",
-      border: "border-emerald-500/30 hover:border-emerald-400/60",
-      bg: "bg-emerald-500/10",
+      gradient: "from-emerald-600 via-teal-600 to-emerald-600",
+      border: "border-emerald-200 hover:border-emerald-400",
+      bg: "bg-emerald-50",
       badge: "Control",
-      badgeColor: "bg-emerald-500/10 border-emerald-500/20 text-emerald-300"
+      badgeColor: "bg-emerald-100 text-emerald-700 border-emerald-200"
     },
     {
       value: "ERP → BBDD",
       title: "Integración y transformación de datos",
       description: "Extracción, transformación y centralización de información procedente de sistemas empresariales.",
-      gradient: "from-amber-400 via-orange-300 to-amber-400",
-      border: "border-amber-500/30 hover:border-amber-400/60 font-mono text-2xl sm:text-3xl",
-      bg: "bg-amber-500/10",
+      gradient: "from-amber-600 via-orange-600 to-amber-600",
+      border: "border-amber-200 hover:border-amber-400 font-mono text-2xl sm:text-3xl",
+      bg: "bg-amber-50",
       badge: "Sistemas",
-      badgeColor: "bg-amber-500/10 border-amber-500/20 text-amber-300"
+      badgeColor: "bg-amber-100 text-amber-700 border-amber-200"
     },
     {
       value: "IA",
       title: "Inteligencia aplicada",
       description: "Agentes de IA integrados en procesos de clasificación, recomendación y automatización.",
-      gradient: "from-pink-400 via-purple-300 to-pink-400",
-      border: "border-pink-500/30 hover:border-pink-400/60",
-      bg: "bg-pink-500/10",
+      gradient: "from-pink-600 via-purple-600 to-pink-600",
+      border: "border-pink-200 hover:border-pink-400",
+      bg: "bg-pink-50",
       badge: "Agentes",
-      badgeColor: "bg-pink-500/10 border-pink-500/20 text-pink-300"
+      badgeColor: "bg-pink-100 text-pink-700 border-pink-200"
     }
   ]
 
   return (
     <section id="impacto" ref={sectionRef} className="section-container">
       <div className="animate-on-scroll text-center max-w-2xl mx-auto mb-10">
-        <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full border border-purple-400/30 bg-purple-500/10 text-purple-300 text-xs font-semibold uppercase tracking-wider mb-3">
+        <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full border border-purple-200 bg-purple-50 text-purple-700 text-xs font-semibold uppercase tracking-wider mb-3">
           <Icons.Sparkle /> Métricas & Impacto
         </div>
         <h2 className="section-title">Variedad e Impacto Real</h2>
@@ -1242,17 +1170,17 @@ function ImpactMetricsSection() {
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 mb-8">
         {metrics.map((m, i) => (
           <div key={i} className="animate-on-scroll" style={{ animationDelay: `${i * 100}ms` }}>
-            <div className={`glass-card-hover p-5 text-left h-full flex flex-col justify-between border ${m.border} relative overflow-hidden group transition-all duration-300`}>
+            <div className={`glass-card-hover p-5 text-left h-full flex flex-col justify-between bg-white border ${m.border} relative overflow-hidden group transition-all duration-300 shadow-sm hover:shadow-md`}>
               <div className={`absolute -top-6 -right-6 w-20 h-20 ${m.bg} blur-2xl rounded-full pointer-events-none group-hover:scale-150 transition-transform duration-500`} />
               <div>
                 <div className="flex items-center justify-between gap-2 mb-3">
-                  <span className={`text-[10px] font-semibold uppercase tracking-wider px-2 py-0.5 rounded border ${m.badgeColor}`}>{m.badge}</span>
+                  <span className={`text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded border ${m.badgeColor}`}>{m.badge}</span>
                 </div>
                 <div className={`font-display font-black text-transparent bg-clip-text bg-gradient-to-r ${m.gradient} mb-2 tracking-tight ${m.value.length > 5 ? 'text-2xl sm:text-2xl' : 'text-3xl sm:text-4xl'}`}>
                   {m.value}
                 </div>
-                <h3 className="text-xs sm:text-sm font-bold text-white mb-2 leading-snug">{m.title}</h3>
-                <p className="text-xs text-white/60 font-light leading-relaxed">{m.description}</p>
+                <h3 className="text-xs sm:text-sm font-bold text-slate-900 mb-2 leading-snug">{m.title}</h3>
+                <p className="text-xs text-slate-600 font-light leading-relaxed">{m.description}</p>
               </div>
             </div>
           </div>
