@@ -694,60 +694,68 @@ function ProjectPreviewModal({ project, onClose }) {
   return createPortal(
     <div
       onClick={onClose}
-      style={{ position: 'fixed', inset: 0, zIndex: 9999, display: 'flex', alignItems: 'center', justify: 'center', padding: '1rem', backgroundColor: 'rgba(15, 23, 42, 0.75)', backdropFilter: 'blur(8px)' }}
+      className="fixed inset-0 z-[9999] flex items-center justify-center p-3 sm:p-6 bg-slate-950/80 backdrop-blur-md overflow-y-auto"
     >
       <div
         onClick={(e) => e.stopPropagation()}
-        style={{ position: 'relative', width: '100%', maxWidth: '56rem', backgroundColor: '#ffffff', borderRadius: '1rem', border: '1px solid #cbd5e1', padding: '1.5rem', boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.25)', maxHeight: '90vh', overflowY: 'auto' }}
+        className="relative w-full max-w-3xl bg-white border border-slate-200 rounded-2xl p-4 sm:p-6 shadow-2xl my-auto flex flex-col justify-between max-h-[90vh] overflow-y-auto"
       >
+        {/* Botón cerrar */}
         <button
           onClick={onClose}
-          style={{ position: 'absolute', top: '1rem', right: '1rem', padding: '0.5rem', borderRadius: '9999px', backgroundColor: '#f1f5f9', color: '#334155', cursor: 'pointer', border: 'none' }}
+          className="absolute top-3 right-3 p-2 rounded-full bg-slate-100 text-slate-600 hover:text-slate-900 hover:bg-slate-200 transition-all z-10"
           aria-label="Cerrar modal"
         >
           <Icons.Close />
         </button>
 
-        <div style={{ marginBottom: '1.25rem' }}>
-          <span style={{ fontSize: '0.75rem', fontWeight: 800, color: '#7e22ce', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Vista Previa de Proyecto</span>
-          <h3 style={{ fontSize: '1.5rem', fontWeight: 800, color: '#0f172a', marginTop: '0.25rem' }}>{project.title}</h3>
-          {project.notes && (
-            <p style={{ fontSize: '0.875rem', color: '#0369a1', marginTop: '0.25rem', fontWeight: 700 }}>
-              💡 {project.notes}
+        <div>
+          {/* Header Modal */}
+          <div className="pr-8 mb-3">
+            <span className="text-[11px] font-extrabold text-purple-700 uppercase tracking-widest block">Vista Previa de Proyecto</span>
+            <h3 className="text-xl sm:text-2xl font-extrabold text-slate-900 mt-0.5">{project.title}</h3>
+            {project.notes && (
+              <p className="text-xs sm:text-sm text-sky-700 font-bold mt-1">
+                💡 {project.notes}
+              </p>
+            )}
+          </div>
+
+          {/* Contenedor de Imagen adaptado */}
+          <div className="w-full rounded-xl overflow-hidden bg-slate-900 border border-slate-200 mb-3 flex items-center justify-center max-h-[35vh] sm:max-h-[40vh] p-2">
+            <img
+              src={currentSrc}
+              alt={`Captura de pantalla de ${project.title}`}
+              onError={handleImageError}
+              className="max-w-full max-h-[33vh] sm:max-h-[38vh] w-auto h-auto object-contain block rounded-lg shadow-sm"
+            />
+          </div>
+
+          {/* Descripción */}
+          <div className="mb-3">
+            <h4 className="text-xs font-bold text-slate-900 mb-1">Descripción del Proyecto:</h4>
+            <p className="text-xs sm:text-sm text-slate-700 leading-relaxed font-medium">
+              {project.description}
             </p>
-          )}
+          </div>
+
+          {/* Tags */}
+          <div className="flex flex-wrap gap-1.5 mb-4">
+            {project.tags.map((tag) => (
+              <span key={tag} className="px-2.5 py-0.5 text-xs font-bold rounded-full bg-purple-100 text-purple-900 border border-purple-200">
+                {tag}
+              </span>
+            ))}
+          </div>
         </div>
 
-        <div style={{ position: 'relative', width: '100%', borderRadius: '0.75rem', overflow: 'hidden', backgroundColor: '#f8fafc', border: '1px solid #e2e8f0', marginBottom: '1.25rem', minHeight: '200px', display: 'flex', alignItems: 'center', justify: 'center' }}>
-          <img
-            src={currentSrc}
-            alt={`Captura de pantalla de ${project.title}`}
-            onError={handleImageError}
-            style={{ width: '100%', height: 'auto', maxHeight: '60vh', objectFit: 'contain', display: 'block' }}
-          />
-        </div>
-
-        <div style={{ marginBottom: '1.25rem' }}>
-          <h4 style={{ fontSize: '0.875rem', fontWeight: 700, color: '#0f172a', marginBottom: '0.5rem' }}>Descripción del Proyecto:</h4>
-          <p style={{ fontSize: '0.875rem', color: '#334155', lineHeight: 1.6, fontWeight: 500, whiteSpace: 'pre-line' }}>
-            {project.description}
-          </p>
-        </div>
-
-        <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem', marginBottom: '1.5rem' }}>
-          {project.tags.map((tag) => (
-            <span key={tag} style={{ padding: '0.25rem 0.75rem', fontSize: '0.75rem', fontWeight: 700, borderRadius: '9999px', backgroundColor: '#f3e8ff', color: '#6b21a8', border: '1px solid #d8b4fe' }}>
-              {tag}
-            </span>
-          ))}
-        </div>
-
-        <div style={{ display: 'flex', alignItems: 'center', justify: 'space-between', gap: '1rem', paddingTop: '1rem', borderTop: '1px solid #f1f5f9' }}>
+        {/* Footer Modal Buttons */}
+        <div className="flex items-center justify-between gap-3 pt-3 border-t border-slate-200 shrink-0">
           <a
             href={project.githubLink || "https://github.com/alonsoarriaza"}
             target="_blank"
             rel="noopener noreferrer"
-            style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', padding: '0.625rem 1.5rem', borderRadius: '9999px', background: 'linear-gradient(to right, #7e22ce, #4338ca)', color: 'white', fontWeight: 700, fontSize: '0.75rem', textDecoration: 'none', letterSpacing: '0.05em' }}
+            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-gradient-to-r from-purple-600 to-indigo-600 text-white font-bold text-xs sm:text-sm shadow-md hover:shadow-lg transition-all hover:scale-105"
           >
             <span>Ver repositorio en GitHub</span>
             <Icons.ExternalLink />
@@ -755,9 +763,9 @@ function ProjectPreviewModal({ project, onClose }) {
 
           <button
             onClick={onClose}
-            style={{ padding: '0.625rem 1.25rem', borderRadius: '9999px', border: '1px solid #cbd5e1', backgroundColor: '#f8fafc', color: '#334155', cursor: 'pointer', fontSize: '0.75rem', fontWeight: 700 }}
+            className="px-4 py-2 rounded-full border border-slate-300 bg-slate-100 text-slate-700 hover:bg-slate-200 text-xs font-bold transition-all"
           >
-            Cerrar vista previa
+            Cerrar
           </button>
         </div>
       </div>
