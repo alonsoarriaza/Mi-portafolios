@@ -916,14 +916,14 @@ function AboutSection() {
           </div>
         </div>
 
-        {/* Bloque secundario: Datos de Interés con etiquetas profesionales y alineación equilibrada */}
+        {/* Bloque secundario: Datos de Interés con diseño BENTO GRID editorial equilibrado */}
         <div id="datos-interes" className="animate-on-scroll">
-          <div className="mb-6 flex items-center gap-2.5 text-slate-900 font-display font-extrabold text-xl">
+          <div className="mb-5 flex items-center gap-2.5 text-slate-900 font-display font-extrabold text-xl">
             <span className="text-purple-600"><Icons.Sparkle /></span>
             <span>Datos de Interés</span>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 items-stretch">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 items-stretch">
             {ABOUT.funFacts.map((fact, i) => {
               let rawLabel = "Información"
               let value = fact
@@ -945,6 +945,13 @@ function AboutSection() {
               const displayLabel = labelMap[rawLabel] || rawLabel
               const isEmail = rawLabel === "Email"
               const isPhone = rawLabel === "Teléfono"
+              const isLanguages = rawLabel === "Idiomas"
+
+              // Grid Bento Spans
+              let bentoClass = "col-span-1"
+              if (isLanguages) {
+                bentoClass = "col-span-1 md:col-span-2"
+              }
 
               const renderIcon = (key) => {
                 switch (key) {
@@ -986,37 +993,42 @@ function AboutSection() {
                 }
               }
 
+              const isContact = isEmail || isPhone
+
               return (
                 <div
                   key={i}
-                  className="glass-card p-5 bg-white border border-slate-200/90 hover:border-purple-300 transition-all duration-300 flex flex-col justify-between h-full shadow-sm hover:shadow-md group rounded-2xl"
+                  className={`glass-card p-4 sm:p-5 ${isContact
+                      ? 'bg-gradient-to-br from-purple-50/70 via-white to-indigo-50/60 border-purple-200/90 shadow-sm hover:shadow-md hover:border-purple-400'
+                      : 'bg-white border-slate-200/90 hover:border-purple-300 shadow-sm hover:shadow-md'
+                    } transition-all duration-300 flex flex-col justify-between ${bentoClass} rounded-2xl group min-h-[110px]`}
                 >
-                  <div className="flex items-center gap-3 mb-3">
-                    <div className="w-9 h-9 rounded-xl bg-purple-100/70 border border-purple-200/80 flex items-center justify-center shrink-0 group-hover:bg-purple-600 transition-colors duration-300 shadow-xs">
+                  <div className="flex items-center gap-2.5 mb-2.5">
+                    <div className="w-8 h-8 rounded-lg bg-purple-100/80 border border-purple-200/80 flex items-center justify-center shrink-0 group-hover:bg-purple-600 transition-colors duration-300 shadow-xs">
                       {renderIcon(rawLabel)}
                     </div>
-                    <span className="text-[11px] font-extrabold text-purple-900 uppercase tracking-widest block leading-tight">
+                    <span className="text-[10px] sm:text-[11px] font-extrabold text-purple-900 uppercase tracking-widest block leading-tight">
                       {displayLabel}
                     </span>
                   </div>
 
-                  <div className="pt-1">
+                  <div>
                     {isEmail ? (
                       <a
                         href={`mailto:${value}`}
-                        className="text-xs sm:text-sm font-bold text-indigo-700 hover:text-purple-800 hover:underline transition-all break-all leading-snug block"
+                        className="text-xs sm:text-sm font-extrabold text-indigo-700 hover:text-purple-900 hover:underline transition-all break-all leading-snug block"
                       >
                         {value}
                       </a>
                     ) : isPhone ? (
                       <a
                         href={`tel:${value.replace(/\s+/g, '')}`}
-                        className="text-xs sm:text-sm font-bold text-indigo-700 hover:text-purple-800 hover:underline transition-all leading-snug block"
+                        className="text-xs sm:text-sm font-extrabold text-indigo-700 hover:text-purple-900 hover:underline transition-all leading-snug block"
                       >
                         {value}
                       </a>
                     ) : (
-                      <p className="text-xs sm:text-sm font-medium text-slate-800 leading-relaxed">
+                      <p className="text-xs sm:text-sm font-bold text-slate-900 leading-snug">
                         {value}
                       </p>
                     )}
