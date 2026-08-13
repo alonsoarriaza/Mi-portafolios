@@ -916,7 +916,7 @@ function AboutSection() {
           </div>
         </div>
 
-        {/* Bloque secundario: Datos de Interés perfectamente alineado y equilibrado */}
+        {/* Bloque secundario: Datos de Interés con etiquetas profesionales y alineación equilibrada */}
         <div id="datos-interes" className="animate-on-scroll">
           <div className="mb-6 flex items-center gap-2.5 text-slate-900 font-display font-extrabold text-xl">
             <span className="text-purple-600"><Icons.Sparkle /></span>
@@ -925,20 +925,29 @@ function AboutSection() {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 items-stretch">
             {ABOUT.funFacts.map((fact, i) => {
-              let label = "Información"
+              let rawLabel = "Información"
               let value = fact
 
               if (fact.includes(":")) {
                 const parts = fact.split(":")
-                label = parts[0].trim()
+                rawLabel = parts[0].trim()
                 value = parts.slice(1).join(":").trim()
               }
 
-              const isEmail = label === "Email"
-              const isPhone = label === "Teléfono"
+              const labelMap = {
+                "Idiomas": "Competencias Lingüísticas",
+                "Movilidad": "Movilidad Profesional",
+                "Ubicación": "Ubicación Principal",
+                "Teléfono": "Contacto Telefónico",
+                "Email": "Contacto Profesional"
+              }
 
-              const renderIcon = (lbl) => {
-                switch (lbl) {
+              const displayLabel = labelMap[rawLabel] || rawLabel
+              const isEmail = rawLabel === "Email"
+              const isPhone = rawLabel === "Teléfono"
+
+              const renderIcon = (key) => {
+                switch (key) {
                   case "Idiomas":
                     return (
                       <svg className="w-4 h-4 text-purple-700 group-hover:text-white transition-colors duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
@@ -984,10 +993,10 @@ function AboutSection() {
                 >
                   <div className="flex items-center gap-3 mb-3">
                     <div className="w-9 h-9 rounded-xl bg-purple-100/70 border border-purple-200/80 flex items-center justify-center shrink-0 group-hover:bg-purple-600 transition-colors duration-300 shadow-xs">
-                      {renderIcon(label)}
+                      {renderIcon(rawLabel)}
                     </div>
                     <span className="text-[11px] font-extrabold text-purple-900 uppercase tracking-widest block leading-tight">
-                      {label}
+                      {displayLabel}
                     </span>
                   </div>
 
