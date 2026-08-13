@@ -21,6 +21,7 @@ const PROFILE = {
 
 const NAV_LINKS = [
   { label: "Ahorra tiempo para el café", href: "#cafe-express" },
+  { label: "Impacto", href: "#impacto" },
   { label: "Educación", href: "#educacion" },
   { label: "Experiencia", href: "#experiencia" },
   { label: "Proyectos", href: "#proyectos" },
@@ -1143,6 +1144,62 @@ function RetroSection() {
 
 
 /* ═══════════════════════════════════════════════
+   COMPONENTE: Bloque de Métricas / Impacto
+   ═══════════════════════════════════════════════ */
+
+function ImpactMetricsSection() {
+  const sectionRef = useAnimateOnScroll()
+  const metrics = [
+    { value: "+5", title: "Proyectos y soluciones desarrolladas", subtitle: "Aplicaciones web e integraciones con impacto directo en negocio", gradient: "from-purple-400 to-pink-400", border: "border-purple-500/30", bg: "bg-purple-500/10" },
+    { value: "Miles", title: "Clientes procesados mediante automatización", subtitle: "Clasificación y tratamiento de datos asistido por agentes IA", gradient: "from-cyan-400 to-blue-400", border: "border-cyan-500/30", bg: "bg-cyan-500/10" },
+    { value: "QR", title: "Trazabilidad de activos", subtitle: "Digitalización e inventario en tiempo real", gradient: "from-emerald-400 to-teal-400", border: "border-emerald-500/30", bg: "bg-emerald-500/10" },
+    { value: "IA", title: "Automatización y clasificación inteligente", subtitle: "Integración de inteligencia artificial en flujos de trabajo", gradient: "from-amber-400 to-orange-400", border: "border-amber-500/30", bg: "bg-amber-500/10" },
+  ]
+  return (
+    <section id="impacto" ref={sectionRef} className="section-container">
+      <div className="animate-on-scroll text-center max-w-2xl mx-auto mb-10">
+        <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full border border-purple-400/30 bg-purple-500/10 text-purple-300 text-xs font-semibold uppercase tracking-wider mb-3">
+          <Icons.Sparkle /> Métricas & Impacto
+        </div>
+        <h2 className="section-title">Escala y Valor Real</h2>
+        <p className="section-subtitle">Transformando problemas operativos en código mantenible, automatización y resultados.</p>
+      </div>
+      <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 mb-8">
+        {metrics.map((m, i) => (
+          <div key={i} className="animate-on-scroll" style={{ animationDelay: `${i * 100}ms` }}>
+            <div className={`glass-card-hover p-6 text-center h-full flex flex-col justify-between border ${m.border} relative overflow-hidden group`}>
+              <div className={`absolute top-0 right-0 w-24 h-24 ${m.bg} blur-2xl rounded-full pointer-events-none group-hover:scale-150 transition-transform duration-500`} />
+              <div>
+                <div className={`font-display text-4xl sm:text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r ${m.gradient} mb-3 tracking-tight`}>{m.value}</div>
+                <h3 className="text-sm sm:text-base font-bold text-white mb-1.5 leading-snug">{m.title}</h3>
+                <p className="text-xs text-white/50 font-light leading-relaxed">{m.subtitle}</p>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+      <div className="animate-on-scroll">
+        <div className="glass-card p-5 md:p-6 border border-cyan-500/30 bg-gradient-to-r from-purple-950/40 via-black/50 to-cyan-950/40 flex flex-col md:flex-row items-center justify-between gap-4 text-center md:text-left">
+          <div className="flex items-center gap-4">
+            <div className="w-11 h-11 rounded-2xl bg-gradient-to-tr from-purple-600 to-cyan-600 flex items-center justify-center text-white font-bold text-lg shrink-0 shadow-lg shadow-purple-500/20">⚡</div>
+            <div>
+              <h4 className="text-sm md:text-base font-bold text-white">Eficiencia en la Gestión de Datos</h4>
+              <p className="text-xs text-white/60">Transformación digital de procesos corporativos para eliminar cuellos de botella.</p>
+            </div>
+          </div>
+          <div className="flex items-center gap-2.5 bg-black/60 border border-white/10 px-4 py-2.5 rounded-xl text-xs">
+            <span className="font-semibold text-red-400/90 line-through">Meses de trabajo manual</span>
+            <span className="text-purple-400 font-bold">➔</span>
+            <span className="font-bold text-emerald-400 bg-emerald-500/10 px-2.5 py-1 rounded-lg border border-emerald-500/30">Automatización eficiente</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  )
+}
+
+
+/* ═══════════════════════════════════════════════
    APP PRINCIPAL
    ═══════════════════════════════════════════════ */
 
@@ -1155,6 +1212,10 @@ export default function App() {
         <HeroSection />
         <ContentWrapper>
           <RetroSection />
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <hr className="section-divider" />
+          </div>
+          <ImpactMetricsSection />
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <hr className="section-divider" />
           </div>
