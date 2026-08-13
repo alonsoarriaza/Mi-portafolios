@@ -20,8 +20,8 @@ const PROFILE = {
 
 const NAV_LINKS = [
   { label: "☕ Ahorra tiempo para el café", href: "#cafe-express" },
-  { label: "Experiencia", href: "#experiencia" },
   { label: "Educación", href: "#educacion" },
+  { label: "Experiencia", href: "#experiencia" },
   { label: "Proyectos", href: "#proyectos" },
   { label: "Sobre Mí", href: "#sobre-mi" },
 ]
@@ -94,12 +94,6 @@ const EDUCATION = [
   },
 
   {
-    year: "Abril 2021 - Junio 2021",
-    degree: "Cisco CCNA v7",
-    institution: "Cisco",
-    description: "Esta certificación va mucho más allá de lo básico. Aprendí a diseñar, construir y mantener redes empresariales, abarcando desde la gestión de redes inalámbricas (WLC) y políticas de calidad de servicio (QoS), hasta la seguridad avanzada. Además, me adentré en las tecnologías que marcan el presente y futuro del sector: virtualización de redes, arquitectura SDN (redes definidas por software) y la programación aplicada a la automatización de tareas. En resumen: aprendí a estructurar la infraestructura para que los datos fluyan de manera eficiente, segura y, sobre todo, automatizada.",
-  },
-  {
     year: "Abril 2022 - Mayo 2022",
     degree: "Curso de JavaScript (Principiante e Intermedio)",
     institution: "OpenWebinars",
@@ -116,6 +110,12 @@ const EDUCATION = [
     degree: "Grado Medio en Sistemas microinformáticos y redes",
     institution: "IES Hermanos Machado",
     description: "Más allá de la pantalla, este grado me dio la visión necesaria para entender cómo vive el software en el mundo real. Aquí aprendí a configurar redes, gestionar servidores y garantizar que la infraestructura no sea un cuello de botella, sino el soporte que hace que cualquier aplicación sea estable, segura y escalable. En definitiva, entiendo qué pasa desde que el usuario pulsa un botón hasta que el dato llega a su destino..",
+  },
+  {
+    year: "Abril 2021 - Junio 2021",
+    degree: "Cisco CCNA v7",
+    institution: "Cisco",
+    description: "Esta certificación va mucho más allá de lo básico. Aprendí a diseñar, construir y mantener redes empresariales, abarcando desde la gestión de redes inalámbricas (WLC) y políticas de calidad de servicio (QoS), hasta la seguridad avanzada. Además, me adentré en las tecnologías que marcan el presente y futuro del sector: virtualización de redes, arquitectura SDN (redes definidas por software) y la programación aplicada a la automatización de tareas. En resumen: aprendí a estructurar la infraestructura para que los datos fluyan de manera eficiente, segura y, sobre todo, automatizada.",
   },
 ]
 
@@ -1123,11 +1123,11 @@ export default function App() {
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <hr className="section-divider" />
           </div>
-          <ExperienceSection />
+          <EducationSection />
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <hr className="section-divider" />
           </div>
-          <EducationSection />
+          <ExperienceSection />
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <hr className="section-divider" />
           </div>
