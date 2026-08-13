@@ -603,6 +603,30 @@ function HeroSection() {
 }
 
 /* ═══════════════════════════════════════════════
+   COMPONENTE: Content Wrapper (con fondo rico y orbes de color)
+   ═══════════════════════════════════════════════ */
+
+function ContentWrapper({ children }) {
+  return (
+    <div className="relative overflow-hidden" style={{
+      background: 'linear-gradient(180deg, rgba(10,5,25,0.92) 0%, rgba(15,10,35,0.95) 20%, rgba(8,5,20,0.96) 50%, rgba(12,8,30,0.95) 80%, rgba(10,5,25,0.92) 100%)',
+      backdropFilter: 'blur(40px) saturate(1.2)',
+    }}>
+      <div className="absolute top-[20%] -left-32 w-96 h-96 rounded-full bg-purple-600/8 blur-[100px] animate-orb pointer-events-none" />
+      <div className="absolute top-[50%] -right-32 w-80 h-80 rounded-full bg-cyan-500/6 blur-[100px] animate-orb pointer-events-none" style={{ animationDelay: '5s' }} />
+      <div className="absolute top-[75%] left-1/4 w-72 h-72 rounded-full bg-pink-500/5 blur-[100px] animate-orb pointer-events-none" style={{ animationDelay: '10s' }} />
+      <div className="absolute top-0 left-0 right-0 -translate-y-full pointer-events-none">
+        <div className="h-56 bg-gradient-to-b from-transparent via-[rgba(10,5,25,0.4)] to-[rgba(10,5,25,0.92)]" />
+      </div>
+      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-purple-500/40 to-transparent" />
+      <div className="relative z-10">
+        {children}
+      </div>
+    </div>
+  )
+}
+
+/* ═══════════════════════════════════════════════
    COMPONENTE: Bloque de Métricas / Impacto
    ═══════════════════════════════════════════════ */
 
