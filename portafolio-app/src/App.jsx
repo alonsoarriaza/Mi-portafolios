@@ -85,39 +85,37 @@ const EDUCATION = [
     year: "Junio 2026 - Julio 2026",
     degree: "Doble Certificación: Desarrollo con IA y Machine Learning",
     institution: "BIGSchool",
-    description: "Aprendi como funciona un Agente de IA y como usarlo para automatizar tareas repetitivas.Gracias a la formación y práctica constante, he aprendido a no ver la IA como algo mágico, sino como una herramienta clave en mi caja: ahora sé cómo darle el contexto necesario para que los agentes resuelvan tareas completas con criterio, en lugar de generar simples fragmentos de código. Con este enfoque, he aprendido a coordinar múltiples procesos para ganar en orden y velocidad, validando siempre cada paso para mantener el control total del proyecto. Al final, se trata de que igualamos las imágenes de lo que la tecnología promete con lo que realmente somos capaces de construir de manera eficiente y profesional",
+    description: "Formación especializada en agentes de IA, automatización de tareas y aplicación práctica de inteligencia artificial al desarrollo de software. Enfoque centrado en proporcionar contexto a los agentes, coordinar procesos y validar sus resultados.",
   },
-
   {
     year: "Septiembre 2024 - Presente",
     degree: "Grado Superior Desarrollo de Aplicaciones Web",
     institution: "Ilerna Sevilla",
-    description: "Mi formación técnica especializada en el ecosistema web. Aquí pasé de escribir un simple HOLA MUNDO! en pocas líneas de código a diseñar arquitecturas completas y funcionales. Aprendí a manejar el ciclo de vida de una aplicación, desde el diseño de la base de datos hasta el despliegue final, asegurando siempre que el resultado no solo funcione, sino que sea eficiente y fácil de mantener. Es la base sobre la que construyo todas mis soluciones actuales.",
+    description: "Formación especializada en desarrollo web, programación, bases de datos, interfaces y ciclo completo de desarrollo de aplicaciones. Base técnica de mi perfil actual como desarrollador Full-Stack.",
   },
-
   {
     year: "Abril 2022 - Mayo 2022",
     degree: "Curso de JavaScript (Principiante e Intermedio)",
     institution: "OpenWebinars",
-    description: "Formación práctica orientada a consolidar las bases del lenguaje JavaScript moderno (ES6+), dominando la manipulación interactiva del DOM, estructuras de datos, asincronía y el control de flujos de ejecución.",
+    description: "Formación práctica en JavaScript moderno (ES6+), estructuras de datos, manipulación del DOM, asincronía y control de flujo.",
   },
   {
     year: "Abril 2022 - Mayo 2022",
     degree: "Curso de JavaScript en WordPress",
     institution: "OpenWebinars",
-    description: "Especialización en el uso de JavaScript dentro del ecosistema de WordPress, enfocándose en la integración de scripts dinámicos en el frontend y el consumo de la REST API para enriquecer temas y plugins.",
+    description: "Especialización en JavaScript aplicado a WordPress, integración de scripts dinámicos y consumo de APIs REST.",
   },
   {
     year: "Septiembre 2020 - Junio 2022",
-    degree: "Grado Medio en Sistemas microinformáticos y redes",
+    degree: "Grado Medio en Sistemas Microinformáticos y Redes",
     institution: "IES Hermanos Machado",
-    description: "Más allá de la pantalla, este grado me dio la visión necesaria para entender cómo vive el software en el mundo real. Aquí aprendí a configurar redes, gestionar servidores y garantizar que la infraestructura no sea un cuello de botella, sino el soporte que hace que cualquier aplicación sea estable, segura y escalable. En definitiva, entiendo qué pasa desde que el usuario pulsa un botón hasta que el dato llega a su destino..",
+    description: "Formación en sistemas, redes, servidores, infraestructura y seguridad informática, proporcionando una base sólida para comprender la relación entre software e infraestructura.",
   },
   {
     year: "Abril 2021 - Junio 2021",
     degree: "Cisco CCNA v7",
     institution: "Cisco",
-    description: "Esta certificación va mucho más allá de lo básico. Aprendí a diseñar, construir y mantener redes empresariales, abarcando desde la gestión de redes inalámbricas (WLC) y políticas de calidad de servicio (QoS), hasta la seguridad avanzada. Además, me adentré en las tecnologías que marcan el presente y futuro del sector: virtualización de redes, arquitectura SDN (redes definidas por software) y la programación aplicada a la automatización de tareas. En resumen: aprendí a estructurar la infraestructura para que los datos fluyan de manera eficiente, segura y, sobre todo, automatizada.",
+    description: "Formación en redes empresariales, routing, switching, seguridad, QoS, redes inalámbricas, virtualización y fundamentos de automatización de redes.",
   },
 ]
 
