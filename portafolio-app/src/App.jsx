@@ -175,12 +175,11 @@ const ABOUT = {
     "Afronto cada desafío tecnológico con un enfoque analítico, estructurado y orientado al detalle, priorizando siempre la calidad del código, el rendimiento del sistema y la adopción de las mejores prácticas de la industria. Mi compromiso está centrado en el aprendizaje continuo y la adaptabilidad técnica ante nuevos entornos, buscando no solo resolver requerimientos complejos de programación, sino también aportar soluciones innovadoras que optimicen la eficiencia operativa del negocio.",
   ],
   funFacts: [
-    "🌐 Idiomas: Español (Nativo) · Inglés (B2) · Italiano (A2)",
-    "🚗 Movilidad: Permiso de conducir B y vehículo propio",
-    "🌍 Disponibilidad: Flexibilidad geográfica y para viajar",
-    "📍 Ubicación: Dos Hermanas, Sevilla",
-    "📞 Teléfono: 627 53 61 25",
-    "✉️ Email: alonsoarriaza03@gmail.com",
+    "Idiomas: Español (Nativo) · Inglés (B2) · Italiano (A2)",
+    "Movilidad: Permiso B · Vehículo propio · Disponibilidad para viajar",
+    "Ubicación: Dos Hermanas, Sevilla",
+    "Teléfono: 627 53 61 25",
+    "Email: alonsoarriaza03@gmail.com",
   ],
 }
 
