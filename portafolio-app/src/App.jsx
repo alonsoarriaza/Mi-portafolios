@@ -31,18 +31,18 @@ const EXPERIENCE = [
     year: "Mayo 2025 — Presente",
     role: "Junior Full-Stack Developer · Prácticas",
     description: [
-      "Desarrollo integral de una aplicación web corporativa desarrollada a medida, concebida para digitalizar y centralizar la gestión de inventarios y la trazabilidad de activos mediante códigos QR. La solución permite identificar y gestionar activos en tiempo real, automatizar parte del seguimiento y disponer de información centralizada para mejorar el control de recursos y la eficiencia de los procesos internos.",
-      " Diseño y desarrollo de una solución para automatizar la clasificación y carga de miles de clientes en una plataforma contable regional. El sistema utiliza un diccionario de correspondencias y procesos de clasificación asistidos por IA para relacionar los datos de cada cliente con su actividad comercial dentro del catálogo oficial, normalizando y validando la información antes de su incorporación. Esta automatización permitió transformar un proceso que habría requerido meses de trabajo manual en un flujo estructurado, consistente y significativamente más eficiente.",
-      "Desarrollo de soluciones y automatizaciones a medida para optimizar procesos internos y reducir tareas repetitivas, combinando programación, Google Apps Script y agentes de IA para resolver de forma recurrente problemas de eficiencia y rendimiento. Integración de plataformas como Therefore y Solpheo, soporte de entornos ERP/CRM (ADV) y administración de Active Directory, Entra ID y GPO, junto con la configuración de soluciones de impresión mediante MyQ. Participación en la monitorización y evaluación de la seguridad corporativa mediante Ciberguardian.",
+      "Desarrollo de soluciones web a medida. Diseño y desarrollo integral de una aplicación web corporativa propia para digitalizar la gestión de inventarios y la trazabilidad de activos mediante códigos QR, con gestión y actualización de información en tiempo real.",
+      "Automatización inteligente de datos. Desarrollo de una solución para clasificar y cargar miles de clientes en una plataforma contable, utilizando IA, normalización de datos y un sistema de correspondencias. Automatización de un proceso que anteriormente requería meses de trabajo manual.",
+      "Automatización e integración empresarial. Desarrollo de herramientas y automatizaciones a medida mediante programación, Google Apps Script y agentes de IA para optimizar procesos y reducir tareas repetitivas. Integración y soporte de plataformas empresariales, incluyendo Therefore, Solpheo, ADV, Active Directory, Entra ID, MyQ y Ciberguardian."
     ]
   },
   {
     year: "Junio 2025 — Enero 2025",
     role: "Dependiente",
     company: "Hollister CO",
-    description: ["Atención al cliente y ventas: Asesoramiento personalizado buscando siempre la mejor experiencia de compra. Aprendí que escuchar activamente al usuario es tan crítico en una tienda como al recoger requisitos para un desarrollo de software.",
-      "Gestión operativa de producto: Recepción, etiquetado y organización del almacén. Aquí igualamos las imágenes de inventario con el stock real, manteniendo el orden necesario para que el flujo de trabajo nunca se detenga.",
-      "Adaptabilidad en entornos dinámicos: Trabajo constante en equipo y gestión de transacciones en un entorno de alta afluencia, asegurando que cada detalle técnico del proceso de venta se ejecute con precisión."
+    description: ["Atención al cliente y ventas. Asesoramiento personalizado buscando siempre la mejor experiencia de compra. Aprendí que escuchar activamente al usuario es tan crítico en una tienda como al recoger requisitos para un desarrollo de software.",
+      "Gestión operativa de producto. Recepción, etiquetado y organización del almacén. Aquí igualamos las imágenes de inventario con el stock real, manteniendo el orden necesario para que el flujo de trabajo nunca se detenga.",
+      "Adaptabilidad en entornos dinámicos. Trabajo constante en equipo y gestión de transacciones en un entorno de alta afluencia, asegurando que cada detalle técnico del proceso de venta se ejecute con precisión."
 
     ]
   },
