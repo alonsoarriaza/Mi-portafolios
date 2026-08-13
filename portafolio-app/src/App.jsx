@@ -931,11 +931,11 @@ export default function App() {
       <main>
         <HeroSection />
         <ContentWrapper>
-          <RetroSection />
+          <ImpactMetricsSection />
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <hr className="section-divider" />
           </div>
-          <EducationSection />
+          <RetroSection />
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <hr className="section-divider" />
           </div>
@@ -947,7 +947,23 @@ export default function App() {
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <hr className="section-divider" />
           </div>
+          <TechStackSection />
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <hr className="section-divider" />
+          </div>
+          <MethodologySection />
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <hr className="section-divider" />
+          </div>
+          <EducationSection />
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <hr className="section-divider" />
+          </div>
           <AboutSection />
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <hr className="section-divider" />
+          </div>
+          <ContactCallToAction />
           <Footer />
         </ContentWrapper>
       </main>
