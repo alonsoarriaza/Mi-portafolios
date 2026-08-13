@@ -31,8 +31,9 @@ const EXPERIENCE = [
     year: "Mayo 2025 — Presente",
     role: "Junior Full-Stack Developer · Prácticas",
     description: [
-      "Diseño y desarrollo integral de una aplicación web personalizada (React, Spring Boot) para gestión de inventarios y trazabilidad con códigos QR en tiempo real.",
-      "Automatización de procesos: creación de scripts (Google Apps Script), flujos documentales inteligentes (Therefore, Solpheo), incidencias ERP/CRM (ADV) y auditoría de ciberseguridad corporativa (Ciberguardian)."
+      "Desarrollo integral de una aplicación web corporativa desarrollada a medida, concebida para digitalizar y centralizar la gestión de inventarios y la trazabilidad de activos mediante códigos QR. La solución permite identificar y gestionar activos en tiempo real, automatizar parte del seguimiento y disponer de información centralizada para mejorar el control de recursos y la eficiencia de los procesos internos.",
+      " Diseño y desarrollo de una solución para automatizar la clasificación y carga de miles de clientes en una plataforma contable regional. El sistema utiliza un diccionario de correspondencias y procesos de clasificación asistidos por IA para relacionar los datos de cada cliente con su actividad comercial dentro del catálogo oficial, normalizando y validando la información antes de su incorporación. Esta automatización permitió transformar un proceso que habría requerido meses de trabajo manual en un flujo estructurado, consistente y significativamente más eficiente.",
+      "Diseño propio en el ambito de automatizacion de procesos y la lif ki.",
     ]
   },
   {
