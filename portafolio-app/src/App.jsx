@@ -944,6 +944,269 @@ function ProjectPreviewModal({ project, onClose }) {
 }
 
 /* ═══════════════════════════════════════════════
+   COMPONENTE: Tech Stack Section
+   ═══════════════════════════════════════════════ */
+
+function TechStackSection() {
+  const sectionRef = useAnimateOnScroll()
+  return (
+    <section id="tecnologias" ref={sectionRef} className="section-container">
+      <div className="animate-on-scroll">
+        <div className="flex items-center gap-3 mb-2">
+          <span className="text-cyan-400"><Icons.Cpu /></span>
+          <span className="text-sm font-medium text-cyan-400 uppercase tracking-widest">Stack</span>
+        </div>
+        <h2 className="section-title">Tecnologías & Herramientas</h2>
+        <p className="section-subtitle">Ecosistema técnico enfocado en desarrollo de software, gestión de datos, automatización y seguridad.</p>
+      </div>
+      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {TECH_CATEGORIES.map((cat, i) => (
+          <div key={i} className="animate-on-scroll" style={{ animationDelay: `${i * 100}ms` }}>
+            <div className="glass-card-hover p-6 h-full border border-white/10 flex flex-col justify-between">
+              <div>
+                <div className="flex items-center gap-2 mb-4">
+                  <span className="w-2.5 h-2.5 rounded-full bg-cyan-400 shadow-[0_0_8px_rgba(6,182,212,0.6)]" />
+                  <h3 className="text-xs font-bold text-cyan-300 uppercase tracking-wider">{cat.title}</h3>
+                </div>
+                <div className="flex flex-wrap gap-2">
+                  {cat.items.map((tech, j) => (
+                    <span key={j} className="tag text-xs py-1.5 px-3 bg-white/5 border border-white/10 text-white/80 hover:border-cyan-400/40 hover:text-white transition-all">{tech}</span>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+  )
+}
+
+/* ═══════════════════════════════════════════════
+   COMPONENTE: Methodology Section (De un problema a una solución)
+   ═══════════════════════════════════════════════ */
+
+function MethodologySection() {
+  const sectionRef = useAnimateOnScroll()
+  return (
+    <section id="metodologia" ref={sectionRef} className="section-container">
+      <div className="animate-on-scroll">
+        <div className="flex items-center gap-3 mb-2">
+          <span className="text-emerald-400"><Icons.Tools /></span>
+          <span className="text-sm font-medium text-emerald-400 uppercase tracking-widest">Filosofía</span>
+        </div>
+        <h2 className="section-title">De un problema a una solución</h2>
+        <p className="section-subtitle">Metodología estructurada de 5 pasos para aportar valor real al negocio.</p>
+      </div>
+      <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-4">
+        {METHODOLOGY_STEPS.map((s, i) => (
+          <div key={i} className="animate-on-scroll" style={{ animationDelay: `${i * 100}ms` }}>
+            <div className="glass-card-hover p-5 h-full border border-white/10 flex flex-col justify-between relative group">
+              <div>
+                <div className="text-3xl font-display font-black text-purple-400/40 group-hover:text-purple-300 transition-colors mb-3">{s.step}</div>
+                <h3 className="text-sm font-bold text-white mb-2 tracking-wide uppercase">{s.title}</h3>
+                <p className="text-xs text-white/60 font-light leading-relaxed">{s.text}</p>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+  )
+}
+
+/* ═══════════════════════════════════════════════
+   COMPONENTE: About Section (Información profesional)
+   ═══════════════════════════════════════════════ */
+
+function AboutSection() {
+  const sectionRef = useAnimateOnScroll()
+  return (
+    <section id="sobre-mi" ref={sectionRef} className="section-container">
+      <div className="animate-on-scroll">
+        <div className="flex items-center gap-3 mb-2">
+          <span className="text-emerald-400"><Icons.User /></span>
+          <span className="text-sm font-medium text-emerald-400 uppercase tracking-widest">Perfil</span>
+        </div>
+        <h2 className="section-title">Sobre Mí</h2>
+        <p className="section-subtitle">Pasión por la tecnología, enfoque estructurado y compromiso profesional.</p>
+      </div>
+      <div className="grid md:grid-cols-3 gap-6 md:gap-8">
+        <div className="md:col-span-2 animate-on-scroll">
+          <div className="glass-card p-6 md:p-8 space-y-5">
+            {ABOUT.paragraphs.map((p, i) => (
+              <p key={i} className="text-sm md:text-base text-white/70 leading-relaxed font-light">{p}</p>
+            ))}
+          </div>
+        </div>
+        <div id="datos-interes" className="animate-on-scroll delay-200">
+          <div className="glass-card p-6 md:p-8 h-full border border-purple-500/20">
+            <h3 className="font-display font-bold text-lg mb-6 flex items-center gap-2 text-white">
+              <Icons.Sparkle /> Información profesional
+            </h3>
+            <div className="space-y-4">
+              {ABOUT.info.map((item, i) => (
+                <div key={i} className="pb-3 border-b border-white/5 last:border-b-0 last:pb-0">
+                  <span className="text-xs font-bold text-purple-300 uppercase tracking-wider block mb-1">{item.label}</span>
+                  {item.label === "Email" ? (
+                    <a href={`mailto:${item.value}`} className="text-xs sm:text-sm text-white/80 hover:text-purple-300 hover:underline transition-all">{item.value}</a>
+                  ) : item.label === "Teléfono" ? (
+                    <a href={`tel:${item.value.replace(/\s+/g, '')}`} className="text-xs sm:text-sm text-white/80 hover:text-cyan-300 hover:underline transition-all">{item.value}</a>
+                  ) : (
+                    <p className="text-xs sm:text-sm text-white/80 font-light">{item.value}</p>
+                  )}
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  )
+}
+
+/* ═══════════════════════════════════════════════
+   COMPONENTE: Call To Action final (Contacto)
+   ═══════════════════════════════════════════════ */
+
+function ContactCallToAction() {
+  const sectionRef = useAnimateOnScroll()
+  return (
+    <section id="contacto" ref={sectionRef} className="section-container text-center py-16">
+      <div className="animate-on-scroll max-w-3xl mx-auto glass-card p-8 md:p-12 border border-purple-500/30 relative overflow-hidden">
+        <div className="absolute -top-24 left-1/2 -translate-x-1/2 w-96 h-96 bg-purple-600/10 blur-[100px] rounded-full pointer-events-none" />
+        <span className="text-xs font-semibold text-purple-300 uppercase tracking-widest bg-purple-500/10 border border-purple-500/20 px-3.5 py-1.5 rounded-full inline-block mb-4">Contacto Directo</span>
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-display font-bold text-white mb-3 leading-tight">¿Tienes un problema que podamos convertir en una solución?</h2>
+        <p className="text-base sm:text-lg text-cyan-300 font-medium mb-8">Hablemos.</p>
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <a href="mailto:alonsoarriaza03@gmail.com" className="px-8 py-3.5 rounded-full bg-gradient-to-r from-purple-600 to-cyan-600 text-white font-semibold text-sm hover:shadow-[0_0_30px_rgba(168,85,247,0.4)] transition-all duration-300 hover:scale-105">Enviar Email</a>
+          <a href={PROFILE.linkedin} target="_blank" rel="noopener noreferrer" className="px-6 py-3.5 rounded-full border border-white/20 bg-black/40 text-white/90 hover:text-white hover:border-cyan-400/40 text-sm font-semibold transition-all duration-300">LinkedIn</a>
+          <a href={PROFILE.github} target="_blank" rel="noopener noreferrer" className="px-6 py-3.5 rounded-full border border-white/20 bg-black/40 text-white/90 hover:text-white hover:border-purple-400/40 text-sm font-semibold transition-all duration-300">GitHub</a>
+        </div>
+      </div>
+    </section>
+  )
+}
+
+/* ═══════════════════════════════════════════════
+   COMPONENTE: Footer
+   ═══════════════════════════════════════════════ */
+
+function Footer() {
+  return (
+    <footer className="border-t border-white/5 py-10">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center justify-center gap-4 text-center">
+        <p className="text-sm text-white/30">
+          © {new Date().getFullYear()} {PROFILE.name}. Hecho con café y mucho amor.
+        </p>
+        <div className="flex items-center gap-4">
+          <a href={PROFILE.github} target="_blank" rel="noopener noreferrer" className="text-white/30 hover:text-white/70 transition-colors duration-300" aria-label="GitHub">
+            <Icons.GitHub />
+          </a>
+          <a href={PROFILE.linkedin} target="_blank" rel="noopener noreferrer" className="text-white/30 hover:text-white/70 transition-colors duration-300" aria-label="LinkedIn">
+            <Icons.LinkedIn />
+          </a>
+        </div>
+      </div>
+    </footer>
+  )
+}
+
+/* ═══════════════════════════════════════════════
+   COMPONENTE: Retro Easter Egg (8-bits CV)
+   ═══════════════════════════════════════════════ */
+
+function RetroSection() {
+  const [open, setOpen] = useState(false)
+  const [cards, setCards] = useState(() =>
+    RETRO_CARDS.map(c => ({
+      ...c,
+      hit: false,
+      done: false,
+      dust: Array.from({ length: 6 }, (_, i) => ({
+        x: `${(Math.random() - 0.5) * 240}px`,
+        y: `${-Math.random() * 120 - 30}px`,
+        d: `${i * 45}ms`
+      }))
+    }))
+  )
+
+  function punch(index) {
+    setCards(prev => {
+      if (prev[index].hit || prev[index].done) return prev
+      const next = [...prev]
+      next[index] = { ...next[index], hit: true }
+      return next
+    })
+    setTimeout(() => {
+      setCards(prev => {
+        const next = [...prev]
+        next[index] = { ...next[index], hit: false, done: true }
+        return next
+      })
+    }, 950)
+  }
+
+  const sectionRef = useAnimateOnScroll()
+
+  return (
+    <section id="cafe-express" ref={sectionRef} className="section-container">
+      <div className="animate-on-scroll">
+        <div className="flex items-center gap-3 mb-2">
+          <span className="text-yellow-400 text-xl">☕</span>
+          <span className="retro-font text-yellow-400 uppercase tracking-widest" style={{ fontSize: '0.55rem' }}>Café Express</span>
+        </div>
+        <h2 className="section-title retro-font" style={{ fontSize: '1.4rem', lineHeight: '2' }}>Ahorra tiempo para el café</h2>
+        <p className="section-subtitle" style={{ marginBottom: '1.5rem' }}>Mi CV resumido en 8 clicks. Ve al grano y guárdate unos minutos para el café.</p>
+        <button className="retro-btn" onClick={() => setOpen(!open)}>
+          {open ? '⏸ PAUSE' : '☕ PREPARAR CAFÉ'}
+        </button>
+      </div>
+
+      <div className={`retro-grid-wrap ${open ? 'retro-open' : 'retro-closed'}`}>
+        <div className="retro-grid">
+          {cards.map((c, i) => (
+            <div
+              key={i}
+              className={`retro-block ${c.hit ? 'retro-bump retro-shattering' : ''} ${c.done ? 'retro-revealed' : ''}`}
+              onClick={() => punch(i)}
+            >
+              {!c.done && (
+                <>
+                  <div className={`retro-char ${c.hit ? 'retro-jump' : 'retro-idle'}`}>
+                    <img src="/MB.png" alt="Mario" className="retro-mario-sprite" />
+                  </div>
+                  <span className="retro-qm">?</span>
+                </>
+              )}
+              {c.hit && (
+                <div className="retro-shatter-debris">
+                  <div className="debris-piece p1"></div>
+                  <div className="debris-piece p2"></div>
+                  <div className="debris-piece p3"></div>
+                  <div className="debris-piece p4"></div>
+                </div>
+              )}
+              {c.hit && <div className="retro-coin">🪙</div>}
+              {c.hit && c.dust.map((d, j) => (
+                <span key={j} className="retro-dust" style={{ '--dx': d.x, '--dy': d.y, animationDelay: d.d }} />
+              ))}
+              {c.done && (
+                <div className="retro-rpg">
+                  <strong>{c.t}</strong>
+                  <p>{c.txt}</p>
+                  <em>▼</em>
+                </div>
+              )}
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  )
+}
+
+/* ═══════════════════════════════════════════════
    APP PRINCIPAL
    ═══════════════════════════════════════════════ */
 
