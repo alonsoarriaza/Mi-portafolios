@@ -1242,7 +1242,7 @@ function ImpactMetricsSection() {
     <section id="impacto" ref={sectionRef} className="section-container">
       <div className="animate-on-scroll text-center max-w-2xl mx-auto mb-10">
         <h2 className="section-title">Variedad e Impacto Real</h2>
-        <p className="section-subtitle">Presentación visual de capacidades técnicas y alcance operativo.</p>
+        <p className="section-subtitle"></p>
       </div>
 
       {/* 5 bloques principales en grid responsive */}
