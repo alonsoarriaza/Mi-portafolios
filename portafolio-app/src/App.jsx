@@ -1201,7 +1201,7 @@ function ImpactMetricsSection() {
               </div>
               <div>
                 <div className="flex flex-wrap items-center gap-2 mb-2">
-                  <span className="px-3 py-1 rounded-lg bg-slate-100 border border-slate-200 text-slate-800 font-bold text-xs sm:text-sm">
+                  <span className="px-3 py-1 rounded-lg bg-slate-100 border border-slate-200 text-slate-500 line-through decoration-rose-500 decoration-2 font-bold text-xs sm:text-sm">
                     Meses de trabajo manual
                   </span>
                   <span className="w-7 h-7 rounded-full bg-purple-100 text-purple-700 flex items-center justify-center font-extrabold text-xs shrink-0 shadow-xs">
