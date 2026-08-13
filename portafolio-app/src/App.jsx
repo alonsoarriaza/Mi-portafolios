@@ -999,8 +999,8 @@ function AboutSection() {
                 <div
                   key={i}
                   className={`glass-card p-4 sm:p-5 ${isContact
-                      ? 'bg-gradient-to-br from-purple-50/70 via-white to-indigo-50/60 border-purple-200/90 shadow-sm hover:shadow-md hover:border-purple-400'
-                      : 'bg-white border-slate-200/90 hover:border-purple-300 shadow-sm hover:shadow-md'
+                    ? 'bg-gradient-to-br from-purple-50/70 via-white to-indigo-50/60 border-purple-200/90 shadow-sm hover:shadow-md hover:border-purple-400'
+                    : 'bg-white border-slate-200/90 hover:border-purple-300 shadow-sm hover:shadow-md'
                     } transition-all duration-300 flex flex-col justify-between ${bentoClass} rounded-2xl group min-h-[110px]`}
                 >
                   <div className="flex items-center gap-2.5 mb-2.5">
@@ -1055,7 +1055,7 @@ function ContactCallToAction() {
       <div className="animate-on-scroll max-w-3xl mx-auto glass-card p-8 md:p-12 border border-purple-200 bg-gradient-to-r from-purple-100/80 via-white to-indigo-100/80 relative overflow-hidden shadow-lg">
         <span className="text-xs font-bold text-purple-900 uppercase tracking-widest bg-purple-200/80 border border-purple-300 px-3.5 py-1.5 rounded-full inline-block mb-4">Contacto Directo</span>
         <h2 className="text-2xl sm:text-3xl md:text-4xl font-display font-extrabold text-slate-900 mb-3 leading-tight">¿Tienes un problema que podamos convertir en una solución?</h2>
-        <p className="text-base sm:text-lg text-indigo-800 font-bold mb-8">Hablemos.</p>
+        <p className="text-base sm:text-lg text-indigo-800 font-bold mb-8">Hablemos</p>
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
           <a href="mailto:alonsoarriaza03@gmail.com" className="px-8 py-3.5 rounded-full bg-gradient-to-r from-purple-600 to-indigo-600 text-white font-bold text-sm hover:shadow-lg hover:shadow-purple-500/20 transition-all duration-300 hover:scale-105">Enviar Email</a>
           <a href={PROFILE.linkedin} target="_blank" rel="noopener noreferrer" className="px-6 py-3.5 rounded-full border border-slate-300 bg-white text-slate-800 hover:border-purple-600 text-sm font-bold transition-all duration-300 shadow-sm">LinkedIn</a>
