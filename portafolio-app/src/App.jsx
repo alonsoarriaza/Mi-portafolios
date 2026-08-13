@@ -20,7 +20,7 @@ const PROFILE = {
 }
 
 const NAV_LINKS = [
-  { label: "☕ Ahorra tiempo para el café", href: "#cafe-express" },
+  { label: "Ahorra tiempo para el café", href: "#cafe-express" },
   { label: "Educación", href: "#educacion" },
   { label: "Experiencia", href: "#experiencia" },
   { label: "Proyectos", href: "#proyectos" },
