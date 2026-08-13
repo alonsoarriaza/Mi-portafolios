@@ -20,8 +20,8 @@ const PROFILE = {
 }
 
 const NAV_LINKS = [
-  { label: "Ahorra tiempo para el café", href: "#cafe-express" },
   { label: "Impacto", href: "#impacto" },
+  { label: "Ahorra tiempo para el café", href: "#cafe-express" },
   { label: "Educación", href: "#educacion" },
   { label: "Experiencia", href: "#experiencia" },
   { label: "Proyectos", href: "#proyectos" },
@@ -1277,11 +1277,11 @@ export default function App() {
       <main>
         <HeroSection />
         <ContentWrapper>
-          <RetroSection />
+          <ImpactMetricsSection />
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <hr className="section-divider" />
           </div>
-          <ImpactMetricsSection />
+          <RetroSection />
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <hr className="section-divider" />
           </div>
