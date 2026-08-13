@@ -1150,47 +1150,113 @@ function RetroSection() {
 function ImpactMetricsSection() {
   const sectionRef = useAnimateOnScroll()
   const metrics = [
-    { value: "+5", title: "Proyectos y soluciones desarrolladas", subtitle: "Aplicaciones web e integraciones con impacto directo en negocio", gradient: "from-purple-400 to-pink-400", border: "border-purple-500/30", bg: "bg-purple-500/10" },
-    { value: "Miles", title: "Clientes procesados mediante automatización", subtitle: "Clasificación y tratamiento de datos asistido por agentes IA", gradient: "from-cyan-400 to-blue-400", border: "border-cyan-500/30", bg: "bg-cyan-500/10" },
-    { value: "QR", title: "Trazabilidad de activos", subtitle: "Digitalización e inventario en tiempo real", gradient: "from-emerald-400 to-teal-400", border: "border-emerald-500/30", bg: "bg-emerald-500/10" },
-    { value: "IA", title: "Automatización y clasificación inteligente", subtitle: "Integración de inteligencia artificial en flujos de trabajo", gradient: "from-amber-400 to-orange-400", border: "border-amber-500/30", bg: "bg-amber-500/10" },
+    {
+      value: "+5",
+      title: "Proyectos y soluciones desarrolladas",
+      description: "Aplicaciones web, automatizaciones e integraciones orientadas a necesidades empresariales.",
+      gradient: "from-purple-400 via-pink-300 to-purple-400",
+      border: "border-purple-500/30 hover:border-purple-400/60",
+      bg: "bg-purple-500/10",
+      badge: "Alcance",
+      badgeColor: "bg-purple-500/10 border-purple-500/20 text-purple-300"
+    },
+    {
+      value: "Miles",
+      title: "Registros procesados",
+      description: "Automatización de clasificación y tratamiento de grandes volúmenes de datos.",
+      gradient: "from-cyan-400 via-blue-300 to-cyan-400",
+      border: "border-cyan-500/30 hover:border-cyan-400/60",
+      bg: "bg-cyan-500/10",
+      badge: "Volumen",
+      badgeColor: "bg-cyan-500/10 border-cyan-500/20 text-cyan-300"
+    },
+    {
+      value: "QR",
+      title: "Trazabilidad de activos",
+      description: "Digitalización, inventario y seguimiento de recursos en tiempo real.",
+      gradient: "from-emerald-400 via-teal-300 to-emerald-400",
+      border: "border-emerald-500/30 hover:border-emerald-400/60",
+      bg: "bg-emerald-500/10",
+      badge: "Control",
+      badgeColor: "bg-emerald-500/10 border-emerald-500/20 text-emerald-300"
+    },
+    {
+      value: "ERP → BBDD",
+      title: "Integración y transformación de datos",
+      description: "Extracción, transformación y centralización de información procedente de sistemas empresariales.",
+      gradient: "from-amber-400 via-orange-300 to-amber-400",
+      border: "border-amber-500/30 hover:border-amber-400/60 font-mono text-2xl sm:text-3xl",
+      bg: "bg-amber-500/10",
+      badge: "Sistemas",
+      badgeColor: "bg-amber-500/10 border-amber-500/20 text-amber-300"
+    },
+    {
+      value: "IA",
+      title: "Inteligencia aplicada",
+      description: "Agentes de IA integrados en procesos de clasificación, recomendación y automatización.",
+      gradient: "from-pink-400 via-purple-300 to-pink-400",
+      border: "border-pink-500/30 hover:border-pink-400/60",
+      bg: "bg-pink-500/10",
+      badge: "Agentes",
+      badgeColor: "bg-pink-500/10 border-pink-500/20 text-pink-300"
+    }
   ]
+
   return (
     <section id="impacto" ref={sectionRef} className="section-container">
       <div className="animate-on-scroll text-center max-w-2xl mx-auto mb-10">
         <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full border border-purple-400/30 bg-purple-500/10 text-purple-300 text-xs font-semibold uppercase tracking-wider mb-3">
           <Icons.Sparkle /> Métricas & Impacto
         </div>
-        <h2 className="section-title">Escala y Valor Real</h2>
-        <p className="section-subtitle">Transformando problemas operativos en código mantenible, automatización y resultados.</p>
+        <h2 className="section-title">Variedad e Impacto Real</h2>
+        <p className="section-subtitle">Presentación visual de capacidades técnicas y alcance operativo.</p>
       </div>
-      <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 mb-8">
+
+      {/* 5 bloques principales en grid responsive */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 mb-8">
         {metrics.map((m, i) => (
           <div key={i} className="animate-on-scroll" style={{ animationDelay: `${i * 100}ms` }}>
-            <div className={`glass-card-hover p-6 text-center h-full flex flex-col justify-between border ${m.border} relative overflow-hidden group`}>
-              <div className={`absolute top-0 right-0 w-24 h-24 ${m.bg} blur-2xl rounded-full pointer-events-none group-hover:scale-150 transition-transform duration-500`} />
+            <div className={`glass-card-hover p-5 text-left h-full flex flex-col justify-between border ${m.border} relative overflow-hidden group transition-all duration-300`}>
+              <div className={`absolute -top-6 -right-6 w-20 h-20 ${m.bg} blur-2xl rounded-full pointer-events-none group-hover:scale-150 transition-transform duration-500`} />
               <div>
-                <div className={`font-display text-4xl sm:text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r ${m.gradient} mb-3 tracking-tight`}>{m.value}</div>
-                <h3 className="text-sm sm:text-base font-bold text-white mb-1.5 leading-snug">{m.title}</h3>
-                <p className="text-xs text-white/50 font-light leading-relaxed">{m.subtitle}</p>
+                <div className="flex items-center justify-between gap-2 mb-3">
+                  <span className={`text-[10px] font-semibold uppercase tracking-wider px-2 py-0.5 rounded border ${m.badgeColor}`}>{m.badge}</span>
+                </div>
+                <div className={`font-display font-black text-transparent bg-clip-text bg-gradient-to-r ${m.gradient} mb-2 tracking-tight ${m.value.length > 5 ? 'text-2xl sm:text-2xl' : 'text-3xl sm:text-4xl'}`}>
+                  {m.value}
+                </div>
+                <h3 className="text-xs sm:text-sm font-bold text-white mb-2 leading-snug">{m.title}</h3>
+                <p className="text-xs text-white/60 font-light leading-relaxed">{m.description}</p>
               </div>
             </div>
           </div>
         ))}
       </div>
+
+      {/* Destacado inferior */}
       <div className="animate-on-scroll">
-        <div className="glass-card p-5 md:p-6 border border-cyan-500/30 bg-gradient-to-r from-purple-950/40 via-black/50 to-cyan-950/40 flex flex-col md:flex-row items-center justify-between gap-4 text-center md:text-left">
-          <div className="flex items-center gap-4">
-            <div className="w-11 h-11 rounded-2xl bg-gradient-to-tr from-purple-600 to-cyan-600 flex items-center justify-center text-white font-bold text-lg shrink-0 shadow-lg shadow-purple-500/20">⚡</div>
-            <div>
-              <h4 className="text-sm md:text-base font-bold text-white">Eficiencia en la Gestión de Datos</h4>
-              <p className="text-xs text-white/60">Transformación digital de procesos corporativos para eliminar cuellos de botella.</p>
+        <div className="glass-card p-6 border border-purple-500/30 bg-gradient-to-r from-purple-950/30 via-black/60 to-cyan-950/30 relative overflow-hidden">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
+            <div className="flex items-center gap-4">
+              <div className="w-12 h-12 rounded-2xl bg-gradient-to-tr from-purple-600 to-cyan-600 flex items-center justify-center text-white shrink-0 shadow-lg shadow-purple-500/20">
+                <Icons.Tools />
+              </div>
+              <div>
+                <h4 className="text-base sm:text-lg font-bold text-white flex flex-wrap items-center justify-center md:justify-start gap-2">
+                  <span>Meses de trabajo manual</span>
+                  <span className="text-purple-400 font-bold">➔</span>
+                  <span className="text-cyan-300 font-bold">Automatización eficiente</span>
+                </h4>
+                <p className="text-xs sm:text-sm text-white/60 font-light leading-relaxed mt-1">
+                  Transformación de tareas repetitivas y procesos de alta carga manual en flujos estructurados y optimizados.
+                </p>
+              </div>
             </div>
-          </div>
-          <div className="flex items-center gap-2.5 bg-black/60 border border-white/10 px-4 py-2.5 rounded-xl text-xs">
-            <span className="font-semibold text-red-400/90 line-through">Meses de trabajo manual</span>
-            <span className="text-purple-400 font-bold">➔</span>
-            <span className="font-bold text-emerald-400 bg-emerald-500/10 px-2.5 py-1 rounded-lg border border-emerald-500/30">Automatización eficiente</span>
+            <div className="shrink-0">
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-purple-500/10 border border-purple-500/30 text-purple-300 text-xs font-semibold">
+                <span>Optimización Operativa</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
