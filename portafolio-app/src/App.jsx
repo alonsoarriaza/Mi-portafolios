@@ -20,31 +20,45 @@ const PROFILE = {
 }
 
 const NAV_LINKS = [
-  { label: "Ahorra tiempo para el café", href: "#cafe-express" },
-  { label: "Educación", href: "#educacion" },
+  { label: "Café Express", href: "#cafe-express" },
+  { label: "Impacto", href: "#impacto" },
   { label: "Experiencia", href: "#experiencia" },
-  { label: "Proyectos", href: "#proyectos" },
+  { label: "Mis Inventos", href: "#proyectos" },
+  { label: "Tecnologías", href: "#tecnologias" },
+  { label: "Metodología", href: "#metodologia" },
+  { label: "Educación", href: "#educacion" },
   { label: "Sobre Mí", href: "#sobre-mi" },
 ]
 
-const EXPERIENCE = [
-  {
-    year: "Mayo 2025 — Presente",
-    role: "Junior Full-Stack Developer · Prácticas",
-    description: [
-      "Desarrollo de soluciones web a medida. Diseño y desarrollo integral de una aplicación web corporativa propia para digitalizar la gestión de inventarios y la trazabilidad de activos mediante códigos QR, con gestión y actualización de información en tiempo real.",
-      "Automatización inteligente de datos. Desarrollo de una solución para clasificar y cargar miles de clientes en una plataforma contable, utilizando IA, normalización de datos y un sistema de correspondencias. Automatización de un proceso que anteriormente requería meses de trabajo manual.",
-      "Automatización e integración empresarial. Desarrollo de herramientas y automatizaciones a medida mediante programación, Google Apps Script y agentes de IA para optimizar procesos y reducir tareas repetitivas. Integración y soporte de plataformas empresariales, incluyendo Therefore, Solpheo, ADV, Active Directory, Entra ID, MyQ y Ciberguardian."
-    ]
-  },
+const COANDA_EXPERIENCE = {
+  year: "Mayo 2025 — Presente",
+  role: "Full-Stack Developer · Programa de Prácticas",
+  company: "Coanda Technologies Solutions",
+  blocks: [
+    {
+      title: "DESARROLLO DE SOLUCIONES WEB",
+      text: "Desarrollo de aplicaciones web y soluciones corporativas a medida, participando en el análisis, diseño, implementación e integración de sistemas orientados a necesidades reales de negocio. Experiencia en gestión de inventarios, trazabilidad de activos mediante QR, gestión de datos y desarrollo de soluciones empresariales."
+    },
+    {
+      title: "AUTOMATIZACIÓN E IA",
+      text: "Desarrollo de soluciones y automatizaciones a medida para optimizar procesos internos y reducir tareas repetitivas, combinando programación, automatización, agentes de IA y tratamiento de datos. Experiencia automatizando procesos de clasificación y gestión de grandes volúmenes de información, transformando tareas que podían requerir meses de trabajo manual en flujos estructurados y eficientes."
+    },
+    {
+      title: "INTEGRACIÓN Y SISTEMAS EMPRESARIALES",
+      text: "Integración y soporte de plataformas empresariales y sistemas corporativos, incluyendo gestión documental, ERP/CRM, Active Directory, Entra ID, GPO y soluciones de impresión mediante MyQ. Participación en procesos de monitorización y evaluación de ciberseguridad corporativa mediante Ciberguardian."
+    }
+  ]
+}
+
+const PRIOR_EXPERIENCE = [
   {
     year: "Junio 2025 — Enero 2025",
     role: "Dependiente",
     company: "Hollister CO",
-    description: ["Atención al cliente y ventas, asesoramiento personalizado buscando siempre la mejor experiencia de compra. Aprendí que escuchar activamente al usuario es tan crítico en una tienda como al recoger requisitos para un desarrollo de software.",
-      "Gestión operativa de producto, recepción, etiquetado y organización del almacén. Aquí igualamos las imágenes de inventario con el stock real, manteniendo el orden necesario para que el flujo de trabajo nunca se detenga.",
-      "Adaptabilidad en entornos dinámicos, trabajo constante en equipo y gestión de transacciones en un entorno de alta afluencia, asegurando que cada detalle técnico del proceso de venta se ejecute con precisión."
-
+    description: [
+      "Atención al cliente y ventas, asesoramiento personalizado buscando siempre la mejor experiencia de compra.",
+      "Gestión operativa de producto, recepción, etiquetado y organización del almacén manteniendo el orden y flujo de trabajo.",
+      "Adaptabilidad en entornos dinámicos, trabajo constante en equipo y gestión de transacciones."
     ]
   },
   {
@@ -52,9 +66,9 @@ const EXPERIENCE = [
     role: "Segundo Encargado",
     company: "JVZ Vamutex",
     description: [
-      "Liderazgo de equipo y gestión operativa, aprendí a coordinar turnos y personal, entendiendo que el éxito de un equipo depende de una buena comunicación y de estar presente cuando surgen los imprevistos.",
-      "Gestión logística integral, desde la recepción de mercancía hasta el control de inventario. Aquí igualamos las imágenes del stock físico con el sistema, asegurando que los números siempre cuadren antes de abrir la persiana.",
-      "Resolución de conflictos y toma de decisiones, mi paso por JVZ me dio la perspectiva necesaria para entender que detrás de cada dato logístico hay un equipo de personas trabajando para que todo funcione."
+      "Liderazgo de equipo y gestión operativa, coordinación de turnos y personal con alta capacidad de comunicación.",
+      "Gestión logística integral desde la recepción de mercancía hasta el control riguroso de inventario.",
+      "Resolución de conflictos y toma de decisiones en entornos de alta exigencia."
     ]
   },
   {
@@ -62,9 +76,9 @@ const EXPERIENCE = [
     role: "Dependiente Primer nivel",
     company: "FC&CO",
     description: [
-      "Asesoramiento de moda personalizado y atención al cliente de alto nivel, representando firmas internacionales de primer nivel (Armani, Calvin Klein, Lacoste, Hugo Boss, etc.) y garantizando una experiencia de compra exclusiva.",
-      "Gestión y control de inventario de producto premium, supervisando la recepción de stock y el mantenimiento del área de venta bajo estrictos estándares estéticos de las marcas.",
-      "Consecución de objetivos de venta individuales y colectivos mediante técnicas de venta consultiva y fidelización de clientes habituales."
+      "Asesoramiento de moda personalizado y atención al cliente de alto nivel para firmas internacionales.",
+      "Gestión y control de inventario de producto premium bajo estrictos estándares estéticos.",
+      "Consecución de objetivos de venta individuales y colectivos mediante técnicas de venta consultiva."
     ]
   },
   {
@@ -72,11 +86,11 @@ const EXPERIENCE = [
     role: "Becario",
     company: "Grillo Telemático",
     description: [
-      "Despliegue y configuración de sistemas TPV en entornos comerciales, aquí aprendí que, si algo puede fallar en el momento menos oportuno, lo hará, y que la mejor solución es una planificación técnica a prueba de balas.",
-      "Soporte técnico tanto remoto como a pie de tienda, resolví incidencias bajo presión, confirmando que la paciencia y la capacidad analítica son tan importantes como el código mismo al lidiar con hardware caprichoso.",
-      "Integración de hardware y periféricos, fue mi bautismo de fuego en el mundo real, donde comprendí que la configuración en producción es el pilar que mantiene el negocio en marcha."
-    ],
-  },
+      "Despliegue y configuración de sistemas TPV en entornos comerciales con planificación técnica rigurosa.",
+      "Soporte técnico tanto remoto como a pie de tienda para la resolución de incidencias.",
+      "Integración de hardware y periféricos comerciales en producción."
+    ]
+  }
 ]
 
 const EDUCATION = [
@@ -84,74 +98,56 @@ const EDUCATION = [
     year: "Junio 2026 - Julio 2026",
     degree: "Doble Certificación: Desarrollo con IA y Machine Learning",
     institution: "BIGSchool",
-    description: "Aprendi como funciona un Agente de IA y como usarlo para automatizar tareas repetitivas.Gracias a la formación y práctica constante, he aprendido a no ver la IA como algo mágico, sino como una herramienta clave en mi caja: ahora sé cómo darle el contexto necesario para que los agentes resuelvan tareas completas con criterio, en lugar de generar simples fragmentos de código. Con este enfoque, he aprendido a coordinar múltiples procesos para ganar en orden y velocidad, validando siempre cada paso para mantener el control total del proyecto. Al final, se trata de que igualamos las imágenes de lo que la tecnología promete con lo que realmente somos capaces de construir de manera eficiente y profesional",
+    description: "Aprendizaje práctico sobre agentes de IA y su aplicación técnica para automatizar tareas complejas, coordinar flujos de trabajo con contexto estructurado y optimizar procesos de desarrollo."
   },
-
   {
     year: "Septiembre 2024 - Presente",
-    degree: "Grado Superior Desarrollo de Aplicaciones Web",
+    degree: "Grado Superior Desarrollo de Aplicaciones Web (DAW)",
     institution: "Ilerna Sevilla",
-    description: "Mi formación técnica especializada en el ecosistema web. Aquí pasé de escribir un simple HOLA MUNDO! en pocas líneas de código a diseñar arquitecturas completas y funcionales. Aprendí a manejar el ciclo de vida de una aplicación, desde el diseño de la base de datos hasta el despliegue final, asegurando siempre que el resultado no solo funcione, sino que sea eficiente y fácil de mantener. Es la base sobre la que construyo todas mis soluciones actuales.",
+    description: "Formación técnica especializada en el ciclo de vida completo de aplicaciones web: diseño de bases de datos, desarrollo backend y frontend, arquitectura de sistemas y despliegue."
   },
-
   {
     year: "Abril 2022 - Mayo 2022",
     degree: "Curso de JavaScript (Principiante e Intermedio)",
     institution: "OpenWebinars",
-    description: "Formación práctica orientada a consolidar las bases del lenguaje JavaScript moderno (ES6+), dominando la manipulación interactiva del DOM, estructuras de datos, asincronía y el control de flujos de ejecución.",
+    description: "Consolidación de bases en JavaScript moderno (ES6+), manipulación del DOM, estructuras de datos, asincronía y control de flujos de ejecución."
   },
   {
     year: "Abril 2022 - Mayo 2022",
     degree: "Curso de JavaScript en WordPress",
     institution: "OpenWebinars",
-    description: "Especialización en el uso de JavaScript dentro del ecosistema de WordPress, enfocándose en la integración de scripts dinámicos en el frontend y el consumo de la REST API para enriquecer temas y plugins.",
+    description: "Integración de scripts dinámicos en el frontend y consumo de REST API en el ecosistema WordPress."
   },
   {
     year: "Septiembre 2020 - Junio 2022",
-    degree: "Grado Medio en Sistemas microinformáticos y redes",
+    degree: "Grado Medio en Sistemas Microinformáticos y Redes (SMR)",
     institution: "IES Hermanos Machado",
-    description: "Más allá de la pantalla, este grado me dio la visión necesaria para entender cómo vive el software en el mundo real. Aquí aprendí a configurar redes, gestionar servidores y garantizar que la infraestructura no sea un cuello de botella, sino el soporte que hace que cualquier aplicación sea estable, segura y escalable. En definitiva, entiendo qué pasa desde que el usuario pulsa un botón hasta que el dato llega a su destino..",
+    description: "Configuración de redes, administración de servidores e infraestructura tecnológica para garantizar entornos estables y seguros."
   },
   {
     year: "Abril 2021 - Junio 2021",
     degree: "Cisco CCNA v7",
     institution: "Cisco",
-    description: "Esta certificación va mucho más allá de lo básico. Aprendí a diseñar, construir y mantener redes empresariales, abarcando desde la gestión de redes inalámbricas (WLC) y políticas de calidad de servicio (QoS), hasta la seguridad avanzada. Además, me adentré en las tecnologías que marcan el presente y futuro del sector: virtualización de redes, arquitectura SDN (redes definidas por software) y la programación aplicada a la automatización de tareas. En resumen: aprendí a estructurar la infraestructura para que los datos fluyan de manera eficiente, segura y, sobre todo, automatizada.",
-  },
+    description: "Diseño, administración y seguridad en redes empresariales, abarcando QoS, virtualización de redes, SDN y automatización."
+  }
 ]
 
 const PROJECTS = [
   {
     id: "trazabilidad-qr",
-    title: "Aplicación Web de Gestión de Inventario y Trazabilidad mediante Códigos QR",
-    description: "Diseño y desarrollo integral de una plataforma web Full-Stack propia para digitalizar y centralizar la gestión de inventarios y la trazabilidad de activos corporativos. La solución incorpora identificación mediante códigos QR, gestión y actualización de información en tiempo real y control centralizado de activos. Incluye además procesos de extracción, transformación y migración de datos procedentes de sistemas ERP hacia bases de datos propias, así como el diseño y estructuración de nuevas bases de datos para adaptar y centralizar la información. Todo ello orientado a reducir tareas manuales, mejorar la calidad de los datos y optimizar los procesos internos de gestión.",
-    notes: "Implantada con éxito a nivel multi-sede, hasta ahora mi proyecto mas importante.",
-    tags: ["Java 21", "Spring Boot 3.4", "React", "Vite", "TailwindCSS", "MySQL", "XAMPP", "Git", "Docker", "JWT", "Spring Security", "API REST", "Códigos QR", "ERP/CRM (ADV)"],
+    title: "Inventario y trazabilidad inteligente",
+    description: "Diseño y desarrollo integral de una plataforma web Full-Stack propia para digitalizar y centralizar la gestión de inventarios y la trazabilidad de activos corporativos. La solución incorpora identificación mediante códigos QR, gestión y actualización de información en tiempo real y control centralizado de activos. El proyecto incluye procesos de extracción, transformación y migración de datos procedentes de sistemas ERP hacia bases de datos propias, así como el diseño y estructuración de nuevas bases de datos para centralizar y normalizar la información. El objetivo es reducir tareas manuales, mejorar la calidad y disponibilidad de los datos y optimizar el seguimiento de los recursos internos.",
+    notes: "Implantada a nivel multi-sede para el control integral de activos.",
+    tags: ["Java 21", "Spring Boot 3.4", "React", "Vite", "TailwindCSS", "MySQL", "Docker", "JWT", "Spring Security", "API REST", "Códigos QR", "ERP/CRM (ADV)"],
     githubLink: "https://github.com/alonsoarriaza/Sistema-Trazabilidad-QR",
     previewImage: tallerImg,
     fallbackImage: "/previews/taller.png",
   },
   {
-    id: "sitoinformatic",
-    title: "SitoInformatic | Plataforma eCommerce y Configurador de Hardware",
-    description: `SitoInformatic es una plataforma e-commerce de hardware y componentes informáticos que integra SitoIA, un sistema inteligente propio para la configuración automática de equipos. A partir del presupuesto, necesidades y perfil de uso del usuario, aplica ponderaciones y cálculos porcentuales para distribuir el presupuesto entre componentes, generar una configuración equilibrada y comprobar su compatibilidad.
-
-La plataforma incorpora catálogo de productos, búsqueda y filtrado, fichas de producto, carrito de compra y gestión de usuarios, además de un sistema de recomendaciones adaptado a perfiles como Gaming, Streaming/Edición y Oficina.
-
-En el apartado de seguridad, implementa autenticación mediante JWT y almacenamiento seguro de contraseñas mediante BCrypt, junto con control de acceso a las funcionalidades de usuario.
-
-Desarrollado como Trabajo de Fin de Grado (TFG) en Desarrollo de Aplicaciones Web (DAW), el proyecto integra e-commerce, gestión de datos, lógica de negocio y un sistema propio de recomendación y configuración automática basado en reglas y cálculos matemáticos..`,
-    notes: "Más allá del 8,4 que obtuvo como nota final, la mayor satisfacción fue ver cómo mi centro de prácticas adoptó mi proyecto como modelo de negocio...",
-    tags: ["Java 21", "Spring Boot 3.4", "Spring Security", "JavaScript (JSX)", "CSS", "PostgreSQL", "MySQL", "H2 Database", "React", "Tailwind", "JWT"],
-    githubLink: "https://github.com/alonsoarriaza/sitoinformatic",
-    previewImage: sitoinfoImg,
-    fallbackImage: "/previews/sitoinfo.png",
-  },
-  {
     id: "automatizacion-datos",
-    title: "Desarrollador de Soluciones de Automatización / Analista de Datos",
-    description: `Desarrollo de una Single Page Application (SPA) para la clasificación automatizada de miles de clientes y sus actividades comerciales. Creación de un sistema propio de correspondencias y filtrado integrado con un agente de IA para analizar, relacionar y clasificar los datos según el catálogo oficial. La solución automatizó un proceso de alta carga manual, transformando una tarea que habría requerido meses de trabajo en un flujo mucho más ágil, estructurado y eficiente.`,
-    notes: "Pasar de miles de clientes sueltos a su clasificación en un solo click",
+    title: "Automatización inteligente de datos",
+    description: "Desarrollo de una solución para automatizar la clasificación de miles de clientes y sus actividades comerciales. Creé un sistema propio de correspondencias y filtrado integrado con un agente de IA para analizar, relacionar y clasificar la información de cada cliente según el catálogo oficial de actividades. La solución automatizó un proceso de alta carga manual, transformando una tarea que habría requerido meses de trabajo en un flujo mucho más ágil, estructurado y eficiente.",
+    notes: "Procesamiento de miles de clientes en un solo clic.",
     tags: ["HTML5", "Vanilla CSS", "JavaScript (ES6)", "MySQL/MariaDB", "Integración IA"],
     githubLink: "https://github.com/alonsoarriaza/Desarrollador-de-Soluciones-de-Automatizaci-n-Analista-de-Datos",
     previewImage: actCliImg,
@@ -159,28 +155,94 @@ Desarrollado como Trabajo de Fin de Grado (TFG) en Desarrollo de Aplicaciones We
   },
   {
     id: "coanda-forms",
-    title: "Assistant Virtual de Recomendación Inteligente",
-    description: "Desarrollo de una aplicación web interactiva para la captación y cualificación automatizada de clientes, mediante un asistente inteligente capaz de analizar sus necesidades y recomendar la solución de gestión documental más adecuada. La información y afinidad obtenidas se sincronizan en tiempo real con un panel comercial, facilitando el seguimiento y la conversión de oportunidades. El proyecto se plantea como base para evolucionar hacia un CRM propio conectado a base de datos, centralizando contactos, oportunidades, interacciones y estado del proceso comercial.",
-    notes: "Del clic en el formulario a la integración de software en tu negocio.",
+    title: "Asistente inteligente para captación y cualificación de clientes",
+    description: "Desarrollo de una aplicación web interactiva orientada a la captación y cualificación automatizada de clientes en el ámbito de la gestión documental. El asistente analiza las necesidades técnicas y operativas del usuario y recomienda la solución de software que mejor se adapta a sus requisitos. La información recopilada y la afinidad calculada se sincronizan en tiempo real con un panel comercial, facilitando el seguimiento personalizado de oportunidades y agilizando la toma de decisiones durante el proceso de venta. El proyecto está planteado como base para evolucionar hacia un CRM propio conectado a base de datos, centralizando contactos, oportunidades, interacciones y estado del proceso comercial.",
+    notes: "Cualificación inteligente de leads orientada a conversión comercial.",
     tags: ["Java", "Spring Boot 3.4", "JavaScript", "React", "PostgreSQL", "Bootstrap 5", "Docker", "Postman", "Git"],
     githubLink: "https://github.com/alonsoarriaza/CoandaForms",
     previewImage: crmInternoImg,
     fallbackImage: "/previews/crm-interno.png",
+  },
+  {
+    id: "sitoinformatic",
+    title: "SitoInformatic",
+    description: "SitoInformatic es una plataforma e-commerce de hardware y componentes informáticos que integra SitoIA, un sistema inteligente propio para la configuración automática de equipos. A partir del presupuesto, necesidades y perfil de uso del usuario, SitoIA aplica ponderaciones y cálculos porcentuales para distribuir el presupuesto entre los diferentes componentes, generar una configuración equilibrada y comprobar su compatibilidad. La plataforma incorpora catálogo de productos, búsqueda y filtrado, fichas de producto, carrito de compra, gestión de usuarios y recomendaciones adaptadas a perfiles como Gaming, Streaming/Edición y Oficina. Implementa autenticación mediante JWT y almacenamiento seguro de contraseñas mediante hashing con BCrypt, junto con control de acceso a las funcionalidades de usuario. Desarrollado como Trabajo de Fin de Grado (TFG) del ciclo de Desarrollo de Aplicaciones Web (DAW), el proyecto integra comercio electrónico, gestión de datos, lógica de negocio y un sistema propio de recomendación y configuración automática basado en reglas y cálculos matemáticos.",
+    notes: "Calificación de 8,4 en TFG con motor de configuración heurística.",
+    tags: ["Java 21", "Spring Boot 3.4", "Spring Security", "JavaScript (JSX)", "CSS", "PostgreSQL", "MySQL", "H2 Database", "React", "Tailwind", "JWT"],
+    githubLink: "https://github.com/alonsoarriaza/sitoinformatic",
+    previewImage: sitoinfoImg,
+    fallbackImage: "/previews/sitoinfo.png",
+  },
+]
+
+const TECH_CATEGORIES = [
+  {
+    title: "DESARROLLO",
+    items: ["Java", "Spring Boot", "React", "JavaScript", "HTML5", "CSS", "APIs REST"],
+    color: "purple",
+  },
+  {
+    title: "DATOS",
+    items: ["SQL", "MySQL", "Bases de datos", "Migración y transformación de datos"],
+    color: "cyan",
+  },
+  {
+    title: "AUTOMATIZACIÓN",
+    items: ["Google Apps Script", "Agentes de IA", "Automatización de procesos"],
+    color: "amber",
+  },
+  {
+    title: "SISTEMAS EMPRESARIALES",
+    items: ["Active Directory", "Entra ID", "GPO", "MyQ", "ERP/CRM", "Therefore", "Solpheo"],
+    color: "emerald",
+  },
+  {
+    title: "SEGURIDAD",
+    items: ["JWT", "BCrypt", "Ciberguardian"],
+    color: "pink",
+  },
+]
+
+const METHODOLOGY_STEPS = [
+  {
+    step: "01",
+    title: "ANALIZAR",
+    text: "Identifico necesidades y problemas reales dentro de los procesos.",
+  },
+  {
+    step: "02",
+    title: "DISEÑAR",
+    text: "Defino la solución, los datos y el flujo de trabajo.",
+  },
+  {
+    step: "03",
+    title: "DESARROLLAR",
+    text: "Construyo aplicaciones e integraciones orientadas a resolver el problema.",
+  },
+  {
+    step: "04",
+    title: "AUTOMATIZAR",
+    text: "Elimino tareas repetitivas mediante programación, automatización e IA.",
+  },
+  {
+    step: "05",
+    title: "OPTIMIZAR",
+    text: "Busco mejorar continuamente la eficiencia y el rendimiento del proceso.",
   },
 ]
 
 const ABOUT = {
   paragraphs: [
     "Mi pasión por la tecnología comenzó desde muy joven. Lo que empezó como una curiosidad insaciable por saber cómo funcionaban las cosas por dentro me llevó a pasar tardes enteras montando, desmontando y diagnosticando ordenadores, instalando sistemas operativos y trasteando con cualquier dispositivo que cayera en mis manos. Ese deseo constante de experimentar y resolver problemas de hardware fue la chispa que me impulsó a enfocar mi futuro profesional hacia el mundo del desarrollo de aplicaciones web y las tecnologías Full-Stack.",
-    "Esta vocación me llevó a dar mis primeros pasos formales en el Grado Medio en Sistemas Microinformáticos y Redes, donde aprendí a entender cómo vive y se comunica el software en entornos de red reales, lo que más tarde consolidé con la certificación Cisco CCNA v7. Para ampliar mis capacidades de creación y diseño de software, di el salto al Grado Superior en Desarrollo de Aplicaciones Web (DAW) y, recientemente, me he especializado en Inteligencia Artificial y Machine Learning. Cada paso en mi trayectoria ha sido guiado por el mismo objetivo: diseñar soluciones web integrales, eficientes y seguras que aporten valor real.",
+    "Esta vocación me llevó a dar mis primeros pasos formales en el Grado Medio en Sistemas Microinformáticos y Redes, donde aprendí a entender cómo vive y se comunica el software en entornos de red reales, lo que más tarde consolidé con la certificación Cisco CCNA v7. Para ampliar mis capacidades de creación y diseño de software, di el salto al Grado Superior en Desarrollo de Aplicaciones Web (DAW) y me he especializado en IA y Machine Learning. Cada paso en mi trayectoria ha sido guiado por el mismo objetivo: diseñar soluciones web integrales, eficientes y seguras que aporten valor real.",
     "Afronto cada desafío tecnológico con un enfoque analítico, estructurado y orientado al detalle, priorizando siempre la calidad del código, el rendimiento del sistema y la adopción de las mejores prácticas de la industria. Mi compromiso está centrado en el aprendizaje continuo y la adaptabilidad técnica ante nuevos entornos, buscando no solo resolver requerimientos complejos de programación, sino también aportar soluciones innovadoras que optimicen la eficiencia operativa del negocio.",
   ],
-  funFacts: [
-    "Idiomas: Español (Nativo) · Inglés (B2) · Italiano (A2)",
-    "Movilidad: Permiso B · Vehículo propio · Disponibilidad para viajar",
-    "Ubicación: Dos Hermanas, Sevilla",
-    "Teléfono: 627 53 61 25",
-    "Email: alonsoarriaza03@gmail.com",
+  info: [
+    { label: "Idiomas", value: "Español (Nativo) · Inglés (B2) · Italiano (A2)" },
+    { label: "Movilidad", value: "Permiso B · Vehículo propio · Disponibilidad para viajar" },
+    { label: "Ubicación", value: "Dos Hermanas, Sevilla" },
+    { label: "Teléfono", value: "627 53 61 25" },
+    { label: "Email", value: "alonsoarriaza03@gmail.com" },
   ],
 }
 
@@ -540,48 +602,68 @@ function HeroSection() {
   )
 }
 
-
 /* ═══════════════════════════════════════════════
-   COMPONENTE: Content Wrapper (con fondo rico y orbes de color)
+   COMPONENTE: Bloque de Métricas / Impacto
    ═══════════════════════════════════════════════ */
 
-function ContentWrapper({ children }) {
+function ImpactMetricsSection() {
+  const sectionRef = useAnimateOnScroll()
+  const metrics = [
+    { value: "+5", title: "Proyectos y soluciones desarrolladas", subtitle: "Aplicaciones web e integraciones con impacto directo en negocio", gradient: "from-purple-400 to-pink-400", border: "border-purple-500/30", bg: "bg-purple-500/10" },
+    { value: "Miles", title: "Clientes procesados mediante automatización", subtitle: "Clasificación y tratamiento de datos asistido por agentes IA", gradient: "from-cyan-400 to-blue-400", border: "border-cyan-500/30", bg: "bg-cyan-500/10" },
+    { value: "QR", title: "Trazabilidad de activos", subtitle: "Digitalización e inventario en tiempo real", gradient: "from-emerald-400 to-teal-400", border: "border-emerald-500/30", bg: "bg-emerald-500/10" },
+    { value: "IA", title: "Automatización y clasificación inteligente", subtitle: "Integración de inteligencia artificial en flujos de trabajo", gradient: "from-amber-400 to-orange-400", border: "border-amber-500/30", bg: "bg-amber-500/10" },
+  ]
   return (
-    <div className="relative overflow-hidden" style={{
-      background: 'linear-gradient(180deg, rgba(10,5,25,0.92) 0%, rgba(15,10,35,0.95) 20%, rgba(8,5,20,0.96) 50%, rgba(12,8,30,0.95) 80%, rgba(10,5,25,0.92) 100%)',
-      backdropFilter: 'blur(40px) saturate(1.2)',
-    }}>
-      {/* Orbe decorativo púrpura */}
-      <div className="absolute top-[20%] -left-32 w-96 h-96 rounded-full bg-purple-600/8 blur-[100px] animate-orb pointer-events-none" />
-      {/* Orbe decorativo cyan */}
-      <div className="absolute top-[50%] -right-32 w-80 h-80 rounded-full bg-cyan-500/6 blur-[100px] animate-orb pointer-events-none" style={{ animationDelay: '5s' }} />
-      {/* Orbe decorativo rosa */}
-      <div className="absolute top-[75%] left-1/4 w-72 h-72 rounded-full bg-pink-500/5 blur-[100px] animate-orb pointer-events-none" style={{ animationDelay: '10s' }} />
-
-      {/* Zona de transición superior */}
-      <div className="absolute top-0 left-0 right-0 -translate-y-full pointer-events-none">
-        <div className="h-56 bg-gradient-to-b from-transparent via-[rgba(10,5,25,0.4)] to-[rgba(10,5,25,0.92)]" />
+    <section id="impacto" ref={sectionRef} className="section-container">
+      <div className="animate-on-scroll text-center max-w-2xl mx-auto mb-10">
+        <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full border border-purple-400/30 bg-purple-500/10 text-purple-300 text-xs font-semibold uppercase tracking-wider mb-3">
+          <Icons.Sparkle /> Métricas & Impacto
+        </div>
+        <h2 className="section-title">Escala y Valor Real</h2>
+        <p className="section-subtitle">Transformando problemas operativos en código mantenible, automatización y resultados.</p>
       </div>
-
-      {/* Línea luminosa decorativa en el borde superior */}
-      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-purple-500/40 to-transparent" />
-
-      {/* Contenido */}
-      <div className="relative z-10">
-        {children}
+      <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 mb-8">
+        {metrics.map((m, i) => (
+          <div key={i} className="animate-on-scroll" style={{ animationDelay: `${i * 100}ms` }}>
+            <div className={`glass-card-hover p-6 text-center h-full flex flex-col justify-between border ${m.border} relative overflow-hidden group`}>
+              <div className={`absolute top-0 right-0 w-24 h-24 ${m.bg} blur-2xl rounded-full pointer-events-none group-hover:scale-150 transition-transform duration-500`} />
+              <div>
+                <div className={`font-display text-4xl sm:text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r ${m.gradient} mb-3 tracking-tight`}>{m.value}</div>
+                <h3 className="text-sm sm:text-base font-bold text-white mb-1.5 leading-snug">{m.title}</h3>
+                <p className="text-xs text-white/50 font-light leading-relaxed">{m.subtitle}</p>
+              </div>
+            </div>
+          </div>
+        ))}
       </div>
-    </div>
+      <div className="animate-on-scroll">
+        <div className="glass-card p-5 md:p-6 border border-cyan-500/30 bg-gradient-to-r from-purple-950/40 via-black/50 to-cyan-950/40 flex flex-col md:flex-row items-center justify-between gap-4 text-center md:text-left">
+          <div className="flex items-center gap-4">
+            <div className="w-11 h-11 rounded-2xl bg-gradient-to-tr from-purple-600 to-cyan-600 flex items-center justify-center text-white font-bold text-lg shrink-0 shadow-lg shadow-purple-500/20">⚡</div>
+            <div>
+              <h4 className="text-sm md:text-base font-bold text-white">Eficiencia en la Gestión de Datos</h4>
+              <p className="text-xs text-white/60">Transformación digital de procesos corporativos para eliminar cuellos de botella.</p>
+            </div>
+          </div>
+          <div className="flex items-center gap-2.5 bg-black/60 border border-white/10 px-4 py-2.5 rounded-xl text-xs">
+            <span className="font-semibold text-red-400/90 line-through">Meses de trabajo manual</span>
+            <span className="text-purple-400 font-bold">➔</span>
+            <span className="font-bold text-emerald-400 bg-emerald-500/10 px-2.5 py-1 rounded-lg border border-emerald-500/30">Automatización eficiente</span>
+          </div>
+        </div>
+      </div>
+    </section>
   )
 }
 
-
 /* ═══════════════════════════════════════════════
-   COMPONENTE: Experience Section (Timeline)
+   COMPONENTE: Experience Section
    ═══════════════════════════════════════════════ */
 
 function ExperienceSection() {
   const sectionRef = useAnimateOnScroll()
-
+  const [showPrior, setShowPrior] = useState(false)
   return (
     <section id="experiencia" ref={sectionRef} className="section-container">
       <div className="animate-on-scroll">
@@ -590,57 +672,133 @@ function ExperienceSection() {
           <span className="text-sm font-medium text-purple-400 uppercase tracking-widest">Trayectoria</span>
         </div>
         <h2 className="section-title">Experiencia Profesional</h2>
-        <p className="section-subtitle">
-          Un recorrido por los lugares donde he dejado mi huella.
-        </p>
+        <p className="section-subtitle">Resolución de necesidades reales de negocio mediante desarrollo, automatización e integración de sistemas.</p>
       </div>
 
-      <div className="relative">
-        {/* Línea del timeline */}
-        <div className="timeline-line" />
-
-        {EXPERIENCE.map((item, i) => (
-          <div
-            key={i}
-            className={`animate-on-scroll relative pl-12 md:pl-0 mb-12 last:mb-0 md:flex md:items-start ${i % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'
-              }`}
-            style={{ animationDelay: `${i * 150}ms` }}
-          >
-            {/* Dot */}
-            <div className="absolute left-[10px] md:left-1/2 md:-translate-x-1/2 top-2 w-5 h-5 rounded-full border-2 border-purple-500 bg-black z-10">
-              <div className="w-full h-full rounded-full bg-purple-500/30 animate-pulse-slow" />
-            </div>
-
-            {/* Content */}
-            <div className={`md:w-1/2 ${i % 2 === 0 ? 'md:pr-12' : 'md:pl-12'}`}>
-              <div className="glass-card-hover p-6 md:p-8">
-                <div className="inline-flex items-center gap-2 text-xs font-semibold text-purple-300 bg-purple-500/10 border border-purple-500/20 px-3.5 py-1.5 rounded-lg mb-3">
-                  <svg className="w-3.5 h-3.5 opacity-70" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><rect x="3" y="4" width="18" height="18" rx="2" /><path d="M16 2v4M8 2v4M3 10h18" /></svg>
-                  {item.year}
-                </div>
-                <h3 className="text-xl font-display font-bold mb-1 text-white">{item.role}</h3>
-                <p className="text-sm text-cyan-400/80 mb-3 font-medium">{item.company}</p>
-                {Array.isArray(item.description) ? (
-                  <ul className="space-y-2 text-sm text-white/50 leading-relaxed list-none">
-                    {item.description.map((desc, j) => (
-                      <li key={j} className="flex gap-2">
-                        <span className="text-purple-400/60 mt-1 shrink-0">▸</span>
-                        <span>{desc}</span>
-                      </li>
-                    ))}
-                  </ul>
-                ) : (
-                  <p className="text-sm text-white/50 leading-relaxed">{item.description}</p>
-                )}
+      <div className="animate-on-scroll mb-8">
+        <div className="glass-card-hover p-6 md:p-8 border border-purple-500/30 relative">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-6 pb-4 border-b border-white/10">
+            <div>
+              <div className="inline-flex items-center gap-2 text-xs font-semibold text-purple-300 bg-purple-500/10 border border-purple-500/20 px-3.5 py-1.5 rounded-lg mb-2">
+                <svg className="w-3.5 h-3.5 opacity-70" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><rect x="3" y="4" width="18" height="18" rx="2" /><path d="M16 2v4M8 2v4M3 10h18" /></svg>
+                {COANDA_EXPERIENCE.year}
               </div>
+              <h3 className="text-2xl font-display font-bold text-white">{COANDA_EXPERIENCE.role}</h3>
+              <p className="text-base text-cyan-400 font-medium">{COANDA_EXPERIENCE.company}</p>
             </div>
           </div>
-        ))}
+
+          <div className="grid md:grid-cols-3 gap-6 mb-8">
+            {COANDA_EXPERIENCE.blocks.map((block, idx) => (
+              <div key={idx} className="bg-black/40 border border-white/10 rounded-2xl p-5 hover:border-purple-400/30 transition-all flex flex-col justify-between">
+                <div>
+                  <div className="flex items-center gap-2 mb-3">
+                    <span className="w-2 h-2 rounded-full bg-purple-400 shadow-[0_0_8px_rgba(168,85,247,0.6)]" />
+                    <h4 className="text-xs font-bold text-purple-300 tracking-wider uppercase">{block.title}</h4>
+                  </div>
+                  <p className="text-xs sm:text-sm text-white/70 leading-relaxed font-light">{block.text}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div className="pt-4 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <p className="text-xs text-white/60 font-light">Los proyectos y soluciones desarrollados se detallan en Mis Inventos.</p>
+            <a href="#proyectos" className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-xs font-semibold bg-gradient-to-r from-purple-600 to-cyan-600 text-white hover:shadow-[0_0_20px_rgba(168,85,247,0.35)] transition-all duration-300 hover:scale-105 shrink-0">
+              <span>Ir a Mis Inventos</span>
+              <Icons.ArrowDown />
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div className="animate-on-scroll text-center">
+        <button onClick={() => setShowPrior(!showPrior)} className="inline-flex items-center gap-2 text-xs font-semibold text-white/60 hover:text-white bg-white/5 border border-white/10 hover:bg-white/10 px-4 py-2 rounded-full transition-all">
+          <span>{showPrior ? 'Ocultar experiencia profesional previa' : 'Ver experiencia profesional previa (Retail y Soporte Técnico)'}</span>
+          <span className={`transition-transform duration-300 ${showPrior ? 'rotate-180' : ''}`}>▼</span>
+        </button>
+
+        {showPrior && (
+          <div className="space-y-4 mt-6 text-left transition-all duration-500">
+            {PRIOR_EXPERIENCE.map((item, i) => (
+              <div key={i} className="glass-card p-5 border border-white/5">
+                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-2">
+                  <h4 className="text-base font-bold text-white">{item.role} <span className="text-purple-400 font-normal">· {item.company}</span></h4>
+                  <span className="text-xs text-white/40">{item.year}</span>
+                </div>
+                <ul className="space-y-1 text-xs text-white/60">
+                  {item.description.map((desc, j) => (
+                    <li key={j} className="flex gap-2">
+                      <span className="text-purple-400/50">▸</span>
+                      <span>{desc}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        )}
       </div>
     </section>
   )
 }
 
+/* ═══════════════════════════════════════════════
+   COMPONENTE: Projects Section ("Mis Inventos")
+   ═══════════════════════════════════════════════ */
+
+function ProjectsSection() {
+  const sectionRef = useAnimateOnScroll()
+  const [selectedProject, setSelectedProject] = useState(null)
+  return (
+    <section id="proyectos" ref={sectionRef} className="section-container">
+      <div className="animate-on-scroll">
+        <div className="flex items-center gap-3 mb-2">
+          <span className="text-pink-400"><Icons.Code /></span>
+          <span className="text-sm font-medium text-pink-400 uppercase tracking-widest">Soluciones Desarrolladas</span>
+        </div>
+        <h2 className="section-title">Mis Inventos</h2>
+        <p className="section-subtitle">Aplicaciones web reales, automatizaciones e integraciones diseñadas para resolver problemas de negocio.</p>
+      </div>
+      <div className="grid md:grid-cols-2 gap-6 md:gap-8">
+        {PROJECTS.map((project, i) => (
+          <div key={i} className="animate-on-scroll" style={{ animationDelay: `${i * 150}ms` }}>
+            <div className="glass-card-hover p-6 md:p-8 h-full flex flex-col group justify-between hover:border-purple-400/40 transition-all duration-300 relative">
+              <div>
+                <div className="flex items-start justify-between mb-3">
+                  <a href={project.githubLink || "https://github.com/alonsoarriaza"} target="_blank" rel="noopener noreferrer" className="hover:text-purple-300 transition-colors duration-300" title="Ver repositorio en GitHub">
+                    <h3 className="text-xl font-display font-bold text-white hover:text-purple-300 transition-colors">{project.title}</h3>
+                  </a>
+                  <a href={project.githubLink || "https://github.com/alonsoarriaza"} target="_blank" rel="noopener noreferrer" className="text-white/30 hover:text-purple-400 transition-colors duration-300 shrink-0 ml-2 mt-1" title="Ver repositorio en GitHub">
+                    <Icons.ExternalLink />
+                  </a>
+                </div>
+
+                <p className="text-xs sm:text-sm text-white/60 mb-4 line-clamp-3 leading-relaxed font-light">{project.description}</p>
+
+                <div className="flex flex-wrap gap-2 mb-6">
+                  {project.tags.map((tag) => (
+                    <span key={tag} className="tag">{tag}</span>
+                  ))}
+                </div>
+              </div>
+
+              <div className="pt-4 border-t border-white/10 flex items-center justify-between gap-3">
+                <button type="button" onClick={() => setSelectedProject(project)} className="w-full py-2.5 px-4 rounded-xl text-xs font-semibold bg-gradient-to-r from-purple-600/30 to-cyan-600/30 border border-purple-500/30 text-purple-200 hover:text-white hover:from-purple-600 hover:to-cyan-600 hover:border-transparent transition-all duration-300 flex items-center justify-center gap-2 group-hover:shadow-[0_0_15px_rgba(168,85,247,0.3)]">
+                  <Icons.Eye />
+                  <span>Ver detalles del invento</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+      {selectedProject && (
+        <ProjectPreviewModal project={selectedProject} onClose={() => setSelectedProject(null)} />
+      )}
+    </section>
+  )
+}
 
 /* ═══════════════════════════════════════════════
    COMPONENTE: Education Section
@@ -658,15 +816,15 @@ function EducationSection() {
         </div>
         <h2 className="section-title">Educación</h2>
         <p className="section-subtitle">
-          Los títulos que decoran mi pared y justifican las noches sin dormir.
+          Formación técnica especializada en desarrollo de software, inteligencia artificial e infraestructura.
         </p>
       </div>
 
       <div className="grid gap-6 md:gap-8">
         {EDUCATION.map((item, i) => (
-          <div key={i} className="animate-on-scroll" style={{ animationDelay: `${i * 150} ms` }}>
+          <div key={i} className="animate-on-scroll" style={{ animationDelay: `${i * 150}ms` }}>
             <div className="glass-card-hover p-6 md:p-8 flex flex-col md:flex-row md:items-start gap-4 md:gap-8">
-              <div className="md:w-40 shrink-0">
+              <div className="md:w-44 shrink-0">
                 <div className="inline-flex items-center gap-2 text-xs font-semibold text-cyan-300 bg-cyan-500/10 border border-cyan-500/20 px-3.5 py-1.5 rounded-lg">
                   <svg className="w-3.5 h-3.5 opacity-70" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><rect x="3" y="4" width="18" height="18" rx="2" /><path d="M16 2v4M8 2v4M3 10h18" /></svg>
                   {item.year}
@@ -675,7 +833,7 @@ function EducationSection() {
               <div>
                 <h3 className="text-lg font-display font-bold mb-1 text-white">{item.degree}</h3>
                 <p className="text-sm text-purple-400/80 font-medium mb-3">{item.institution}</p>
-                <p className="text-sm text-white/50 leading-relaxed">{item.description}</p>
+                <p className="text-sm text-white/60 leading-relaxed font-light">{item.description}</p>
               </div>
             </div>
           </div>
@@ -685,7 +843,6 @@ function EducationSection() {
   )
 }
 
-
 /* ═══════════════════════════════════════════════
    COMPONENTE: Project Preview Modal
    ═══════════════════════════════════════════════ */
@@ -693,12 +850,10 @@ function EducationSection() {
 function ProjectPreviewModal({ project, onClose }) {
   const [currentSrc, setCurrentSrc] = useState(project?.previewImage)
   const [imageError, setImageError] = useState(false)
-
   useEffect(() => {
     setCurrentSrc(project?.previewImage)
     setImageError(false)
   }, [project])
-
   useEffect(() => {
     const handleKeyDown = (e) => {
       if (e.key === 'Escape') onClose()
@@ -710,7 +865,6 @@ function ProjectPreviewModal({ project, onClose }) {
       document.body.style.overflow = ''
     }
   }, [onClose])
-
   const handleImageError = () => {
     if (currentSrc !== project?.fallbackImage && project?.fallbackImage) {
       setCurrentSrc(project.fallbackImage)
@@ -718,405 +872,52 @@ function ProjectPreviewModal({ project, onClose }) {
       setImageError(true)
     }
   }
-
   if (!project) return null
-
   return createPortal(
-    <div
-      style={{ position: 'fixed', inset: 0, zIndex: 9999, display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '1rem', backgroundColor: 'rgba(0,0,0,0.85)', backdropFilter: 'blur(8px)' }}
-      onClick={onClose}
-    >
-      <div
-        style={{ position: 'relative', width: '100%', maxWidth: '56rem', maxHeight: '90vh', overflowY: 'auto', borderRadius: '1.5rem', backgroundColor: '#09090b', border: '1px solid rgba(168,85,247,0.3)', padding: '2rem', boxShadow: '0 0 50px rgba(168,85,247,0.25)', color: 'white' }}
-        onClick={(e) => e.stopPropagation()}
-      >
-        {/* Header Modal */}
+    <div style={{ position: 'fixed', inset: 0, zIndex: 9999, display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '1rem', backgroundColor: 'rgba(0,0,0,0.85)', backdropFilter: 'blur(8px)' }} onClick={onClose}>
+      <div style={{ position: 'relative', width: '100%', maxWidth: '56rem', maxHeight: '90vh', overflowY: 'auto', borderRadius: '1.5rem', backgroundColor: '#09090b', border: '1px solid rgba(168,85,247,0.3)', padding: '2rem', boxShadow: '0 0 50px rgba(168,85,247,0.25)', color: 'white' }} onClick={(e) => e.stopPropagation()}>
         <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', gap: '1rem', marginBottom: '1.5rem' }}>
           <div>
-            <span style={{ fontSize: '0.75rem', fontWeight: 600, color: '#a855f7', textTransform: 'uppercase', letterSpacing: '0.05em', display: 'block', marginBottom: '0.25rem' }}>
-              Vista previa del proyecto
-            </span>
-            <h3 style={{ fontSize: '1.5rem', fontWeight: 700, color: 'white', margin: 0 }}>
-              {project.title}
-            </h3>
+            <span style={{ fontSize: '0.75rem', fontWeight: 600, color: '#a855f7', textTransform: 'uppercase', letterSpacing: '0.05em', display: 'block', marginBottom: '0.25rem' }}>Vista previa del invento</span>
+            <h3 style={{ fontSize: '1.5rem', fontWeight: 700, color: 'white', margin: 0 }}>{project.title}</h3>
           </div>
-          <button
-            onClick={onClose}
-            style={{ padding: '0.5rem', borderRadius: '9999px', backgroundColor: 'rgba(255,255,255,0.1)', color: 'rgba(255,255,255,0.8)', border: 'none', cursor: 'pointer', flexShrink: 0 }}
-            aria-label="Cerrar modal"
-          >
-            <Icons.Close />
-          </button>
+          <button onClick={onClose} style={{ padding: '0.5rem', borderRadius: '9999px', backgroundColor: 'rgba(255,255,255,0.1)', color: 'rgba(255,255,255,0.8)', border: 'none', cursor: 'pointer', flexShrink: 0 }} aria-label="Cerrar modal"><Icons.Close /></button>
         </div>
-
-        {/* Imagen / Screenshot del Proyecto */}
         <div style={{ position: 'relative', marginBottom: '1.5rem', borderRadius: '1rem', overflow: 'hidden', border: '1px solid rgba(255,255,255,0.1)', backgroundColor: 'rgba(24,24,27,0.8)', padding: '0.5rem' }}>
           {!imageError ? (
-            <img
-              src={currentSrc}
-              alt={`Vista previa de ${project.title}`}
-              onError={handleImageError}
-              style={{ width: '100%', height: 'auto', maxHeight: '60vh', objectFit: 'contain', borderRadius: '0.75rem', display: 'block', margin: '0 auto' }}
-            />
+            <img src={currentSrc} alt={`Vista previa de ${project.title}`} onError={handleImageError} style={{ width: '100%', height: 'auto', maxHeight: '60vh', objectFit: 'contain', borderRadius: '0.75rem', display: 'block', margin: '0 auto' }} />
           ) : (
             <div style={{ width: '100%', padding: '3rem 1.5rem', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', textAlign: 'center', borderRadius: '1rem', border: '1px dashed rgba(168,85,247,0.3)', backgroundColor: 'rgba(24,24,27,0.6)' }}>
-              <div style={{ width: '4rem', height: '4rem', borderRadius: '9999px', backgroundColor: 'rgba(168,85,247,0.1)', border: '1px solid rgba(168,85,247,0.3)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#a855f7', marginBottom: '1rem' }}>
-                <Icons.ImageIcon />
-              </div>
-              <h4 style={{ fontSize: '1.125rem', fontWeight: 600, color: 'white', marginBottom: '0.5rem' }}>Vista previa del proyecto</h4>
-              <p style={{ fontSize: '0.875rem', color: 'rgba(255,255,255,0.6)', maxWidth: '28rem', marginBottom: '1rem', lineHeight: 1.6 }}>
-                {project.description}
-              </p>
+              <div style={{ width: '4rem', height: '4rem', borderRadius: '9999px', backgroundColor: 'rgba(168,85,247,0.1)', border: '1px solid rgba(168,85,247,0.3)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#a855f7', marginBottom: '1rem' }}><Icons.ImageIcon /></div>
+              <h4 style={{ fontSize: '1.125rem', fontWeight: 600, color: 'white', marginBottom: '0.5rem' }}>Vista previa del invento</h4>
+              <p style={{ fontSize: '0.875rem', color: 'rgba(255,255,255,0.6)', maxWidth: '28rem', marginBottom: '1rem', lineHeight: 1.6 }}>{project.description}</p>
             </div>
           )}
         </div>
-
-        {/* Descripción y Notas */}
         <div style={{ marginBottom: '1.5rem' }}>
-          <p style={{ fontSize: '0.875rem', color: 'rgba(255,255,255,0.7)', lineHeight: 1.6, marginBottom: '1rem' }}>
-            {project.description}
-          </p>
-
+          <p style={{ fontSize: '0.875rem', color: 'rgba(255,255,255,0.7)', lineHeight: 1.6, marginBottom: '1rem' }}>{project.description}</p>
           {project.notes && (
             <div style={{ padding: '1rem', borderRadius: '0.75rem', backgroundColor: 'rgba(168,85,247,0.1)', border: '1px solid rgba(168,85,247,0.2)', fontSize: '0.8rem', color: '#e9d5ff', display: 'flex', alignItems: 'flex-start', gap: '0.5rem', marginBottom: '1rem' }}>
               <span style={{ color: '#a855f7', marginTop: '0.125rem' }}>💡</span>
-              <span><strong>Nota:</strong> {project.notes}</span>
+              <span><strong>Impacto / Resultado:</strong> {project.notes}</span>
             </div>
           )}
-
-          {/* Tags */}
           <div className="flex flex-wrap gap-2 pt-2">
-            {project.tags.map((tag) => (
-              <span key={tag} className="tag">{tag}</span>
-            ))}
+            {project.tags.map((tag) => (<span key={tag} className="tag">{tag}</span>))}
           </div>
         </div>
-
-        {/* Acciones del Modal */}
         <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'space-between', gap: '1rem', paddingTop: '1rem', borderTop: '1px solid rgba(255,255,255,0.1)' }}>
-          <a
-            href={project.githubLink || "https://github.com/alonsoarriaza"}
-            target="_blank"
-            rel="noopener noreferrer"
-            style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', padding: '0.625rem 1.5rem', borderRadius: '9999px', background: 'linear-gradient(to right, #9333ea, #0891b2)', color: 'white', fontWeight: 600, fontSize: '0.75rem', textDecoration: 'none', letterSpacing: '0.05em' }}
-          >
+          <a href={project.githubLink || "https://github.com/alonsoarriaza"} target="_blank" rel="noopener noreferrer" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', padding: '0.625rem 1.5rem', borderRadius: '9999px', background: 'linear-gradient(to right, #9333ea, #0891b2)', color: 'white', fontWeight: 600, fontSize: '0.75rem', textDecoration: 'none', letterSpacing: '0.05em' }}>
             <span>Ver repositorio en GitHub</span>
             <Icons.ExternalLink />
           </a>
-
-          <button
-            onClick={onClose}
-            style={{ padding: '0.625rem 1.25rem', borderRadius: '9999px', border: '1px solid rgba(255,255,255,0.2)', backgroundColor: 'transparent', color: 'rgba(255,255,255,0.8)', cursor: 'pointer', fontSize: '0.75rem', fontWeight: 600 }}
-          >
-            Cerrar vista previa
-          </button>
+          <button onClick={onClose} style={{ padding: '0.625rem 1.25rem', borderRadius: '9999px', border: '1px solid rgba(255,255,255,0.2)', backgroundColor: 'transparent', color: 'rgba(255,255,255,0.8)', cursor: 'pointer', fontSize: '0.75rem', fontWeight: 600 }}>Cerrar vista previa</button>
         </div>
       </div>
     </div>,
     document.body
   )
 }
-
-
-/* ═══════════════════════════════════════════════
-   COMPONENTE: Projects Section
-   ═══════════════════════════════════════════════ */
-
-function ProjectsSection() {
-  const sectionRef = useAnimateOnScroll()
-  const [selectedProject, setSelectedProject] = useState(null)
-
-  return (
-    <section id="proyectos" ref={sectionRef} className="section-container">
-      <div className="animate-on-scroll">
-        <div className="flex items-center gap-3 mb-2">
-          <span className="text-pink-400"><Icons.Code /></span>
-          <span className="text-sm font-medium text-pink-400 uppercase tracking-widest">Portfolio</span>
-        </div>
-        <h2 className="section-title">Proyectos</h2>
-        <p className="section-subtitle">
-          Cosas que he construido y de las que estoy ridículamente orgulloso.
-        </p>
-      </div>
-
-      <div className="grid md:grid-cols-2 gap-6 md:gap-8">
-        {PROJECTS.map((project, i) => (
-          <div key={i} className="animate-on-scroll" style={{ animationDelay: `${i * 150}ms` }}>
-            <div
-              className="glass-card-hover p-6 md:p-8 h-full flex flex-col group justify-between hover:border-purple-400/40 transition-all duration-300 relative"
-            >
-              {/* Header & Title */}
-              <div>
-                <div className="flex items-start justify-between mb-3">
-                  <a
-                    href={project.githubLink || "https://github.com/alonsoarriaza"}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="hover:text-purple-300 transition-colors duration-300"
-                    title="Ver en GitHub"
-                  >
-                    <h3 className="text-xl font-display font-bold text-white hover:text-purple-300 transition-colors">
-                      {project.title}
-                    </h3>
-                  </a>
-                  <a
-                    href={project.githubLink || "https://github.com/alonsoarriaza"}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-white/30 hover:text-purple-400 transition-colors duration-300 shrink-0 ml-2 mt-1"
-                    title="Ver en GitHub"
-                  >
-                    <Icons.ExternalLink />
-                  </a>
-                </div>
-
-                <p className="text-xs sm:text-sm text-white/60 mb-4 line-clamp-2 leading-relaxed">
-                  {project.description}
-                </p>
-
-                {/* Tags */}
-                <div className="flex flex-wrap gap-2 mb-6">
-                  {project.tags.map((tag) => (
-                    <span key={tag} className="tag">{tag}</span>
-                  ))}
-                </div>
-              </div>
-
-              {/* Botón de Vista Previa */}
-              <div className="pt-4 border-t border-white/10 flex items-center justify-between gap-3">
-                <button
-                  type="button"
-                  onClick={() => setSelectedProject(project)}
-                  className="w-full py-2.5 px-4 rounded-xl text-xs font-semibold bg-gradient-to-r from-purple-600/30 to-cyan-600/30 border border-purple-500/30 text-purple-200 hover:text-white hover:from-purple-600 hover:to-cyan-600 hover:border-transparent transition-all duration-300 flex items-center justify-center gap-2 group-hover:shadow-[0_0_15px_rgba(168,85,247,0.3)]"
-                >
-                  <Icons.Eye />
-                  <span>Vista previa</span>
-                </button>
-              </div>
-            </div>
-          </div>
-        ))}
-      </div>
-
-      {/* Modal de Vista Previa */}
-      {selectedProject && (
-        <ProjectPreviewModal
-          project={selectedProject}
-          onClose={() => setSelectedProject(null)}
-        />
-      )}
-    </section>
-  )
-}
-
-
-
-
-
-
-/* ═══════════════════════════════════════════════
-   COMPONENTE: About Section
-   ═══════════════════════════════════════════════ */
-
-function AboutSection() {
-  const sectionRef = useAnimateOnScroll()
-
-  return (
-    <section id="sobre-mi" ref={sectionRef} className="section-container">
-      <div className="animate-on-scroll">
-        <div className="flex items-center gap-3 mb-2">
-          <span className="text-emerald-400"><Icons.User /></span>
-          <span className="text-sm font-medium text-emerald-400 uppercase tracking-widest">Bio</span>
-        </div>
-        <h2 className="section-title">Sobre Mí</h2>
-        <p className="section-subtitle">
-          La parte del portafolio donde finjo ser interesante.
-        </p>
-      </div>
-
-      <div className="grid md:grid-cols-3 gap-6 md:gap-8">
-        {/* Main Text */}
-        <div className="md:col-span-2 animate-on-scroll">
-          <div className="glass-card p-6 md:p-8 space-y-5">
-            {ABOUT.paragraphs.map((p, i) => (
-              <p key={i} className="text-sm md:text-base text-white/60 leading-relaxed">
-                {p}
-              </p>
-            ))}
-          </div>
-        </div>
-
-        {/* Fun Facts */}
-        <div id="datos-interes" className="animate-on-scroll delay-200">
-          <div className="glass-card p-6 md:p-8 h-full">
-            <h3 className="font-display font-bold text-lg mb-5 flex items-center gap-2 text-white">
-              <Icons.Sparkle /> Datos de Interés
-            </h3>
-            <ul className="space-y-4">
-              {ABOUT.funFacts.map((fact, i) => {
-                if (fact.includes("Email:")) {
-                  const parts = fact.split("Email:");
-                  return (
-                    <li key={i} className="text-sm text-white/50 leading-relaxed pl-1">
-                      {parts[0]}Email: <a href={`mailto:${parts[1].trim()}`} className="text-purple-400 hover:text-purple-300 hover:underline transition-all">{parts[1]}</a>
-                    </li>
-                  );
-                }
-                if (fact.includes("Teléfono:")) {
-                  const parts = fact.split("Teléfono:");
-                  const phoneClean = parts[1].replace(/\s+/g, '');
-                  return (
-                    <li key={i} className="text-sm text-white/50 leading-relaxed pl-1">
-                      {parts[0]}Teléfono: <a href={`tel:${phoneClean}`} className="text-cyan-400 hover:text-cyan-300 hover:underline transition-all">{parts[1]}</a>
-                    </li>
-                  );
-                }
-                return (
-                  <li key={i} className="text-sm text-white/50 leading-relaxed pl-1">
-                    {fact}
-                  </li>
-                );
-              })}
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-  )
-}
-
-
-/* ═══════════════════════════════════════════════
-   COMPONENTE: Footer
-   ═══════════════════════════════════════════════ */
-
-function Footer() {
-  return (
-    <footer className="border-t border-white/5 py-10">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center justify-center gap-4 text-center">
-        <p className="text-sm text-white/30">
-          © {new Date().getFullYear()} {PROFILE.name}. Hecho con café y mucho amor.
-        </p>
-        <div className="flex items-center gap-4">
-          <a
-            href={PROFILE.github}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-white/30 hover:text-white/70 transition-colors duration-300"
-            aria-label="GitHub"
-          >
-            <Icons.GitHub />
-          </a>
-          <a
-            href={PROFILE.linkedin}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-white/30 hover:text-white/70 transition-colors duration-300"
-            aria-label="LinkedIn"
-          >
-            <Icons.LinkedIn />
-          </a>
-        </div>
-      </div>
-    </footer>
-  )
-}
-
-
-/* ═══════════════════════════════════════════════
-   COMPONENTE: Retro Easter Egg (8-bits CV)
-   ═══════════════════════════════════════════════ */
-
-function RetroSection() {
-  const [open, setOpen] = useState(false)
-  const [cards, setCards] = useState(() =>
-    RETRO_CARDS.map(c => ({
-      ...c,
-      hit: false,
-      done: false,
-      dust: Array.from({ length: 6 }, (_, i) => ({
-        x: `${(Math.random() - 0.5) * 240}px`,
-        y: `${-Math.random() * 120 - 30}px`,
-        d: `${i * 45}ms`
-      }))
-    }))
-  )
-
-  function punch(index) {
-    setCards(prev => {
-      if (prev[index].hit || prev[index].done) return prev
-      const next = [...prev]
-      next[index] = { ...next[index], hit: true }
-      return next
-    })
-    setTimeout(() => {
-      setCards(prev => {
-        const next = [...prev]
-        next[index] = { ...next[index], hit: false, done: true }
-        return next
-      })
-    }, 950)
-  }
-
-  const sectionRef = useAnimateOnScroll()
-
-  return (
-    <section id="cafe-express" ref={sectionRef} className="section-container">
-      <div className="animate-on-scroll">
-        <div className="flex items-center gap-3 mb-2">
-          <span className="text-yellow-400 text-xl">☕</span>
-          <span className="retro-font text-yellow-400 uppercase tracking-widest" style={{ fontSize: '0.55rem' }}>Café Express</span>
-        </div>
-        <h2 className="section-title retro-font" style={{ fontSize: '1.4rem', lineHeight: '2' }}>Ahorra tiempo para el café</h2>
-        <p className="section-subtitle" style={{ marginBottom: '1.5rem' }}>Mi CV resumido en 8 clicks. Ve al grano y guárdate unos minutos para el café.</p>
-        <button className="retro-btn" onClick={() => setOpen(!open)}>
-          {open ? '⏸ PAUSE' : '☕ PREPARAR CAFÉ'}
-        </button>
-      </div>
-
-      <div className={`retro-grid-wrap ${open ? 'retro-open' : 'retro-closed'}`}>
-        <div className="retro-grid">
-          {cards.map((c, i) => (
-            <div
-              key={i}
-              className={`retro-block ${c.hit ? 'retro-bump retro-shattering' : ''} ${c.done ? 'retro-revealed' : ''}`}
-              onClick={() => punch(i)}
-            >
-              {!c.done && (
-                <>
-                  <div className={`retro-char ${c.hit ? 'retro-jump' : 'retro-idle'}`}>
-                    <img src="/MB.png" alt="Mario" className="retro-mario-sprite" />
-                  </div>
-                  <span className="retro-qm">?</span>
-                </>
-              )}
-              {c.hit && (
-                <div className="retro-shatter-debris">
-                  <div className="debris-piece p1"></div>
-                  <div className="debris-piece p2"></div>
-                  <div className="debris-piece p3"></div>
-                  <div className="debris-piece p4"></div>
-                </div>
-              )}
-              {c.hit && <div className="retro-coin">🪙</div>}
-              {c.hit && c.dust.map((d, j) => (
-                <span key={j} className="retro-dust" style={{ '--dx': d.x, '--dy': d.y, animationDelay: d.d }} />
-              ))}
-              {c.done && (
-                <div className="retro-rpg">
-                  <strong>{c.t}</strong>
-                  <p>{c.txt}</p>
-                  <em>▼</em>
-                </div>
-              )}
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  )
-}
-
 
 /* ═══════════════════════════════════════════════
    APP PRINCIPAL
