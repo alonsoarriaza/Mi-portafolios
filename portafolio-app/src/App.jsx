@@ -1193,25 +1193,33 @@ function ImpactMetricsSection() {
 
       {/* Destacado inferior */}
       <div className="animate-on-scroll">
-        <div className="glass-card p-6 border border-purple-500/30 bg-gradient-to-r from-purple-950/30 via-black/60 to-cyan-950/30 relative overflow-hidden">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
+        <div className="glass-card p-6 md:p-7 border border-purple-200/90 bg-white shadow-lg shadow-purple-500/5 relative overflow-hidden">
+          <div className="flex flex-col lg:flex-row items-center justify-between gap-6">
             <div className="flex items-center gap-4">
-              <div className="w-12 h-12 rounded-2xl bg-gradient-to-tr from-purple-600 to-cyan-600 flex items-center justify-center text-white shrink-0 shadow-lg shadow-purple-500/20">
+              <div className="w-12 h-12 rounded-2xl bg-gradient-to-tr from-purple-600 to-indigo-600 flex items-center justify-center text-white shrink-0 shadow-md shadow-purple-500/20">
                 <Icons.Tools />
               </div>
               <div>
-                <h4 className="text-base sm:text-lg font-bold text-white flex flex-wrap items-center justify-center md:justify-start gap-2">
-                  <span>Meses de trabajo manual</span>
-                  <span className="text-purple-400 font-bold">➔</span>
-                  <span className="text-cyan-300 font-bold">Automatización eficiente</span>
-                </h4>
-                <p className="text-xs sm:text-sm text-white/60 font-light leading-relaxed mt-1">
+                <div className="flex flex-wrap items-center gap-2 mb-2">
+                  <span className="px-3 py-1 rounded-lg bg-slate-100 border border-slate-200 text-slate-800 font-bold text-xs sm:text-sm">
+                    Meses de trabajo manual
+                  </span>
+                  <span className="w-7 h-7 rounded-full bg-purple-100 text-purple-700 flex items-center justify-center font-extrabold text-xs shrink-0 shadow-xs">
+                    ➔
+                  </span>
+                  <span className="px-3.5 py-1 rounded-lg bg-gradient-to-r from-purple-600 to-indigo-600 text-white font-extrabold text-xs sm:text-sm shadow-sm">
+                    Automatización eficiente
+                  </span>
+                </div>
+                <p className="text-xs sm:text-sm text-slate-700 font-medium leading-relaxed">
                   Transformación de tareas repetitivas y procesos de alta carga manual en flujos estructurados y optimizados.
                 </p>
               </div>
             </div>
+
             <div className="shrink-0">
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-purple-500/10 border border-purple-500/30 text-purple-300 text-xs font-semibold">
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-purple-50 border border-purple-200 text-purple-900 text-xs font-extrabold shadow-xs">
+                <Icons.Sparkle />
                 <span>Optimización Operativa</span>
               </div>
             </div>
