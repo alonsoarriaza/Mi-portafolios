@@ -1143,7 +1143,7 @@ function ImpactMetricsSection() {
       title: "Integración y transformación de datos",
       description: "Extracción, transformación y centralización de información procedente de sistemas empresariales.",
       gradient: "from-amber-700 via-orange-700 to-amber-800",
-      border: "border-amber-200 hover:border-amber-400 font-mono text-2xl sm:text-3xl",
+      border: "border-amber-200 hover:border-amber-400",
       bg: "bg-amber-100/60",
       badge: "Sistemas",
       badgeColor: "bg-amber-100 text-amber-900 border-amber-300"
