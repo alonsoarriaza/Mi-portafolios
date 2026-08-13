@@ -339,7 +339,7 @@ function Navbar() {
         {/* CTA Button Desktop (Contacto) */}
         <div className="hidden md:block">
           <a
-            href="#sobre-mi"
+            href="#contacto"
             className="px-5 py-1.5 rounded-full text-xs font-semibold bg-gradient-to-r from-purple-600 to-cyan-600 text-white hover:shadow-[0_0_15px_rgba(168,85,247,0.4)] transition-all duration-300 hover:scale-105"
           >
             Contacto
@@ -373,7 +373,7 @@ function Navbar() {
             </a>
           ))}
           <a
-            href="#sobre-mi"
+            href="#contacto"
             onClick={() => setMobileOpen(false)}
             className="block text-center mt-2 py-2.5 px-4 rounded-xl bg-gradient-to-r from-purple-600 to-cyan-600 text-white text-sm font-semibold transition-all"
           >
@@ -825,6 +825,13 @@ function ProjectsSection() {
   const sectionRef = useAnimateOnScroll()
   const [selectedProject, setSelectedProject] = useState(null)
 
+  const cardAccents = [
+    { border: "border-purple-500/30 hover:border-purple-400/60", bg: "bg-purple-950/10", badge: "bg-purple-500/10 text-purple-300 border-purple-500/20" },
+    { border: "border-cyan-500/30 hover:border-cyan-400/60", bg: "bg-cyan-950/10", badge: "bg-cyan-500/10 text-cyan-300 border-cyan-500/20" },
+    { border: "border-emerald-500/30 hover:border-emerald-400/60", bg: "bg-emerald-950/10", badge: "bg-emerald-500/10 text-emerald-300 border-emerald-500/20" },
+    { border: "border-amber-500/30 hover:border-amber-400/60", bg: "bg-amber-950/10", badge: "bg-amber-500/10 text-amber-300 border-amber-500/20" },
+  ]
+
   return (
     <section id="proyectos" ref={sectionRef} className="section-container">
       <div className="animate-on-scroll">
@@ -839,62 +846,65 @@ function ProjectsSection() {
       </div>
 
       <div className="grid md:grid-cols-2 gap-6 md:gap-8">
-        {PROJECTS.map((project, i) => (
-          <div key={i} className="animate-on-scroll" style={{ animationDelay: `${i * 150}ms` }}>
-            <div
-              className="glass-card-hover p-6 md:p-8 h-full flex flex-col group justify-between hover:border-purple-400/40 transition-all duration-300 relative"
-            >
-              {/* Header & Title */}
-              <div>
-                <div className="flex items-start justify-between mb-3">
-                  <a
-                    href={project.githubLink || "https://github.com/alonsoarriaza"}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="hover:text-purple-300 transition-colors duration-300"
-                    title="Ver en GitHub"
-                  >
-                    <h3 className="text-xl font-display font-bold text-white hover:text-purple-300 transition-colors">
-                      {project.title}
-                    </h3>
-                  </a>
-                  <a
-                    href={project.githubLink || "https://github.com/alonsoarriaza"}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-white/30 hover:text-purple-400 transition-colors duration-300 shrink-0 ml-2 mt-1"
-                    title="Ver en GitHub"
-                  >
-                    <Icons.ExternalLink />
-                  </a>
+        {PROJECTS.map((project, i) => {
+          const accent = cardAccents[i % cardAccents.length]
+          return (
+            <div key={i} className="animate-on-scroll" style={{ animationDelay: `${i * 150}ms` }}>
+              <div
+                className={`glass-card p-6 md:p-8 h-full flex flex-col group justify-between border ${accent.border} ${accent.bg} transition-all duration-500 relative hover:scale-[1.01] overflow-hidden`}
+              >
+                {/* Visual Header & Title */}
+                <div>
+                  <div className="flex items-start justify-between mb-3 gap-3">
+                    <a
+                      href={project.githubLink || "https://github.com/alonsoarriaza"}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="hover:text-purple-300 transition-colors duration-300"
+                      title="Ver en GitHub"
+                    >
+                      <h3 className="text-xl font-display font-bold text-white hover:text-purple-300 transition-colors leading-snug">
+                        {project.title}
+                      </h3>
+                    </a>
+                    <a
+                      href={project.githubLink || "https://github.com/alonsoarriaza"}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-white/30 hover:text-purple-400 transition-colors duration-300 shrink-0 mt-1 p-1"
+                      title="Ver en GitHub"
+                    >
+                      <Icons.ExternalLink />
+                    </a>
+                  </div>
+
+                  <p className="text-xs sm:text-sm text-white/60 mb-5 line-clamp-3 leading-relaxed font-light">
+                    {project.description}
+                  </p>
+
+                  {/* Tags */}
+                  <div className="flex flex-wrap gap-2 mb-6">
+                    {project.tags.map((tag) => (
+                      <span key={tag} className="tag text-xs">{tag}</span>
+                    ))}
+                  </div>
                 </div>
 
-                <p className="text-xs sm:text-sm text-white/60 mb-4 line-clamp-2 leading-relaxed">
-                  {project.description}
-                </p>
-
-                {/* Tags */}
-                <div className="flex flex-wrap gap-2 mb-6">
-                  {project.tags.map((tag) => (
-                    <span key={tag} className="tag">{tag}</span>
-                  ))}
+                {/* Botón de Vista Previa */}
+                <div className="pt-4 border-t border-white/10 flex items-center justify-between gap-3">
+                  <button
+                    type="button"
+                    onClick={() => setSelectedProject(project)}
+                    className="w-full py-2.5 px-4 rounded-xl text-xs font-semibold bg-gradient-to-r from-purple-600/30 to-cyan-600/30 border border-purple-500/30 text-purple-200 hover:text-white hover:from-purple-600 hover:to-cyan-600 hover:border-transparent transition-all duration-300 flex items-center justify-center gap-2 group-hover:shadow-[0_0_15px_rgba(168,85,247,0.3)]"
+                  >
+                    <Icons.Eye />
+                    <span>Vista previa</span>
+                  </button>
                 </div>
-              </div>
-
-              {/* Botón de Vista Previa */}
-              <div className="pt-4 border-t border-white/10 flex items-center justify-between gap-3">
-                <button
-                  type="button"
-                  onClick={() => setSelectedProject(project)}
-                  className="w-full py-2.5 px-4 rounded-xl text-xs font-semibold bg-gradient-to-r from-purple-600/30 to-cyan-600/30 border border-purple-500/30 text-purple-200 hover:text-white hover:from-purple-600 hover:to-cyan-600 hover:border-transparent transition-all duration-300 flex items-center justify-center gap-2 group-hover:shadow-[0_0_15px_rgba(168,85,247,0.3)]"
-                >
-                  <Icons.Eye />
-                  <span>Vista previa</span>
-                </button>
               </div>
             </div>
-          </div>
-        ))}
+          )
+        })}
       </div>
 
       {/* Modal de Vista Previa */}
