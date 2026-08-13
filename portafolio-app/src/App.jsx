@@ -33,7 +33,7 @@ const EXPERIENCE = [
     description: [
       "Desarrollo integral de una aplicación web corporativa desarrollada a medida, concebida para digitalizar y centralizar la gestión de inventarios y la trazabilidad de activos mediante códigos QR. La solución permite identificar y gestionar activos en tiempo real, automatizar parte del seguimiento y disponer de información centralizada para mejorar el control de recursos y la eficiencia de los procesos internos.",
       " Diseño y desarrollo de una solución para automatizar la clasificación y carga de miles de clientes en una plataforma contable regional. El sistema utiliza un diccionario de correspondencias y procesos de clasificación asistidos por IA para relacionar los datos de cada cliente con su actividad comercial dentro del catálogo oficial, normalizando y validando la información antes de su incorporación. Esta automatización permitió transformar un proceso que habría requerido meses de trabajo manual en un flujo estructurado, consistente y significativamente más eficiente.",
-      "Diseño propio en el ambito de automatizacion de procesos y la lif ki.",
+      "Desarrollo de soluciones y automatizaciones a medida para optimizar procesos internos y reducir tareas repetitivas, combinando programación, Google Apps Script y agentes de IA para resolver de forma recurrente problemas de eficiencia y rendimiento. Integración de plataformas como Therefore y Solpheo, soporte de entornos ERP/CRM (ADV) y administración de Active Directory, Entra ID y GPO, junto con la configuración de soluciones de impresión mediante MyQ. Participación en la monitorización y evaluación de la seguridad corporativa mediante Ciberguardian.",
     ]
   },
   {
