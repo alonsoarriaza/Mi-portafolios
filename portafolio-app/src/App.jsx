@@ -916,14 +916,14 @@ function AboutSection() {
           </div>
         </div>
 
-        {/* Bloque secundario: Datos de Interés en tarjetas limpias */}
+        {/* Bloque secundario: Datos de Interés perfectamente alineado y equilibrado */}
         <div id="datos-interes" className="animate-on-scroll">
-          <div className="mb-4 flex items-center gap-2 text-slate-900 font-display font-bold text-lg">
-            <Icons.Sparkle />
+          <div className="mb-6 flex items-center gap-2.5 text-slate-900 font-display font-extrabold text-xl">
+            <span className="text-purple-600"><Icons.Sparkle /></span>
             <span>Datos de Interés</span>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 items-stretch">
             {ABOUT.funFacts.map((fact, i) => {
               let label = "Información"
               let value = fact
@@ -937,20 +937,77 @@ function AboutSection() {
               const isEmail = label === "Email"
               const isPhone = label === "Teléfono"
 
+              const renderIcon = (lbl) => {
+                switch (lbl) {
+                  case "Idiomas":
+                    return (
+                      <svg className="w-4 h-4 text-purple-700 group-hover:text-white transition-colors duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 002 2h1.5a2.5 2.5 0 002.5-2.5V7a2 2 0 00-2-2h-1.5a.5.5 0 01-.5-.5V4" />
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                      </svg>
+                    )
+                  case "Movilidad":
+                    return (
+                      <svg className="w-4 h-4 text-purple-700 group-hover:text-white transition-colors duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M8 17h8M9 9h6M5 13h14M7 17a2 2 0 100-4 2 2 0 000 4zM17 17a2 2 0 100-4 2 2 0 000 4z" />
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l2-5h10l2 5" />
+                      </svg>
+                    )
+                  case "Ubicación":
+                    return (
+                      <svg className="w-4 h-4 text-purple-700 group-hover:text-white transition-colors duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                      </svg>
+                    )
+                  case "Teléfono":
+                    return (
+                      <svg className="w-4 h-4 text-purple-700 group-hover:text-white transition-colors duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                      </svg>
+                    )
+                  case "Email":
+                    return (
+                      <svg className="w-4 h-4 text-purple-700 group-hover:text-white transition-colors duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                      </svg>
+                    )
+                  default:
+                    return <Icons.Sparkle />
+                }
+              }
+
               return (
-                <div key={i} className="glass-card p-5 bg-white border border-slate-200 hover:border-purple-400 transition-all duration-300 flex flex-col justify-between shadow-sm hover:shadow-md">
-                  <div>
-                    <span className="text-[10px] font-extrabold text-purple-900 uppercase tracking-widest block mb-1.5">{label}</span>
+                <div
+                  key={i}
+                  className="glass-card p-5 bg-white border border-slate-200/90 hover:border-purple-300 transition-all duration-300 flex flex-col justify-between h-full shadow-sm hover:shadow-md group rounded-2xl"
+                >
+                  <div className="flex items-center gap-3 mb-3">
+                    <div className="w-9 h-9 rounded-xl bg-purple-100/70 border border-purple-200/80 flex items-center justify-center shrink-0 group-hover:bg-purple-600 transition-colors duration-300 shadow-xs">
+                      {renderIcon(label)}
+                    </div>
+                    <span className="text-[11px] font-extrabold text-purple-900 uppercase tracking-widest block leading-tight">
+                      {label}
+                    </span>
+                  </div>
+
+                  <div className="pt-1">
                     {isEmail ? (
-                      <a href={`mailto:${value}`} className="text-xs sm:text-sm text-indigo-700 hover:text-purple-800 hover:underline transition-all break-all font-bold">
+                      <a
+                        href={`mailto:${value}`}
+                        className="text-xs sm:text-sm font-bold text-indigo-700 hover:text-purple-800 hover:underline transition-all break-all leading-snug block"
+                      >
                         {value}
                       </a>
                     ) : isPhone ? (
-                      <a href={`tel:${value.replace(/\s+/g, '')}`} className="text-xs sm:text-sm text-indigo-700 hover:text-purple-800 hover:underline transition-all font-bold">
+                      <a
+                        href={`tel:${value.replace(/\s+/g, '')}`}
+                        className="text-xs sm:text-sm font-bold text-indigo-700 hover:text-purple-800 hover:underline transition-all leading-snug block"
+                      >
                         {value}
                       </a>
                     ) : (
-                      <p className="text-xs sm:text-sm text-slate-800 font-semibold leading-relaxed">
+                      <p className="text-xs sm:text-sm font-medium text-slate-800 leading-relaxed">
                         {value}
                       </p>
                     )}
