@@ -6,28 +6,25 @@ import sitoinfoImg from './assets/previews/sitoinfo.png'
 import actCliImg from './assets/previews/act-cli.png'
 import crmInternoImg from './assets/previews/crm-interno.png'
 
-
-
 const PROFILE = {
   name: "Alonso Feria Arriaza",
   headline: "Convierto problemas reales en soluciones digitales.",
-  description: "Desarrollo aplicaciones web, automatizaciones e integraciones que optimizan procesos, reducen tareas repetitivas y aportan valor al negocio.",
-  techStack: "Full-Stack Developer · Java · Spring Boot · React · Automatización · IA · Trazabilidad QR",
-  ctaText: "Ver mis inventos",
+  subtitle: "Full-Stack Developer especializado en desarrollo web, automatización e integración de sistemas.",
+  techBadges: ["Java", "Spring Boot", "React", "Automatización", "IA", "Trazabilidad QR"],
+  ctaText: "Explora mis inventos",
   ctaLink: "#proyectos",
   github: "https://github.com/alonsoarriaza",
   linkedin: "https://www.linkedin.com/in/alonsoferiaarriaza/",
 }
 
 const NAV_LINKS = [
-  { label: "Café Express", href: "#cafe-express" },
-  { label: "Impacto", href: "#impacto" },
   { label: "Experiencia", href: "#experiencia" },
   { label: "Mis Inventos", href: "#proyectos" },
-  { label: "Tecnologías", href: "#tecnologias" },
-  { label: "Metodología", href: "#metodologia" },
-  { label: "Educación", href: "#educacion" },
+  { label: "Diferencia", href: "#diferencia" },
+  { label: "Stack", href: "#tecnologias" },
   { label: "Sobre Mí", href: "#sobre-mi" },
+  { label: "Café Express", href: "#cafe-express" },
+  { label: "Contacto", href: "#contacto" },
 ]
 
 const COANDA_EXPERIENCE = {
@@ -36,16 +33,17 @@ const COANDA_EXPERIENCE = {
   company: "Coanda Technologies Solutions",
   blocks: [
     {
-      title: "DESARROLLO DE SOLUCIONES WEB",
-      text: "Desarrollo de aplicaciones web y soluciones corporativas a medida, participando en el análisis, diseño, implementación e integración de sistemas orientados a necesidades reales de negocio. Experiencia en gestión de inventarios, trazabilidad de activos mediante QR, gestión de datos y desarrollo de soluciones empresariales."
+      title: "DESARROLLO FULL-STACK",
+      text: "Desarrollo de aplicaciones web corporativas y soluciones a medida, participando en el análisis, diseño, implementación, integración y gestión de datos."
     },
     {
       title: "AUTOMATIZACIÓN E IA",
-      text: "Desarrollo de soluciones y automatizaciones a medida para optimizar procesos internos y reducir tareas repetitivas, combinando programación, automatización, agentes de IA y tratamiento de datos. Experiencia automatizando procesos de clasificación y gestión de grandes volúmenes de información, transformando tareas que podían requerir meses de trabajo manual en flujos estructurados y eficientes."
+      text: "Creación de automatizaciones y herramientas internas para reducir tareas repetitivas, tratar grandes volúmenes de información e incorporar agentes de IA a procesos empresariales."
     },
     {
-      title: "INTEGRACIÓN Y SISTEMAS EMPRESARIALES",
-      text: "Integración y soporte de plataformas empresariales y sistemas corporativos, incluyendo gestión documental, ERP/CRM, Active Directory, Entra ID, GPO y soluciones de impresión mediante MyQ. Participación en procesos de monitorización y evaluación de ciberseguridad corporativa mediante Ciberguardian."
+      title: "SISTEMAS E INTEGRACIÓN",
+      text: "Trabajo con plataformas empresariales, gestión documental, ERP/CRM, sistemas de identidad e infraestructura corporativa.",
+      techs: ["Therefore", "Solpheo", "ADV", "Active Directory", "Entra ID", "GPO", "MyQ", "Ciberguardian"]
     }
   ]
 }
@@ -93,6 +91,137 @@ const PRIOR_EXPERIENCE = [
   }
 ]
 
+const PROJECTS = [
+  {
+    id: "trazabilidad-qr",
+    number: "PROYECTO 01",
+    title: "Inventario & Trazabilidad",
+    subtitle: "Digitalización y control de activos mediante QR.",
+    description: "Plataforma web Full-Stack propia para centralizar la gestión de inventarios y la trazabilidad de activos corporativos. Permite identificar, consultar y actualizar activos mediante códigos QR y gestionar la información en tiempo real.",
+    details: "El proyecto incluye extracción, transformación y migración de datos procedentes de sistemas ERP hacia bases de datos propias, además del diseño y estructuración de nuevas bases de datos.",
+    goal: "Objetivo: mejorar el control de recursos, reducir tareas manuales y centralizar la información.",
+    tags: ["Java 21", "Spring Boot 3.4", "React", "MySQL", "Códigos QR", "ERP (ADV)"],
+    githubLink: "https://github.com/alonsoarriaza/Sistema-Trazabilidad-QR",
+    previewImage: tallerImg,
+    fallbackImage: "/previews/taller.png",
+    accentColor: "from-purple-500/20 to-pink-500/10 border-purple-500/30",
+  },
+  {
+    id: "automatizacion-datos",
+    number: "PROYECTO 02",
+    title: "Clasificación Inteligente de Clientes",
+    subtitle: "Miles de clientes. Meses de trabajo manual. Un proceso automatizado.",
+    description: "Solución desarrollada para automatizar la clasificación de miles de clientes y sus actividades comerciales.",
+    details: "Creación de un sistema propio de correspondencias y filtrado integrado con un agente de IA para analizar, relacionar y clasificar información según el catálogo oficial.",
+    goal: "Resultado: transformación de un proceso de alta carga manual en un flujo mucho más ágil, estructurado y eficiente.",
+    tags: ["JavaScript", "HTML5", "CSS", "Agente de IA", "Filtrado de Datos", "Google Apps Script"],
+    githubLink: "https://github.com/alonsoarriaza/Desarrollador-de-Soluciones-de-Automatizaci-n-Analista-de-Datos",
+    previewImage: actCliImg,
+    fallbackImage: "/previews/act-cli.png",
+    accentColor: "from-cyan-500/20 to-blue-500/10 border-cyan-500/30",
+  },
+  {
+    id: "coanda-forms",
+    number: "PROYECTO 03",
+    title: "Lead Generation & Sales Assistant",
+    subtitle: "De visitante a oportunidad comercial.",
+    description: "Aplicación web interactiva orientada a la captación y cualificación automatizada de clientes en el ámbito de la gestión documental.",
+    details: "Un asistente interactivo analiza las necesidades técnicas y operativas del usuario y recomienda la solución de software que mejor se adapta a sus requisitos. La información recopilada y la afinidad calculada se sincronizan en tiempo real con un panel comercial, facilitando el seguimiento personalizado y la toma de decisiones durante el proceso de venta.",
+    goal: "Evolución prevista: planteado como base para evolucionar hacia un CRM propio conectado a una base de datos, centralizando contactos, oportunidades, interacciones y estado comercial.",
+    tags: ["React", "Java", "Spring Boot", "PostgreSQL", "Cualificación Comercial"],
+    githubLink: "https://github.com/alonsoarriaza/CoandaForms",
+    previewImage: crmInternoImg,
+    fallbackImage: "/previews/crm-interno.png",
+    accentColor: "from-emerald-500/20 to-teal-500/10 border-emerald-500/30",
+  },
+  {
+    id: "sitoinformatic",
+    number: "PROYECTO 04",
+    title: "SitoInformatic",
+    subtitle: "¿Qué PC necesita realmente cada usuario?",
+    description: "Plataforma e-commerce de hardware que incorpora SitoIA, un sistema inteligente propio para la configuración automática de equipos.",
+    details: "El sistema utiliza presupuesto, necesidades y perfil de uso para aplicar ponderaciones y cálculos porcentuales, distribuir el presupuesto entre componentes y generar una configuración equilibrada y compatible. Incluye catálogo de productos, búsqueda y filtrado, fichas, carrito de compra, gestión de usuarios y recomendaciones para perfiles Gaming, Streaming/Edición y Oficina.",
+    security: "Autenticación mediante JWT y almacenamiento seguro de contraseñas mediante hashing con BCrypt.",
+    goal: "Proyecto desarrollado como Trabajo de Fin de Grado (TFG) del ciclo de Desarrollo de Aplicaciones Web.",
+    tags: ["Java 21", "Spring Boot", "React", "MySQL", "JWT", "BCrypt", "TFG DAW"],
+    githubLink: "https://github.com/alonsoarriaza/sitoinformatic",
+    previewImage: sitoinfoImg,
+    fallbackImage: "/previews/sitoinfo.png",
+    accentColor: "from-amber-500/20 to-orange-500/10 border-amber-500/30",
+  },
+]
+
+const DIFFERENTIATORS = [
+  {
+    title: "DESARROLLO",
+    text: "Construcción de aplicaciones web completas orientadas a necesidades reales.",
+    iconKey: "Code",
+    border: "border-purple-500/30",
+    bg: "bg-purple-500/10",
+    textGradient: "from-purple-400 to-pink-400"
+  },
+  {
+    title: "AUTOMATIZACIÓN",
+    text: "Transformación de tareas manuales en procesos automatizados.",
+    iconKey: "Tools",
+    border: "border-cyan-500/30",
+    bg: "bg-cyan-500/10",
+    textGradient: "from-cyan-400 to-blue-400"
+  },
+  {
+    title: "DATOS",
+    text: "Extracción, transformación, normalización y centralización de información.",
+    iconKey: "Database",
+    border: "border-emerald-500/30",
+    bg: "bg-emerald-500/10",
+    textGradient: "from-emerald-400 to-teal-400"
+  },
+  {
+    title: "IA",
+    text: "Integración de agentes y sistemas inteligentes para resolver tareas concretas.",
+    iconKey: "Sparkle",
+    border: "border-amber-500/30",
+    bg: "bg-amber-500/10",
+    textGradient: "from-amber-400 to-orange-400"
+  },
+  {
+    title: "ENTORNO EMPRESARIAL",
+    text: "Experiencia trabajando con ERP, CRM, gestión documental, identidades, infraestructura y seguridad.",
+    iconKey: "Server",
+    border: "border-pink-500/30",
+    bg: "bg-pink-500/10",
+    textGradient: "from-pink-400 to-rose-400"
+  }
+]
+
+const TECH_CATEGORIES = [
+  {
+    title: "DESARROLLO",
+    items: ["Java", "Spring Boot", "React", "JavaScript", "HTML5", "CSS", "REST API"],
+    color: "purple",
+  },
+  {
+    title: "DATOS",
+    items: ["SQL", "MySQL", "Bases de datos", "Migración y transformación de datos"],
+    color: "cyan",
+  },
+  {
+    title: "AUTOMATIZACIÓN",
+    items: ["Google Apps Script", "Agentes IA", "Automatización"],
+    color: "amber",
+  },
+  {
+    title: "ENTORNO EMPRESARIAL",
+    items: ["Therefore", "Solpheo", "ADV", "Active Directory", "Entra ID", "GPO", "MyQ", "Ciberguardian"],
+    color: "emerald",
+  },
+  {
+    title: "SEGURIDAD",
+    items: ["JWT", "BCrypt"],
+    color: "pink",
+  },
+]
+
 const EDUCATION = [
   {
     year: "Junio 2026 - Julio 2026",
@@ -132,129 +261,28 @@ const EDUCATION = [
   }
 ]
 
-const PROJECTS = [
-  {
-    id: "trazabilidad-qr",
-    title: "Inventario y trazabilidad inteligente",
-    description: "Diseño y desarrollo integral de una plataforma web Full-Stack propia para digitalizar y centralizar la gestión de inventarios y la trazabilidad de activos corporativos. La solución incorpora identificación mediante códigos QR, gestión y actualización de información en tiempo real y control centralizado de activos. El proyecto incluye procesos de extracción, transformación y migración de datos procedentes de sistemas ERP hacia bases de datos propias, así como el diseño y estructuración de nuevas bases de datos para centralizar y normalizar la información. El objetivo es reducir tareas manuales, mejorar la calidad y disponibilidad de los datos y optimizar el seguimiento de los recursos internos.",
-    notes: "Implantada a nivel multi-sede para el control integral de activos.",
-    tags: ["Java 21", "Spring Boot 3.4", "React", "Vite", "TailwindCSS", "MySQL", "Docker", "JWT", "Spring Security", "API REST", "Códigos QR", "ERP/CRM (ADV)"],
-    githubLink: "https://github.com/alonsoarriaza/Sistema-Trazabilidad-QR",
-    previewImage: tallerImg,
-    fallbackImage: "/previews/taller.png",
-  },
-  {
-    id: "automatizacion-datos",
-    title: "Automatización inteligente de datos",
-    description: "Desarrollo de una solución para automatizar la clasificación de miles de clientes y sus actividades comerciales. Creé un sistema propio de correspondencias y filtrado integrado con un agente de IA para analizar, relacionar y clasificar la información de cada cliente según el catálogo oficial de actividades. La solución automatizó un proceso de alta carga manual, transformando una tarea que habría requerido meses de trabajo en un flujo mucho más ágil, estructurado y eficiente.",
-    notes: "Procesamiento de miles de clientes en un solo clic.",
-    tags: ["HTML5", "Vanilla CSS", "JavaScript (ES6)", "MySQL/MariaDB", "Integración IA"],
-    githubLink: "https://github.com/alonsoarriaza/Desarrollador-de-Soluciones-de-Automatizaci-n-Analista-de-Datos",
-    previewImage: actCliImg,
-    fallbackImage: "/previews/act-cli.png",
-  },
-  {
-    id: "coanda-forms",
-    title: "Asistente inteligente para captación y cualificación de clientes",
-    description: "Desarrollo de una aplicación web interactiva orientada a la captación y cualificación automatizada de clientes en el ámbito de la gestión documental. El asistente analiza las necesidades técnicas y operativas del usuario y recomienda la solución de software que mejor se adapta a sus requisitos. La información recopilada y la afinidad calculada se sincronizan en tiempo real con un panel comercial, facilitando el seguimiento personalizado de oportunidades y agilizando la toma de decisiones durante el proceso de venta. El proyecto está planteado como base para evolucionar hacia un CRM propio conectado a base de datos, centralizando contactos, oportunidades, interacciones y estado del proceso comercial.",
-    notes: "Cualificación inteligente de leads orientada a conversión comercial.",
-    tags: ["Java", "Spring Boot 3.4", "JavaScript", "React", "PostgreSQL", "Bootstrap 5", "Docker", "Postman", "Git"],
-    githubLink: "https://github.com/alonsoarriaza/CoandaForms",
-    previewImage: crmInternoImg,
-    fallbackImage: "/previews/crm-interno.png",
-  },
-  {
-    id: "sitoinformatic",
-    title: "SitoInformatic",
-    description: "SitoInformatic es una plataforma e-commerce de hardware y componentes informáticos que integra SitoIA, un sistema inteligente propio para la configuración automática de equipos. A partir del presupuesto, necesidades y perfil de uso del usuario, SitoIA aplica ponderaciones y cálculos porcentuales para distribuir el presupuesto entre los diferentes componentes, generar una configuración equilibrada y comprobar su compatibilidad. La plataforma incorpora catálogo de productos, búsqueda y filtrado, fichas de producto, carrito de compra, gestión de usuarios y recomendaciones adaptadas a perfiles como Gaming, Streaming/Edición y Oficina. Implementa autenticación mediante JWT y almacenamiento seguro de contraseñas mediante hashing con BCrypt, junto con control de acceso a las funcionalidades de usuario. Desarrollado como Trabajo de Fin de Grado (TFG) del ciclo de Desarrollo de Aplicaciones Web (DAW), el proyecto integra comercio electrónico, gestión de datos, lógica de negocio y un sistema propio de recomendación y configuración automática basado en reglas y cálculos matemáticos.",
-    notes: "Calificación de 8,4 en TFG con motor de configuración heurística.",
-    tags: ["Java 21", "Spring Boot 3.4", "Spring Security", "JavaScript (JSX)", "CSS", "PostgreSQL", "MySQL", "H2 Database", "React", "Tailwind", "JWT"],
-    githubLink: "https://github.com/alonsoarriaza/sitoinformatic",
-    previewImage: sitoinfoImg,
-    fallbackImage: "/previews/sitoinfo.png",
-  },
-]
-
-const TECH_CATEGORIES = [
-  {
-    title: "DESARROLLO",
-    items: ["Java", "Spring Boot", "React", "JavaScript", "HTML5", "CSS", "APIs REST"],
-    color: "purple",
-  },
-  {
-    title: "DATOS",
-    items: ["SQL", "MySQL", "Bases de datos", "Migración y transformación de datos"],
-    color: "cyan",
-  },
-  {
-    title: "AUTOMATIZACIÓN",
-    items: ["Google Apps Script", "Agentes de IA", "Automatización de procesos"],
-    color: "amber",
-  },
-  {
-    title: "SISTEMAS EMPRESARIALES",
-    items: ["Active Directory", "Entra ID", "GPO", "MyQ", "ERP/CRM", "Therefore", "Solpheo"],
-    color: "emerald",
-  },
-  {
-    title: "SEGURIDAD",
-    items: ["JWT", "BCrypt", "Ciberguardian"],
-    color: "pink",
-  },
-]
-
-const METHODOLOGY_STEPS = [
-  {
-    step: "01",
-    title: "ANALIZAR",
-    text: "Identifico necesidades y problemas reales dentro de los procesos.",
-  },
-  {
-    step: "02",
-    title: "DISEÑAR",
-    text: "Defino la solución, los datos y el flujo de trabajo.",
-  },
-  {
-    step: "03",
-    title: "DESARROLLAR",
-    text: "Construyo aplicaciones e integraciones orientadas a resolver el problema.",
-  },
-  {
-    step: "04",
-    title: "AUTOMATIZAR",
-    text: "Elimino tareas repetitivas mediante programación, automatización e IA.",
-  },
-  {
-    step: "05",
-    title: "OPTIMIZAR",
-    text: "Busco mejorar continuamente la eficiencia y el rendimiento del proceso.",
-  },
-]
-
 const ABOUT = {
   paragraphs: [
-    "Mi pasión por la tecnología comenzó desde muy joven. Lo que empezó como una curiosidad insaciable por saber cómo funcionaban las cosas por dentro me llevó a pasar tardes enteras montando, desmontando y diagnosticando ordenadores, instalando sistemas operativos y trasteando con cualquier dispositivo que cayera en mis manos. Ese deseo constante de experimentar y resolver problemas de hardware fue la chispa que me impulsó a enfocar mi futuro profesional hacia el mundo del desarrollo de aplicaciones web y las tecnologías Full-Stack.",
-    "Esta vocación me llevó a dar mis primeros pasos formales en el Grado Medio en Sistemas Microinformáticos y Redes, donde aprendí a entender cómo vive y se comunica el software en entornos de red reales, lo que más tarde consolidé con la certificación Cisco CCNA v7. Para ampliar mis capacidades de creación y diseño de software, di el salto al Grado Superior en Desarrollo de Aplicaciones Web (DAW) y me he especializado en IA y Machine Learning. Cada paso en mi trayectoria ha sido guiado por el mismo objetivo: diseñar soluciones web integrales, eficientes y seguras que aporten valor real.",
-    "Afronto cada desafío tecnológico con un enfoque analítico, estructurado y orientado al detalle, priorizando siempre la calidad del código, el rendimiento del sistema y la adopción de las mejores prácticas de la industria. Mi compromiso está centrado en el aprendizaje continuo y la adaptabilidad técnica ante nuevos entornos, buscando no solo resolver requerimientos complejos de programación, sino también aportar soluciones innovadoras que optimicen la eficiencia operativa del negocio.",
+    "Mi pasión por la tecnología comenzó desde muy joven. Lo que empezó como una curiosidad por comprender la tecnología me llevó a pasar tardes enteras montando y diagnosticando ordenadores, administrando sistemas operativos y explorando soluciones informáticas.",
+    "Esa vocación se consolidó en el Grado Medio en Sistemas Microinformáticos y Redes (con certificación Cisco CCNA v7) y posteriormente en el Grado Superior en Desarrollo de Aplicaciones Web (DAW), complementado con especialización en IA y Machine Learning. Mi objetivo es diseñar y desplegar soluciones de software sólidas, mantenibles y orientadas a aportar valor en entornos corporativos reales.",
   ],
   info: [
     { label: "Idiomas", value: "Español (Nativo) · Inglés (B2) · Italiano (A2)" },
     { label: "Movilidad", value: "Permiso B · Vehículo propio · Disponibilidad para viajar" },
     { label: "Ubicación", value: "Dos Hermanas, Sevilla" },
-    { label: "Teléfono", value: "627 53 61 25" },
-    { label: "Email", value: "alonsoarriaza03@gmail.com" },
+    { label: "Contacto", value: "627 53 61 25 · alonsoarriaza03@gmail.com" },
   ],
 }
 
 const RETRO_CARDS = [
-  { t: '📍 DATOS', txt: 'Alonso Feria Arriaza · Dos Hermanas, Sevilla · 627 53 61 25 · alonsoarriaza03@gmail.com · Permiso B + Vehículo propio · Disponibilidad geográfica inmediata para incorporaciones locales o nacionales.' },
-  { t: '⚔️ EXPERIENCIA', txt: 'Full-Stack Developer · Coanda Technologies. Desarrollo e implantación de soluciones digitales empresariales. Destaca el desarrollo individual de una app web corporativa en despliegue multi-sede. Experiencia en gestión documental (Therefore, Solpheo), ERP/CRM (ADV) y ciberseguridad (Ciberguardian).' },
-  { t: '💡 COMPROMISO', txt: 'Enfoque analítico y estructurado en la resolución de incidencias complejas. Compromiso riguroso con el código limpio (Clean Code) y las mejores prácticas de arquitectura de software. Gran capacidad de organización, comunicación clara y liderazgo de equipos en entornos bajo presión.' },
-  { t: '📱 DESARROLLO QR', txt: 'Diseño e implantación de un sistema Full-Stack para gestión de activos y trazabilidad mediante códigos QR. Backend robusto en Java 21 con Spring Boot y seguridad JWT. Frontend interactivo en React + Tailwind con escáner QR. Migración automatizada de 15.000 registros desde el ERP ADV hacia base de datos MySQL.' },
-  { t: '🚀 SITOINFORMATIC', txt: 'Trabajo de Fin de Grado (TFG) finalizado con calificación de 8,4. Plataforma eCommerce de hardware de computadoras que integra SitoIA, un motor heurístico en Java 21 que calcula la compatibilidad física de sockets, equilibrio térmico TDP, performanceScore y balancea presupuestos en tiempo real.' },
-  { t: '📜 FORMACIÓN', txt: 'Grado Superior en Desarrollo de Aplicaciones Web (DAW) en Ilerna Sevilla. Certificación Oficial Cisco CCNA v7 (diseño de redes, seguridad, virtualización y automatización SDN). Doble Certificación en Inteligencia Artificial y Machine Learning. Grado Medio SMR.' },
-  { t: '🧙 SOBRE MÍ', txt: 'Desarrollador con mentalidad proactiva y alto nivel de exigencia personal. Cuento con una madurez profesional consolidada tras años como Segundo Encargado en retail, gestionando equipos y logística en entornos de alta presión, capacidades que ahora vuelco al desarrollo de software.' },
-  { t: '📡 CONTACTO & WEB', txt: 'Encuentra todos mis repositorios en GitHub (github.com/alonsoarriaza) y conecta conmigo en LinkedIn (linkedin.com/in/alonsoferiaarriaza) para entrevistas, propuestas de proyectos o para descargar mi currículum en formato PDF clásico.' },
+  { t: '📍 DATOS', txt: 'Alonso Feria Arriaza · Dos Hermanas, Sevilla · 627 53 61 25 · alonsoarriaza03@gmail.com · Permiso B + Vehículo propio · Disponibilidad geográfica inmediata.' },
+  { t: '⚔️ EXPERIENCIA', txt: 'Full-Stack Developer · Coanda Technologies. Desarrollo e implantación de soluciones digitales empresariales. Destaca el desarrollo de una plataforma web corporativa en despliegue multi-sede.' },
+  { t: '💡 COMPROMISO', txt: 'Enfoque analítico y estructurado en la resolución de problemas complejos. Compromiso riguroso con la calidad del código y las buenas prácticas de arquitectura de software.' },
+  { t: '📱 DESARROLLO QR', txt: 'Diseño e implantación de un sistema Full-Stack para gestión de activos y trazabilidad mediante códigos QR. Backend en Java 21 con Spring Boot y frontend en React. Migración automatizada desde ERP ADV hacia MySQL.' },
+  { t: '🚀 SITOINFORMATIC', txt: 'Trabajo de Fin de Grado (TFG) con nota 8,4. eCommerce de hardware que integra SitoIA, un motor inteligente en Java 21 para configuración automática de equipos informáticos.' },
+  { t: '📜 FORMACIÓN', txt: 'Grado Superior DAW en Ilerna Sevilla. Certificación Cisco CCNA v7. Doble Certificación en IA y Machine Learning. Grado Medio SMR.' },
+  { t: '🧙 SOBRE MÍ', txt: 'Desarrollador proactivo orientado a resultados. Madurez profesional consolidada en liderazgo operacional y gestión de equipos.' },
+  { t: '📡 CONTACTO & WEB', txt: 'GitHub: github.com/alonsoarriaza · LinkedIn: linkedin.com/in/alonsoferiaarriaza · Email: alonsoarriaza03@gmail.com' },
 ]
 
 
@@ -294,25 +322,19 @@ const Icons = {
     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" /></svg>
   ),
   Sparkle: () => (
-    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 3l1.912 5.813a2 2 0 0 0 1.275 1.275L21 12l-5.813 1.912a2 2 0 0 0-1.275 1.275L12 21l-1.912-5.813a2 2 0 0 0-1.275-1.275L3 12l5.813-1.912a2 2 0 0 0 1.275-1.275L12 3z" /></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 3l1.912 5.813a2 2 0 0 0 1.275 1.275L21 12l-5.813 1.912a2 2 0 0 0-1.275 1.275L12 21l-1.912-5.813a2 2 0 0 0-1.275-1.275L3 12l5.813-1.912a2 2 0 0 0 1.275-1.275L12 3z" /></svg>
   ),
   Server: () => (
     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="2" width="20" height="8" rx="2" ry="2" /><rect x="2" y="14" width="20" height="8" rx="2" ry="2" /><line x1="6" y1="6" x2="6.01" y2="6" /><line x1="6" y1="18" x2="6.01" y2="18" /></svg>
   ),
-  Layout: () => (
-    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2" /><line x1="3" y1="9" x2="21" y2="9" /><line x1="9" y1="21" x2="9" y2="9" /></svg>
-  ),
   Database: () => (
     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3" /><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5" /><path d="M3 12c0 1.66 4 3 9 3s9-1.34 9-3" /></svg>
   ),
-  Terminal: () => (
-    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="4 17 10 11 4 5" /><line x1="12" y1="19" x2="20" y2="19" /></svg>
+  Tools: () => (
+    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" /></svg>
   ),
   Cpu: () => (
     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><rect x="4" y="4" width="16" height="16" rx="2" /><rect x="9" y="9" width="6" height="6" /><line x1="9" y1="1" x2="9" y2="4" /><line x1="15" y1="1" x2="15" y2="4" /><line x1="9" y1="20" x2="9" y2="23" /><line x1="15" y1="20" x2="15" y2="23" /><line x1="20" y1="9" x2="23" y2="9" /><line x1="20" y1="15" x2="23" y2="15" /><line x1="1" y1="9" x2="4" y2="9" /><line x1="1" y1="15" x2="4" y2="15" /></svg>
-  ),
-  Tools: () => (
-    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" /></svg>
   ),
   Eye: () => (
     <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z" /><circle cx="12" cy="12" r="3" /></svg>
@@ -375,7 +397,6 @@ function Navbar() {
         }`}
     >
       <div className="flex items-center justify-between">
-        {/* Logo */}
         <a href="#" className="flex items-center gap-2 group">
           <span className="text-purple-400 group-hover:rotate-180 transition-transform duration-700">
             <Icons.Sparkle />
@@ -386,30 +407,27 @@ function Navbar() {
           </span>
         </a>
 
-        {/* Desktop Links */}
-        <div className="hidden md:flex items-center gap-8">
+        <div className="hidden md:flex items-center gap-6">
           {NAV_LINKS.map((link) => (
             <a
               key={link.href}
               href={link.href}
-              className="text-sm font-medium text-white/80 hover:text-purple-300 transition-colors duration-300 relative py-1 after:content-[''] after:absolute after:bottom-[-2px] after:left-0 after:w-0 after:h-[2px] after:bg-gradient-to-r after:from-purple-400 after:to-cyan-400 after:transition-all after:duration-300 hover:after:w-full"
+              className="text-xs font-medium text-white/80 hover:text-purple-300 transition-colors duration-300 relative py-1 after:content-[''] after:absolute after:bottom-[-2px] after:left-0 after:w-0 after:h-[2px] after:bg-gradient-to-r after:from-purple-400 after:to-cyan-400 after:transition-all after:duration-300 hover:after:w-full"
             >
               {link.label}
             </a>
           ))}
         </div>
 
-        {/* CTA Button Desktop (Contacto) */}
         <div className="hidden md:block">
           <a
-            href="#sobre-mi"
+            href="#contacto"
             className="px-5 py-1.5 rounded-full text-xs font-semibold bg-gradient-to-r from-purple-600 to-cyan-600 text-white hover:shadow-[0_0_15px_rgba(168,85,247,0.4)] transition-all duration-300 hover:scale-105"
           >
             Contacto
           </a>
         </div>
 
-        {/* Mobile Menu Toggle */}
         <button
           onClick={() => setMobileOpen(!mobileOpen)}
           className="md:hidden p-2 rounded-full bg-white/5 border border-white/10 text-white/90 hover:text-white hover:bg-white/10 transition-all"
@@ -419,7 +437,6 @@ function Navbar() {
         </button>
       </div>
 
-      {/* Mobile Menu */}
       <div
         className={`md:hidden overflow-hidden transition-all duration-500 ${mobileOpen ? 'max-h-[400px] opacity-100 mt-4' : 'max-h-0 opacity-0'
           }`}
@@ -436,7 +453,7 @@ function Navbar() {
             </a>
           ))}
           <a
-            href="#sobre-mi"
+            href="#contacto"
             onClick={() => setMobileOpen(false)}
             className="block text-center mt-2 py-2.5 px-4 rounded-xl bg-gradient-to-r from-purple-600 to-cyan-600 text-white text-sm font-semibold transition-all"
           >
@@ -450,7 +467,7 @@ function Navbar() {
 
 
 /* ═══════════════════════════════════════════════
-   COMPONENTE: Video Background (con blur dinámico al scroll)
+   COMPONENTE: Video Background
    ═══════════════════════════════════════════════ */
 
 function VideoBackground() {
@@ -482,15 +499,12 @@ function VideoBackground() {
         <source src="/8bits.mp4" type="video/mp4" />
       </video>
 
-      {/* Capa 1: Viñeta radial (siempre visible, efecto cine) */}
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
           background: 'radial-gradient(ellipse at center, transparent 40%, rgba(0,0,0,0.6) 100%)',
         }}
       />
-
-      {/* Capa 2: Degradado vertical (se intensifica al bajar) */}
       <div
         className="absolute inset-0 pointer-events-none transition-opacity duration-500"
         style={{
@@ -498,14 +512,10 @@ function VideoBackground() {
           opacity: 0.6 + scrollProgress * 0.4,
         }}
       />
-
-      {/* Capa 3: Oscurecimiento progresivo general */}
       <div
         className="absolute inset-0 bg-black pointer-events-none transition-opacity duration-500"
         style={{ opacity: scrollProgress * 0.55 }}
       />
-
-      {/* Capa 4: Ruido sutil (textura premium) */}
       <div
         className="absolute inset-0 pointer-events-none opacity-[0.03]"
         style={{
@@ -523,39 +533,36 @@ function VideoBackground() {
 
 function HeroSection() {
   return (
-    <section id="hero" className="relative min-h-screen flex items-center justify-center">
-      {/* Capa de respaldo para legibilidad sobre el video */}
+    <section id="hero" className="relative min-h-screen flex items-center justify-center pt-16">
       <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-black/40 pointer-events-none" />
 
-      <div className="relative text-center px-4 sm:px-6">
-        {/* Badge */}
-        <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-purple-400/30 bg-black/40 backdrop-blur-xl mb-8 animate-fade-in">
+      <div className="relative text-center px-4 sm:px-6 max-w-4xl mx-auto">
+        <div className="inline-flex items-center gap-2 px-5 py-2 rounded-full border border-purple-400/30 bg-black/40 backdrop-blur-xl mb-6 animate-fade-in">
           <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse shadow-[0_0_8px_rgba(52,211,153,0.6)]" />
-          <span className="text-sm text-white font-medium">Disponible para proyectos</span>
+          <span className="text-xs sm:text-sm text-white font-medium">Full-Stack Developer</span>
         </div>
 
-        {/* Name */}
-        <h1 className="font-display text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-extrabold mb-4 animate-fade-in-up leading-tight hero-text-shadow">
-          <span className="block text-white">{PROFILE.name.split(' ')[0]}</span>
-          <span className="relative inline-block text-white">
-            {PROFILE.name.split(' ').slice(1).join(' ')}
-            <span className="absolute -bottom-2 left-0 w-full h-1 rounded-full bg-gradient-to-r from-purple-500 via-pink-500 to-cyan-500 opacity-80" />
+        <h1 className="font-display text-4xl sm:text-6xl md:text-7xl font-extrabold mb-4 animate-fade-in-up leading-tight hero-text-shadow">
+          <span className="block text-white mb-2">{PROFILE.name}</span>
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-300 via-pink-200 to-cyan-300 block text-2xl sm:text-4xl md:text-5xl font-bold">
+            {PROFILE.headline}
           </span>
         </h1>
 
-        {/* Headline */}
-        <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-300 via-pink-200 to-cyan-300 max-w-3xl mx-auto mb-4 animate-fade-in-up delay-200 hero-text-shadow">
-          {PROFILE.headline}
-        </h2>
-
-        {/* Description */}
-        <p className="text-base sm:text-lg text-white/80 max-w-2xl mx-auto mb-5 animate-fade-in-up delay-300 font-light leading-relaxed hero-text-shadow">
-          {PROFILE.description}
+        <p className="text-base sm:text-lg text-white/80 max-w-2xl mx-auto mb-8 animate-fade-in-up delay-200 font-light leading-relaxed hero-text-shadow">
+          {PROFILE.subtitle}
         </p>
 
-        {/* Tech Stack */}
-        <div className="inline-block px-5 py-2 rounded-full border border-purple-400/20 bg-black/40 backdrop-blur-md text-xs sm:text-sm text-cyan-300/90 font-medium max-w-2xl mx-auto mb-8 animate-fade-in-up delay-300 shadow-[0_0_15px_rgba(168,85,247,0.15)]">
-          {PROFILE.techStack}
+        {/* Visual Tech Badges */}
+        <div className="flex flex-wrap items-center justify-center gap-2 max-w-2xl mx-auto mb-10 animate-fade-in-up delay-300">
+          {PROFILE.techBadges.map((badge, idx) => (
+            <span
+              key={idx}
+              className="px-4 py-1.5 rounded-full text-xs font-semibold bg-black/50 border border-purple-400/30 text-purple-200 backdrop-blur-md shadow-[0_0_12px_rgba(168,85,247,0.15)] hover:border-cyan-400/40 hover:text-white transition-all"
+            >
+              {badge}
+            </span>
+          ))}
         </div>
 
         {/* CTA Buttons */}
@@ -592,8 +599,7 @@ function HeroSection() {
         </div>
       </div>
 
-      {/* Scroll indicator */}
-      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce">
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce pointer-events-none">
         <div className="w-6 h-10 rounded-full border-2 border-purple-400/30 flex justify-center pt-2 animate-glow-pulse">
           <div className="w-1 h-2 rounded-full bg-gradient-to-b from-purple-400/60 to-cyan-400/60 animate-pulse" />
         </div>
@@ -603,7 +609,7 @@ function HeroSection() {
 }
 
 /* ═══════════════════════════════════════════════
-   COMPONENTE: Content Wrapper (con fondo rico y orbes de color)
+   COMPONENTE: Content Wrapper
    ═══════════════════════════════════════════════ */
 
 function ContentWrapper({ children }) {
@@ -627,62 +633,7 @@ function ContentWrapper({ children }) {
 }
 
 /* ═══════════════════════════════════════════════
-   COMPONENTE: Bloque de Métricas / Impacto
-   ═══════════════════════════════════════════════ */
-
-function ImpactMetricsSection() {
-  const sectionRef = useAnimateOnScroll()
-  const metrics = [
-    { value: "+5", title: "Proyectos y soluciones desarrolladas", subtitle: "Aplicaciones web e integraciones con impacto directo en negocio", gradient: "from-purple-400 to-pink-400", border: "border-purple-500/30", bg: "bg-purple-500/10" },
-    { value: "Miles", title: "Clientes procesados mediante automatización", subtitle: "Clasificación y tratamiento de datos asistido por agentes IA", gradient: "from-cyan-400 to-blue-400", border: "border-cyan-500/30", bg: "bg-cyan-500/10" },
-    { value: "QR", title: "Trazabilidad de activos", subtitle: "Digitalización e inventario en tiempo real", gradient: "from-emerald-400 to-teal-400", border: "border-emerald-500/30", bg: "bg-emerald-500/10" },
-    { value: "IA", title: "Automatización y clasificación inteligente", subtitle: "Integración de inteligencia artificial en flujos de trabajo", gradient: "from-amber-400 to-orange-400", border: "border-amber-500/30", bg: "bg-amber-500/10" },
-  ]
-  return (
-    <section id="impacto" ref={sectionRef} className="section-container">
-      <div className="animate-on-scroll text-center max-w-2xl mx-auto mb-10">
-        <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full border border-purple-400/30 bg-purple-500/10 text-purple-300 text-xs font-semibold uppercase tracking-wider mb-3">
-          <Icons.Sparkle /> Métricas & Impacto
-        </div>
-        <h2 className="section-title">Escala y Valor Real</h2>
-        <p className="section-subtitle">Transformando problemas operativos en código mantenible, automatización y resultados.</p>
-      </div>
-      <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 mb-8">
-        {metrics.map((m, i) => (
-          <div key={i} className="animate-on-scroll" style={{ animationDelay: `${i * 100}ms` }}>
-            <div className={`glass-card-hover p-6 text-center h-full flex flex-col justify-between border ${m.border} relative overflow-hidden group`}>
-              <div className={`absolute top-0 right-0 w-24 h-24 ${m.bg} blur-2xl rounded-full pointer-events-none group-hover:scale-150 transition-transform duration-500`} />
-              <div>
-                <div className={`font-display text-4xl sm:text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r ${m.gradient} mb-3 tracking-tight`}>{m.value}</div>
-                <h3 className="text-sm sm:text-base font-bold text-white mb-1.5 leading-snug">{m.title}</h3>
-                <p className="text-xs text-white/50 font-light leading-relaxed">{m.subtitle}</p>
-              </div>
-            </div>
-          </div>
-        ))}
-      </div>
-      <div className="animate-on-scroll">
-        <div className="glass-card p-5 md:p-6 border border-cyan-500/30 bg-gradient-to-r from-purple-950/40 via-black/50 to-cyan-950/40 flex flex-col md:flex-row items-center justify-between gap-4 text-center md:text-left">
-          <div className="flex items-center gap-4">
-            <div className="w-11 h-11 rounded-2xl bg-gradient-to-tr from-purple-600 to-cyan-600 flex items-center justify-center text-white font-bold text-lg shrink-0 shadow-lg shadow-purple-500/20">⚡</div>
-            <div>
-              <h4 className="text-sm md:text-base font-bold text-white">Eficiencia en la Gestión de Datos</h4>
-              <p className="text-xs text-white/60">Transformación digital de procesos corporativos para eliminar cuellos de botella.</p>
-            </div>
-          </div>
-          <div className="flex items-center gap-2.5 bg-black/60 border border-white/10 px-4 py-2.5 rounded-xl text-xs">
-            <span className="font-semibold text-red-400/90 line-through">Meses de trabajo manual</span>
-            <span className="text-purple-400 font-bold">➔</span>
-            <span className="font-bold text-emerald-400 bg-emerald-500/10 px-2.5 py-1 rounded-lg border border-emerald-500/30">Automatización eficiente</span>
-          </div>
-        </div>
-      </div>
-    </section>
-  )
-}
-
-/* ═══════════════════════════════════════════════
-   COMPONENTE: Experience Section
+   COMPONENTE: Experiencia Profesional
    ═══════════════════════════════════════════════ */
 
 function ExperienceSection() {
@@ -693,10 +644,10 @@ function ExperienceSection() {
       <div className="animate-on-scroll">
         <div className="flex items-center gap-3 mb-2">
           <span className="text-purple-400"><Icons.Briefcase /></span>
-          <span className="text-sm font-medium text-purple-400 uppercase tracking-widest">Trayectoria</span>
+          <span className="text-sm font-medium text-purple-400 uppercase tracking-widest">Desempeño</span>
         </div>
         <h2 className="section-title">Experiencia Profesional</h2>
-        <p className="section-subtitle">Resolución de necesidades reales de negocio mediante desarrollo, automatización e integración de sistemas.</p>
+        <p className="section-subtitle">¿Qué hago profesionalmente?</p>
       </div>
 
       <div className="animate-on-scroll mb-8">
@@ -720,17 +671,23 @@ function ExperienceSection() {
                     <span className="w-2 h-2 rounded-full bg-purple-400 shadow-[0_0_8px_rgba(168,85,247,0.6)]" />
                     <h4 className="text-xs font-bold text-purple-300 tracking-wider uppercase">{block.title}</h4>
                   </div>
-                  <p className="text-xs sm:text-sm text-white/70 leading-relaxed font-light">{block.text}</p>
+                  <p className="text-xs sm:text-sm text-white/70 leading-relaxed font-light mb-4">{block.text}</p>
                 </div>
+                {block.techs && (
+                  <div className="flex flex-wrap gap-1.5 pt-3 border-t border-white/5">
+                    {block.techs.map((t) => (
+                      <span key={t} className="text-[10px] py-0.5 px-2 rounded-md bg-white/5 border border-white/10 text-cyan-300/80 font-mono">{t}</span>
+                    ))}
+                  </div>
+                )}
               </div>
             ))}
           </div>
 
           <div className="pt-4 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4">
-            <p className="text-xs text-white/60 font-light">Los proyectos y soluciones desarrollados se detallan en Mis Inventos.</p>
+            <p className="text-xs text-white/60 font-light">Explora los proyectos y soluciones desarrollados en la siguiente sección.</p>
             <a href="#proyectos" className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-xs font-semibold bg-gradient-to-r from-purple-600 to-cyan-600 text-white hover:shadow-[0_0_20px_rgba(168,85,247,0.35)] transition-all duration-300 hover:scale-105 shrink-0">
-              <span>Ir a Mis Inventos</span>
-              <Icons.ArrowDown />
+              <span>Explora los proyectos y soluciones desarrollados →</span>
             </a>
           </div>
         </div>
@@ -738,7 +695,7 @@ function ExperienceSection() {
 
       <div className="animate-on-scroll text-center">
         <button onClick={() => setShowPrior(!showPrior)} className="inline-flex items-center gap-2 text-xs font-semibold text-white/60 hover:text-white bg-white/5 border border-white/10 hover:bg-white/10 px-4 py-2 rounded-full transition-all">
-          <span>{showPrior ? 'Ocultar experiencia profesional previa' : 'Ver experiencia profesional previa (Retail y Soporte Técnico)'}</span>
+          <span>{showPrior ? 'Ocultar trayectoria profesional previa' : 'Ver trayectoria profesional previa (Retail y Soporte Técnico)'}</span>
           <span className={`transition-transform duration-300 ${showPrior ? 'rotate-180' : ''}`}>▼</span>
         </button>
 
@@ -768,7 +725,7 @@ function ExperienceSection() {
 }
 
 /* ═══════════════════════════════════════════════
-   COMPONENTE: Projects Section ("Mis Inventos")
+   COMPONENTE: Mis Inventos (Proyectos)
    ═══════════════════════════════════════════════ */
 
 function ProjectsSection() {
@@ -782,27 +739,37 @@ function ProjectsSection() {
           <span className="text-sm font-medium text-pink-400 uppercase tracking-widest">Soluciones Desarrolladas</span>
         </div>
         <h2 className="section-title">Mis Inventos</h2>
-        <p className="section-subtitle">Aplicaciones web reales, automatizaciones e integraciones diseñadas para resolver problemas de negocio.</p>
+        <p className="section-subtitle">¿Qué he construido?</p>
       </div>
+
       <div className="grid md:grid-cols-2 gap-6 md:gap-8">
         {PROJECTS.map((project, i) => (
           <div key={i} className="animate-on-scroll" style={{ animationDelay: `${i * 150}ms` }}>
-            <div className="glass-card-hover p-6 md:p-8 h-full flex flex-col group justify-between hover:border-purple-400/40 transition-all duration-300 relative">
+            <div className={`glass-card p-6 md:p-8 h-full flex flex-col justify-between border bg-gradient-to-b ${project.accentColor} transition-all duration-300 relative group`}>
               <div>
-                <div className="flex items-start justify-between mb-3">
-                  <a href={project.githubLink || "https://github.com/alonsoarriaza"} target="_blank" rel="noopener noreferrer" className="hover:text-purple-300 transition-colors duration-300" title="Ver repositorio en GitHub">
-                    <h3 className="text-xl font-display font-bold text-white hover:text-purple-300 transition-colors">{project.title}</h3>
-                  </a>
-                  <a href={project.githubLink || "https://github.com/alonsoarriaza"} target="_blank" rel="noopener noreferrer" className="text-white/30 hover:text-purple-400 transition-colors duration-300 shrink-0 ml-2 mt-1" title="Ver repositorio en GitHub">
+                <div className="flex items-center justify-between gap-2 mb-3">
+                  <span className="text-[10px] font-mono font-bold tracking-widest text-purple-300 uppercase bg-purple-500/10 border border-purple-500/20 px-2.5 py-1 rounded-md">{project.number}</span>
+                  <a href={project.githubLink} target="_blank" rel="noopener noreferrer" className="text-white/40 hover:text-purple-300 transition-colors" title="Ver GitHub">
                     <Icons.ExternalLink />
                   </a>
                 </div>
 
-                <p className="text-xs sm:text-sm text-white/60 mb-4 line-clamp-3 leading-relaxed font-light">{project.description}</p>
+                <h3 className="text-xl font-display font-bold text-white mb-1 group-hover:text-purple-300 transition-colors">{project.title}</h3>
+                <p className="text-xs font-semibold text-cyan-300 mb-4">{project.subtitle}</p>
+                <p className="text-xs sm:text-sm text-white/70 leading-relaxed font-light mb-3">{project.description}</p>
+                {project.details && (
+                  <p className="text-xs text-white/60 leading-relaxed font-light mb-4 italic border-l-2 border-purple-500/40 pl-3">{project.details}</p>
+                )}
+                {project.security && (
+                  <p className="text-xs text-pink-300/90 leading-relaxed font-light mb-4 bg-pink-500/10 border border-pink-500/20 p-2.5 rounded-lg">{project.security}</p>
+                )}
+                {project.goal && (
+                  <p className="text-xs font-medium text-emerald-300/90 bg-emerald-500/10 border border-emerald-500/20 p-2.5 rounded-lg mb-6">{project.goal}</p>
+                )}
 
                 <div className="flex flex-wrap gap-2 mb-6">
                   {project.tags.map((tag) => (
-                    <span key={tag} className="tag">{tag}</span>
+                    <span key={tag} className="tag text-xs">{tag}</span>
                   ))}
                 </div>
               </div>
@@ -817,6 +784,7 @@ function ProjectsSection() {
           </div>
         ))}
       </div>
+
       {selectedProject && (
         <ProjectPreviewModal project={selectedProject} onClose={() => setSelectedProject(null)} />
       )}
@@ -825,43 +793,183 @@ function ProjectsSection() {
 }
 
 /* ═══════════════════════════════════════════════
-   COMPONENTE: Education Section
+   COMPONENTE: Lo Que Me Diferencia
    ═══════════════════════════════════════════════ */
 
-function EducationSection() {
+function DifferentiatorsSection() {
   const sectionRef = useAnimateOnScroll()
+  const renderIcon = (key) => {
+    switch (key) {
+      case 'Code': return <Icons.Code />
+      case 'Tools': return <Icons.Tools />
+      case 'Database': return <Icons.Database />
+      case 'Sparkle': return <Icons.Sparkle />
+      case 'Server': return <Icons.Server />
+      default: return <Icons.Sparkle />
+    }
+  }
 
   return (
-    <section id="educacion" ref={sectionRef} className="section-container">
-      <div className="animate-on-scroll">
-        <div className="flex items-center gap-3 mb-2">
-          <span className="text-cyan-400"><Icons.GraduationCap /></span>
-          <span className="text-sm font-medium text-cyan-400 uppercase tracking-widest">Formación</span>
+    <section id="diferencia" ref={sectionRef} className="section-container">
+      <div className="animate-on-scroll text-center max-w-2xl mx-auto mb-10">
+        <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full border border-purple-400/30 bg-purple-500/10 text-purple-300 text-xs font-semibold uppercase tracking-wider mb-3">
+          <Icons.Sparkle /> Capacidades
         </div>
-        <h2 className="section-title">Educación</h2>
-        <p className="section-subtitle">
-          Formación técnica especializada en desarrollo de software, inteligencia artificial e infraestructura.
-        </p>
+        <h2 className="section-title">Lo que me diferencia</h2>
+        <p className="section-subtitle">¿Qué sé hacer especialmente bien?</p>
       </div>
 
-      <div className="grid gap-6 md:gap-8">
-        {EDUCATION.map((item, i) => (
-          <div key={i} className="animate-on-scroll" style={{ animationDelay: `${i * 150}ms` }}>
-            <div className="glass-card-hover p-6 md:p-8 flex flex-col md:flex-row md:items-start gap-4 md:gap-8">
-              <div className="md:w-44 shrink-0">
-                <div className="inline-flex items-center gap-2 text-xs font-semibold text-cyan-300 bg-cyan-500/10 border border-cyan-500/20 px-3.5 py-1.5 rounded-lg">
-                  <svg className="w-3.5 h-3.5 opacity-70" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><rect x="3" y="4" width="18" height="18" rx="2" /><path d="M16 2v4M8 2v4M3 10h18" /></svg>
-                  {item.year}
-                </div>
-              </div>
+      <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-4">
+        {DIFFERENTIATORS.map((item, i) => (
+          <div key={i} className="animate-on-scroll" style={{ animationDelay: `${i * 100}ms` }}>
+            <div className={`glass-card-hover p-5 h-full border ${item.border} flex flex-col justify-between relative group`}>
               <div>
-                <h3 className="text-lg font-display font-bold mb-1 text-white">{item.degree}</h3>
-                <p className="text-sm text-purple-400/80 font-medium mb-3">{item.institution}</p>
-                <p className="text-sm text-white/60 leading-relaxed font-light">{item.description}</p>
+                <div className={`w-10 h-10 rounded-xl ${item.bg} flex items-center justify-center text-white mb-4 shadow-lg`}>
+                  {renderIcon(item.iconKey)}
+                </div>
+                <h3 className={`text-sm font-bold text-transparent bg-clip-text bg-gradient-to-r ${item.textGradient} mb-2 tracking-wide uppercase`}>{item.title}</h3>
+                <p className="text-xs text-white/70 font-light leading-relaxed">{item.text}</p>
               </div>
             </div>
           </div>
         ))}
+      </div>
+    </section>
+  )
+}
+
+/* ═══════════════════════════════════════════════
+   COMPONENTE: Stack / Tecnologías
+   ═══════════════════════════════════════════════ */
+
+function TechStackSection() {
+  const sectionRef = useAnimateOnScroll()
+  return (
+    <section id="tecnologias" ref={sectionRef} className="section-container">
+      <div className="animate-on-scroll">
+        <div className="flex items-center gap-3 mb-2">
+          <span className="text-cyan-400"><Icons.Cpu /></span>
+          <span className="text-sm font-medium text-cyan-400 uppercase tracking-widest">Herramientas</span>
+        </div>
+        <h2 className="section-title">Stack / Tecnologías</h2>
+        <p className="section-subtitle">¿Con qué herramientas trabajo?</p>
+      </div>
+
+      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {TECH_CATEGORIES.map((cat, i) => (
+          <div key={i} className="animate-on-scroll" style={{ animationDelay: `${i * 100}ms` }}>
+            <div className="glass-card-hover p-6 h-full border border-white/10 flex flex-col justify-between">
+              <div>
+                <div className="flex items-center gap-2 mb-4">
+                  <span className="w-2.5 h-2.5 rounded-full bg-cyan-400 shadow-[0_0_8px_rgba(6,182,212,0.6)]" />
+                  <h3 className="text-xs font-bold text-cyan-300 uppercase tracking-wider">{cat.title}</h3>
+                </div>
+                <div className="flex flex-wrap gap-2">
+                  {cat.items.map((tech, j) => (
+                    <span key={j} className="tag text-xs py-1.5 px-3 bg-white/5 border border-white/10 text-white/80 hover:border-cyan-400/40 hover:text-white transition-all">{tech}</span>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+  )
+}
+
+/* ═══════════════════════════════════════════════
+   COMPONENTE: Información Profesional & Educación
+   ═══════════════════════════════════════════════ */
+
+function AboutSection() {
+  const sectionRef = useAnimateOnScroll()
+  return (
+    <section id="sobre-mi" ref={sectionRef} className="section-container">
+      <div className="animate-on-scroll">
+        <div className="flex items-center gap-3 mb-2">
+          <span className="text-emerald-400"><Icons.User /></span>
+          <span className="text-sm font-medium text-emerald-400 uppercase tracking-widest">Perfil</span>
+        </div>
+        <h2 className="section-title">Información profesional</h2>
+        <p className="section-subtitle">Datos profesionales, formación técnica y trayectoria académica.</p>
+      </div>
+
+      <div className="grid md:grid-cols-3 gap-6 md:gap-8 mb-12">
+        <div className="md:col-span-2 animate-on-scroll">
+          <div className="glass-card p-6 md:p-8 space-y-5 h-full">
+            {ABOUT.paragraphs.map((p, i) => (
+              <p key={i} className="text-sm md:text-base text-white/70 leading-relaxed font-light">{p}</p>
+            ))}
+          </div>
+        </div>
+        <div id="datos-interes" className="animate-on-scroll delay-200">
+          <div className="glass-card p-6 md:p-8 h-full border border-purple-500/20">
+            <h3 className="font-display font-bold text-lg mb-6 text-white">
+              Información profesional
+            </h3>
+            <div className="space-y-4">
+              {ABOUT.info.map((item, i) => (
+                <div key={i} className="pb-3 border-b border-white/5 last:border-b-0 last:pb-0">
+                  <span className="text-xs font-bold text-purple-300 uppercase tracking-wider block mb-1">{item.label}</span>
+                  {item.label === "Email" ? (
+                    <a href={`mailto:${item.value}`} className="text-xs sm:text-sm text-white/80 hover:text-purple-300 hover:underline transition-all">{item.value}</a>
+                  ) : item.label === "Teléfono" ? (
+                    <a href={`tel:${item.value.replace(/\s+/g, '')}`} className="text-xs sm:text-sm text-white/80 hover:text-cyan-300 hover:underline transition-all">{item.value}</a>
+                  ) : (
+                    <p className="text-xs sm:text-sm text-white/80 font-light">{item.value}</p>
+                  )}
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Formación / Educación incorporada de forma limpia */}
+      <div className="animate-on-scroll">
+        <h3 className="text-xl font-display font-bold text-white mb-6 flex items-center gap-2">
+          <span className="text-cyan-400"><Icons.GraduationCap /></span> Formación Técnica & Certificaciones
+        </h3>
+        <div className="grid gap-4">
+          {EDUCATION.map((item, i) => (
+            <div key={i} className="glass-card p-5 border border-white/10 flex flex-col md:flex-row md:items-start gap-4">
+              <div className="md:w-44 shrink-0">
+                <span className="inline-block text-xs font-semibold text-cyan-300 bg-cyan-500/10 border border-cyan-500/20 px-3 py-1 rounded-md">
+                  {item.year}
+                </span>
+              </div>
+              <div>
+                <h4 className="text-base font-bold text-white mb-1">{item.degree}</h4>
+                <p className="text-xs text-purple-400 font-medium mb-2">{item.institution}</p>
+                <p className="text-xs text-white/60 font-light leading-relaxed">{item.description}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  )
+}
+
+/* ═══════════════════════════════════════════════
+   COMPONENTE: Call To Action final (Contacto)
+   ═══════════════════════════════════════════════ */
+
+function ContactCallToAction() {
+  const sectionRef = useAnimateOnScroll()
+  return (
+    <section id="contacto" ref={sectionRef} className="section-container text-center py-16">
+      <div className="animate-on-scroll max-w-3xl mx-auto glass-card p-8 md:p-12 border border-purple-500/30 relative overflow-hidden">
+        <div className="absolute -top-24 left-1/2 -translate-x-1/2 w-96 h-96 bg-purple-600/10 blur-[100px] rounded-full pointer-events-none" />
+        <span className="text-xs font-semibold text-purple-300 uppercase tracking-widest bg-purple-500/10 border border-purple-500/20 px-3.5 py-1.5 rounded-full inline-block mb-4">Contacto Directo</span>
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-display font-bold text-white mb-3 leading-tight">¿Tienes un problema que podamos convertir en una solución?</h2>
+        <p className="text-base sm:text-lg text-cyan-300 font-medium mb-8">Hablemos.</p>
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <a href="mailto:alonsoarriaza03@gmail.com" className="px-8 py-3.5 rounded-full bg-gradient-to-r from-purple-600 to-cyan-600 text-white font-semibold text-sm hover:shadow-[0_0_30px_rgba(168,85,247,0.4)] transition-all duration-300 hover:scale-105">Enviar Email</a>
+          <a href={PROFILE.linkedin} target="_blank" rel="noopener noreferrer" className="px-6 py-3.5 rounded-full border border-white/20 bg-black/40 text-white/90 hover:text-white hover:border-cyan-400/40 text-sm font-semibold transition-all duration-300">LinkedIn</a>
+          <a href={PROFILE.github} target="_blank" rel="noopener noreferrer" className="px-6 py-3.5 rounded-full border border-white/20 bg-black/40 text-white/90 hover:text-white hover:border-purple-400/40 text-sm font-semibold transition-all duration-300">GitHub</a>
+        </div>
       </div>
     </section>
   )
@@ -902,7 +1010,7 @@ function ProjectPreviewModal({ project, onClose }) {
       <div style={{ position: 'relative', width: '100%', maxWidth: '56rem', maxHeight: '90vh', overflowY: 'auto', borderRadius: '1.5rem', backgroundColor: '#09090b', border: '1px solid rgba(168,85,247,0.3)', padding: '2rem', boxShadow: '0 0 50px rgba(168,85,247,0.25)', color: 'white' }} onClick={(e) => e.stopPropagation()}>
         <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', gap: '1rem', marginBottom: '1.5rem' }}>
           <div>
-            <span style={{ fontSize: '0.75rem', fontWeight: 600, color: '#a855f7', textTransform: 'uppercase', letterSpacing: '0.05em', display: 'block', marginBottom: '0.25rem' }}>Vista previa del invento</span>
+            <span style={{ fontSize: '0.75rem', fontWeight: 600, color: '#a855f7', textTransform: 'uppercase', letterSpacing: '0.05em', display: 'block', marginBottom: '0.25rem' }}>{project.number}</span>
             <h3 style={{ fontSize: '1.5rem', fontWeight: 700, color: 'white', margin: 0 }}>{project.title}</h3>
           </div>
           <button onClick={onClose} style={{ padding: '0.5rem', borderRadius: '9999px', backgroundColor: 'rgba(255,255,255,0.1)', color: 'rgba(255,255,255,0.8)', border: 'none', cursor: 'pointer', flexShrink: 0 }} aria-label="Cerrar modal"><Icons.Close /></button>
@@ -913,17 +1021,20 @@ function ProjectPreviewModal({ project, onClose }) {
           ) : (
             <div style={{ width: '100%', padding: '3rem 1.5rem', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', textAlign: 'center', borderRadius: '1rem', border: '1px dashed rgba(168,85,247,0.3)', backgroundColor: 'rgba(24,24,27,0.6)' }}>
               <div style={{ width: '4rem', height: '4rem', borderRadius: '9999px', backgroundColor: 'rgba(168,85,247,0.1)', border: '1px solid rgba(168,85,247,0.3)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#a855f7', marginBottom: '1rem' }}><Icons.ImageIcon /></div>
-              <h4 style={{ fontSize: '1.125rem', fontWeight: 600, color: 'white', marginBottom: '0.5rem' }}>Vista previa del invento</h4>
+              <h4 style={{ fontSize: '1.125rem', fontWeight: 600, color: 'white', marginBottom: '0.5rem' }}>{project.title}</h4>
               <p style={{ fontSize: '0.875rem', color: 'rgba(255,255,255,0.6)', maxWidth: '28rem', marginBottom: '1rem', lineHeight: 1.6 }}>{project.description}</p>
             </div>
           )}
         </div>
         <div style={{ marginBottom: '1.5rem' }}>
           <p style={{ fontSize: '0.875rem', color: 'rgba(255,255,255,0.7)', lineHeight: 1.6, marginBottom: '1rem' }}>{project.description}</p>
-          {project.notes && (
+          {project.details && (
+            <p style={{ fontSize: '0.8rem', color: 'rgba(255,255,255,0.6)', lineHeight: 1.6, marginBottom: '1rem', fontStyle: 'italic' }}>{project.details}</p>
+          )}
+          {project.goal && (
             <div style={{ padding: '1rem', borderRadius: '0.75rem', backgroundColor: 'rgba(168,85,247,0.1)', border: '1px solid rgba(168,85,247,0.2)', fontSize: '0.8rem', color: '#e9d5ff', display: 'flex', alignItems: 'flex-start', gap: '0.5rem', marginBottom: '1rem' }}>
               <span style={{ color: '#a855f7', marginTop: '0.125rem' }}>💡</span>
-              <span><strong>Impacto / Resultado:</strong> {project.notes}</span>
+              <span><strong>{project.goal}</strong></span>
             </div>
           )}
           <div className="flex flex-wrap gap-2 pt-2">
@@ -931,7 +1042,7 @@ function ProjectPreviewModal({ project, onClose }) {
           </div>
         </div>
         <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'space-between', gap: '1rem', paddingTop: '1rem', borderTop: '1px solid rgba(255,255,255,0.1)' }}>
-          <a href={project.githubLink || "https://github.com/alonsoarriaza"} target="_blank" rel="noopener noreferrer" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', padding: '0.625rem 1.5rem', borderRadius: '9999px', background: 'linear-gradient(to right, #9333ea, #0891b2)', color: 'white', fontWeight: 600, fontSize: '0.75rem', textDecoration: 'none', letterSpacing: '0.05em' }}>
+          <a href={project.githubLink} target="_blank" rel="noopener noreferrer" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', padding: '0.625rem 1.5rem', borderRadius: '9999px', background: 'linear-gradient(to right, #9333ea, #0891b2)', color: 'white', fontWeight: 600, fontSize: '0.75rem', textDecoration: 'none', letterSpacing: '0.05em' }}>
             <span>Ver repositorio en GitHub</span>
             <Icons.ExternalLink />
           </a>
@@ -940,151 +1051,6 @@ function ProjectPreviewModal({ project, onClose }) {
       </div>
     </div>,
     document.body
-  )
-}
-
-/* ═══════════════════════════════════════════════
-   COMPONENTE: Tech Stack Section
-   ═══════════════════════════════════════════════ */
-
-function TechStackSection() {
-  const sectionRef = useAnimateOnScroll()
-  return (
-    <section id="tecnologias" ref={sectionRef} className="section-container">
-      <div className="animate-on-scroll">
-        <div className="flex items-center gap-3 mb-2">
-          <span className="text-cyan-400"><Icons.Cpu /></span>
-          <span className="text-sm font-medium text-cyan-400 uppercase tracking-widest">Stack</span>
-        </div>
-        <h2 className="section-title">Tecnologías & Herramientas</h2>
-        <p className="section-subtitle">Ecosistema técnico enfocado en desarrollo de software, gestión de datos, automatización y seguridad.</p>
-      </div>
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {TECH_CATEGORIES.map((cat, i) => (
-          <div key={i} className="animate-on-scroll" style={{ animationDelay: `${i * 100}ms` }}>
-            <div className="glass-card-hover p-6 h-full border border-white/10 flex flex-col justify-between">
-              <div>
-                <div className="flex items-center gap-2 mb-4">
-                  <span className="w-2.5 h-2.5 rounded-full bg-cyan-400 shadow-[0_0_8px_rgba(6,182,212,0.6)]" />
-                  <h3 className="text-xs font-bold text-cyan-300 uppercase tracking-wider">{cat.title}</h3>
-                </div>
-                <div className="flex flex-wrap gap-2">
-                  {cat.items.map((tech, j) => (
-                    <span key={j} className="tag text-xs py-1.5 px-3 bg-white/5 border border-white/10 text-white/80 hover:border-cyan-400/40 hover:text-white transition-all">{tech}</span>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </div>
-        ))}
-      </div>
-    </section>
-  )
-}
-
-/* ═══════════════════════════════════════════════
-   COMPONENTE: Methodology Section (De un problema a una solución)
-   ═══════════════════════════════════════════════ */
-
-function MethodologySection() {
-  const sectionRef = useAnimateOnScroll()
-  return (
-    <section id="metodologia" ref={sectionRef} className="section-container">
-      <div className="animate-on-scroll">
-        <div className="flex items-center gap-3 mb-2">
-          <span className="text-emerald-400"><Icons.Tools /></span>
-          <span className="text-sm font-medium text-emerald-400 uppercase tracking-widest">Filosofía</span>
-        </div>
-        <h2 className="section-title">De un problema a una solución</h2>
-        <p className="section-subtitle">Metodología estructurada de 5 pasos para aportar valor real al negocio.</p>
-      </div>
-      <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-4">
-        {METHODOLOGY_STEPS.map((s, i) => (
-          <div key={i} className="animate-on-scroll" style={{ animationDelay: `${i * 100}ms` }}>
-            <div className="glass-card-hover p-5 h-full border border-white/10 flex flex-col justify-between relative group">
-              <div>
-                <div className="text-3xl font-display font-black text-purple-400/40 group-hover:text-purple-300 transition-colors mb-3">{s.step}</div>
-                <h3 className="text-sm font-bold text-white mb-2 tracking-wide uppercase">{s.title}</h3>
-                <p className="text-xs text-white/60 font-light leading-relaxed">{s.text}</p>
-              </div>
-            </div>
-          </div>
-        ))}
-      </div>
-    </section>
-  )
-}
-
-/* ═══════════════════════════════════════════════
-   COMPONENTE: About Section (Información profesional)
-   ═══════════════════════════════════════════════ */
-
-function AboutSection() {
-  const sectionRef = useAnimateOnScroll()
-  return (
-    <section id="sobre-mi" ref={sectionRef} className="section-container">
-      <div className="animate-on-scroll">
-        <div className="flex items-center gap-3 mb-2">
-          <span className="text-emerald-400"><Icons.User /></span>
-          <span className="text-sm font-medium text-emerald-400 uppercase tracking-widest">Perfil</span>
-        </div>
-        <h2 className="section-title">Sobre Mí</h2>
-        <p className="section-subtitle">Pasión por la tecnología, enfoque estructurado y compromiso profesional.</p>
-      </div>
-      <div className="grid md:grid-cols-3 gap-6 md:gap-8">
-        <div className="md:col-span-2 animate-on-scroll">
-          <div className="glass-card p-6 md:p-8 space-y-5">
-            {ABOUT.paragraphs.map((p, i) => (
-              <p key={i} className="text-sm md:text-base text-white/70 leading-relaxed font-light">{p}</p>
-            ))}
-          </div>
-        </div>
-        <div id="datos-interes" className="animate-on-scroll delay-200">
-          <div className="glass-card p-6 md:p-8 h-full border border-purple-500/20">
-            <h3 className="font-display font-bold text-lg mb-6 flex items-center gap-2 text-white">
-              <Icons.Sparkle /> Información profesional
-            </h3>
-            <div className="space-y-4">
-              {ABOUT.info.map((item, i) => (
-                <div key={i} className="pb-3 border-b border-white/5 last:border-b-0 last:pb-0">
-                  <span className="text-xs font-bold text-purple-300 uppercase tracking-wider block mb-1">{item.label}</span>
-                  {item.label === "Email" ? (
-                    <a href={`mailto:${item.value}`} className="text-xs sm:text-sm text-white/80 hover:text-purple-300 hover:underline transition-all">{item.value}</a>
-                  ) : item.label === "Teléfono" ? (
-                    <a href={`tel:${item.value.replace(/\s+/g, '')}`} className="text-xs sm:text-sm text-white/80 hover:text-cyan-300 hover:underline transition-all">{item.value}</a>
-                  ) : (
-                    <p className="text-xs sm:text-sm text-white/80 font-light">{item.value}</p>
-                  )}
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  )
-}
-
-/* ═══════════════════════════════════════════════
-   COMPONENTE: Call To Action final (Contacto)
-   ═══════════════════════════════════════════════ */
-
-function ContactCallToAction() {
-  const sectionRef = useAnimateOnScroll()
-  return (
-    <section id="contacto" ref={sectionRef} className="section-container text-center py-16">
-      <div className="animate-on-scroll max-w-3xl mx-auto glass-card p-8 md:p-12 border border-purple-500/30 relative overflow-hidden">
-        <div className="absolute -top-24 left-1/2 -translate-x-1/2 w-96 h-96 bg-purple-600/10 blur-[100px] rounded-full pointer-events-none" />
-        <span className="text-xs font-semibold text-purple-300 uppercase tracking-widest bg-purple-500/10 border border-purple-500/20 px-3.5 py-1.5 rounded-full inline-block mb-4">Contacto Directo</span>
-        <h2 className="text-2xl sm:text-3xl md:text-4xl font-display font-bold text-white mb-3 leading-tight">¿Tienes un problema que podamos convertir en una solución?</h2>
-        <p className="text-base sm:text-lg text-cyan-300 font-medium mb-8">Hablemos.</p>
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-          <a href="mailto:alonsoarriaza03@gmail.com" className="px-8 py-3.5 rounded-full bg-gradient-to-r from-purple-600 to-cyan-600 text-white font-semibold text-sm hover:shadow-[0_0_30px_rgba(168,85,247,0.4)] transition-all duration-300 hover:scale-105">Enviar Email</a>
-          <a href={PROFILE.linkedin} target="_blank" rel="noopener noreferrer" className="px-6 py-3.5 rounded-full border border-white/20 bg-black/40 text-white/90 hover:text-white hover:border-cyan-400/40 text-sm font-semibold transition-all duration-300">LinkedIn</a>
-          <a href={PROFILE.github} target="_blank" rel="noopener noreferrer" className="px-6 py-3.5 rounded-full border border-white/20 bg-black/40 text-white/90 hover:text-white hover:border-purple-400/40 text-sm font-semibold transition-all duration-300">GitHub</a>
-        </div>
-      </div>
-    </section>
   )
 }
 
@@ -1218,14 +1184,6 @@ export default function App() {
       <main>
         <HeroSection />
         <ContentWrapper>
-          <ImpactMetricsSection />
-          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <hr className="section-divider" />
-          </div>
-          <RetroSection />
-          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <hr className="section-divider" />
-          </div>
           <ExperienceSection />
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <hr className="section-divider" />
@@ -1234,19 +1192,19 @@ export default function App() {
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <hr className="section-divider" />
           </div>
+          <DifferentiatorsSection />
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <hr className="section-divider" />
+          </div>
           <TechStackSection />
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <hr className="section-divider" />
           </div>
-          <MethodologySection />
-          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <hr className="section-divider" />
-          </div>
-          <EducationSection />
-          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <hr className="section-divider" />
-          </div>
           <AboutSection />
+          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <hr className="section-divider" />
+          </div>
+          <RetroSection />
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <hr className="section-divider" />
           </div>
