@@ -124,7 +124,7 @@ const PROJECTS = [
     id: "trazabilidad-qr",
     title: "Aplicación Web de Gestión de Inventario y Trazabilidad mediante Códigos QR",
     description: "Diseño y desarrollo integral de una plataforma web Full-Stack propia para digitalizar y centralizar la gestión de inventarios y la trazabilidad de activos corporativos. La solución incorpora identificación mediante códigos QR, gestión y actualización de información en tiempo real y control centralizado de activos. Incluye además procesos de extracción, transformación y migración de datos procedentes de sistemas ERP hacia bases de datos propias, así como el diseño y estructuración de nuevas bases de datos para adaptar y centralizar la información. Todo ello orientado a reducir tareas manuales, mejorar la calidad de los datos y optimizar los procesos internos de gestión.",
-    notes: "Implantada con éxito a nivel multi-sede, hasta ahora mi proyecto mas importante.",
+    notes: "Implantada con éxito a nivel multi-sede. Hasta ahora, mi proyecto más importante, con una interfaz optimizada para ofrecer un acceso rápido y sencillo desde dispositivos móviles y PDA internas, facilitando el trabajo diario de los técnicos y agilizando la gestión de activos.",
     tags: ["Java 21", "Spring Boot 3.4", "React", "Vite", "TailwindCSS", "MySQL", "XAMPP", "Git", "Docker", "JWT", "Spring Security", "API REST", "Códigos QR", "ERP/CRM (ADV)"],
     githubLink: "https://github.com/alonsoarriaza/Sistema-Trazabilidad-QR",
     previewImage: tallerImg,
