@@ -1163,9 +1163,6 @@ function ImpactMetricsSection() {
   return (
     <section id="impacto" ref={sectionRef} className="section-container">
       <div className="animate-on-scroll text-center max-w-2xl mx-auto mb-10">
-        <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full border border-purple-300 bg-purple-100/80 text-purple-900 text-xs font-bold uppercase tracking-wider mb-3">
-          <Icons.Sparkle /> Métricas & Impacto
-        </div>
         <h2 className="section-title">Variedad e Impacto Real</h2>
         <p className="section-subtitle">Presentación visual de capacidades técnicas y alcance operativo.</p>
       </div>
