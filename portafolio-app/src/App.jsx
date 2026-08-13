@@ -998,7 +998,7 @@ function Footer() {
     <footer className="border-t border-slate-300/80 py-10 bg-slate-200/60">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center justify-center gap-4 text-center">
         <p className="text-sm text-slate-700 font-medium">
-          © {new Date().getFullYear()} Alonso Feria Arriaza · Desarrollador Full-Stack
+          © {new Date().getFullYear()} Alonso Feria Arriaza. Hecho con café y mucho amor.
         </p>
       </div>
     </footer>
