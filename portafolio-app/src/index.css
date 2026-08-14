@@ -383,10 +383,10 @@ body {
   100% { transform: translate(var(--dx), var(--dy)) scale(0) rotate(360deg); opacity: 0; }
 }
 
-/* Sombra de texto suave y alto contraste para la máxima legibilidad del Header sobre el vídeo */
+/* Sombra ambiental atmosférica de alto nivel en perfecta sintonía con el diseño de la web */
 .hero-text-shadow {
   text-shadow: 
-    0 2px 4px rgba(0, 0, 0, 0.85),
-    0 4px 14px rgba(0, 0, 0, 0.75),
-    0 0 24px rgba(0, 0, 0, 0.6);
+    0 2px 10px rgba(0, 0, 0, 0.5),
+    0 4px 25px rgba(15, 23, 42, 0.6),
+    0 0 35px rgba(147, 51, 234, 0.25);
 }

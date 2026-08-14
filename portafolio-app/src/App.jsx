@@ -450,8 +450,8 @@ function VideoBackground() {
 function HeroSection() {
   return (
     <section id="hero" className="relative min-h-screen flex items-center justify-center">
-      {/* Capa de respaldo para legibilidad sobre el video */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-transparent to-slate-900/50 pointer-events-none" />
+      {/* Capa de contraste ambiental suave integradora con el video */}
+      <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-purple-950/20 to-slate-900/55 pointer-events-none" />
 
       <div className="relative text-center px-4 sm:px-6">
         {/* Badge */}
