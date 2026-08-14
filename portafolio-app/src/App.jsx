@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from 'react'
 import { createPortal } from 'react-dom'
+import { Analytics } from '@vercel/analytics/react'
 
 import tallerImg from './assets/previews/taller.png'
 import sitoinfoImg from './assets/previews/sitoinfo.png'
@@ -1313,6 +1314,7 @@ function ImpactMetricsSection() {
 export default function App() {
   return (
     <>
+      <Analytics />
       <VideoBackground />
       <Navbar />
       <main>
