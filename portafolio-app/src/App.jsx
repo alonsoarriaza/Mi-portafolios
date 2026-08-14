@@ -187,14 +187,14 @@ const ABOUT = {
 }
 
 const RETRO_CARDS = [
-  { t: '📍 DATOS', txt: 'Alonso Feria Arriaza · Dos Hermanas, Sevilla · 627 53 61 25 · alonsoarriaza03@gmail.com · Permiso B + Vehículo propio · Disponibilidad geográfica inmediata para incorporaciones locales o nacionales.' },
-  { t: '⚔️ EXPERIENCIA', txt: 'Full-Stack Developer · Coanda Technologies. Desarrollo e implantación de soluciones digitales empresariales. Destaca el desarrollo individual de una app web corporativa en despliegue multi-sede. Experiencia en gestión documental (Therefore, Solpheo), ERP/CRM (ADV) y ciberseguridad (Ciberguardian).' },
-  { t: '💡 COMPROMISO', txt: 'Enfoque analítico y estructurado en la resolución de incidencias complejas. Compromiso riguroso con el código limpio (Clean Code) y las mejores prácticas de arquitectura de software. Gran capacidad de organización, comunicación clara y liderazgo de equipos en entornos bajo presión.' },
-  { t: '📱 DESARROLLO QR', txt: 'Diseño e implantación de un sistema Full-Stack para gestión de activos y trazabilidad mediante códigos QR. Backend robusto en Java 21 con Spring Boot y seguridad JWT. Frontend interactivo en React + Tailwind con escáner QR. Migración automatizada de 15.000 registros desde el ERP ADV hacia base de datos MySQL.' },
-  { t: '🚀 SITOINFORMATIC', txt: 'Trabajo de Fin de Grado (TFG) finalizado con calificación de 8,4. Plataforma eCommerce de hardware de computadoras que integra SitoIA, un motor heurístico en Java 21 que calcula la compatibilidad física de sockets, equilibrio térmico TDP, performanceScore y balancea presupuestos en tiempo real.' },
-  { t: '📜 FORMACIÓN', txt: 'Grado Superior en Desarrollo de Aplicaciones Web (DAW) en Ilerna Sevilla. Certificación Oficial Cisco CCNA v7 (diseño de redes, seguridad, virtualización y automatización SDN). Doble Certificación en Inteligencia Artificial y Machine Learning. Grado Medio SMR.' },
-  { t: '🧙 SOBRE MÍ', txt: 'Desarrollador con mentalidad proactiva y alto nivel de exigencia personal. Cuento con una madurez profesional consolidada tras años como Segundo Encargado en retail, gestionando equipos y logística en entornos de alta presión, capacidades que ahora vuelco al desarrollo de software.' },
-  { t: '📡 CONTACTO & WEB', txt: 'Encuentra todos mis repositorios en GitHub (github.com/alonsoarriaza) y conecta conmigo en LinkedIn (linkedin.com/in/alonsoferiaarriaza) para entrevistas, propuestas de proyectos o para descargar mi currículum en formato PDF clásico.' },
+  { t: '📍 DATOS', txt: 'Alonso Feria Arriaza · Dos Hermanas, Sevilla · 627 53 61 25 · alonsoarriaza03@gmail.com · Permiso B + Vehículo propio · Disponibilidad geográfica inmediata.' },
+  { t: '⚔️ EXPERIENCIA', txt: 'Full-Stack Developer · Coanda Technologies. Desarrollo e implantación de aplicaciones corporativas a medida, automatización con IA, gestión documental y trazabilidad QR.' },
+  { t: '💡 COMPROMISO', txt: 'Enfoque analítico y estructurado. Compromiso riguroso con el código limpio (Clean Code), arquitectura de software y comunicación clara en equipos.' },
+  { t: '📱 DESARROLLO QR', txt: 'Sistema Full-Stack para gestión de activos y trazabilidad con códigos QR. Backend Java 21/Spring Boot, frontend React+Tailwind y migración de 15.000 registros ADV.' },
+  { t: '🚀 SITOINFORMATIC', txt: 'TFG finalizado con 8,4. Plataforma eCommerce con SitoIA, motor heurístico en Java 21 para cálculo de compatibilidad, equilibrio térmico TDP y presupuestos.' },
+  { t: '📜 FORMACIÓN', txt: 'Grado Superior DAW (Ilerna). Certificación Cisco CCNA v7 (redes y automatización SDN). Doble Certificación en IA y Machine Learning (BIGSchool). Grado Medio SMR.' },
+  { t: '🧙 SOBRE MÍ', txt: 'Desarrollador proactivo con madurez profesional tras años como Segundo Encargado en retail, liderando equipos y logística en entornos de alta presión.' },
+  { t: '📡 CONTACTO & WEB', txt: 'Mis repositorios en GitHub (github.com/alonsoarriaza) y perfil de LinkedIn (linkedin.com/in/alonsoferiaarriaza) para propuestas, proyectos o descarga de mi CV.' },
 ]
 
 
