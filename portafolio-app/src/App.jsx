@@ -90,6 +90,7 @@ const EDUCATION = [
     institution: "DataCamp",
     description: "Certificación profesional en ingeniería de IA aplicada al desarrollo de software, cubriendo integración de modelos, APIs de IA y buenas prácticas para desarrolladores.",
     certLink: "https://www.datacamp.com/certificate/AIEDA0018974463982",
+    linkedinLink: "https://www.linkedin.com/feed/update/urn:li:activity:7477651029489025025/",
   },
   {
     year: "Junio 2026 - Julio 2026",
@@ -662,16 +663,31 @@ function EducationSection() {
                 <h3 className="text-lg font-display font-extrabold mb-1 text-slate-900">{item.degree}</h3>
                 <p className="text-sm text-purple-800 font-bold mb-3">{item.institution}</p>
                 <p className="text-sm text-slate-700 leading-relaxed font-medium">{item.description}</p>
-                {item.certLink && (
-                  <a
-                    href={item.certLink}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 mt-3 px-4 py-2 rounded-full bg-gradient-to-r from-purple-600 to-indigo-600 text-white font-bold text-xs hover:shadow-lg hover:shadow-purple-500/20 transition-all duration-300 hover:scale-105"
-                  >
-                    <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101" /><path strokeLinecap="round" strokeLinejoin="round" d="M10.172 13.828a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" /></svg>
-                    Ver certificado
-                  </a>
+                {(item.certLink || item.linkedinLink) && (
+                  <div className="flex flex-wrap items-center gap-3 mt-3">
+                    {item.certLink && (
+                      <a
+                        href={item.certLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-purple-600 to-indigo-600 text-white font-bold text-xs hover:shadow-lg hover:shadow-purple-500/20 transition-all duration-300 hover:scale-105"
+                      >
+                        <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101" /><path strokeLinecap="round" strokeLinejoin="round" d="M10.172 13.828a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" /></svg>
+                        Ver certificado
+                      </a>
+                    )}
+                    {item.linkedinLink && (
+                      <a
+                        href={item.linkedinLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#0A66C2] text-white font-bold text-xs hover:shadow-lg hover:shadow-sky-500/20 transition-all duration-300 hover:scale-105"
+                      >
+                        <Icons.LinkedIn />
+                        Ver en LinkedIn
+                      </a>
+                    )}
+                  </div>
                 )}
               </div>
             </div>
