@@ -33,7 +33,7 @@ const NAV_LINKS = [
 
 const EXPERIENCE = [
   {
-    year: "Mayo 2025 — Presente",
+    year: "Mayo 2026 — Presente",
     role: "Junior Full-Stack Developer · Prácticas",
     description: [
       "Desarrollo de soluciones web a medida. Diseño y desarrollo integral de una aplicación web corporativa propia para digitalizar la gestión de inventarios y la trazabilidad de activos mediante códigos QR, con gestión y actualización de información en tiempo real.",
@@ -42,7 +42,7 @@ const EXPERIENCE = [
     ]
   },
   {
-    year: "Junio 2025 — Enero 2025",
+    year: "Junio 2025 — Enero 2026",
     role: "Dependiente",
     company: "Hollister CO",
     description: ["Atención al cliente y ventas, asesoramiento personalizado buscando siempre la mejor experiencia de compra. Aprendí que escuchar activamente al usuario es tan crítico en una tienda como al recoger requisitos para un desarrollo de software.",
