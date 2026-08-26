@@ -37,9 +37,9 @@ const EXPERIENCE = [
     role: "Full-Stack Developer",
     company: "Coanda Technologies",
     description: [
-      "Arquitectura y desarrollo end-to-end de plataformas web corporativas. Lideré el diseño, desarrollo y despliegue de un sistema Full-Stack de gestión de inventarios y trazabilidad de activos a nivel multi-sede, con identificación mediante códigos QR, sincronización en tiempo real y migración masiva de +15.000 registros desde sistemas ERP (ADV). Responsable de la toma de decisiones técnicas, modelado de bases de datos, diseño de API REST con Spring Security/JWT y optimización de rendimiento para acceso móvil y PDA industriales.",
-      "Ingeniería de datos y automatización con IA. Diseñé y desarrollé desde cero un motor de clasificación automatizada capaz de procesar y categorizar miles de registros de clientes mediante un pipeline propio de normalización, correspondencia difusa y orquestación de agentes de IA. El sistema redujo un proceso de meses de trabajo manual a una ejecución automatizada, siendo adoptado como herramienta operativa interna por el departamento contable.",
-      "Integración de sistemas empresariales y DevOps. Responsable del desarrollo de herramientas de automatización a medida, scripting avanzado con Google Apps Script e integración de agentes de IA en flujos de trabajo corporativos. Gestión, configuración y soporte de plataformas empresariales críticas: Therefore (gestión documental), Solpheo (workflow), ADV (ERP/CRM), Active Directory, Entra ID (Azure AD), MyQ (impresión gestionada) y Ciberguardian (ciberseguridad). Participación activa en la mejora continua de la infraestructura IT y la automatización de procesos internos."
+      "Arquitectura y desarrollo end-to-end de una plataforma Full-Stack de gestión de inventarios y trazabilidad QR multi-sede. Migración masiva de +15.000 registros desde ERP (ADV), diseño de API REST con Spring Security/JWT y optimización para acceso móvil y PDA industriales.",
+      "Ingeniería de datos y automatización con IA. Motor de clasificación automatizada de miles de clientes mediante pipeline de normalización, correspondencia difusa y orquestación de agentes de IA. Adoptado como herramienta operativa interna.",
+      "Integración de sistemas empresariales y DevOps. Automatizaciones a medida con Google Apps Script y agentes de IA. Gestión de plataformas críticas: Therefore, Solpheo, ADV (ERP/CRM), Active Directory, Entra ID, MyQ y Ciberguardian."
     ]
   },
   {
@@ -135,8 +135,8 @@ const PROJECTS = [
   {
     id: "trazabilidad-qr",
     title: "Sistema Empresarial de Gestión de Activos y Trazabilidad QR · Multi-Sede",
-    description: "Arquitectura, desarrollo y despliegue de una plataforma Full-Stack empresarial para la digitalización completa de la gestión de inventarios y trazabilidad de activos corporativos a escala multi-sede. El sistema integra identificación mediante códigos QR, sincronización en tiempo real, control centralizado de activos con histórico de movimientos y un pipeline de ETL (Extract, Transform, Load) para la migración masiva de +15.000 registros desde sistemas ERP legacy (ADV) hacia bases de datos propias optimizadas. Incluye autenticación segura con JWT/Spring Security, API RESTful documentada, arquitectura por capas y una interfaz responsive optimizada para dispositivos móviles y PDA industriales.",
-    notes: "Implantada con éxito en producción a nivel multi-sede. Sistema adoptado por los equipos técnicos como herramienta principal de gestión diaria, eliminando por completo los procesos manuales anteriores y reduciendo los tiempos de auditoría de inventario en un 80%.",
+    description: "Plataforma Full-Stack empresarial para gestión de inventarios y trazabilidad de activos con códigos QR a escala multi-sede. Integra sincronización en tiempo real, pipeline ETL para migración de +15.000 registros desde ERP legacy (ADV), autenticación JWT/Spring Security y API RESTful. Interfaz responsive optimizada para móviles y PDA industriales.",
+    notes: "Implantada en producción multi-sede. Adoptada como herramienta principal de gestión diaria, reduciendo los tiempos de auditoría de inventario en un 80%.",
     tags: ["Java 21", "Spring Boot 3.4", "React", "Vite", "TailwindCSS", "MySQL", "XAMPP", "Git", "Docker", "JWT", "Spring Security", "API REST", "Códigos QR", "ERP/CRM (ADV)", "ETL", "CI/CD"],
     githubLink: "https://github.com/alonsoarriaza/Sistema-Trazabilidad-QR",
     previewImage: tallerImg,
@@ -145,14 +145,8 @@ const PROJECTS = [
   {
     id: "sitoinformatic",
     title: "SitoInformatic | Plataforma eCommerce con Motor Heurístico de Configuración de Hardware",
-    description: `Diseño y desarrollo completo de una plataforma e-commerce profesional de hardware y componentes informáticos, con un motor de inteligencia heurística propio (SitoIA) para la configuración automática de equipos. El algoritmo analiza presupuesto, perfil de uso y requisitos técnicos del usuario, aplicando ponderaciones dinámicas, distribución porcentual de presupuesto, validación de compatibilidad de componentes y equilibrio térmico TDP para generar configuraciones óptimas.
-
-La plataforma implementa catálogo completo con búsqueda avanzada y filtrado multicriteria, fichas de producto detalladas, carrito de compra persistente, gestión de usuarios con roles diferenciados y un sistema de recomendación adaptado a perfiles especializados (Gaming, Streaming/Edición, Oficina, Workstation).
-
-Arquitectura de seguridad robusta con autenticación JWT, cifrado de contraseñas BCrypt, control de acceso granular por roles y protección CSRF. Backend Java 21/Spring Boot con API RESTful, frontend React con state management optimizado y doble base de datos (PostgreSQL + MySQL).
-
-Proyecto adoptado por la empresa como modelo de negocio real tras su presentación como TFG.`,
-    notes: "Calificación final de 8,4 como TFG. El proyecto fue tan sólido que la empresa donde realicé mi formación lo adoptó como base para su propio modelo de negocio, validando su viabilidad comercial.",
+    description: `Plataforma e-commerce profesional con motor heurístico propio (SitoIA) para configuración automática de hardware. Analiza presupuesto y perfil de uso, validando compatibilidad de componentes y equilibrio térmico TDP. Incluye catálogo con filtrado multicriteria, gestión de usuarios con roles, recomendación por perfiles (Gaming, Streaming, Oficina) y seguridad robusta con JWT/BCrypt. Adoptado por la empresa como modelo de negocio real.`,
+    notes: "Calificación de 8,4 como TFG. Adoptado por la empresa como base para su propio modelo de negocio.",
     tags: ["Java 21", "Spring Boot 3.4", "Spring Security", "JavaScript (JSX)", "CSS", "PostgreSQL", "MySQL", "H2 Database", "React", "Tailwind", "JWT", "BCrypt", "API REST"],
     githubLink: "https://github.com/alonsoarriaza/sitoinformatic",
     previewImage: sitoinfoImg,
@@ -161,8 +155,8 @@ Proyecto adoptado por la empresa como modelo de negocio real tras su presentaci�
   {
     id: "automatizacion-datos",
     title: "Motor de Clasificación Automatizada de Datos con Integración de IA",
-    description: `Ingeniería y desarrollo de un motor de clasificación automatizada de alto rendimiento, implementado como SPA (Single Page Application), capaz de procesar y categorizar miles de registros de clientes contra catálogos oficiales de actividades comerciales. El sistema integra un pipeline propio de normalización de datos, correspondencia difusa (fuzzy matching), filtrado multicriteria y orquestación de agentes de IA para el análisis semántico y la clasificación precisa de datos desestructurados. Incluye soporte para múltiples formatos de entrada (JSON, Excel, SQL), exportación estructurada y trazabilidad completa del proceso de clasificación. La solución transformó un proceso que habría requerido meses de trabajo manual en un flujo automatizado y auditable.`,
-    notes: "De meses de trabajo manual a clasificación automatizada en minutos. Sistema adoptado internamente como herramienta operativa del departamento contable.",
+    description: `Motor SPA de clasificación automatizada de miles de clientes mediante pipeline de normalización, fuzzy matching y orquestación de agentes de IA. Soporte multi-formato (JSON, Excel, SQL) con exportación estructurada y trazabilidad completa. Transformó meses de trabajo manual en un flujo automatizado y auditable.`,
+    notes: "De meses de trabajo manual a minutos. Adoptado como herramienta operativa del departamento contable.",
     tags: ["HTML5", "Vanilla CSS", "JavaScript (ES6)", "MySQL/MariaDB", "Integración IA", "Fuzzy Matching", "ETL", "SheetJS"],
     githubLink: "https://github.com/alonsoarriaza/Desarrollador-de-Soluciones-de-Automatizaci-n-Analista-de-Datos",
     previewImage: actCliImg,
@@ -171,8 +165,8 @@ Proyecto adoptado por la empresa como modelo de negocio real tras su presentaci�
   {
     id: "coanda-forms",
     title: "CRM Inteligente con Asistente Virtual de Cualificación Comercial",
-    description: "Diseño y desarrollo de un sistema CRM con asistente virtual inteligente para la captación, cualificación y conversión automatizada de leads comerciales. El asistente analiza en tiempo real las necesidades del prospecto y recomienda la solución de gestión documental más adecuada mediante un algoritmo de scoring y afinidad. Los datos de cualificación se sincronizan en tiempo real con un panel comercial centralizado, ofreciendo métricas de conversión, histórico de interacciones y estado del pipeline de ventas. Arquitectura escalable diseñada para evolucionar hacia un CRM empresarial completo con base de datos relacional, gestión de contactos, oportunidades y automatización del ciclo de venta.",
-    notes: "Sistema desplegado en producción para la captación activa de clientes. Del primer clic a la integración de software en el negocio del cliente.",
+    description: "Sistema CRM con asistente virtual para captación y cualificación automatizada de leads. Algoritmo de scoring y afinidad que recomienda soluciones en tiempo real, con panel comercial centralizado, métricas de conversión y pipeline de ventas. Arquitectura escalable hacia CRM empresarial completo.",
+    notes: "Del primer clic a la integración de software en el negocio del cliente.",
     tags: ["Java", "Spring Boot 3.4", "JavaScript", "React", "PostgreSQL", "Bootstrap 5", "Docker", "Postman", "Git", "API REST", "CRM"],
     githubLink: "https://github.com/alonsoarriaza/CoandaForms",
     previewImage: crmInternoImg,
