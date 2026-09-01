@@ -53,7 +53,13 @@ Soy un desarrollador de software con un enfoque analítico, estructurado y orien
 
 ### 🚀 Proyectos Destacados
 
-#### 1️⃣ **Aplicación Web de Gestión de Inventario y Trazabilidad mediante Códigos QR**
+#### 1️⃣ **Business Data Collector — Plataforma Full-Stack de Inteligencia Corporativa**
+* **Descripción**: Solución full-stack de coste 0 € para la recolección, normalización y enriquecimiento automatizado de datos públicos de empresas españolas.
+* **Arquitectura & Conectores**: Conectores asíncronos concurrentes con OpenStreetMap (Overpass API), BOE / BORME y rastreador web respetuoso con robots.txt.
+* **Motor & Dashboard**: Deduplicación jerárquica en 4 capas (CIF/NIF, dominio, email y RapidFuzz > 88%), con dashboard SaaS interactivo en React 19, TypeScript y Tailwind CSS para monitoreo en tiempo real y exportación multiformato (XLSX, CSV, JSON).
+* **Stack**: Python, FastAPI, React 19, TypeScript, Tailwind CSS, SQLAlchemy, Asyncio, Docker.
+
+#### 2️⃣ **Aplicación Web de Gestión de Inventario y Trazabilidad mediante Códigos QR**
 * **Descripción**: Plataforma Full-Stack orientada a la trazabilidad de activos corporativos en todas las sedes con almacén de la empresa. Cuenta con una interfaz intuitiva con React/Vite/Tailwind que gestiona la lectura de códigos QR.
 * **Backend & Seguridad**: API REST robusta en Java 21 y Spring Boot con seguridad perimetral JWT y Spring Security.
 * **Impacto**: Carga masiva e importación automatizada de 15.000 registros desde el ERP/CRM (ADV) a MySQL. Sistema de permisos adaptado para comerciales, técnicos y supervisores.

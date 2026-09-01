@@ -7,7 +7,7 @@ const cards = reactive([
   { t:'🛡️ SKILLS', txt:'Java · Spring Boot · React · Vite · TailwindCSS · PostgreSQL · MySQL · Docker · Git · API REST · JavaScript', hit:false, done:false },
   { t:'📜 EDUCACIÓN', txt:'DAW @ Ilerna Sevilla · Cisco CCNA v7 · Doble Certificación IA & ML · SMR @ IES Hermanos Machado', hit:false, done:false },
   { t:'🧙 SOBRE MÍ', txt:'Desarrollador proactivo que pasó de gestionar equipos en retail a construir software empresarial de alto nivel.', hit:false, done:false },
-  { t:'🏆 PROYECTOS', txt:'SitoInformatic: eCommerce + Motor IA · App Inventario QR: 15K registros migrados · Automatización comercial', hit:false, done:false },
+  { t:'🏆 PROYECTOS', txt:'Business Data Collector: Full-Stack SaaS · SitoInformatic: eCommerce + Motor IA · App Inventario QR: 15K registros', hit:false, done:false },
   { t:'📡 CONTACTO', txt:'Dos Hermanas, Sevilla · alonsoarriaza03@gmail.com · github.com/alonsoarriaza · LinkedIn: alonsoferiaarriaza', hit:false, done:false },
 ].map(c=>({...c,dust:Array.from({length:6},(_,i)=>({x:`${(Math.random()-.5)*120}px`,y:`${-Math.random()*60-20}px`,d:`${i*45}ms`}))})))
 

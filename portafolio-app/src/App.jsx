@@ -8,6 +8,8 @@ import tallerImg from './assets/previews/taller.png'
 import sitoinfoImg from './assets/previews/sitoinfo.png'
 import actCliImg from './assets/previews/act-cli.png'
 import crmInternoImg from './assets/previews/crm-interno.png'
+import bdcImg from './assets/previews/business-data-collector.png'
+
 
 
 
@@ -133,6 +135,16 @@ const EDUCATION = [
 
 const PROJECTS = [
   {
+    id: "business-data-collector",
+    title: "Business Data Collector | Plataforma Full-Stack de Inteligencia Corporativa",
+    description: `Solución full-stack de coste 0 € para la recolección, normalización y enriquecimiento automatizado de datos públicos de empresas españolas. Implementa conectores asíncronos altamente concurrentes con OpenStreetMap (Overpass API), BOE / BORME y un rastreador web de sitios oficiales respetuoso con las directivas robots.txt. Cuenta con un motor de deduplicación jerárquica en 4 capas (CIF/NIF, dominio web, email y coincidencia difusa de nombres > 88% con RapidFuzz), garantizando la fusión de registros sin pérdida de trazabilidad. Construyó un dashboard SaaS moderno e interactivo en React 19, TypeScript y Tailwind CSS con monitoreo de procesos en tiempo real y exportación multiformato en Excel (XLSX), CSV y JSON.`,
+    notes: "Creador y Desarrollador Principal · Solución de coste 0 € con deduplicación jerárquica en 4 capas y conectores asíncronos concurrentes.",
+    tags: ["Python", "FastAPI", "React 19", "TypeScript", "Tailwind CSS", "SQLAlchemy", "Asyncio", "Docker", "RapidFuzz", "OpenStreetMap", "Web Scraping", "API REST"],
+    githubLink: "https://github.com/alonsoarriaza/Business-Data-Collector",
+    previewImage: bdcImg,
+    fallbackImage: "/previews/business-data-collector.png",
+  },
+  {
     id: "trazabilidad-qr",
     title: "Sistema Empresarial de Gestión de Activos y Trazabilidad QR · Multi-Sede",
     description: "Plataforma Full-Stack empresarial para gestión de inventarios y trazabilidad de activos con códigos QR a escala multi-sede. Integra sincronización en tiempo real, pipeline ETL para migración de +15.000 registros desde ERP legacy (ADV), autenticación JWT/Spring Security y API RESTful. Interfaz responsive optimizada para móviles y PDA industriales.",
@@ -193,6 +205,7 @@ const RETRO_CARDS = [
   { t: '📍 DATOS', txt: 'Alonso Feria Arriaza · Dos Hermanas, Sevilla · 627 53 61 25 · alonsoarriaza03@gmail.com · Permiso B + Vehículo propio · Disponibilidad geográfica inmediata.' },
   { t: '⚔️ EXPERIENCIA', txt: 'Full-Stack Developer · Coanda Technologies. Arquitectura e implantación de plataformas corporativas a medida, automatización con IA, integración de sistemas empresariales, ingeniería de datos y trazabilidad QR multi-sede.' },
   { t: '💡 COMPROMISO', txt: 'Enfoque analítico y estructurado. Compromiso riguroso con Clean Code, arquitectura por capas, patrones de diseño, seguridad (JWT/Spring Security) y comunicación técnica clara en equipos multidisciplinares.' },
+  { t: '📊 DATA COLLECTOR', txt: 'Business Data Collector: Plataforma Full-Stack (Python, FastAPI, React 19, Asyncio) de coste 0 € para la recolección, normalización y deduplicación en 4 capas (RapidFuzz) de datos públicos de empresas españolas.' },
   { t: '📱 DESARROLLO QR', txt: 'Sistema empresarial Full-Stack de gestión de activos y trazabilidad QR multi-sede. Backend Java 21/Spring Boot, frontend React+Tailwind, pipeline ETL y migración masiva de +15.000 registros desde ERP (ADV).' },
   { t: '🚀 SITOINFORMATIC', txt: 'Plataforma eCommerce con SitoIA: motor heurístico propio en Java 21 para configuración automática de hardware con cálculo de compatibilidad, equilibrio térmico TDP y distribución dinámica de presupuestos. Adoptado como modelo de negocio.' },
   { t: '📜 FORMACIÓN', txt: 'Grado Superior DAW (Ilerna). AI Engineer for Developers (DataCamp). Cisco CCNA v7 (redes y automatización SDN). Doble Certificación en IA y Machine Learning (BIGSchool). Grado Medio SMR.' },
@@ -805,6 +818,7 @@ function ProjectsSection() {
     { border: "border-purple-200 hover:border-purple-400", bg: "bg-gradient-to-br from-white via-purple-50/30 to-white", badge: "bg-purple-100 text-purple-900 border-purple-200" },
     { border: "border-sky-200 hover:border-sky-400", bg: "bg-gradient-to-br from-white via-sky-50/30 to-white", badge: "bg-sky-100 text-sky-900 border-sky-200" },
     { border: "border-emerald-200 hover:border-emerald-400", bg: "bg-gradient-to-br from-white via-emerald-50/30 to-white", badge: "bg-emerald-100 text-emerald-900 border-emerald-200" },
+    { border: "border-indigo-200 hover:border-indigo-400", bg: "bg-gradient-to-br from-white via-indigo-50/30 to-white", badge: "bg-indigo-100 text-indigo-900 border-indigo-200" },
     { border: "border-amber-200 hover:border-amber-400", bg: "bg-gradient-to-br from-white via-amber-50/30 to-white", badge: "bg-amber-100 text-amber-900 border-amber-200" },
   ]
 
