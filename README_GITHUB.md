@@ -33,11 +33,11 @@ Soy un desarrollador de software con un enfoque analítico, estructurado y orien
 * **Flujos de Trabajo Inteligentes y Scripts**: Programación de integraciones en Google Apps Script para automatizar tareas repetitivas y gestión de flujos de trabajo inteligentes en plataformas documentales como **Therefore**.
 * **Ciberseguridad y Gestión**: Análisis interno e integración de plataformas documentales e incidencias como **Solpheo** y **ADV** (ERP/CRM), junto con la monitorización de soluciones de ciberseguridad con **Ciberguardian**.
 
-#### 🔹 **Dependiente** | Hollister CO *(Junio 2025 — Enero 2025)*
+#### 🔹 **Dependiente** | Hollister CO *(Enero 2025 — Mayo 2025)*
 * **Atención al Cliente**: Asesoramiento y venta personalizada aplicando técnicas de escucha activa para entender requisitos del cliente (valores transferibles al análisis de requisitos de software).
 * **Control de Inventario**: Recepción, etiquetado y organización operativa del stock físico, asegurando que coincidiera exactamente con el sistema informático.
 
-#### 🔹 **Segundo Encargado** | JVZ Vamutex *(Diciembre 2023 — Mayo 2025)*
+#### 🔹 **Segundo Encargado** | JVZ Vamutex *(Noviembre 2023 — Enero 2025)*
 * **Liderazgo y Coordinación**: Gestión operativa de personal, asignación de turnos y toma de decisiones de inventario bajo presión.
 * **Logística Integral**: Control de stock y cuadres diarios de almacén para asegurar la exactitud del stock en el sistema de ventas.
 

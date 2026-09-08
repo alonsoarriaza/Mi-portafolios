@@ -45,7 +45,7 @@ const EXPERIENCE = [
     ]
   },
   {
-    year: "Junio 2025 — Enero 2026",
+    year: "Enero 2025 — Mayo 2025",
     role: "Dependiente",
     company: "Hollister CO",
     description: ["Atención al cliente y ventas, asesoramiento personalizado buscando siempre la mejor experiencia de compra. Aprendí que escuchar activamente al usuario es tan crítico en una tienda como al recoger requisitos para un desarrollo de software.",
@@ -55,7 +55,7 @@ const EXPERIENCE = [
     ]
   },
   {
-    year: "Diciembre 2023 — Mayo 2025",
+    year: "Noviembre 2023 — Enero 2025",
     role: "Segundo Encargado",
     company: "JVZ Vamutex",
     description: [
