@@ -35,7 +35,7 @@ const NAV_LINKS = [
 
 const EXPERIENCE = [
   {
-    year: "Mayo 2026 — Presente",
+    year: "Mayo 2025 — Presente",
     role: "Full-Stack Developer",
     company: "Coanda Technologies",
     description: [
